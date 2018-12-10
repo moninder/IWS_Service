@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B8488E5-10B1-4A6F-AA79-9051596A3041}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AirportIQ.Model</RootNamespace>
+    <AssemblyName>AirportIQ.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\DllReference\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\DllReference\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\DllReference\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DllReference\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EF\LookUps\Audits.cs" />
+    <Compile Include="EF\LookUps\Audit_AuditDivisionInfo_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Audit_AuditDocuments.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Audit_AuditDocumentTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Audit_AuditGroups.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Badging_Access_GetLocations_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Badging_GetDoorsInCategory_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Badging_GetLastCHRCAndSTADates_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Badging_GetSpecialAccessCategories_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Countries.cs" />
+    <Compile Include="EF\LookUps\CountrySubdivisions.cs" />
+    <Compile Include="EF\LookUps\IWS_Badge_Badge.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\IWS_Person_Demographics.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\IWS_Person_Person.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\IWS_Person_PersonBadgeXref.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\LEO_OfficerRanksAndTitles.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\LEO_Officers.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\LEO_Officers.Ext.cs" />
+    <Compile Include="EF\LookUps\LEO_OfficerTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\LEO_PoliceDepartments.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lookups.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Lookups.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Access_Areas.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Access_Categories.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Access_CategoryAreaMapping.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Access_Doors.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Access_PersonDivisionCategoryXref.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Audit_AuditSpecifications.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_BackgroundCheck_PersonDivisionChecks.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Badges_Info.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Badge_GetStatusCode_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Badge_SetStatus_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Badging_Access_GetCategoriesByLocations_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Badging_GetExpirationDates_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Badging_NewBadgeExt_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Colors.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Entities.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Entities.Ext.cs" />
+    <Compile Include="EF\LookUps\Lookups_Common_EntityTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_ContentTypes_Extensions.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_ContentTypes_Extensions.Ext.cs" />
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_Documents.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_DocumentsRequired.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_DocumentTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_LegalStatusTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_Requirements.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Common_Requirement_Requirements.Ext.cs" />
+    <Compile Include="EF\LookUps\Lookups_Company_Companies.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Company_Companies.Ext.cs" />
+    <Compile Include="EF\LookUps\Lookups_Division_AgreementAccessDefaults.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_AgreementBadgeColors.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_AgreementBadgeIcons.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_AgreementJobRoles.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_AgreementLocations.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_Agreements.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_Contacts.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_ContactTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_DivisionNotes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_Divisions.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Division_DivisionTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Documents_DocumentTypeExt.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_EyeColors.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Facility_BadgeColors.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Facility_Departments.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Facility_Staff.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Facility_StaffDepartmentXref.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_HairColors.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Icon_Icons.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Icon_PersonDivisionIconXref.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_NamePrefixes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_NameSuffixes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_Aliases.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_AuthorizedSigners.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_BadgeAccessPeriods.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_BadgeIconPeriods.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_BadgeIssuanceReasons.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_BadgeReprintReasons.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_Badges.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_BadgeStatuses.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_BadgeStatusPeriods.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_FelonyAnswers.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_FelonyQuestions.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_FullName.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_JobRoles.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_Notes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_NoteTypes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_PersonBiographics.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_PersonBiographics.Ext.cs" />
+    <Compile Include="EF\LookUps\Lookups_Person_PersonDivisionJobRoleXref.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_Persons.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_PersonTypeStatuses.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_Trainers.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Person_TrainingSites.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Races.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Security_Users.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Sexes.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_Task.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_TaskParam.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_TaskStatus.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Lookups_TaskType.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Miscellaneous_Countries.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Miscellaneous_Countries_Load_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Miscellaneous_CountrySubdivisions.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Person_PersonDivisionXref.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Person_PersonDivisionXref.Ext.cs" />
+    <Compile Include="EF\LookUps\Person_STAEmployeeStatuses.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Security_Groups.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Security_Users_GetCurrentGroupsForUser_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\LookUps\Trainers_Result.cs">
+      <DependentUpon>Lookups.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Badges_Info.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Common_Requirement_DocumentsRequired.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Company_Companies.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Division_Divisions.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Documents.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Documents.Ext.cs" />
+    <Compile Include="EF\SAFE\LEO_OfficerBadges.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Person_Badges.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Person_FullName.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Person_FullName_LastFirst.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Person_PersonDivisionXref.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Safe.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe.Context.Ext.cs" />
+    <Compile Include="EF\SAFE\Safe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Safe.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_CitationPoliceOfficers.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_Citations.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_Citations.Ext.cs" />
+    <Compile Include="EF\SAFE\Safe_CitationViolations.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_CitationViolationsExt.cs" />
+    <Compile Include="EF\SAFE\Safe_HearingPoliceOfficers.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_HearingPoliceOfficers.Ext.cs" />
+    <Compile Include="EF\SAFE\Safe_Hearings.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_Hearings.Ext.cs" />
+    <Compile Include="EF\SAFE\Safe_Officers.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_VehicleBodyTypes.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_VehicleMakes.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_Violations.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\SAFE\Safe_ViolationTypes.cs">
+      <DependentUpon>Safe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Badging\Address.cs" />
+    <Compile Include="Models\Badging\Alias.cs" />
+    <Compile Include="Models\Badging\BadgeStatusGridField.cs" />
+    <Compile Include="Models\Badging\BadgingResults.cs" />
+    <Compile Include="Models\Badging\Category.cs" />
+    <Compile Include="Models\Badging\CategoryList.cs" />
+    <Compile Include="Models\Badging\Country.cs" />
+    <Compile Include="Models\Badging\CountrySubdivision.cs" />
+    <Compile Include="Models\Badging\DocumentType.cs" />
+    <Compile Include="Models\Badging\FileInfo.cs" />
+    <Compile Include="Models\Badging\FingerprintBiographicPerson.cs" />
+    <Compile Include="Models\Badging\FingerprintBiographicReferenceData.cs" />
+    <Compile Include="Models\Badging\GovernmentId.cs" />
+    <Compile Include="Models\Badging\LostBadgeDetails.cs" />
+    <Compile Include="Models\Badging\Person.cs" />
+    <Compile Include="Models\Badging\ReferenceItem.cs" />
+    <Compile Include="Models\Common\AjaxResult.cs" />
+    <Compile Include="Models\Helpers\CitationSummary.cs" />
+    <Compile Include="Models\Helpers\DictionaryHelper.cs" />
+    <Compile Include="Models\Helpers\HearingSummary.cs" />
+    <Compile Include="Models\Helpers\IJsonDatasource.cs" />
+    <Compile Include="Models\Helpers\IJsonDatasourceChild.cs" />
+    <Compile Include="Models\Helpers\JsonDataSourceBase.cs" />
+    <Compile Include="Models\Helpers\KeyTextPair.cs" />
+    <Compile Include="Models\Helpers\MarshalAttribute.cs" />
+    <Compile Include="Models\Helpers\PersonAlias.cs" />
+    <Compile Include="Models\LEOResults.cs" />
+    <Compile Include="Models\Lists\ListsCache.cs" />
+    <Compile Include="Models\Lists\LookUpItem.cs" />
+    <Compile Include="Models\Lists\LookUpList.cs" />
+    <Compile Include="Models\Lists\LookUpLists.cs" />
+    <Compile Include="Models\PersonCredentialing\PerCredCitationSummary.cs" />
+    <Compile Include="Models\PersonCredentialing\PersonBadgeGrid.cs" />
+    <Compile Include="Models\PersonCredentialing\PersonFile.cs" />
+    <Compile Include="Models\PersonCredentialing\PersonNotes.cs" />
+    <Compile Include="Models\PersonCredentialing\PerCredEntry.cs" />
+    <Compile Include="Models\PersonCredentialing\PersonPointsPeriod.cs" />
+    <Compile Include="Models\QueryBrowser\Constants.cs" />
+    <Compile Include="Models\QueryBrowser\DatabaseColumn.cs" />
+    <Compile Include="Models\QueryBrowser\DisplayColumn.cs" />
+    <Compile Include="Models\QueryBrowser\Filter.cs" />
+    <Compile Include="Models\QueryBrowser\ListItem.cs" />
+    <Compile Include="Models\QueryBrowser\Operator.cs" />
+    <Compile Include="Models\QueryBrowser\OperatorFactory.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\AuditQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\CompanyDivisionAgreementQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\CompanyDivisionContactsQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\CompanyDivisionEmployeesQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\CompanyDivisionInfoQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\CompanyDivisionPersonBadgeQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\BadgeInspectionsQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\CompanyDivisionAgreementAllQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\GuardPostQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\PersonBackgroundCheckQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\PersonBadgeQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\RACUQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Queries\SAFEQuery.cs" />
+    <Compile Include="Models\QueryBrowser\Query.cs" />
+    <Compile Include="Models\QueryBrowser\SortColumn.cs" />
+    <Compile Include="Models\RACU\ColumnSetter.cs" />
+    <Compile Include="Models\References\ReferenceAction.cs" />
+    <Compile Include="Models\References\ReferenceViewEntity.cs" />
+    <Compile Include="Models\Review\Badge\Badge.cs" />
+    <Compile Include="Models\Review\Badge\BadgeAccessCategory.cs" />
+    <Compile Include="Models\Review\Badge\BadgeIcon.cs" />
+    <Compile Include="Models\Review\Badge\BadgeNotes.cs" />
+    <Compile Include="Models\Review\Badge\BadgeReview.cs" />
+    <Compile Include="Models\Review\Badge\BadgeStatusPeriod.cs" />
+    <Compile Include="Models\Review\Badge\BadgeFiles.cs" />
+    <Compile Include="Models\Review\Badge\Company.cs" />
+    <Compile Include="Models\Review\Badge\Division.cs" />
+    <Compile Include="Models\Review\Badge\Location.cs" />
+    <Compile Include="Models\Review\Badge\BadgeNote.cs" />
+    <Compile Include="Models\Review\Badge\Person.cs" />
+    <Compile Include="Models\Review\Badge\Miscellaneous.cs" />
+    <Compile Include="Models\Review\Badge\Safe.cs" />
+    <Compile Include="Models\SAFE\CitationEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EF\SAFE\Safe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Safe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="EF\LookUps\Lookups.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Lookups.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\LookUps\Lookups.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Lookups.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EF\LookUps\Lookups.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Lookups.cs</LastGenOutput>
+    </None>
+    <Compile Include="EF\SAFE\Division_Divisions.Ext.cs" />
+    <None Include="EF\SAFE\Safe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Safe.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EF\SAFE\Safe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Safe.cs</LastGenOutput>
+    </None>
+    <Compile Include="EF\SAFE\Safe_CitationPoliceOfficers.Ext.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

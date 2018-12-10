@@ -1,0 +1,36 @@
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\bin\Release\ISBWrapper.dll.config
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\bin\Release\ISBWrapper.dll
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\bin\Release\ISBWrapper.pdb
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\bin\Release\ImageWare.ISBLibrary.dll
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\bin\Release\log4net.dll
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\bin\Release\nunit.framework.dll
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\obj\Release\ISBWrapper.csprojResolveAssemblyReference.cache
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\obj\Release\ISBWrapper.dll
+C:\Development\DEV LAWA 2016\QA\Misc\ISBWrapper\obj\Release\ISBWrapper.pdb
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\bin\Release\ISBWrapper.dll.config
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\bin\Release\ISBWrapper.dll
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\bin\Release\ISBWrapper.pdb
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\bin\Release\ImageWare.ISBLibrary.dll
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\bin\Release\log4net.dll
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\bin\Release\nunit.framework.dll
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\obj\Release\ISBWrapper.csprojResolveAssemblyReference.cache
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\obj\Release\ISBWrapper.dll
+C:\Development\DEV LAWA 2016\Frist QA\QA\Misc\ISBWrapper\obj\Release\ISBWrapper.pdb
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ISBWrapper.dll.config
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ISBWrapper.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ISBWrapper.pdb
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ImageWare.ISBLibrary.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\log4net.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\nunit.framework.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Release\ISBWrapper.csprojResolveAssemblyReference.cache
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Release\ISBWrapper.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Release\ISBWrapper.pdb
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ISBWrapper.dll.config
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ISBWrapper.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ISBWrapper.pdb
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\ImageWare.ISBLibrary.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\log4net.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Release\nunit.framework.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Release\ISBWrapper.csprojResolveAssemblyReference.cache
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Release\ISBWrapper.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Release\ISBWrapper.pdb

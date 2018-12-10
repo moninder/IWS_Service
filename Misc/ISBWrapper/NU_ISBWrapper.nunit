@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" processModel="Default" domainUsage="Default" />
+  <Config name="Debug" binpathtype="Auto" configfile="C:\Users\latchison\code\Credentialing 4\Credentialing_System\Dev\Misc\ISBWrapperTest\app.config">
+    <assembly path="bin\Debug\ISBWrapper.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="bin\Release\ISBWrapper.dll" />
+  </Config>
+</NUnitProject>

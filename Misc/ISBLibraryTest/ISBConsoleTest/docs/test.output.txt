@@ -1,0 +1,1641 @@
+
+
+
+
+Testing GetPerson(01E51989-75CD-D64D-5FB0-A3F88C11C25E)
+person.ToString() output:>>> Person >>> 
+GUID: 01E51989-75CD-D64D-5FB0-A3F88C11C25E
+DSID: 1
+Status: 2
+LegacyID: 8
+Created: 2012-08-17T15:55:14.710-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.710-07:00
+LastUpdatedBy: 
+LastName: HERNANDEZ
+FirstName: DAVID
+MiddleName: V
+Sex: U
+Race: U
+DOB: 1899-01-01-08:00
+[ metadata ]
+[NVS] ID: 665 seqnum: -1 N: SSN V: 777-55-2233[NVS] ID: 666 seqnum: -1 N: EMP_ID V: 7537[NVS] ID: 667 seqnum: -1 N: EMP_Loc V: ONT[NVS] ID: 688 seqnum: -1 N: PIN V: 1828[NVS] ID: 701 seqnum: -1 N: status V: 1[NVS] ID: 702 seqnum: -1 N: employee V: P2283[NVS] ID: 704 seqnum: -1 N: ContractExpiryDate V: 1900-01-01-08:00[NVS] ID: 715 seqnum: -1 N: Validated V: N[NVS] ID: 2172 seqnum: -1 N: PrintExpiryDate V: 1900-01-01-08:00
+
+>>> Appearance >>>
+ID: 1924
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: XXX
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: XXX
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 1933
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 234 BEACH LANE
+Street2: 
+City: ALTA LOMA
+State: CA
+Zip: 91343-4343
+Country: USA
+[ metadata ]
+[NVS] ID: 687 seqnum: -1 N: HomePhone V: (303) 653-6666
+
+>>> Document >>>
+ID: 1938
+SeqNum: 0
+TypeCode: Unknown
+Number: 2/5/98
+Issuer: 
+
+ID: 2334
+SeqNum: 0
+TypeCode: Unknown
+Number: Unknown
+Issuer: Unknown
+[ metadata ]
+[NVS] ID: 755 seqnum: -1 N: VerificationDocumentType V: 99
+
+ID: 2330
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'HERNANDEZ'.
+first name is 'DAVID'.
+DOB is '1899-01-01-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(01E51989-75CD-D64D-5FB0-A3F88C11C25E)
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(01E51989-75CD-D64D-5FB0-A3F88C11C25E, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(0384B853-3970-15B8-0835-431DD7ED95B0)
+person.ToString() output:>>> Person >>> 
+GUID: 0384B853-3970-15B8-0835-431DD7ED95B0
+DSID: 1
+Status: 2
+LegacyID: 15
+Created: 2012-08-17T15:55:15.150-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:15.150-07:00
+LastUpdatedBy: 
+LastName: VAGUENS
+FirstName: VIOLET
+MiddleName: I
+Sex: F
+Race: A
+DOB: 1984-10-27-07:00
+[ metadata ]
+[NVS] ID: 1321 seqnum: -1 N: SSN V: 697-44-4326[NVS] ID: 1322 seqnum: -1 N: EMP_ID V: 9137[NVS] ID: 1323 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 1354 seqnum: -1 N: HotNotes V: N[NVS] ID: 1366 seqnum: -1 N: CountrySubdivisionCode_Birth V: PHL[NVS] ID: 1367 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 1368 seqnum: -1 N: Alien V: N[NVS] ID: 1369 seqnum: -1 N: Visa V: N[NVS] ID: 1370 seqnum: -1 N: USCitizen V: Y[NVS] ID: 1371 seqnum: -1 N: VerificationType V: NATURALIZATION[NVS] ID: 1372 seqnum: -1 N: Assessment V: PASS[NVS] ID: 2179 seqnum: -1 N: PrintsDate V: 2010-10-13-07:00
+
+>>> Appearance >>>
+ID: 2060
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLK
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 2069
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 39455 WINTER AVE
+Street2: 
+City: CARSON
+State: CA
+Zip: 90103-2323
+Country: USA
+[ metadata ]
+[NVS] ID: 1343 seqnum: -1 N: HomePhone V: (123) 323-3265
+
+>>> Document >>>
+ID: 2079
+SeqNum: 0
+TypeCode: Unknown
+Number: D1105125 INTERIM
+Issuer: CA
+[ metadata ]
+[NVS] ID: 1413 seqnum: -1 N: ExpireDate V: 2010-12-11-08:00
+
+ID: 2378
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+ID: 2076
+SeqNum: 0
+TypeCode: Unknown
+Number: A45904184
+Issuer: 
+
+
+last name is 'VAGUENS'.
+first name is 'VIOLET'.
+DOB is '1984-10-27-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(0384B853-3970-15B8-0835-431DD7ED95B0)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(0384B853-3970-15B8-0835-431DD7ED95B0, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(1314D7E6-7D61-A7FB-A5FF-5B9A7180C007)
+person.ToString() output:>>> Person >>> 
+GUID: 1314D7E6-7D61-A7FB-A5FF-5B9A7180C007
+DSID: 1
+Status: 2
+LegacyID: 3
+Created: 2012-08-17T15:55:14.403-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.403-07:00
+LastUpdatedBy: 
+LastName: GOODWIN
+FirstName: CHRISTIE
+MiddleName: 
+Sex: F
+Race: H
+DOB: 1981-06-09-07:00
+[ metadata ]
+[NVS] ID: 193 seqnum: -1 N: SSN V: 111-22-3344[NVS] ID: 194 seqnum: -1 N: EMP_ID V: 4010[NVS] ID: 195 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 221 seqnum: -1 N: EMAIL V: chichis999@hotmail.com[NVS] ID: 224 seqnum: -1 N: ListBDocTypeNum V: 8[NVS] ID: 225 seqnum: -1 N: ListCDocTypeNum V: 22[NVS] ID: 226 seqnum: -1 N: HotNotes V: N[NVS] ID: 238 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 239 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 240 seqnum: -1 N: Alien V: N[NVS] ID: 241 seqnum: -1 N: Visa V: N[NVS] ID: 242 seqnum: -1 N: USCitizen V: Y[NVS] ID: 243 seqnum: -1 N: VerificationType V: PASSPORT[NVS] ID: 2167 seqnum: -1 N: PrintsDate V: 2005-09-30-07:00
+
+>>> Alias >>>
+ID: 1827
+SeqNum: 0
+LastName: RODRIGUEZ
+First: CLAUDIA
+Middle: 
+Title: 
+Suffix: 
+
+>>> Appearance >>>
+ID: 1830
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BRO
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 1839
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 1234 STAGE  BLVD APT 4
+Street2: 
+City: HAWTHORNE
+State: CA
+Zip: 90025-3333
+Country: USA
+[ metadata ]
+[NVS] ID: 215 seqnum: -1 N: HomePhone V: (234) 654-3333
+
+>>> Document >>>
+ID: 1846
+SeqNum: 0
+TypeCode: Unknown
+Number: B4959028
+Issuer: CA
+[ metadata ]
+[NVS] ID: 285 seqnum: -1 N: ExpireDate V: 2011-06-09-07:00
+
+ID: 2300
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'GOODWIN'.
+first name is 'CHRISTIE'.
+DOB is '1981-06-09-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(1314D7E6-7D61-A7FB-A5FF-5B9A7180C007)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(1314D7E6-7D61-A7FB-A5FF-5B9A7180C007, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(1DDD9685-7DC6-0012-FE06-06146FCEE1A4)
+person.ToString() output:>>> Person >>> 
+GUID: 1DDD9685-7DC6-0012-FE06-06146FCEE1A4
+DSID: 1
+Status: 2
+LegacyID: 4
+Created: 2012-08-17T15:55:14.463-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.463-07:00
+LastUpdatedBy: 
+LastName: JONES
+FirstName: JOHN
+MiddleName: E
+Sex: M
+Race: B
+DOB: 1964-09-17-07:00
+[ metadata ]
+[NVS] ID: 289 seqnum: -1 N: SSN V: 122-33-4567[NVS] ID: 290 seqnum: -1 N: EMP_ID V: 6910[NVS] ID: 291 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 322 seqnum: -1 N: HotNotes V: N[NVS] ID: 334 seqnum: -1 N: CountrySubdivisionCode_Birth V: NGA[NVS] ID: 335 seqnum: -1 N: CountryCode_Citizenship V: NGA[NVS] ID: 336 seqnum: -1 N: Alien V: Y[NVS] ID: 337 seqnum: -1 N: Visa V: N[NVS] ID: 338 seqnum: -1 N: USCitizen V: N[NVS] ID: 340 seqnum: -1 N: Assessment V: PASS[NVS] ID: 2168 seqnum: -1 N: PrintsDate V: 2007-10-25-07:00
+
+>>> Appearance >>>
+ID: 1848
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLD
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 1857
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 5543 OLYMPIA RD
+Street2: 
+City: SAUGUS
+State: CA
+Zip: 90302-2222
+Country: USA
+[ metadata ]
+[NVS] ID: 311 seqnum: -1 N: HomePhone V: (333) 555-6666
+
+>>> Document >>>
+ID: 1864
+SeqNum: 0
+TypeCode: Unknown
+Number: 098820295
+Issuer: 
+[ metadata ]
+[NVS] ID: 359 seqnum: -1 N: ExpireDate V: 2016-03-23-07:00
+
+ID: 1866
+SeqNum: 0
+TypeCode: Unknown
+Number: 082729467
+Issuer: OK
+[ metadata ]
+[NVS] ID: 381 seqnum: -1 N: ExpireDate V: 2010-09-30-07:00
+
+ID: 2304
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'JONES'.
+first name is 'JOHN'.
+DOB is '1964-09-17-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(1DDD9685-7DC6-0012-FE06-06146FCEE1A4)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(1DDD9685-7DC6-0012-FE06-06146FCEE1A4, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(25F41EC9-E152-7B02-5D64-8BEEFFA1BE50)
+person.ToString() output:>>> Person >>> 
+GUID: 25F41EC9-E152-7B02-5D64-8BEEFFA1BE50
+DSID: 1
+Status: 2
+LegacyID: 6
+Created: 2012-08-17T15:55:14.587-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.587-07:00
+LastUpdatedBy: 
+LastName: WESTON JONES
+FirstName: BARBARA
+MiddleName: B
+Sex: F
+Race: H
+DOB: 1989-02-23-08:00
+[ metadata ]
+[NVS] ID: 477 seqnum: -1 N: SSN V: 333-44-6767[NVS] ID: 478 seqnum: -1 N: EMP_ID V: 7368[NVS] ID: 479 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 510 seqnum: -1 N: HotNotes V: N[NVS] ID: 522 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 523 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 524 seqnum: -1 N: Alien V: N[NVS] ID: 525 seqnum: -1 N: Visa V: N[NVS] ID: 526 seqnum: -1 N: USCitizen V: Y[NVS] ID: 527 seqnum: -1 N: VerificationType V: BIRTH CERTIFICATE[NVS] ID: 528 seqnum: -1 N: Assessment V: PASS[NVS] ID: 2170 seqnum: -1 N: PrintsDate V: 2008-03-28-07:00
+
+>>> Appearance >>>
+ID: 1887
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BRO
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 1896
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 8888 SOMETIMES BLVD APT 44
+Street2: 
+City: LOS ANGELES
+State: CA
+Zip: 90723-9933
+Country: USA
+[ metadata ]
+[NVS] ID: 499 seqnum: -1 N: HomePhone V: (313) 555-1234
+
+>>> Document >>>
+ID: 1903
+SeqNum: 0
+TypeCode: Unknown
+Number: d7299720
+Issuer: CA
+[ metadata ]
+[NVS] ID: 569 seqnum: -1 N: ExpireDate V: 2013-02-23-08:00
+
+ID: 2317
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'WESTON JONES'.
+first name is 'BARBARA'.
+DOB is '1989-02-23-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(25F41EC9-E152-7B02-5D64-8BEEFFA1BE50)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(25F41EC9-E152-7B02-5D64-8BEEFFA1BE50, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(2DA776CB-6600-9FB8-7DBD-5405126B7834)
+person.ToString() output:>>> Person >>> 
+GUID: 2DA776CB-6600-9FB8-7DBD-5405126B7834
+DSID: 1
+Status: 2
+LegacyID: 13
+Created: 2012-08-17T15:55:15.020-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:15.020-07:00
+LastUpdatedBy: 
+LastName: HAYNES
+FirstName: SUZY
+MiddleName: 
+Sex: F
+Race: W
+DOB: 1959-06-11-07:00
+[ metadata ]
+[NVS] ID: 1137 seqnum: -1 N: SSN V: 333-44-9999[NVS] ID: 1138 seqnum: -1 N: EMP_ID V: 8596[NVS] ID: 1139 seqnum: -1 N: EMP_Loc V: ONT[NVS] ID: 1160 seqnum: -1 N: PIN V: 5656[NVS] ID: 1173 seqnum: -1 N: status V: 2[NVS] ID: 1174 seqnum: -1 N: employee V: 8596[NVS] ID: 1176 seqnum: -1 N: ContractExpiryDate V: 8596-01-01-08:00[NVS] ID: 1187 seqnum: -1 N: Validated V: N[NVS] ID: 2177 seqnum: -1 N: PrintExpiryDate V: 2000-06-30-07:00
+
+>>> Appearance >>>
+ID: 2022
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: RED
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BLU
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 2031
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 9955 EXCHANGE CIRCLE
+Street2: 
+City: MIDLOTHIAN
+State: TX
+Zip: 90154-4444
+Country: USA
+
+>>> Document >>>
+ID: 2364
+SeqNum: 0
+TypeCode: Unknown
+Number: Unknown
+Issuer: Unknown
+[ metadata ]
+[NVS] ID: 1227 seqnum: -1 N: VerificationDocumentType V: 99
+
+ID: 2360
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'HAYNES'.
+first name is 'SUZY'.
+DOB is '1959-06-11-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(2DA776CB-6600-9FB8-7DBD-5405126B7834)
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(2DA776CB-6600-9FB8-7DBD-5405126B7834, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(3F1F5C90-7F8C-BD0D-4583-A1F7F28BCD38)
+person.ToString() output:>>> Person >>> 
+GUID: 3F1F5C90-7F8C-BD0D-4583-A1F7F28BCD38
+DSID: 1
+Status: 2
+LegacyID: 17
+Created: 2012-08-17T15:55:15.280-07:00
+CreatedBy: Migration
+LastUpdated: 2011-11-15T13:55:15.000-08:00
+LastUpdatedBy: s38kxd
+LastName: JOHNSON
+FirstName: NANCY
+MiddleName: 
+Sex: M
+Race: H
+DOB: 1955-01-03-08:00
+[ metadata ]
+[NVS] ID: 1509 seqnum: -1 N: SSN V: 174-37-5674[NVS] ID: 1510 seqnum: -1 N: EMP_ID V: 10000007[NVS] ID: 1511 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 1536 seqnum: -1 N: PIN V: 1255[NVS] ID: 1538 seqnum: -1 N: FedEmp V: N[NVS] ID: 1540 seqnum: -1 N: ListBDocTypeNum V: 7[NVS] ID: 1541 seqnum: -1 N: ListCDocTypeNum V: 22[NVS] ID: 1544 seqnum: -1 N: DoNotBadge V: N[NVS] ID: 1545 seqnum: -1 N: FingerprintExempt V: N[NVS] ID: 1546 seqnum: -1 N: DOJFlag V: N[NVS] ID: 1548 seqnum: -1 N: LastUserDateAccessed V: 1/30/2006 4:49:07 PM s38mxm[NVS] ID: 1554 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 1555 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 1556 seqnum: -1 N: Alien V: N[NVS] ID: 1557 seqnum: -1 N: Visa V: N[NVS] ID: 1558 seqnum: -1 N: USCitizen V: Y[NVS] ID: 1559 seqnum: -1 N: VerificationType V: PASSPORT[NVS] ID: 1560 seqnum: -1 N: Assessment V: PASS[NVS] ID: 1561 seqnum: -1 N: SboVerified V: Y[NVS] ID: 1562 seqnum: -1 N: InsExempt V: N[NVS] ID: 1566 seqnum: -1 N: DojPrintedDate V: 2004-07-08-07:00[NVS] ID: 1567 seqnum: -1 N: DojPrintedFlag V: Y[NVS] ID: 2182 seqnum: -1 N: PrintsDate V: 2004-07-08-07:00
+
+>>> Appearance >>>
+ID: 2100
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: GRY
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 2109
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 2678 BORDERLINE LANE
+Street2: 
+City: EL SEGUNDO
+State: CA
+Zip: 90054-4879
+Country: USA
+[ metadata ]
+[NVS] ID: 1531 seqnum: -1 N: HomePhone V: (567) 693-0863
+
+>>> Document >>>
+ID: 2121
+SeqNum: 0
+TypeCode: Unknown
+Number: 478724723
+Issuer: USA
+[ metadata ]
+[NVS] ID: 1588 seqnum: -1 N: ExpireDate V: 2021-05-10-07:00
+
+ID: 2118
+SeqNum: 0
+TypeCode: Unknown
+Number: 478724723
+Issuer: 
+[ metadata ]
+[NVS] ID: 1574 seqnum: -1 N: Description V: US PP[NVS] ID: 1575 seqnum: -1 N: ExpireDate V: 2021-05-10-07:00
+
+ID: 2116
+SeqNum: 0
+TypeCode: Unknown
+Number: N0932579
+Issuer: CA
+[ metadata ]
+[NVS] ID: 1571 seqnum: -1 N: ExpireDate V: 2013-01-03-08:00
+
+ID: 2391
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'JOHNSON'.
+first name is 'NANCY'.
+DOB is '1955-01-03-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(3F1F5C90-7F8C-BD0D-4583-A1F7F28BCD38)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(3F1F5C90-7F8C-BD0D-4583-A1F7F28BCD38, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(4CCFC8B6-7F58-AD2E-0C08-955EE6E2502B)
+person.ToString() output:>>> Person >>> 
+GUID: 4CCFC8B6-7F58-AD2E-0C08-955EE6E2502B
+DSID: 1
+Status: 2
+LegacyID: 1
+Created: 2012-08-17T15:55:14.253-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.253-07:00
+LastUpdatedBy: 
+LastName: MORGANZA
+FirstName: LINDA
+MiddleName: G
+Sex: F
+Race: H
+DOB: 1986-06-20-07:00
+[ metadata ]
+[NVS] ID: 1 seqnum: -1 N: SSN V: 321-98-3333[NVS] ID: 2 seqnum: -1 N: EMP_ID V: 4003[NVS] ID: 3 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 34 seqnum: -1 N: HotNotes V: 0[NVS] ID: 46 seqnum: -1 N: CountrySubdivisionCode_Birth V: SLV[NVS] ID: 48 seqnum: -1 N: Alien V: N[NVS] ID: 49 seqnum: -1 N: Visa V: N[NVS] ID: 50 seqnum: -1 N: USCitizen V: N[NVS] ID: 2165 seqnum: -1 N: PrintsDate V: 2005-09-29-07:00
+
+>>> Appearance >>>
+ID: 1797
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BRO
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 1806
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 11233 SOMEWHERE ST
+Street2: 
+City: INGLEWOOD
+State: CA
+Zip: 90012-3444
+Country: USA
+[ metadata ]
+[NVS] ID: 23 seqnum: -1 N: HomePhone V: (444) 123-6564
+
+>>> Document >>>
+ID: 1811
+SeqNum: 0
+TypeCode: Unknown
+Number: 078024315
+Issuer: CA
+[ metadata ]
+[NVS] ID: 92 seqnum: -1 N: Description V: PERM RES CARD[NVS] ID: 93 seqnum: -1 N: ExpireDate V: 2014-04-19-07:00
+
+ID: 2292
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'MORGANZA'.
+first name is 'LINDA'.
+DOB is '1986-06-20-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(4CCFC8B6-7F58-AD2E-0C08-955EE6E2502B)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(4CCFC8B6-7F58-AD2E-0C08-955EE6E2502B, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(7D62FF11-6047-B20D-3CB4-F3523864FA84)
+person.ToString() output:>>> Person >>> 
+GUID: 7D62FF11-6047-B20D-3CB4-F3523864FA84
+DSID: 1
+Status: 2
+LegacyID: 19
+Created: 2012-08-17T15:55:15.410-07:00
+CreatedBy: Migration
+LastUpdated: 2012-03-01T12:03:42.000-08:00
+LastUpdatedBy: b2kswipe
+LastName: WILLIAMS
+FirstName: COURTNEY
+MiddleName: 
+Sex: M
+Race: B
+DOB: 1958-04-01-08:00
+[ metadata ]
+[NVS] ID: 1701 seqnum: -1 N: SSN V: 888-33-8765[NVS] ID: 1702 seqnum: -1 N: EMP_ID V: 10182010[NVS] ID: 1703 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 1728 seqnum: -1 N: PIN V: 1927[NVS] ID: 1730 seqnum: -1 N: FedEmp V: N[NVS] ID: 1732 seqnum: -1 N: ListBDocTypeNum V: 7[NVS] ID: 1733 seqnum: -1 N: ListCDocTypeNum V: 22[NVS] ID: 1736 seqnum: -1 N: DoNotBadge V: N[NVS] ID: 1737 seqnum: -1 N: FingerprintExempt V: N[NVS] ID: 1738 seqnum: -1 N: DOJFlag V: N[NVS] ID: 1746 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 1747 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 1748 seqnum: -1 N: Alien V: N[NVS] ID: 1749 seqnum: -1 N: Visa V: N[NVS] ID: 1750 seqnum: -1 N: USCitizen V: Y[NVS] ID: 1751 seqnum: -1 N: VerificationType V: DS-1350[NVS] ID: 1752 seqnum: -1 N: Assessment V: PENDING[NVS] ID: 1753 seqnum: -1 N: SboVerified V: N[NVS] ID: 1754 seqnum: -1 N: InsExempt V: N[NVS] ID: 1759 seqnum: -1 N: DojPrintedFlag V: N[NVS] ID: 2184 seqnum: -1 N: PrintsDate V: 2011-12-08-08:00
+
+>>> Appearance >>>
+ID: 2147
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLK
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 2156
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 6798 OLYMPIA AVE
+Street2: 
+City: LOS ANGELES
+State: CA
+Zip: 90047-7937
+Country: USA
+[ metadata ]
+[NVS] ID: 1723 seqnum: -1 N: HomePhone V: (202) 495-3397
+
+>>> Document >>>
+ID: 2163
+SeqNum: 0
+TypeCode: Unknown
+Number: N7819882
+Issuer: CA
+[ metadata ]
+[NVS] ID: 1763 seqnum: -1 N: ExpireDate V: 2014-04-01-07:00
+
+ID: 2399
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'WILLIAMS'.
+first name is 'COURTNEY'.
+DOB is '1958-04-01-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(7D62FF11-6047-B20D-3CB4-F3523864FA84)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(7D62FF11-6047-B20D-3CB4-F3523864FA84, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(7EC7B093-9103-311A-14E8-B308DF3FC15D)
+person.ToString() output:>>> Person >>> 
+GUID: 7EC7B093-9103-311A-14E8-B308DF3FC15D
+DSID: 1
+Status: 2
+LegacyID: 9
+Created: 2012-08-17T15:55:14.767-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.767-07:00
+LastUpdatedBy: 
+LastName: LOPEZ
+FirstName: DONALD
+MiddleName: A
+Sex: M
+Race: H
+DOB: 1989-08-30-07:00
+[ metadata ]
+[NVS] ID: 757 seqnum: -1 N: SSN V: 121-33-4545[NVS] ID: 758 seqnum: -1 N: EMP_ID V: 7537[NVS] ID: 759 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 790 seqnum: -1 N: HotNotes V: N[NVS] ID: 802 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 803 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 804 seqnum: -1 N: Alien V: N[NVS] ID: 805 seqnum: -1 N: Visa V: N[NVS] ID: 806 seqnum: -1 N: USCitizen V: Y[NVS] ID: 807 seqnum: -1 N: VerificationType V: PASSPORT[NVS] ID: 808 seqnum: -1 N: Assessment V: PASS[NVS] ID: 2173 seqnum: -1 N: PrintsDate V: 2008-04-29-07:00
+
+>>> Appearance >>>
+ID: 1945
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLK
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 1954
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 87667 OCEAN AVE UNIT 65
+Street2: 
+City: INGLEWOOD
+State: CA
+Zip: 90044-4455
+Country: USA
+[ metadata ]
+[NVS] ID: 779 seqnum: -1 N: HomePhone V: (542) 935-7744
+
+>>> Document >>>
+ID: 1961
+SeqNum: 0
+TypeCode: Unknown
+Number: 034131810
+Issuer: USA
+[ metadata ]
+[NVS] ID: 836 seqnum: -1 N: ExpireDate V: 1996-11-11-08:00
+
+ID: 1963
+SeqNum: 0
+TypeCode: Unknown
+Number: 23369491
+Issuer: TX
+[ metadata ]
+[NVS] ID: 849 seqnum: -1 N: ExpireDate V: 2011-08-30-07:00
+
+ID: 2339
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'LOPEZ'.
+first name is 'DONALD'.
+DOB is '1989-08-30-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(7EC7B093-9103-311A-14E8-B308DF3FC15D)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(7EC7B093-9103-311A-14E8-B308DF3FC15D, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(89AF3F9B-CC81-8087-667E-9FA12C5C4B28)
+person.ToString() output:>>> Person >>> 
+GUID: 89AF3F9B-CC81-8087-667E-9FA12C5C4B28
+DSID: 1
+Status: 2
+LegacyID: 2
+Created: 2012-08-17T15:55:14.330-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.330-07:00
+LastUpdatedBy: 
+LastName: LOURNE
+FirstName: MARY
+MiddleName: D
+Sex: F
+Race: H
+DOB: 1982-08-20-07:00
+[ metadata ]
+[NVS] ID: 97 seqnum: -1 N: SSN V: 123-45-6789[NVS] ID: 98 seqnum: -1 N: EMP_ID V: 4009[NVS] ID: 99 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 130 seqnum: -1 N: HotNotes V: 0[NVS] ID: 142 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 144 seqnum: -1 N: Alien V: N[NVS] ID: 145 seqnum: -1 N: Visa V: N[NVS] ID: 146 seqnum: -1 N: USCitizen V: N[NVS] ID: 2166 seqnum: -1 N: PrintsDate V: 2005-09-29-07:00
+
+>>> Appearance >>>
+ID: 1813
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLN
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 1822
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 1234 STAGE  BLVD APT 4
+Street2: 
+City: INGLEWOOD
+State: CA
+Zip: 90038-1234
+Country: USA
+[ metadata ]
+[NVS] ID: 119 seqnum: -1 N: HomePhone V: (222) 755-4444
+
+>>> Document >>>
+ID: 2296
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'LOURNE'.
+first name is 'MARY'.
+DOB is '1982-08-20-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(89AF3F9B-CC81-8087-667E-9FA12C5C4B28)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(89AF3F9B-CC81-8087-667E-9FA12C5C4B28, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(A1B3FD9D-A975-C991-3BB8-9B6585F09036)
+person.ToString() output:>>> Person >>> 
+GUID: A1B3FD9D-A975-C991-3BB8-9B6585F09036
+DSID: 1
+Status: 2
+LegacyID: 12
+Created: 2012-08-17T15:55:14.957-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.957-07:00
+LastUpdatedBy: 
+LastName: TAQUITZ
+FirstName: SUISA
+MiddleName: S
+Sex: F
+Race: H
+DOB: 1987-05-28-07:00
+[ metadata ]
+[NVS] ID: 1041 seqnum: -1 N: SSN V: 987-65-4321[NVS] ID: 1042 seqnum: -1 N: EMP_ID V: 8596[NVS] ID: 1043 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 1069 seqnum: -1 N: EMAIL V: nenaluvs087@aol.com[NVS] ID: 1072 seqnum: -1 N: ListBDocTypeNum V: 8[NVS] ID: 1073 seqnum: -1 N: ListCDocTypeNum V: 19[NVS] ID: 1074 seqnum: -1 N: HotNotes V: N[NVS] ID: 1086 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 1087 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 1088 seqnum: -1 N: Alien V: N[NVS] ID: 1089 seqnum: -1 N: Visa V: N[NVS] ID: 1090 seqnum: -1 N: USCitizen V: Y[NVS] ID: 1091 seqnum: -1 N: VerificationType V: PASSPORT[NVS] ID: 1092 seqnum: -1 N: Assessment V: PASS[NVS] ID: 2176 seqnum: -1 N: PrintsDate V: 2009-10-30-07:00
+
+>>> Appearance >>>
+ID: 2002
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLK
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 2011
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 8765 CORNERSTONE BLVD
+Street2: 
+City: LOS ANGELES
+State: CA
+Zip: 90250-2222
+Country: USA
+[ metadata ]
+[NVS] ID: 1063 seqnum: -1 N: HomePhone V: (292) 785-4564
+
+>>> Document >>>
+ID: 2018
+SeqNum: 0
+TypeCode: Unknown
+Number: 303213757
+Issuer: USA
+[ metadata ]
+[NVS] ID: 1120 seqnum: -1 N: ExpireDate V: 2013-07-10-07:00
+
+ID: 2020
+SeqNum: 0
+TypeCode: Unknown
+Number: D3845053
+Issuer: CA
+[ metadata ]
+[NVS] ID: 1133 seqnum: -1 N: ExpireDate V: 2013-05-28-07:00
+
+ID: 2356
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'TAQUITZ'.
+first name is 'SUISA'.
+DOB is '1987-05-28-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(A1B3FD9D-A975-C991-3BB8-9B6585F09036)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(A1B3FD9D-A975-C991-3BB8-9B6585F09036, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(C35BC14B-64C8-5FDB-DD06-CFE1E2C25B46)
+person.ToString() output:>>> Person >>> 
+GUID: C35BC14B-64C8-5FDB-DD06-CFE1E2C25B46
+DSID: 1
+Status: 2
+LegacyID: 16
+Created: 2012-08-17T15:55:15.217-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:15.217-07:00
+LastUpdatedBy: 
+LastName: HANSEN
+FirstName: GEORGE
+MiddleName: 
+Sex: M
+Race: B
+DOB: 1970-07-19-07:00
+[ metadata ]
+[NVS] ID: 1417 seqnum: -1 N: SSN V: 703-78-3453[NVS] ID: 1418 seqnum: -1 N: EMP_ID V: 26405[NVS] ID: 1419 seqnum: -1 N: EMP_Loc V: ONT[NVS] ID: 1440 seqnum: -1 N: PIN V: 1911[NVS] ID: 1453 seqnum: -1 N: status V: 2[NVS] ID: 1454 seqnum: -1 N: employee V: RETURN-26405[NVS] ID: 1456 seqnum: -1 N: ContractExpiryDate V: 1900-01-01-08:00[NVS] ID: 1458 seqnum: -1 N: CountrySubdivisionCode_Birth V: PNG[NVS] ID: 1467 seqnum: -1 N: Validated V: N[NVS] ID: 2180 seqnum: -1 N: FingerprintCode V: APPROVED[NVS] ID: 2181 seqnum: -1 N: PrintExpiryDate V: 2004-10-31-07:00
+
+>>> Appearance >>>
+ID: 2081
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLK
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 2090
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 2343 WEST 6TH ST
+Street2: 
+City: POMONA
+State: CA
+Zip: 90228-3213
+Country: USA
+[ metadata ]
+[NVS] ID: 1439 seqnum: -1 N: HomePhone V: (484) 578-5785
+
+>>> Document >>>
+ID: 2386
+SeqNum: 0
+TypeCode: Unknown
+Number: Unknown
+Issuer: Unknown
+[ metadata ]
+[NVS] ID: 1507 seqnum: -1 N: VerificationDocumentType V: 99
+
+ID: 2382
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'HANSEN'.
+first name is 'GEORGE'.
+DOB is '1970-07-19-07:00'.
+status is '2'.
+
+Testing GetPersonDocuments(C35BC14B-64C8-5FDB-DD06-CFE1E2C25B46)
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(C35BC14B-64C8-5FDB-DD06-CFE1E2C25B46, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(C7DB2583-91AC-95F9-0650-9CE372CACE0F)
+person.ToString() output:>>> Person >>> 
+GUID: C7DB2583-91AC-95F9-0650-9CE372CACE0F
+DSID: 1
+Status: 2
+LegacyID: 7
+Created: 2012-08-17T15:55:14.653-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.653-07:00
+LastUpdatedBy: 
+LastName: YOUNG SECURITY SVC (YOSCO)
+FirstName: ID-TEMPLATE
+MiddleName: 
+Sex: U
+Race: U
+DOB: 1899-01-01-08:00
+[ metadata ]
+[NVS] ID: 573 seqnum: -1 N: SSN V: 656-33-4321[NVS] ID: 574 seqnum: -1 N: EMP_ID V: 7368[NVS] ID: 575 seqnum: -1 N: EMP_Loc V: ONT[NVS] ID: 609 seqnum: -1 N: status V: 1[NVS] ID: 610 seqnum: -1 N: employee V: 1[NVS] ID: 612 seqnum: -1 N: ContractExpiryDate V: 1900-01-01-08:00[NVS] ID: 623 seqnum: -1 N: Validated V: N[NVS] ID: 2171 seqnum: -1 N: PrintExpiryDate V: 1900-01-01-08:00
+
+>>> Appearance >>>
+ID: 1905
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: XXX
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: XXX
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 1914
+SeqNum: 0
+TypeCode: Office
+Description: 
+Street1: 
+Street2: 
+City: 
+State: 
+Zip: 
+Country: USA
+
+>>> Document >>>
+ID: 2325
+SeqNum: 0
+TypeCode: Unknown
+Number: Unknown
+Issuer: Unknown
+[ metadata ]
+[NVS] ID: 663 seqnum: -1 N: VerificationDocumentType V: 99
+
+ID: 2321
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'YOUNG SECURITY SVC (YOSCO)'.
+first name is 'ID-TEMPLATE'.
+DOB is '1899-01-01-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(C7DB2583-91AC-95F9-0650-9CE372CACE0F)
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(C7DB2583-91AC-95F9-0650-9CE372CACE0F, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(C833777D-1BD0-5273-AAB3-990D99D89D8E)
+person.ToString() output:>>> Person >>> 
+GUID: C833777D-1BD0-5273-AAB3-990D99D89D8E
+DSID: 1
+Status: 2
+LegacyID: 10
+Created: 2012-08-17T15:55:14.833-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.833-07:00
+LastUpdatedBy: 
+LastName: BOGOS
+FirstName: ROBERT
+MiddleName: R
+Sex: M
+Race: W
+DOB: 2023-01-01-08:00
+[ metadata ]
+[NVS] ID: 853 seqnum: -1 N: SSN V: 852-52-8525[NVS] ID: 854 seqnum: -1 N: EMP_ID V: 7706[NVS] ID: 855 seqnum: -1 N: EMP_Loc V: ONT[NVS] ID: 876 seqnum: -1 N: PIN V: 2468[NVS] ID: 889 seqnum: -1 N: status V: 2[NVS] ID: 890 seqnum: -1 N: employee V: RETURN 7706[NVS] ID: 892 seqnum: -1 N: ContractExpiryDate V: 1900-01-01-08:00[NVS] ID: 903 seqnum: -1 N: Validated V: N[NVS] ID: 2174 seqnum: -1 N: PrintExpiryDate V: 2000-01-31-08:00
+
+>>> Appearance >>>
+ID: 1965
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: GRY
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: GRN
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 1974
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 4321 RIGHT WAY
+Street2: 
+City: FONTANA
+State: CA
+Zip: 90028-3344
+Country: USA
+[ metadata ]
+[NVS] ID: 875 seqnum: -1 N: HomePhone V: (222) 579-4488
+
+>>> Document >>>
+ID: 2347
+SeqNum: 0
+TypeCode: Unknown
+Number: Unknown
+Issuer: Unknown
+[ metadata ]
+[NVS] ID: 943 seqnum: -1 N: VerificationDocumentType V: 99
+
+ID: 2343
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'BOGOS'.
+first name is 'ROBERT'.
+DOB is '2023-01-01-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(C833777D-1BD0-5273-AAB3-990D99D89D8E)
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(C833777D-1BD0-5273-AAB3-990D99D89D8E, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(CAC9D393-4868-1BE7-0AEE-BEC30A3C4072)
+person.ToString() output:>>> Person >>> 
+GUID: CAC9D393-4868-1BE7-0AEE-BEC30A3C4072
+DSID: 1
+Status: 2
+LegacyID: 14
+Created: 2012-08-17T15:55:15.083-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:15.083-07:00
+LastUpdatedBy: 
+LastName: TAYNOR
+FirstName: ROGER
+MiddleName: Y
+Sex: M
+Race: W
+DOB: 1962-03-19-08:00
+[ metadata ]
+[NVS] ID: 1229 seqnum: -1 N: SSN V: 555-12-1234[NVS] ID: 1230 seqnum: -1 N: EMP_ID V: 9137[NVS] ID: 1231 seqnum: -1 N: EMP_Loc V: ONT[NVS] ID: 1252 seqnum: -1 N: PIN V: 1962[NVS] ID: 1265 seqnum: -1 N: status V: 2[NVS] ID: 1266 seqnum: -1 N: employee V: RETURN-9137[NVS] ID: 1268 seqnum: -1 N: ContractExpiryDate V: 1900-01-01-08:00[NVS] ID: 1279 seqnum: -1 N: Validated V: N[NVS] ID: 2178 seqnum: -1 N: PrintExpiryDate V: 1998-12-31-08:00
+
+>>> Appearance >>>
+ID: 2041
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BRO
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BRO
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 2050
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 3978 HANDLERY RD
+Street2: 
+City: VALLEY CENTER
+State: CA
+Zip: 90405-3456
+Country: USA
+
+>>> Document >>>
+ID: 2373
+SeqNum: 0
+TypeCode: Unknown
+Number: Unknown
+Issuer: Unknown
+[ metadata ]
+[NVS] ID: 1319 seqnum: -1 N: VerificationDocumentType V: 99
+
+ID: 2369
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'TAYNOR'.
+first name is 'ROGER'.
+DOB is '1962-03-19-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(CAC9D393-4868-1BE7-0AEE-BEC30A3C4072)
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(CAC9D393-4868-1BE7-0AEE-BEC30A3C4072, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(E3C9C937-1B40-DFAC-3FB4-2CB447DADB4B)
+person.ToString() output:>>> Person >>> 
+GUID: E3C9C937-1B40-DFAC-3FB4-2CB447DADB4B
+DSID: 1
+Status: 2
+LegacyID: 5
+Created: 2012-08-17T15:55:14.527-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.527-07:00
+LastUpdatedBy: 
+LastName: SMITH
+FirstName: DIANA
+MiddleName: N
+Sex: M
+Race: B
+DOB: 1967-03-18-08:00
+[ metadata ]
+[NVS] ID: 385 seqnum: -1 N: SSN V: 321-45-9876[NVS] ID: 386 seqnum: -1 N: EMP_ID V: 6910[NVS] ID: 387 seqnum: -1 N: EMP_Loc V: ONT[NVS] ID: 408 seqnum: -1 N: PIN V: 5678[NVS] ID: 421 seqnum: -1 N: status V: 2[NVS] ID: 422 seqnum: -1 N: employee V: RETURN-3771[NVS] ID: 424 seqnum: -1 N: ContractExpiryDate V: 1900-01-01-08:00[NVS] ID: 435 seqnum: -1 N: Validated V: N[NVS] ID: 2169 seqnum: -1 N: PrintExpiryDate V: 2000-03-31-08:00
+
+>>> Appearance >>>
+ID: 1868
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: XXX
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BLK
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Address >>>
+ID: 1877
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 1223 JAMES AVE
+Street2: 
+City: ONTARIO
+State: CA
+Zip: 90252-5555
+Country: USA
+
+>>> Document >>>
+ID: 2312
+SeqNum: 0
+TypeCode: Unknown
+Number: Unknown
+Issuer: Unknown
+[ metadata ]
+[NVS] ID: 475 seqnum: -1 N: VerificationDocumentType V: 99
+
+ID: 2308
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'SMITH'.
+first name is 'DIANA'.
+DOB is '1967-03-18-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(E3C9C937-1B40-DFAC-3FB4-2CB447DADB4B)
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(E3C9C937-1B40-DFAC-3FB4-2CB447DADB4B, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(EC71EB56-F74F-CBCA-61CE-4E5579D54412)
+person.ToString() output:>>> Person >>> 
+GUID: EC71EB56-F74F-CBCA-61CE-4E5579D54412
+DSID: 1
+Status: 2
+LegacyID: 18
+Created: 2012-08-17T15:55:15.347-07:00
+CreatedBy: Migration
+LastUpdated: 2011-12-14T09:02:17.000-08:00
+LastUpdatedBy: s38cmj
+LastName: INO
+FirstName: JAGO
+MiddleName: N
+Sex: M
+Race: O
+DOB: 1959-01-13-08:00
+[ metadata ]
+[NVS] ID: 1605 seqnum: -1 N: SSN V: 839-73-6482[NVS] ID: 1606 seqnum: -1 N: EMP_ID V: 10000112[NVS] ID: 1607 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 1632 seqnum: -1 N: PIN V: 9114[NVS] ID: 1634 seqnum: -1 N: FedEmp V: N[NVS] ID: 1640 seqnum: -1 N: DoNotBadge V: N[NVS] ID: 1641 seqnum: -1 N: FingerprintExempt V: N[NVS] ID: 1642 seqnum: -1 N: DOJFlag V: N[NVS] ID: 1644 seqnum: -1 N: LastUserDateAccessed V: 3/18/2006 12:10:08 PM s38vrh[NVS] ID: 1650 seqnum: -1 N: CountrySubdivisionCode_Birth V: TON[NVS] ID: 1651 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 1652 seqnum: -1 N: Alien V: N[NVS] ID: 1653 seqnum: -1 N: Visa V: N[NVS] ID: 1654 seqnum: -1 N: USCitizen V: Y[NVS] ID: 1655 seqnum: -1 N: VerificationType V: PASSPORT[NVS] ID: 1656 seqnum: -1 N: Assessment V: PASS[NVS] ID: 1657 seqnum: -1 N: SboVerified V: N[NVS] ID: 1658 seqnum: -1 N: InsExempt V: N[NVS] ID: 1663 seqnum: -1 N: DojPrintedFlag V: N[NVS] ID: 2183 seqnum: -1 N: PrintsDate V: 2010-01-05-08:00
+
+>>> Appearance >>>
+ID: 2127
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BLK
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BLK
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 2136
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 123 WILSHIRE STREET
+Street2: 
+City: INGLEWOOD
+State: CA
+Zip: 90020-8936
+Country: USA
+[ metadata ]
+[NVS] ID: 1627 seqnum: -1 N: HomePhone V: (303) 607-4573
+
+>>> Document >>>
+ID: 2145
+SeqNum: 0
+TypeCode: Unknown
+Number: 038062159
+Issuer: USA
+[ metadata ]
+[NVS] ID: 1684 seqnum: -1 N: ExpireDate V: 2012-03-07-08:00
+
+ID: 2143
+SeqNum: 0
+TypeCode: Unknown
+Number: C2379330
+Issuer: CA
+[ metadata ]
+[NVS] ID: 1667 seqnum: -1 N: ExpireDate V: 2015-01-13-08:00
+
+ID: 2395
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'INO'.
+first name is 'JAGO'.
+DOB is '1959-01-13-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(EC71EB56-F74F-CBCA-61CE-4E5579D54412)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(EC71EB56-F74F-CBCA-61CE-4E5579D54412, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]
+
+
+
+
+Testing GetPerson(FE9164C5-8CCC-3D07-6C81-1B69A3AB6539)
+person.ToString() output:>>> Person >>> 
+GUID: FE9164C5-8CCC-3D07-6C81-1B69A3AB6539
+DSID: 1
+Status: 2
+LegacyID: 11
+Created: 2012-08-17T15:55:14.893-07:00
+CreatedBy: Migration
+LastUpdated: 2012-08-17T15:55:14.893-07:00
+LastUpdatedBy: 
+LastName: GONZALES
+FirstName: PAUL
+MiddleName: F
+Sex: F
+Race: H
+DOB: 1988-03-27-08:00
+[ metadata ]
+[NVS] ID: 945 seqnum: -1 N: SSN V: 444-55-6666[NVS] ID: 946 seqnum: -1 N: EMP_ID V: 7706[NVS] ID: 947 seqnum: -1 N: EMP_Loc V: LAX[NVS] ID: 978 seqnum: -1 N: HotNotes V: N[NVS] ID: 990 seqnum: -1 N: CountrySubdivisionCode_Birth V: USA[NVS] ID: 991 seqnum: -1 N: CountryCode_Citizenship V: USA[NVS] ID: 992 seqnum: -1 N: Alien V: N[NVS] ID: 993 seqnum: -1 N: Visa V: N[NVS] ID: 994 seqnum: -1 N: USCitizen V: Y[NVS] ID: 995 seqnum: -1 N: VerificationType V: BIRTH CERTIFICATE[NVS] ID: 996 seqnum: -1 N: Assessment V: PASS[NVS] ID: 2175 seqnum: -1 N: PrintsDate V: 2008-05-29-07:00
+
+>>> Appearance >>>
+ID: 1984
+SeqNum: 0
+Height: 0, UOM: INCHES
+Weight: 0, UOM: POUNDS
+HairColorCode: BRO
+HairLengthCode: 
+HairTypeCode: 
+EyeColorCode: BLK
+SkinColorCode: 
+ComplexionCode: 
+BuildCode: 
+BeardCode: 
+MustacheCode: 
+
+>>> Note >>>
+>>> Address >>>
+ID: 1993
+SeqNum: 0
+TypeCode: Home
+Description: 
+Street1: 8877 BEETLEY RD
+Street2: 
+City: HUNTINGTON PK
+State: CA
+Zip: 90060-4321
+Country: USA
+[ metadata ]
+[NVS] ID: 967 seqnum: -1 N: HomePhone V: (231) 665-9966
+
+>>> Document >>>
+ID: 2000
+SeqNum: 0
+TypeCode: Unknown
+Number: D6781050
+Issuer: CA
+[ metadata ]
+[NVS] ID: 1037 seqnum: -1 N: ExpireDate V: 2011-03-27-07:00
+
+ID: 2352
+SeqNum: 0
+TypeCode: 
+Number: Unknown
+Issuer: Unknown
+
+
+last name is 'GONZALES'.
+first name is 'PAUL'.
+DOB is '1988-03-27-08:00'.
+status is '2'.
+
+Testing GetPersonDocuments(FE9164C5-8CCC-3D07-6C81-1B69A3AB6539)
+[GetPersonDocuments] Exception.Message: [Document Manager] - Return Code: -1
+Comment: An error has occurred in com.iwsinc.isb.documentmanager.implementation.DocumentManager
+ErrorCode: -120
+ErrorMessage: Type value not found in configuration
+[GetPersonDocuments] Exception.InnerException: 
+[GetPersonDocuments] Exception.Source: ImageWare.ISBLibrary
+[GetPersonDocuments] Exception.StackTrace:    at ImageWare.ISBLibrary.DocumentManager.SearchDocuments(ISBSearch isbQuery)
+   at ISBLibTest.ISBLibExtGCR.GetPersonDocuments(String personGUID) in C:\Users\latchison\code\IWS\ISBConsoleTest\ISBLibExtGCR.cs:line 113
+personDocs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocumentInfo]
+
+Testing GetDocument(FE9164C5-8CCC-3D07-6C81-1B69A3AB6539, 1)
+docs.ToString() output:System.Collections.Generic.List`1[ImageWare.ISBLibrary.DMDocument]

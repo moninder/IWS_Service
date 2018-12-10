@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3461a81-2786-46d6-8868-3614903ba144" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54548/IwsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IwsService.xsd" MetadataType="Schema" ID="b94892b1-c7cd-481c-bec3-5f6d41fa1086" SourceId="1" SourceUrl="http://localhost:54548/IwsService.svc?xsd=xsd4" />
+    <MetadataFile FileName="IwsService.wsdl" MetadataType="Wsdl" ID="51abce5b-0bae-47df-aea2-9ac1a7174d11" SourceId="1" SourceUrl="http://localhost:54548/IwsService.svc?wsdl" />
+    <MetadataFile FileName="IwsService.disco" MetadataType="Disco" ID="0920cbad-8336-4c51-a3df-932c108087aa" SourceId="1" SourceUrl="http://localhost:54548/IwsService.svc?disco" />
+    <MetadataFile FileName="IwsService1.xsd" MetadataType="Schema" ID="42cdf7de-ad90-42fa-a6ca-bc3e0b5eec31" SourceId="1" SourceUrl="http://localhost:54548/IwsService.svc?xsd=xsd0" />
+    <MetadataFile FileName="IwsService2.xsd" MetadataType="Schema" ID="6daa2a30-4239-4681-b2fe-de5d63f0f859" SourceId="1" SourceUrl="http://localhost:54548/IwsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="IwsService3.xsd" MetadataType="Schema" ID="3d70d8a9-19de-44a9-92ba-0f89cd39a953" SourceId="1" SourceUrl="http://localhost:54548/IwsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="IwsService4.xsd" MetadataType="Schema" ID="173553a0-c273-4f25-8d83-10c27a46bf0c" SourceId="1" SourceUrl="http://localhost:54548/IwsService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

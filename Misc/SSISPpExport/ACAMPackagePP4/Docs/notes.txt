@@ -1,0 +1,133 @@
+﻿Notes on the ACAM SSIS export to PP process
+February 2013
+
+===================
+Initialization
+===================
+
+1) Add Stored Procedure: [App.Sbo].[SSIS.AccessControlTransfers.Insert] 
+   This procedure inserts records into the Access Control Tables when 
+   records are added or changed in Badges, Divisions and Persons tables 
+   (hmm, should it have been on the Biographics table instead?)
+
+   - file: SSISAccessControlTransfersInsert.sql
+
+
+2) Add a call to the proc within the following after update table triggers
+   - files:
+
+     Badges
+     Divisions
+     PersonBiographics
+
+
+3) Project.params
+   This file contains the following 4 parameters which need to be correctly initialized
+   - run_mode
+     values: dev, production
+
+   - log_dir
+     the path to the folder where you want the log files created
+
+   - Telnet_Client_Path:
+     the path to Plink
+
+   - Telnet_Connection:
+     Plink connection string
+
+   NOTE: Ignore the database connection parameters in this file. They are obsolete.
+         The connection strings are managed in the connection manager files below!
+
+   NOTE: ACAMPackageConfig.dtsConfig
+   - Ignore: went with the project.params file and connection manager files instead
+
+
+4) SSIS connection manager files
+   - CS.conmgr:             connection string for CS BOSD data
+   - PicturePErfectInformix.conmgr: connection string for Picture Perfect data via an ODBC DSN
+
+5) ODBC DSN
+   - In order to connect to the informix Picture Perfect database, each client requiring a connection needs to 
+     install the IBM Informix device driver. The sdk install exe, installclientsdk.exe, can be downloaded from 
+     http://www.ciscounitytools.com/Applications/CxN/InformixODBC/InformixODBC.html via the link: 
+     o IBM Informix Client SDK Install 3.70 TC5 for all 32 and 64 bit Windows Systems. Download Now (ZIP file - unpack and run install) 
+
+     You will need to register with IBM.
+
+     This is a 32 bit driver, so on 64 bit machines, you 1st need to jump through the following hoop:
+
+     1.Open a Windows command window ('cmd') 
+     2.run: "set PATH=C:\WINDOWS\SysWOW64\;%PATH%" 
+     3.Run the setup.exe for IBM Informix Client SDK 
+
+     To confirm that the Informix 32-bit ODBC driver has been installed run: 
+     "C:\windows\syswow64\odbcad32.exe" and look under the Drivers tab. 
+
+     If the above step did not work, you must change the System variable so any child process would also pick the new PATH. 
+     That would allow any child process to have the C:\WINDOWS\SYSWOW64 prefix in the PATH. 
+
+     If you need it, you may restore the value of the PATH environment variable after the CSDK/IConnect installation.  
+     Control Panel -> System -> Advanced (tab) -> Environment Variable button 
+
+
+     Once you can confirm that the device driver is available, create a 32 bit ODBC DSN accordingly:
+     1) Add iws03gcr to your windows/system32/drivers/etc/hosts file
+         192.168.16.51   iws03gcr #       Picture Perfect server
+
+     2) The Informix server folks will need to add –your- IP address to their hosts file:    
+         I passed along as 192.168.60.127 my address.
+
+     3) In my case, I needed to disable my personal windows firewall so they could see my machine.
+
+     4) Add sqlexec to your windows/system32/drivers/etc/services file:
+         sqlexec           9088/tcp       #Informix Database
+
+     5) Create the system DSN: 
+         run C:\Windows\SysWOW64\odbcad32.exe
+
+         server : iws03gcr
+         Host Name: 192.168.16.51
+         Service: sqlexec
+         Protocol: onsoctp
+         DB Name: proteus
+         un: informix
+         pw: informix
+
+
+IMPORTANT IMPLEMENTATION NOTE: 
+Needed to set the following project property in order to allow the use of the 32 bit ODBC.dll as required by the informix 32 bit driver.
+The impact is that when we set up the SQL ALERT job, we need to include the full path to the 32 bit ?????
+
+===================
+Source Code:
+===================
+
+	Application
+	-------------------
+	Location: $/Credentialing_System/Dev/Misc/SSISPpExport
+
+	Database
+	-------------------
+        Tables: 
+		[Data].[AccessControl].[TransferDivisions]
+		[Data].[AccessControl].[TransferPersons]
+		[Data].[AccessControl][.Transfers]
+
+	Procedures:
+		[App.Sbo].[SSIS.AccessControlTransfers.Insert]
+
+========================
+Unresolved Issues:
+========================
+The sql calls to informix really do not like to receive NULL as a parameter value.
+Not sure if this is due to the informix ODBC driver, or if there is a configuration setting to avoid translations or what.
+
+
+PLINK has not been tested and is commented out.
+
+
+Categories are not yet supported.
+
+
+	
+

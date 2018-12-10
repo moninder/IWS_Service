@@ -1,0 +1,1601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LookupModelStoreContainer" CdmEntityContainer="LookupEntities">
+    <EntitySetMapping Name="Miscellaneous_Countries">
+      <EntityTypeMapping TypeName="LookupModel.Miscellaneous_Countries">
+        <MappingFragment StoreEntitySet="Miscellaneous_Countries">
+          <ScalarProperty Name="NCICCountryCode" ColumnName="NCICCountryCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+          <ScalarProperty Name="CountrySubdivisionTypeName" ColumnName="CountrySubdivisionTypeName" />
+          <ScalarProperty Name="InternationalCallPrefix" ColumnName="InternationalCallPrefix" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Miscellaneous_CountrySubdivisions">
+      <EntityTypeMapping TypeName="LookupModel.Miscellaneous_CountrySubdivisions">
+        <MappingFragment StoreEntitySet="Miscellaneous_CountrySubdivisions">
+          <ScalarProperty Name="NCICCountrySubdivisionCode" ColumnName="NCICCountrySubdivisionCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="CountrySubdivisionName" ColumnName="CountrySubdivisionName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Badges_Info">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Badges_Info">
+        <MappingFragment StoreEntitySet="Badges_Info">
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="CorporationName" ColumnName="CorporationName" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BadgeNumber" ColumnName="BadgeNumber" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Colors">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Colors">
+        <MappingFragment StoreEntitySet="Miscellaneous_Colors">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BlueComponent" ColumnName="BlueComponent" />
+          <ScalarProperty Name="GreenComponent" ColumnName="GreenComponent" />
+          <ScalarProperty Name="RedComponent" ColumnName="RedComponent" />
+          <ScalarProperty Name="HtmlColorCode" ColumnName="HtmlColorCode" />
+          <ScalarProperty Name="ColorName" ColumnName="ColorName" />
+          <ScalarProperty Name="ColorID" ColumnName="ColorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_EyeColors">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_EyeColors">
+        <MappingFragment StoreEntitySet="Miscellaneous_EyeColors">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EyeColorDescription" ColumnName="EyeColorDescription" />
+          <ScalarProperty Name="EyeColorCode" ColumnName="EyeColorCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_HairColors">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_HairColors">
+        <MappingFragment StoreEntitySet="Miscellaneous_HairColors">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="HairColorDescription" ColumnName="HairColorDescription" />
+          <ScalarProperty Name="HairColorCode" ColumnName="HairColorCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_NamePrefixes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_NamePrefixes">
+        <MappingFragment StoreEntitySet="Miscellaneous_NamePrefixes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="NamePrefixDescription" ColumnName="NamePrefixDescription" />
+          <ScalarProperty Name="NamePrefixCode" ColumnName="NamePrefixCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_NameSuffixes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_NameSuffixes">
+        <MappingFragment StoreEntitySet="Miscellaneous_NameSuffixes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="NameSuffixDescription" ColumnName="NameSuffixDescription" />
+          <ScalarProperty Name="NameSuffixCode" ColumnName="NameSuffixCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Races">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Races">
+        <MappingFragment StoreEntitySet="Miscellaneous_Races">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RaceDescription" ColumnName="RaceDescription" />
+          <ScalarProperty Name="RaceCode" ColumnName="RaceCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Sexes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Sexes">
+        <MappingFragment StoreEntitySet="Miscellaneous_Sexes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SexDescription" ColumnName="SexDescription" />
+          <ScalarProperty Name="SexCode" ColumnName="SexCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_Agreements">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_Agreements">
+        <MappingFragment StoreEntitySet="Division_Agreements">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="WhenAgreementEnds" ColumnName="WhenAgreementEnds" />
+          <ScalarProperty Name="WhenAgreementBegins" ColumnName="WhenAgreementBegins" />
+          <ScalarProperty Name="OtherAgreementType" ColumnName="OtherAgreementType" />
+          <ScalarProperty Name="DirectAuthorityNumber" ColumnName="DirectAuthorityNumber" />
+          <ScalarProperty Name="AgreementTypeID" ColumnName="AgreementTypeID" />
+          <ScalarProperty Name="AgreementNumber" ColumnName="AgreementNumber" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="C_Division_Agreements_______Division_Agreements_" TypeName="LookupModel.C_Division_Agreements_______Division_Agreements_" StoreEntitySet="Division_Agreements">
+      <EndProperty Name="Division_Agreements1">
+        <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+      </EndProperty>
+      <EndProperty Name="Division_Agreements">
+        <ScalarProperty Name="AgreementID" ColumnName="AgreementID_Prime" />
+      </EndProperty>
+      <Condition ColumnName="AgreementID_Prime" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Lookups_Person_FelonyQuestions">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_FelonyQuestions">
+        <MappingFragment StoreEntitySet="Person_FelonyQuestions">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FelonyQuestionDescription" ColumnName="FelonyQuestionDescription" />
+          <ScalarProperty Name="FelonyQuestionAbbreviation" ColumnName="FelonyQuestionAbbreviation" />
+          <ScalarProperty Name="FelonyQuestionID" ColumnName="FelonyQuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_FelonyAnswers">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_FelonyAnswers">
+        <MappingFragment StoreEntitySet="Person_FelonyAnswers">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="FelonyQuestionID" ColumnName="FelonyQuestionID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Icon_Icons">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Icon_Icons">
+        <MappingFragment StoreEntitySet="Icon_Icons">
+          <ScalarProperty Name="IsAllowedOnFirstBadge" ColumnName="IsAllowedOnFirstBadge" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IconAbbreviation" ColumnName="IconAbbreviation" />
+          <ScalarProperty Name="IconDescription" ColumnName="IconDescription" />
+          <ScalarProperty Name="IconID" ColumnName="IconID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Icon_PersonDivisionIconXref">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Icon_PersonDivisionIconXref">
+        <MappingFragment StoreEntitySet="Icon_PersonDivisionIconXref">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="StaffID_End" ColumnName="StaffID_End" />
+          <ScalarProperty Name="StaffID_Begin" ColumnName="StaffID_Begin" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="IconID" ColumnName="IconID" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_PersonDivisionXref">
+      <EntityTypeMapping TypeName="LookupModel.Person_PersonDivisionXref">
+        <MappingFragment StoreEntitySet="Person_PersonDivisionXref">
+          <ScalarProperty Name="SubmittedStateDoJRequest" ColumnName="SubmittedStateDoJRequest" />
+          <ScalarProperty Name="ApplicantType" ColumnName="ApplicantType" />
+          <ScalarProperty Name="IsSTACheckRequired" ColumnName="IsSTACheckRequired" />
+          <ScalarProperty Name="FederalIDLEONumber" ColumnName="FederalIDLEONumber" />
+          <ScalarProperty Name="STAEmployeeStatusID" ColumnName="STAEmployeeStatusID" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="WhenAccepted" ColumnName="WhenAccepted" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_AgreementBadgeColors">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_AgreementBadgeColors">
+        <MappingFragment StoreEntitySet="Division_AgreementBadgeColors">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="StaffID_End" ColumnName="StaffID_End" />
+          <ScalarProperty Name="StaffID_Begin" ColumnName="StaffID_Begin" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="BadgeColorID" ColumnName="BadgeColorID" />
+          <ScalarProperty Name="JobRoleID" ColumnName="JobRoleID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="AgreementBadgeColorID" ColumnName="AgreementBadgeColorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_AgreementBadgeIcons">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_AgreementBadgeIcons">
+        <MappingFragment StoreEntitySet="Division_AgreementBadgeIcons">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="StaffID_End" ColumnName="StaffID_End" />
+          <ScalarProperty Name="StaffID_Begin" ColumnName="StaffID_Begin" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="BadgeColorID" ColumnName="BadgeColorID" />
+          <ScalarProperty Name="IconID" ColumnName="IconID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="AgreementBadgeIconID" ColumnName="AgreementBadgeIconID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Facility_BadgeColors">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Facility_BadgeColors">
+        <MappingFragment StoreEntitySet="Facility_BadgeColors">
+          <ScalarProperty Name="BadgeType" ColumnName="BadgeType" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="BadgeColor" ColumnName="BadgeColor" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="BadgeColorID" ColumnName="BadgeColorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_BadgeIssuanceReasons">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_BadgeIssuanceReasons">
+        <MappingFragment StoreEntitySet="Person_BadgeIssuanceReasons">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BadgeIssuanceReasonDescription" ColumnName="BadgeIssuanceReasonDescription" />
+          <ScalarProperty Name="BadgeIssuanceReasonCode" ColumnName="BadgeIssuanceReasonCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_PersonBiographics">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_PersonBiographics">
+        <MappingFragment StoreEntitySet="Person_PersonBiographics">
+          <ScalarProperty Name="ApplicantTrackingIdentifier" ColumnName="ApplicantTrackingIdentifier" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="CountryCode_Citizenship" ColumnName="CountryCode_Citizenship" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="FormID" ColumnName="FormID" />
+          <ScalarProperty Name="FormCode" ColumnName="FormCode" />
+          <ScalarProperty Name="IsSubmitted" ColumnName="IsSubmitted" />
+          <ScalarProperty Name="EmailAddress_Alternate" ColumnName="EmailAddress_Alternate" />
+          <ScalarProperty Name="EmailAddress_Primary" ColumnName="EmailAddress_Primary" />
+          <ScalarProperty Name="CountrySubdivisionCode_Birth" ColumnName="CountrySubdivisionCode_Birth" />
+          <ScalarProperty Name="CountryCode_Birth" ColumnName="CountryCode_Birth" />
+          <ScalarProperty Name="SexCode" ColumnName="SexCode" />
+          <ScalarProperty Name="RaceCode" ColumnName="RaceCode" />
+          <ScalarProperty Name="HairColorCode" ColumnName="HairColorCode" />
+          <ScalarProperty Name="EyeColorCode" ColumnName="EyeColorCode" />
+          <ScalarProperty Name="WeightInPounds" ColumnName="WeightInPounds" />
+          <ScalarProperty Name="HeightInInches" ColumnName="HeightInInches" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="WorkPhoneNumber" ColumnName="WorkPhoneNumber" />
+          <ScalarProperty Name="HomePhoneNumber" ColumnName="HomePhoneNumber" />
+          <ScalarProperty Name="SocialSecurityNumber" ColumnName="SocialSecurityNumber" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ApartmentNumber" ColumnName="ApartmentNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="NameSuffixCode" ColumnName="NameSuffixCode" />
+          <ScalarProperty Name="LastName_Sound" ColumnName="LastName_Sound" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName_Sound" ColumnName="MiddleName_Sound" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName_Sound" ColumnName="FirstName_Sound" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="NamePrefixCode" ColumnName="NamePrefixCode" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_Aliases">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_Aliases">
+        <MappingFragment StoreEntitySet="Person_Aliases">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="NameSuffixCode" ColumnName="NameSuffixCode" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="NamePrefixCode" ColumnName="NamePrefixCode" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="PersonAliasID" ColumnName="PersonAliasID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Common_Entities">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Common_Entities">
+        <MappingFragment StoreEntitySet="Common_Entities">
+          <ScalarProperty Name="ShadowPersonDivisionXrefID" ColumnName="ShadowPersonDivisionXrefID" />
+          <ScalarProperty Name="ShadowDivisionID" ColumnName="ShadowDivisionID" />
+          <ScalarProperty Name="ShadowCompanyID" ColumnName="ShadowCompanyID" />
+          <ScalarProperty Name="ShadowBadgeID" ColumnName="ShadowBadgeID" />
+          <ScalarProperty Name="ShadowAgreementID" ColumnName="ShadowAgreementID" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="EntityTypeCode" ColumnName="EntityTypeCode" />
+          <ScalarProperty Name="SafeHearingID" ColumnName="SafeHearingID" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="IconRequestID" ColumnName="IconRequestID" />
+          <ScalarProperty Name="FormDataID" ColumnName="FormDataID" />
+          <ScalarProperty Name="DivisionRequestID" ColumnName="DivisionRequestID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+          <ScalarProperty Name="AuditSpecificationID" ColumnName="AuditSpecificationID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+          <ScalarProperty Name="AccessRequestID" ColumnName="AccessRequestID" />
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Access_Categories">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Access_Categories">
+        <MappingFragment StoreEntitySet="Access_Categories">
+          <ScalarProperty Name="C_Legacy_PrimaryKeyValue" ColumnName="_Legacy_PrimaryKeyValue" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SourceCategoryPKID" ColumnName="SourceCategoryPKID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_AgreementAccessDefaults">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_AgreementAccessDefaults">
+        <MappingFragment StoreEntitySet="Division_AgreementAccessDefaults">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="StaffID_End" ColumnName="StaffID_End" />
+          <ScalarProperty Name="StaffID_Begin" ColumnName="StaffID_Begin" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="JobRoleID" ColumnName="JobRoleID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_PersonDivisionJobRoleXref">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_PersonDivisionJobRoleXref">
+        <MappingFragment StoreEntitySet="Person_PersonDivisionJobRoleXref">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="JobRoleID" ColumnName="JobRoleID" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_BadgeIconPeriods">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_BadgeIconPeriods">
+        <MappingFragment StoreEntitySet="Person_BadgeIconPeriods">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="IconID" ColumnName="IconID" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_Badges">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_Badges">
+        <MappingFragment StoreEntitySet="Person_Badges">
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="DriverLEO" ColumnName="DriverLEO" />
+          <ScalarProperty Name="DriveThroughGates" ColumnName="DriveThroughGates" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_PersonType_ONT" ColumnName="_Legacy_PersonType_ONT" />
+          <ScalarProperty Name="C_Legacy_BadgeReturnDate_ONT" ColumnName="_Legacy_BadgeReturnDate_ONT" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="BadgeColorID" ColumnName="BadgeColorID" />
+          <ScalarProperty Name="BadgeIssuanceReasonCode" ColumnName="BadgeIssuanceReasonCode" />
+          <ScalarProperty Name="ProxNumber" ColumnName="ProxNumber" />
+          <ScalarProperty Name="BadgeNumber" ColumnName="BadgeNumber" />
+          <ScalarProperty Name="BadgeID_IWS" ColumnName="BadgeID_IWS" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_Notes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_Notes">
+        <MappingFragment StoreEntitySet="Person_Notes">
+          <ScalarProperty Name="NoteTypeCode" ColumnName="NoteTypeCode" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="IsHotNote" ColumnName="IsHotNote" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_NoteTypes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_NoteTypes">
+        <MappingFragment StoreEntitySet="Person_NoteTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="NoteTypeDescription" ColumnName="NoteTypeDescription" />
+          <ScalarProperty Name="NoteTypeCode" ColumnName="NoteTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Facility_Staff">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Facility_Staff">
+        <MappingFragment StoreEntitySet="Facility_Staff">
+          <ScalarProperty Name="C_Legacy_UserIdentifiers" ColumnName="_Legacy_UserIdentifiers" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Security_Users">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Security_Users">
+        <MappingFragment StoreEntitySet="Security_Users">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PasswordExpiresEndOf" ColumnName="PasswordExpiresEndOf" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="ActiveDirectoryUserSID" ColumnName="ActiveDirectoryUserSID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_FullName">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_FullName">
+        <MappingFragment StoreEntitySet="Person_FullName">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Common_EntityTypes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Common_EntityTypes">
+        <MappingFragment StoreEntitySet="Common_EntityTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EntityTypeDescription" ColumnName="EntityTypeDescription" />
+          <ScalarProperty Name="EntityTypeCode" ColumnName="EntityTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Common_Requirement_ContentTypes_Extensions">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Common_Requirement_ContentTypes_Extensions">
+        <MappingFragment StoreEntitySet="Common_Requirement_ContentTypes_Extensions">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="FileExtention" ColumnName="FileExtention" />
+          <ScalarProperty Name="ContentTypeCode" ColumnName="ContentTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_Divisions">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_Divisions">
+        <MappingFragment StoreEntitySet="Division_Divisions">
+          <ScalarProperty Name="RAMSExpirationDate" ColumnName="RAMSExpirationDate" />
+          <ScalarProperty Name="RAMSAgreementNumber" ColumnName="RAMSAgreementNumber" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_DIV_ID" ColumnName="_Legacy_DIV_ID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="BadgeCreditCost" ColumnName="BadgeCreditCost" />
+          <ScalarProperty Name="BadgeBillingCost" ColumnName="BadgeBillingCost" />
+          <ScalarProperty Name="ReplaceBadgeCost" ColumnName="ReplaceBadgeCost" />
+          <ScalarProperty Name="NewBadgeCost" ColumnName="NewBadgeCost" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="ProviderNumber" ColumnName="ProviderNumber" />
+          <ScalarProperty Name="CategoryCode" ColumnName="CategoryCode" />
+          <ScalarProperty Name="StaffID_LastUpdated" ColumnName="StaffID_LastUpdated" />
+          <ScalarProperty Name="WhenLastUpdated" ColumnName="WhenLastUpdated" />
+          <ScalarProperty Name="BackgroundCheckRequired" ColumnName="BackgroundCheckRequired" />
+          <ScalarProperty Name="FingerprintRequired" ColumnName="FingerprintRequired" />
+          <ScalarProperty Name="WhenEnrolled" ColumnName="WhenEnrolled" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DivisionStatusCode" ColumnName="DivisionStatusCode" />
+          <ScalarProperty Name="DivisionTypeID" ColumnName="DivisionTypeID" />
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_TaskParam">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_TaskParam">
+        <MappingFragment StoreEntitySet="TaskParams">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+          <ScalarProperty Name="ParamName" ColumnName="ParamName" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="TaskParamID" ColumnName="TaskParamID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Task">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Task">
+        <MappingFragment StoreEntitySet="Tasks">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Successful" ColumnName="Successful" />
+          <ScalarProperty Name="EndedDate" ColumnName="EndedDate" />
+          <ScalarProperty Name="StartedDate" ColumnName="StartedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="TaskStatusCode" ColumnName="TaskStatusCode" />
+          <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskStatuses">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_TaskStatus">
+        <MappingFragment StoreEntitySet="TaskStatuses">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TaskDescription" ColumnName="TaskDescription" />
+          <ScalarProperty Name="TaskStatusCode" ColumnName="TaskStatusCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_TaskType">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_TaskType">
+        <MappingFragment StoreEntitySet="TaskTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="ProcedureName" ColumnName="ProcedureName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TaskNotes" ColumnName="TaskNotes" />
+          <ScalarProperty Name="TaskDescription" ColumnName="TaskDescription" />
+          <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IWS_Person_Person">
+      <EntityTypeMapping TypeName="LookupModel.IWS_Person_Person">
+        <MappingFragment StoreEntitySet="Person_Person">
+          <ScalarProperty Name="C_Legacy_PersonID_IWS_Integer" ColumnName="_Legacy_PersonID_IWS_Integer" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="PersonID_IWS" ColumnName="PersonID_IWS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IWS_Person_PersonBadgeXref">
+      <EntityTypeMapping TypeName="LookupModel.IWS_Person_PersonBadgeXref">
+        <MappingFragment StoreEntitySet="Person_PersonBadgeXref">
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="BadgeID_IWS" ColumnName="BadgeID_IWS" />
+          <ScalarProperty Name="PersonID_IWS" ColumnName="PersonID_IWS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IWS_Badge_Badge">
+      <EntityTypeMapping TypeName="LookupModel.IWS_Badge_Badge">
+        <MappingFragment StoreEntitySet="Badge_Badge">
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="BadgeExpiryDate" ColumnName="BadgeExpiryDate" />
+          <ScalarProperty Name="BadgeIssueDate" ColumnName="BadgeIssueDate" />
+          <ScalarProperty Name="JobRoleID" ColumnName="JobRoleID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Gates" ColumnName="Gates" />
+          <ScalarProperty Name="BadgeIssuanceReasonCode" ColumnName="BadgeIssuanceReasonCode" />
+          <ScalarProperty Name="BadgeStatusCode" ColumnName="BadgeStatusCode" />
+          <ScalarProperty Name="BadgeColorID" ColumnName="BadgeColorID" />
+          <ScalarProperty Name="BID" ColumnName="BID" />
+          <ScalarProperty Name="Exception" ColumnName="Exception" />
+          <ScalarProperty Name="Match" ColumnName="Match" />
+          <ScalarProperty Name="Prox" ColumnName="Prox" />
+          <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
+          <ScalarProperty Name="BadgeNumber" ColumnName="BadgeNumber" />
+          <ScalarProperty Name="BadgeID_IWS" ColumnName="BadgeID_IWS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IWS_Person_Demographics">
+      <EntityTypeMapping TypeName="LookupModel.IWS_Person_Demographics">
+        <MappingFragment StoreEntitySet="Person_Demographics">
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="FingerprintCode" ColumnName="FingerprintCode" />
+          <ScalarProperty Name="VerificationDocumentType" ColumnName="VerificationDocumentType" />
+          <ScalarProperty Name="Alias1" ColumnName="Alias1" />
+          <ScalarProperty Name="FPClassification" ColumnName="FPClassification" />
+          <ScalarProperty Name="STAStatus" ColumnName="STAStatus" />
+          <ScalarProperty Name="DateOfValidation" ColumnName="DateOfValidation" />
+          <ScalarProperty Name="Validated" ColumnName="Validated" />
+          <ScalarProperty Name="StateCode_Birth" ColumnName="StateCode_Birth" />
+          <ScalarProperty Name="StateCode_Citizenship" ColumnName="StateCode_Citizenship" />
+          <ScalarProperty Name="ContractExpiryDate" ColumnName="ContractExpiryDate" />
+          <ScalarProperty Name="PrintExpiryDate" ColumnName="PrintExpiryDate" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Initials" ColumnName="Initials" />
+          <ScalarProperty Name="employee" ColumnName="employee" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="DocumentExpirationDate" ColumnName="DocumentExpirationDate" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="IssuingStateCode" ColumnName="IssuingStateCode" />
+          <ScalarProperty Name="DocumentIdentificationNumber" ColumnName="DocumentIdentificationNumber" />
+          <ScalarProperty Name="DocumentTypeNumber" ColumnName="DocumentTypeNumber" />
+          <ScalarProperty Name="HotNotes" ColumnName="HotNotes" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AliasSuffix" ColumnName="AliasSuffix" />
+          <ScalarProperty Name="AliasMiddleName" ColumnName="AliasMiddleName" />
+          <ScalarProperty Name="AliasFirstName" ColumnName="AliasFirstName" />
+          <ScalarProperty Name="AliasLastName" ColumnName="AliasLastName" />
+          <ScalarProperty Name="ListCDocumentTypeNumber" ColumnName="ListCDocumentTypeNumber" />
+          <ScalarProperty Name="ListBDocumentTypeNumber" ColumnName="ListBDocumentTypeNumber" />
+          <ScalarProperty Name="FedID" ColumnName="FedID" />
+          <ScalarProperty Name="FedEmp" ColumnName="FedEmp" />
+          <ScalarProperty Name="BirthCert_DocumentTypeNumber" ColumnName="BirthCert_DocumentTypeNumber" />
+          <ScalarProperty Name="DS1350_IdentificationNumber" ColumnName="DS1350_IdentificationNumber" />
+          <ScalarProperty Name="DS1350_DocumentTypeNumber" ColumnName="DS1350_DocumentTypeNumber" />
+          <ScalarProperty Name="CertNat_IdentificationNumber" ColumnName="CertNat_IdentificationNumber" />
+          <ScalarProperty Name="CertNat_DocumentTypeNumber" ColumnName="CertNat_DocumentTypeNumber" />
+          <ScalarProperty Name="I94_ExpirationDate" ColumnName="I94_ExpirationDate" />
+          <ScalarProperty Name="I94_IdentificationNumber" ColumnName="I94_IdentificationNumber" />
+          <ScalarProperty Name="I94_DocumentTypeNumber" ColumnName="I94_DocumentTypeNumber" />
+          <ScalarProperty Name="InsExempt" ColumnName="InsExempt" />
+          <ScalarProperty Name="SboVerified" ColumnName="SboVerified" />
+          <ScalarProperty Name="Assessment" ColumnName="Assessment" />
+          <ScalarProperty Name="VerificationType" ColumnName="VerificationType" />
+          <ScalarProperty Name="UsCitizen" ColumnName="UsCitizen" />
+          <ScalarProperty Name="PlaceBirthCode" ColumnName="PlaceBirthCode" />
+          <ScalarProperty Name="CitizenshipCountry" ColumnName="CitizenshipCountry" />
+          <ScalarProperty Name="Passport_IssuingCountryCode" ColumnName="Passport_IssuingCountryCode" />
+          <ScalarProperty Name="Passport_ExpirationDate" ColumnName="Passport_ExpirationDate" />
+          <ScalarProperty Name="Passport_IdentificationNumber" ColumnName="Passport_IdentificationNumber" />
+          <ScalarProperty Name="Passport_DocumentTypeNumber" ColumnName="Passport_DocumentTypeNumber" />
+          <ScalarProperty Name="Visa_IssuingCountryCode" ColumnName="Visa_IssuingCountryCode" />
+          <ScalarProperty Name="Visa_ExpirationDate" ColumnName="Visa_ExpirationDate" />
+          <ScalarProperty Name="Visa_DocumentDescription" ColumnName="Visa_DocumentDescription" />
+          <ScalarProperty Name="Visa_IdentificationNumber" ColumnName="Visa_IdentificationNumber" />
+          <ScalarProperty Name="Visa_DocumentTypeNumber" ColumnName="Visa_DocumentTypeNumber" />
+          <ScalarProperty Name="Visa" ColumnName="Visa" />
+          <ScalarProperty Name="Alien_IssuingCountryCode" ColumnName="Alien_IssuingCountryCode" />
+          <ScalarProperty Name="Alien_ExpirationDate" ColumnName="Alien_ExpirationDate" />
+          <ScalarProperty Name="Alien_DocumentDescription" ColumnName="Alien_DocumentDescription" />
+          <ScalarProperty Name="Alien_IdentificationNumber" ColumnName="Alien_IdentificationNumber" />
+          <ScalarProperty Name="Alien_DocumentTypeNumber" ColumnName="Alien_DocumentTypeNumber" />
+          <ScalarProperty Name="Alien" ColumnName="Alien" />
+          <ScalarProperty Name="OtherID_ExpirationDate" ColumnName="OtherID_ExpirationDate" />
+          <ScalarProperty Name="OtherID_DocumentDescription" ColumnName="OtherID_DocumentDescription" />
+          <ScalarProperty Name="OtherID_IdentificationNumber" ColumnName="OtherID_IdentificationNumber" />
+          <ScalarProperty Name="OtherID_DocumentTypeNumber" ColumnName="OtherID_DocumentTypeNumber" />
+          <ScalarProperty Name="DL_ExpirationDate" ColumnName="DL_ExpirationDate" />
+          <ScalarProperty Name="DL_IssuingStateCode" ColumnName="DL_IssuingStateCode" />
+          <ScalarProperty Name="DL_IdentificationNumber" ColumnName="DL_IdentificationNumber" />
+          <ScalarProperty Name="DL_DocumentTypeNumber" ColumnName="DL_DocumentTypeNumber" />
+          <ScalarProperty Name="LastUserAccessed" ColumnName="LastUserAccessed" />
+          <ScalarProperty Name="LastDateAccessed" ColumnName="LastDateAccessed" />
+          <ScalarProperty Name="DojPrintedFlag" ColumnName="DojPrintedFlag" />
+          <ScalarProperty Name="DojPrinted" ColumnName="DojPrinted" />
+          <ScalarProperty Name="Masked_SSN" ColumnName="Masked_SSN" />
+          <ScalarProperty Name="LastUserDateAccessed" ColumnName="LastUserDateAccessed" />
+          <ScalarProperty Name="HiddenFlag" ColumnName="HiddenFlag" />
+          <ScalarProperty Name="DOJFlag" ColumnName="DOJFlag" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FingerprintExempt" ColumnName="FingerprintExempt" />
+          <ScalarProperty Name="DoNotBadge" ColumnName="DoNotBadge" />
+          <ScalarProperty Name="PrintsDate" ColumnName="PrintsDate" />
+          <ScalarProperty Name="Fingerprint" ColumnName="Fingerprint" />
+          <ScalarProperty Name="MiscInfo" ColumnName="MiscInfo" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="IsHotNote" ColumnName="IsHotNote" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="PIC_DT" ColumnName="PIC_DT" />
+          <ScalarProperty Name="EthnicityCode" ColumnName="EthnicityCode" />
+          <ScalarProperty Name="HairColorCode" ColumnName="HairColorCode" />
+          <ScalarProperty Name="EyeColorCode" ColumnName="EyeColorCode" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="WeightInPounds" ColumnName="WeightInPounds" />
+          <ScalarProperty Name="HeightInInches" ColumnName="HeightInInches" />
+          <ScalarProperty Name="HT_IN" ColumnName="HT_IN" />
+          <ScalarProperty Name="HT_FT" ColumnName="HT_FT" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="C_Legacy_EMP_ID" ColumnName="_Legacy_EMP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_Persons">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_Persons">
+        <MappingFragment StoreEntitySet="Person_Persons">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="PersonID_IWS" ColumnName="PersonID_IWS" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_AuthorizedSigners">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_AuthorizedSigners">
+        <MappingFragment StoreEntitySet="Person_AuthorizedSigners">
+          <ScalarProperty Name="Instructor" ColumnName="Instructor" />
+          <ScalarProperty Name="TrainingType" ColumnName="TrainingType" />
+          <ScalarProperty Name="SignatureDate" ColumnName="SignatureDate" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SignatureImage" ColumnName="SignatureImage" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenTrained" ColumnName="WhenTrained" />
+          <ScalarProperty Name="SignerCode" ColumnName="SignerCode" />
+          <ScalarProperty Name="PersonTypeStatusCode" ColumnName="PersonTypeStatusCode" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Company_Companies">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Company_Companies">
+        <MappingFragment StoreEntitySet="Company_Companies">
+          <ScalarProperty Name="StaffID_BadgeCoordinator" ColumnName="StaffID_BadgeCoordinator" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_PrimaryKeyValue" ColumnName="_Legacy_PrimaryKeyValue" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="RAMSExpirationDate" ColumnName="RAMSExpirationDate" />
+          <ScalarProperty Name="RAMSAgreementNumber" ColumnName="RAMSAgreementNumber" />
+          <ScalarProperty Name="StaffID_LastUpdated" ColumnName="StaffID_LastUpdated" />
+          <ScalarProperty Name="WhenLastUpdated" ColumnName="WhenLastUpdated" />
+          <ScalarProperty Name="ProviderNumber" ColumnName="ProviderNumber" />
+          <ScalarProperty Name="BadgeColorID_HighestLevel" ColumnName="BadgeColorID_HighestLevel" />
+          <ScalarProperty Name="BackgroundCheckRequired" ColumnName="BackgroundCheckRequired" />
+          <ScalarProperty Name="FingerprintRequired" ColumnName="FingerprintRequired" />
+          <ScalarProperty Name="BTRCRequired" ColumnName="BTRCRequired" />
+          <ScalarProperty Name="InsuranceRequired" ColumnName="InsuranceRequired" />
+          <ScalarProperty Name="BadgeName" ColumnName="BadgeName" />
+          <ScalarProperty Name="DBAName" ColumnName="DBAName" />
+          <ScalarProperty Name="CorporationName" ColumnName="CorporationName" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Audit_AuditDivisionInfo" FunctionName="LookupModel.Store.Audit_AuditDivisionInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Audit_AuditDivisionInfo_Result">
+          <ScalarProperty Name="AuditSpecificationID" ColumnName="AuditSpecificationID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="AuditStatusCode" ColumnName="AuditStatusCode" />
+          <ScalarProperty Name="NumberOfBadgesToAudit" ColumnName="NumberOfBadgesToAudit" />
+          <ScalarProperty Name="ResultLetterImage" ColumnName="ResultLetterImage" />
+          <ScalarProperty Name="PayrollImage" ColumnName="PayrollImage" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="WhenCompleted" ColumnName="WhenCompleted" />
+          <ScalarProperty Name="PayrollFileName" ColumnName="PayrollFileName" />
+          <ScalarProperty Name="AuditStatusDescription" ColumnName="AuditStatusDescription" />
+          <ScalarProperty Name="AuditTypeDescription" ColumnName="AuditTypeDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Helpers_GetContentType" FunctionName="LookupModel.Store.Helpers_GetContentType" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_GetPersonDivisionXrefEnityID" FunctionName="LookupModel.Store.Badging_GetPersonDivisionXrefEnityID" />
+    <EntitySetMapping Name="Lookups_BackgroundCheck_PersonDivisionChecks">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_BackgroundCheck_PersonDivisionChecks">
+        <MappingFragment StoreEntitySet="BackgroundCheck_PersonDivisionChecks">
+          <ScalarProperty Name="IsCopy" ColumnName="IsCopy" />
+          <ScalarProperty Name="EffectiveExpirationDate" ColumnName="EffectiveExpirationDate" />
+          <ScalarProperty Name="BadgeIsDenied" ColumnName="BadgeIsDenied" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+          <ScalarProperty Name="WhenMessageReceived" ColumnName="WhenMessageReceived" />
+          <ScalarProperty Name="WebMessageID" ColumnName="WebMessageID" />
+          <ScalarProperty Name="WhenFingerprintTaken" ColumnName="WhenFingerprintTaken" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="PersonDivisionCheckID" ColumnName="PersonDivisionCheckID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_AgreementJobRoles">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_AgreementJobRoles">
+        <MappingFragment StoreEntitySet="Division_AgreementJobRoles">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="JobRoleID" ColumnName="JobRoleID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_AgreementLocations">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_AgreementLocations">
+        <MappingFragment StoreEntitySet="Division_AgreementLocations">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="IsSpecialDefault" ColumnName="IsSpecialDefault" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_Contacts">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_Contacts">
+        <MappingFragment StoreEntitySet="Division_Contacts">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="WhenContactEnds" ColumnName="WhenContactEnds" />
+          <ScalarProperty Name="WhenContactBegins" ColumnName="WhenContactBegins" />
+          <ScalarProperty Name="AlternateEmailAddress" ColumnName="AlternateEmailAddress" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FaxPhoneNumber" ColumnName="FaxPhoneNumber" />
+          <ScalarProperty Name="FaxPhonePrefix" ColumnName="FaxPhonePrefix" />
+          <ScalarProperty Name="MobilePhoneNumber" ColumnName="MobilePhoneNumber" />
+          <ScalarProperty Name="MobilePhonePrefix" ColumnName="MobilePhonePrefix" />
+          <ScalarProperty Name="Work2PhoneExtension" ColumnName="Work2PhoneExtension" />
+          <ScalarProperty Name="Work2PhoneNumber" ColumnName="Work2PhoneNumber" />
+          <ScalarProperty Name="Work2PhonePrefix" ColumnName="Work2PhonePrefix" />
+          <ScalarProperty Name="Work1PhoneExtension" ColumnName="Work1PhoneExtension" />
+          <ScalarProperty Name="Work1PhoneNumber" ColumnName="Work1PhoneNumber" />
+          <ScalarProperty Name="Work1PhonePrefix" ColumnName="Work1PhonePrefix" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="NameSuffixCode" ColumnName="NameSuffixCode" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="NamePrefixCode" ColumnName="NamePrefixCode" />
+          <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_ContactTypes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_ContactTypes">
+        <MappingFragment StoreEntitySet="Division_ContactTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ContactTypeAbbreviation" ColumnName="ContactTypeAbbreviation" />
+          <ScalarProperty Name="ContactTypeDescription" ColumnName="ContactTypeDescription" />
+          <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Entities_GetEntityID_EX" FunctionName="LookupModel.Store.Entities_GetEntityID_EX" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_GetExpirationDates" FunctionName="LookupModel.Store.Badging_GetExpirationDates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Lookups_Badging_GetExpirationDates_Result">
+          <ScalarProperty Name="FacilityExpD8" ColumnName="FacilityExpD8" />
+          <ScalarProperty Name="CompDivAgrExpD8" ColumnName="CompDivAgrExpD8" />
+          <ScalarProperty Name="EffectiveExpD8" ColumnName="EffectiveExpD8" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Lookups_Access_PersonDivisionCategoryXref">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Access_PersonDivisionCategoryXref">
+        <MappingFragment StoreEntitySet="Access_PersonDivisionCategoryXref">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="IsSpecialAccess" ColumnName="IsSpecialAccess" />
+          <ScalarProperty Name="StaffID_End" ColumnName="StaffID_End" />
+          <ScalarProperty Name="StaffID_Begin" ColumnName="StaffID_Begin" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Common_Requirement_DocumentsRequired">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Common_Requirement_DocumentsRequired">
+        <MappingFragment StoreEntitySet="Common_Requirement_DocumentsRequired">
+          <ScalarProperty Name="DropdownName" ColumnName="DropdownName" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DocumentTypeNumber" ColumnName="DocumentTypeNumber" />
+          <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Access_Areas">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Access_Areas">
+        <MappingFragment StoreEntitySet="Access_Areas">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SourceAreaPKID" ColumnName="SourceAreaPKID" />
+          <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Access_CategoryAreaMapping">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Access_CategoryAreaMapping">
+        <MappingFragment StoreEntitySet="Access_CategoryAreaMapping">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Access_Doors">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Access_Doors">
+        <MappingFragment StoreEntitySet="Access_Doors">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TSAMaximumBadgeCount" ColumnName="TSAMaximumBadgeCount" />
+          <ScalarProperty Name="DepartmentID_Authorizer" ColumnName="DepartmentID_Authorizer" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+          <ScalarProperty Name="SourceDoorPKID" ColumnName="SourceDoorPKID" />
+          <ScalarProperty Name="DoorName" ColumnName="DoorName" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="DoorID" ColumnName="DoorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_STAEmployeeStatuses">
+      <EntityTypeMapping TypeName="LookupModel.Person_STAEmployeeStatuses">
+        <MappingFragment StoreEntitySet="Person_STAEmployeeStatuses">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="STAEmployeeStatusTitle" ColumnName="STAEmployeeStatusTitle" />
+          <ScalarProperty Name="STAEmployeeStatusID" ColumnName="STAEmployeeStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Common_Requirement_LegalStatusTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(LookupModel.Lookups_Common_Requirement_LegalStatusTypes)">
+        <MappingFragment StoreEntitySet="Common_Requirement_LegalStatusTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LegalStatusDescription" ColumnName="LegalStatusDescription" />
+          <ScalarProperty Name="LegalStatusCode" ColumnName="LegalStatusCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Facility_Departments">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Facility_Departments">
+        <MappingFragment StoreEntitySet="Facility_Departments">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DepartmentAbbreviation" ColumnName="DepartmentAbbreviation" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Facility_StaffDepartmentXref">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Facility_StaffDepartmentXref">
+        <MappingFragment StoreEntitySet="Facility_StaffDepartmentXref">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="CanFulfillWorkQueue" ColumnName="CanFulfillWorkQueue" />
+          <ScalarProperty Name="CanAssignWorkQueue" ColumnName="CanAssignWorkQueue" />
+          <ScalarProperty Name="DepartmentOrder" ColumnName="DepartmentOrder" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEO_OfficerRanksAndTitles">
+      <EntityTypeMapping TypeName="LookupModel.LEO_OfficerRanksAndTitles">
+        <MappingFragment StoreEntitySet="LEO_OfficerRanksAndTitles">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OfficerRankTitleAbbreviation" ColumnName="OfficerRankTitleAbbreviation" />
+          <ScalarProperty Name="OfficerRankTitleDescription" ColumnName="OfficerRankTitleDescription" />
+          <ScalarProperty Name="OfficerTypeID" ColumnName="OfficerTypeID" />
+          <ScalarProperty Name="OfficerRankAndTitleID" ColumnName="OfficerRankAndTitleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEO_OfficerTypes">
+      <EntityTypeMapping TypeName="LookupModel.LEO_OfficerTypes">
+        <MappingFragment StoreEntitySet="LEO_OfficerTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OfficerTypeAbbreviation" ColumnName="OfficerTypeAbbreviation" />
+          <ScalarProperty Name="OfficerTypeDescription" ColumnName="OfficerTypeDescription" />
+          <ScalarProperty Name="OfficerTypeID" ColumnName="OfficerTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEO_PoliceDepartments">
+      <EntityTypeMapping TypeName="LookupModel.LEO_PoliceDepartments">
+        <MappingFragment StoreEntitySet="LEO_PoliceDepartments">
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PoliceDepartmentAbbreviation" ColumnName="PoliceDepartmentAbbreviation" />
+          <ScalarProperty Name="PoliceDepartmentDescription" ColumnName="PoliceDepartmentDescription" />
+          <ScalarProperty Name="PoliceDepartmentID" ColumnName="PoliceDepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEO_Officers">
+      <EntityTypeMapping TypeName="LookupModel.LEO_Officers">
+        <MappingFragment StoreEntitySet="LEO_Officers">
+          <ScalarProperty Name="Person_FullName" ColumnName="Person_FullName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="LBSP_WE" ColumnName="LBSP_WE" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="LBSP_WBA" ColumnName="LBSP_WBA" />
+          <ScalarProperty Name="PoliceDepartmentAbbreviation" ColumnName="PoliceDepartmentAbbreviation" />
+          <ScalarProperty Name="PoliceDepartmentDescription" ColumnName="PoliceDepartmentDescription" />
+          <ScalarProperty Name="PoliceDepartmentID" ColumnName="PoliceDepartmentID" />
+          <ScalarProperty Name="OfficerTypeAbbreviation" ColumnName="OfficerTypeAbbreviation" />
+          <ScalarProperty Name="OfficerTypeDescription" ColumnName="OfficerTypeDescription" />
+          <ScalarProperty Name="OfficerTypeID" ColumnName="OfficerTypeID" />
+          <ScalarProperty Name="OfficerRankTitleDescription" ColumnName="OfficerRankTitleDescription" />
+          <ScalarProperty Name="OfficerRankTitleAbbreviation" ColumnName="OfficerRankTitleAbbreviation" />
+          <ScalarProperty Name="OfficerRankAndTitleID" ColumnName="OfficerRankAndTitleID" />
+          <ScalarProperty Name="NameSuffixCode" ColumnName="NameSuffixCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="BadgeStatusCode" ColumnName="BadgeStatusCode" />
+          <ScalarProperty Name="OfficerBadgeID" ColumnName="OfficerBadgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_GetSpecialAccessCategories" FunctionName="LookupModel.Store.Badging_GetSpecialAccessCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Badging_GetSpecialAccessCategories_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_GetDoorsInCategory" FunctionName="LookupModel.Store.Badging_GetDoorsInCategory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Badging_GetDoorsInCategory_Result">
+          <ScalarProperty Name="DoorID" ColumnName="DoorID" />
+          <ScalarProperty Name="DoorName" ColumnName="DoorName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_AddSpecialAccessCategory" FunctionName="LookupModel.Store.Badging_AddSpecialAccessCategory" />
+    <EntitySetMapping Name="Lookups_Common_Requirement_Requirements">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Common_Requirement_Requirements">
+        <MappingFragment StoreEntitySet="Common_Requirement_Requirements">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TrainingProgramID" ColumnName="TrainingProgramID" />
+          <ScalarProperty Name="IsDocument" ColumnName="IsDocument" />
+          <ScalarProperty Name="ActionRequired" ColumnName="ActionRequired" />
+          <ScalarProperty Name="RequirementDescription" ColumnName="RequirementDescription" />
+          <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="C_Common_Requirement_Requirements_______Common_EntityTypes_" TypeName="LookupModel.C_Common_Requirement_Requirements_______Common_EntityTypes_" StoreEntitySet="Common_Requirement_Requirements">
+      <EndProperty Name="Common_Requirement_Requirements">
+        <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+      </EndProperty>
+      <EndProperty Name="Lookups_Common_EntityTypes">
+        <ScalarProperty Name="EntityTypeCode" ColumnName="EntityTypeCode" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="C_Common_Requirement_Requirements_______Facility_Departments_" TypeName="LookupModel.C_Common_Requirement_Requirements_______Facility_Departments_" StoreEntitySet="Common_Requirement_Requirements">
+      <EndProperty Name="Common_Requirement_Requirements">
+        <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+      </EndProperty>
+      <EndProperty Name="Lookups_Facility_Departments">
+        <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="Lookups_Documents_DocumentTypeExt">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Documents_DocumentTypeExt">
+        <MappingFragment StoreEntitySet="Documents_DocumentTypeExt">
+          <ScalarProperty Name="RequiresIssuingAuthority_School" ColumnName="RequiresIssuingAuthority_School" />
+          <ScalarProperty Name="Requires_CountrySubdivisionCode_Optional" ColumnName="Requires_CountrySubdivisionCode_Optional" />
+          <ScalarProperty Name="RequiresExpirationDate_Optional" ColumnName="RequiresExpirationDate_Optional" />
+          <ScalarProperty Name="ShortDate" ColumnName="ShortDate" />
+          <ScalarProperty Name="LegalStatusCode" ColumnName="LegalStatusCode" />
+          <ScalarProperty Name="Force_CountryCode" ColumnName="Force_CountryCode" />
+          <ScalarProperty Name="Requires_CountrySubdivisionCode" ColumnName="Requires_CountrySubdivisionCode" />
+          <ScalarProperty Name="RequiresExpirationDate" ColumnName="RequiresExpirationDate" />
+          <ScalarProperty Name="RequiresIdentificationNumber" ColumnName="RequiresIdentificationNumber" />
+          <ScalarProperty Name="RequiresIssuingAuthority" ColumnName="RequiresIssuingAuthority" />
+          <ScalarProperty Name="DocumentTypeDescription" ColumnName="DocumentTypeDescription" />
+          <ScalarProperty Name="DocumentTypeNumber" ColumnName="DocumentTypeNumber" />
+          <ScalarProperty Name="DropdownName" ColumnName="DropdownName" />
+          <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Common_Requirement_Documents">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Common_Requirement_Documents">
+        <MappingFragment StoreEntitySet="Common_Requirement_Documents">
+          <ScalarProperty Name="IssuingAuthority_School" ColumnName="IssuingAuthority_School" />
+          <ScalarProperty Name="WhenSubmitted" ColumnName="WhenSubmitted" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="IdentificationNumber" ColumnName="IdentificationNumber" />
+          <ScalarProperty Name="IssuingAuthority_CountrySubdivisionCode" ColumnName="IssuingAuthority_CountrySubdivisionCode" />
+          <ScalarProperty Name="IssuingAuthority_CountryCode" ColumnName="IssuingAuthority_CountryCode" />
+          <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+          <ScalarProperty Name="DocumentImage" ColumnName="DocumentImage" />
+          <ScalarProperty Name="ContentTypeCode" ColumnName="ContentTypeCode" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="DocumentFilename" ColumnName="DocumentFilename" />
+          <ScalarProperty Name="DocumentTypeNumber" ColumnName="DocumentTypeNumber" />
+          <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Common_Requirement_DocumentTypes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Common_Requirement_DocumentTypes">
+        <MappingFragment StoreEntitySet="Common_Requirement_DocumentTypes">
+          <ScalarProperty Name="RequiresIssuingAuthority_School" ColumnName="RequiresIssuingAuthority_School" />
+          <ScalarProperty Name="Requires_CountrySubdivisionCode_Optional" ColumnName="Requires_CountrySubdivisionCode_Optional" />
+          <ScalarProperty Name="RequiresExpirationDate_Optional" ColumnName="RequiresExpirationDate_Optional" />
+          <ScalarProperty Name="ShortDate" ColumnName="ShortDate" />
+          <ScalarProperty Name="LegalStatusCode" ColumnName="LegalStatusCode" />
+          <ScalarProperty Name="Force_CountryCode" ColumnName="Force_CountryCode" />
+          <ScalarProperty Name="Requires_CountrySubdivisionCode" ColumnName="Requires_CountrySubdivisionCode" />
+          <ScalarProperty Name="I9Compliant" ColumnName="I9Compliant" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RequiresExpirationDate" ColumnName="RequiresExpirationDate" />
+          <ScalarProperty Name="RequiresIdentificationNumber" ColumnName="RequiresIdentificationNumber" />
+          <ScalarProperty Name="RequiresIssuingAuthority" ColumnName="RequiresIssuingAuthority" />
+          <ScalarProperty Name="EntityTypeCode" ColumnName="EntityTypeCode" />
+          <ScalarProperty Name="DocumentTypeDescription" ColumnName="DocumentTypeDescription" />
+          <ScalarProperty Name="DocumentTypeNumber" ColumnName="DocumentTypeNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_Appointment_HasActiveBadge" FunctionName="LookupModel.Store.Badging_Appointment_HasActiveBadge" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_CancelBadge" FunctionName="LookupModel.Store.Badging_CancelBadge" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_NewBadgeExt" FunctionName="LookupModel.Store.Badging_NewBadgeExt">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Lookups_Badging_NewBadgeExt_Result">
+          <ScalarProperty Name="BadgeId" ColumnName="BadgeId" />
+          <ScalarProperty Name="BadgeNumber" ColumnName="BadgeNumber" />
+          <ScalarProperty Name="ErrorText" ColumnName="ErrorText" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Lookups_Person_BadgeStatusPeriods">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_BadgeStatusPeriods">
+        <MappingFragment StoreEntitySet="Person_BadgeStatusPeriods">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="BadgeStatusCode" ColumnName="BadgeStatusCode" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badge_GetStatusCode" FunctionName="LookupModel.Store.Badge_GetStatusCode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Lookups_Badge_GetStatusCode_Result">
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badge_SetStatus" FunctionName="LookupModel.Store.Badge_SetStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Lookups_Badge_SetStatus_Result">
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_Appointment_AddBadgeStatus" FunctionName="LookupModel.Store.Badging_Appointment_AddBadgeStatus" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_GetBadgeStatus" FunctionName="LookupModel.Store.Badging_GetBadgeStatus" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_Appointment_HasActiveBadgeWrapper" FunctionName="LookupModel.Store.Badging_Appointment_HasActiveBadgeWrapper" />
+    <FunctionImportMapping FunctionImportName="Lookups_BL_User_GetId" FunctionName="LookupModel.Store.User_GetId" />
+    <FunctionImportMapping FunctionImportName="Lookups_BL_User_GetStaffId" FunctionName="LookupModel.Store.User_GetStaffId" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_Access_GetCategoriesByLocations" FunctionName="LookupModel.Store.Badging_Access_GetCategoriesByLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Lookups_Badging_Access_GetCategoriesByLocations_Result">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_Access_GetLocations" FunctionName="LookupModel.Store.Badging_Access_GetLocations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Badging_Access_GetLocations_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationAbbreviation" ColumnName="LocationAbbreviation" />
+          <ScalarProperty Name="Saved" ColumnName="Saved" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Lookups_Person_BadgeAccessPeriods">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_BadgeAccessPeriods">
+        <MappingFragment StoreEntitySet="Person_BadgeAccessPeriods">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="AccessType" ColumnName="AccessType" />
+          <ScalarProperty Name="StaffID_End" ColumnName="StaffID_End" />
+          <ScalarProperty Name="StaffID_Begin" ColumnName="StaffID_Begin" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Audit_AuditSpecifications">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Audit_AuditSpecifications">
+        <MappingFragment StoreEntitySet="Audit_AuditSpecifications">
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TotalDivisionBadges" ColumnName="TotalDivisionBadges" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="DivisionAuditDateThreshold" ColumnName="DivisionAuditDateThreshold" />
+          <ScalarProperty Name="DivisionBadgeMaximum" ColumnName="DivisionBadgeMaximum" />
+          <ScalarProperty Name="DivisionBadgeMinimum" ColumnName="DivisionBadgeMinimum" />
+          <ScalarProperty Name="BadgesToAudit_PercentInDivision" ColumnName="BadgesToAudit_PercentInDivision" />
+          <ScalarProperty Name="BadgesToAudit_TotalNumber" ColumnName="BadgesToAudit_TotalNumber" />
+          <ScalarProperty Name="StaffID_Responsible" ColumnName="StaffID_Responsible" />
+          <ScalarProperty Name="AuditStatusCode" ColumnName="AuditStatusCode" />
+          <ScalarProperty Name="AuditCategoryCode" ColumnName="AuditCategoryCode" />
+          <ScalarProperty Name="AuditTypeCode" ColumnName="AuditTypeCode" />
+          <ScalarProperty Name="AuditName" ColumnName="AuditName" />
+          <ScalarProperty Name="AuditGroupID" ColumnName="AuditGroupID" />
+          <ScalarProperty Name="AuditSpecificationID" ColumnName="AuditSpecificationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_BadgeStatuses">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_BadgeStatuses">
+        <MappingFragment StoreEntitySet="Person_BadgeStatuses">
+          <ScalarProperty Name="VAAU_Specific" ColumnName="VAAU_Specific" />
+          <ScalarProperty Name="BO_Specific" ColumnName="BO_Specific" />
+          <ScalarProperty Name="Police_Specific" ColumnName="Police_Specific" />
+          <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BadgeStatusDescription" ColumnName="BadgeStatusDescription" />
+          <ScalarProperty Name="BadgeStatusCode" ColumnName="BadgeStatusCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Trainers" FunctionName="LookupModel.Store.Trainers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Trainers_Result">
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="IsTrainer" ColumnName="IsTrainer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Lookups_Person_PersonTypeStatuses">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_PersonTypeStatuses">
+        <MappingFragment StoreEntitySet="Person_PersonTypeStatuses">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="PersonTypeStatusDescription" ColumnName="PersonTypeStatusDescription" />
+          <ScalarProperty Name="PersonTypeStatusCode" ColumnName="PersonTypeStatusCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_Trainers">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_Trainers">
+        <MappingFragment StoreEntitySet="Person_Trainers">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Instructor" ColumnName="Instructor" />
+          <ScalarProperty Name="WhenPrinted" ColumnName="WhenPrinted" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenTrained" ColumnName="WhenTrained" />
+          <ScalarProperty Name="IsLEO" ColumnName="IsLEO" />
+          <ScalarProperty Name="IsFingerPrinted" ColumnName="IsFingerPrinted" />
+          <ScalarProperty Name="IsCertified" ColumnName="IsCertified" />
+          <ScalarProperty Name="PersonTypeStatusCode" ColumnName="PersonTypeStatusCode" />
+          <ScalarProperty Name="TrainingSiteID" ColumnName="TrainingSiteID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_TrainingSites">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_TrainingSites">
+        <MappingFragment StoreEntitySet="Person_TrainingSites">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="TrainingSiteAbbreviation" ColumnName="TrainingSiteAbbreviation" />
+          <ScalarProperty Name="TrainingSiteDescription" ColumnName="TrainingSiteDescription" />
+          <ScalarProperty Name="TrainingSiteID" ColumnName="TrainingSiteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_IWS_GetFBICaseNumber" FunctionName="LookupModel.Store.IWS_GetFBICaseNumber" />
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_GetLastCHRCAndSTADates" FunctionName="LookupModel.Store.Badging_GetLastCHRCAndSTADates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Badging_GetLastCHRCAndSTADates_Result">
+          <ScalarProperty Name="FBICaseNumber" ColumnName="FBICaseNumber" />
+          <ScalarProperty Name="FBIResultDate" ColumnName="FBIResultDate" />
+          <ScalarProperty Name="FBIResult" ColumnName="FBIResult" />
+          <ScalarProperty Name="TSACaseNumber" ColumnName="TSACaseNumber" />
+          <ScalarProperty Name="TSAResultDate" ColumnName="TSAResultDate" />
+          <ScalarProperty Name="TSAResult" ColumnName="TSAResult" />
+          <ScalarProperty Name="RevetDate" ColumnName="RevetDate" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="WhenMessageReceived" ColumnName="WhenMessageReceived" />
+          <ScalarProperty Name="CALDJCaseNumber" ColumnName="CALDJCaseNumber" />
+          <ScalarProperty Name="CALDJResultDate" ColumnName="CALDJResultDate" />
+          <ScalarProperty Name="CALDJResult" ColumnName="CALDJResult" />
+          <ScalarProperty Name="LastSetPersonTransmitStatus" ColumnName="LastSetPersonTransmitStatus" />
+          <ScalarProperty Name="LastSetPersonTransmitDate" ColumnName="LastSetPersonTransmitDate" />
+          <ScalarProperty Name="TransactionControlNumber" ColumnName="TransactionControlNumber" />
+          <ScalarProperty Name="IWSTransactionControlNumber" ColumnName="IWSTransactionControlNumber" />
+          <ScalarProperty Name="PersonDivisionCheckForTCN" ColumnName="PersonDivisionCheckForTCN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Lookups_Division_DivisionTypes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_DivisionTypes">
+        <MappingFragment StoreEntitySet="Division_DivisionTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RangeUpper" ColumnName="RangeUpper" />
+          <ScalarProperty Name="RangeLower" ColumnName="RangeLower" />
+          <ScalarProperty Name="DivisionTypeDescription" ColumnName="DivisionTypeDescription" />
+          <ScalarProperty Name="DivisionTypeName" ColumnName="DivisionTypeName" />
+          <ScalarProperty Name="DivisionTypeID" ColumnName="DivisionTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_JobRoles">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_JobRoles">
+        <MappingFragment StoreEntitySet="Person_JobRoles">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="JobRoleAbbreviation" ColumnName="JobRoleAbbreviation" />
+          <ScalarProperty Name="JobRoleDescription" ColumnName="JobRoleDescription" />
+          <ScalarProperty Name="JobRoleID" ColumnName="JobRoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Division_DivisionNotes">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Division_DivisionNotes">
+        <MappingFragment StoreEntitySet="Division_DivisionNotes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="IsHotNote" ColumnName="IsHotNote" />
+          <ScalarProperty Name="NoteText" ColumnName="NoteText" />
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="DivisionNoteID" ColumnName="DivisionNoteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Miscellaneous_Countries_Load" FunctionName="LookupModel.Store.Miscellaneous_Countries_Load">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Miscellaneous_Countries_Load_Result">
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+          <ScalarProperty Name="CountrySubdivisionTypeName" ColumnName="CountrySubdivisionTypeName" />
+          <ScalarProperty Name="InternationalCallPrefix" ColumnName="InternationalCallPrefix" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Audit_AuditDocumentTypes">
+      <EntityTypeMapping TypeName="LookupModel.Audit_AuditDocumentTypes">
+        <MappingFragment StoreEntitySet="Audit_AuditDocumentTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="AuditDocumentTypeDescription" ColumnName="AuditDocumentTypeDescription" />
+          <ScalarProperty Name="AuditDocumentTypeCode" ColumnName="AuditDocumentTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Audit_AuditDocuments">
+      <EntityTypeMapping TypeName="LookupModel.Audit_AuditDocuments">
+        <MappingFragment StoreEntitySet="Audit_AuditDocuments">
+          <ScalarProperty Name="DocumentFilename" ColumnName="DocumentFilename" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+          <ScalarProperty Name="DocumentImage" ColumnName="DocumentImage" />
+          <ScalarProperty Name="AuditDocumentTypeCode" ColumnName="AuditDocumentTypeCode" />
+          <ScalarProperty Name="AuditSpecificationID" ColumnName="AuditSpecificationID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="AuditDocumentID" ColumnName="AuditDocumentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Lookups_Badging_GetCALDoJFPAcceptedDate" FunctionName="LookupModel.Store.Badging_GetCALDoJFPAcceptedDate" />
+    <EntitySetMapping Name="Audit_AuditGroups">
+      <EntityTypeMapping TypeName="LookupModel.Audit_AuditGroups">
+        <MappingFragment StoreEntitySet="Audit_AuditGroups">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="AuditDate" ColumnName="AuditDate" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="AuditGroupID" ColumnName="AuditGroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lookups_Person_BadgeReprintReasons">
+      <EntityTypeMapping TypeName="LookupModel.Lookups_Person_BadgeReprintReasons">
+        <MappingFragment StoreEntitySet="Person_BadgeReprintReasons">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BadgeReprintReasonDescription" ColumnName="BadgeReprintReasonDescription" />
+          <ScalarProperty Name="BadgeReprintReasonCode" ColumnName="BadgeReprintReasonCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Security_Groups">
+      <EntityTypeMapping TypeName="LookupModel.Security_Groups">
+        <MappingFragment StoreEntitySet="Security_Groups">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="ActiveDirectoryGroupSID" ColumnName="ActiveDirectoryGroupSID" />
+          <ScalarProperty Name="GroupDescription" ColumnName="GroupDescription" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Security_Users_GetCurrentGroupsForUser" FunctionName="LookupModel.Store.Security_Users_GetCurrentGroupsForUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="LookupModel.Security_Users_GetCurrentGroupsForUser_Result">
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupDescription" ColumnName="GroupDescription" />
+          <ScalarProperty Name="ActiveDirectoryGroupSID" ColumnName="ActiveDirectoryGroupSID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

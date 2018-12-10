@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PicturePerfectInformix"
+  DTS:DTSID="{C97EF245-E07F-4D29-A278-2EE842DBD0A1}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=informix;Dsn=PicturePerfectInformix;pw=informix;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAp/nR6EOKz0uWbfrP1NAOWgAAAAACAAAAAAADZgAAwAAAABAAAAB7ciHBRKVIrUQyGnQzbE30AAAAAASAAACgAAAAEAAAAAcl4D1SnOHo+j88LBDAeVxwAAAAR+aVHmxIjdNAP5szI8ZWn2H6HQ5+FVKfL5WfoHw/7o+1kxt6paZk6R/BGhGYxCgZaZOt9R0NreW5s2mICQ3Er/INFStN94ADSanBscRCoPlDGNEYLzH7FXxfMkXlbYa7AcIhTwPzfJdvcthgdLDulhQAAAAAhcf1ttffEjqaxgmzhR1L0EqH7w==</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

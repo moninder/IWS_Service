@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ACAMPackagePP4", "ACAMPackagePP4\ACAMPackagePP4.dtproj", "{9C04869E-1E3D-40FA-9E52-5D66D8AA3D19}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs-gcr-01:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ACAMPackagePP4\\ACAMPackagePP4.dtproj
+		SccProjectName1 = ACAMPackagePP4
+		SccLocalPath1 = ACAMPackagePP4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C04869E-1E3D-40FA-9E52-5D66D8AA3D19}.Development|Default.ActiveCfg = Development
+		{9C04869E-1E3D-40FA-9E52-5D66D8AA3D19}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

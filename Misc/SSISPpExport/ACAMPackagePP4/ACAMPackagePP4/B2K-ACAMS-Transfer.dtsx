@@ -1,0 +1,3422 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="LAWABADGE\b21mmg"
+  DTS:CreatorComputerName="SBDGSQL02"
+  DTS:CreationDate="3/1/2010 12:20:29 PM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="301"
+  DTS:VersionGUID="{A200F1EE-3FDC-4599-B82A-4EA303B080C4}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="B2K-ACAMS-Transfer"
+  DTS:DTSID="{4FD51364-1D55-4CF3-B860-7BC07422BD48}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transfer Person Data"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer Person Data"
+      DTS:DTSID="{E1000217-A3DC-4903-AA9B-C2EA5261F605}"
+      DTS:Description="Transfer Person Data"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:Namespace="User"
+          DTS:IncludeInDebugDump="6789"
+          DTS:ObjectName="NumberOfRecords"
+          DTS:DTSID="{1BDF7E0E-04BF-4D71-BE0A-D673A84F6256}"
+          DTS:CreationName="">
+          <DTS:VariableValue
+            DTS:DataType="3">100</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_fee19305817346c48778eab4d49c9257"
+          VSTAMajorVersion="3"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="$Project::log_dir,$Project::Telnet_Client_Path,$Project::Telnet_Connection">
+          <ProjectItem
+            Name="st_fee19305817346c48778eab4d49c9257.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ST_fee19305817346c48778eab4d49c9257.vbproj</RootNamespace>
+    <AssemblyName>SSIS_PP_Export.vbproj</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{F995AD3D-4007-43BE-A6C4-845CDAF3D2E9}</ProjectGuid>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="Badge.vb" />
+    <Compile Include="Division.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Person.vb" />
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="devenv.exe" DebugInfoCommandLine="/vstaHostDebugUri:&quot;vstadebug71cf7449-6567-48bb-bd8a-888893edeadd/918c1002-9cf9-4019-9193-0f927d8409ff&quot;" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST110</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("SSIS_PP_Export.vbproj")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("Microsoft")> 
+<Assembly: AssemblyProduct("SSIS_PP_Export.vbproj")> 
+<Assembly: AssemblyCopyright("Copyright @ Microsoft 2010")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("c20cc24e-8008-4f27-b8aa-920f991bada3")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[' Microsoft SQL Server Integration Services Script Task
+' Write scripts using Microsoft Visual Basic 2008.
+' The ScriptMain is the entry point class of the script.
+'
+' Modified 2/2103 to read from CS_BOSD tables
+
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+Imports System.Data.SqlClient
+Imports System.Data.Odbc
+Imports System.Threading
+Imports System.Reflection
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+    Dim maxACAMSMessageQueue As Integer = 500
+
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+    Dim statusMapStr As String = "ACTIVE=0,CONFISCATED=5,EXPIRED=5,INVALID=5,LOST=4,RECALL=5,RETURNED=6,UNCLAIMED=5,CANCELLED=6,STOLEN=4,9-30-02  non FP=5"
+    Dim specialCategoriesStartSlot As Integer = 9999    ' mmg: set it to large number to avoid any retention of categories across badge updates
+    Dim statusMapTable As Hashtable
+    Dim personUserDataMap As New Hashtable
+    Dim badgeUserDataMap As New Hashtable
+
+
+    ' The execution engine calls this method when the task executes.
+    ' To access the object model, use the Dts property. Connections, variables, events,
+    ' and logging features are available as members of the Dts property as shown in the following examples.
+    '
+    ' To reference a variable, call Dts.Variables("MyCaseSensitiveVariableName").Value
+    ' To post a log entry, call Dts.Log("This is my log text", 999, Nothing)
+    ' To fire an event, call Dts.Events.FireInformation(99, "test", "hit the help message", "", 0, True)
+    '
+    ' To use the connections collection use something like the following:
+    ' ConnectionManager cm = Dts.Connections.Add("OLEDB")
+    ' cm.ConnectionString = "Data Source=localhost;Initial Catalog=AdventureWorks;Provider=SQLNCLI10;Integrated Security=SSPI;Auto Translate=False;"
+    '
+    ' Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+    ' 
+    ' To open Help, press F1.
+
+    ' Microsoft SQL Server Integration Services Script Task
+    ' Write scripts using Microsoft Visual Basic 2008.
+    ' The ScriptMain is the entry point class of the script.
+    Dim GlobalErrorlevel As Integer = 3
+    '  connection attributes
+    Dim CS_Manager As ConnectionManager
+    Dim informixManager As ConnectionManager
+    Dim CS_Connection As SqlConnection
+    Dim picConnection As SqlConnection
+    Dim InformixReadConnectionODBC As Odbc.OdbcConnection
+    Dim InformixWriteConnectionODBC As Odbc.OdbcConnection
+    Dim InformixReadConnectionSQL As SqlConnection
+    Dim InformixWriteConnectionSQL As SqlConnection
+    '
+    '     stop watch attributes
+    'Dim deptTimer As New System.Diagnostics.Stopwatch
+    'Dim personTimer As New System.Diagnostics.Stopwatch
+    'Dim catTimer As New System.Diagnostics.Stopwatch
+    'Dim userTimer As New System.Diagnostics.Stopwatch
+    'Dim badgeTimer As New System.Diagnostics.Stopwatch
+    '     
+    '    counters
+    Dim NumberOfDepartmentsAdded As Integer = 0
+    Dim numberOfPersonsAdded As Integer = 0
+    Dim numberOfBadgesAdded As Integer = 0
+    Dim NumberOfPicturesAdded As Integer = 0
+    Dim NumberOfPerson_UserAdded As Integer = 0
+    Dim NumberOfPerson_Category As Integer = 0
+    Dim logDir As String = ""
+    'Dim run_mode As String = "production"
+    Dim PP_Schema As String = ""
+
+    '    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    'Main routine:
+    Public Sub Main()
+
+        If (Dts.Variables.Contains("log_dir") = True) Then
+            logDir = Dts.Variables("log_dir").Value 'eg "C:\JobLogs\"
+        End If
+        'If (Dts.Variables.Contains("run_mode") = True) Then
+        'run_mode = Dts.Variables("run_mode").Value
+        'End If
+        'If run_mode = "production" Then
+        PP_Schema = "informix"
+        'Else
+        'PP_Schema = "dbo"
+        'End If
+
+        'NO WAY TO TEST THIS AT THE MOMENT!
+        'Check the queue size before continuing
+        '''   If ckACAMSqueue() > maxACAMSMessageQueue Then
+        '''TraceLog(1, "***** Processing Haulted, ACAMS message queue = " & maxACAMSMessageQueue)
+        '''  Exit Sub
+        '''  End If
+
+        ' Initialize badge status map
+        Me.statusMapTable = New Hashtable
+        Dim spl() As String = Me.statusMapStr.Split(",")
+        For Each s As String In spl
+            Dim nv() As String = s.Split("=")
+            Me.statusMapTable.Add(nv(0), nv(1))
+        Next
+
+        badgeUserDataMap.Add("co_name", 1)
+        badgeUserDataMap.Add("div_name", 2)
+        badgeUserDataMap.Add("color", 3)
+        'badgeUserDataMap.Add("user4", 4)
+        badgeUserDataMap.Add("customs", 5)
+        badgeUserDataMap.Add("job_title", 6)
+        'badgeUserDataMap.Add("work_loc", 7)
+        badgeUserDataMap.Add("driver", 8)
+        badgeUserDataMap.Add("law", 9)
+        badgeUserDataMap.Add("gates", 10)
+        badgeUserDataMap.Add("atct", 11)
+        badgeUserDataMap.Add("badgeno", 25)
+
+        'RGuidi: replaced commented entries with our column names
+
+        'personUserDataMap.Add("dob", 12)
+        'personUserDataMap.Add("ssn", 13)
+        personUserDataMap.Add("ht_ft", 14) 'RGuidi: no match
+        'personUserDataMap.Add("ht_in", 15)
+        'personUserDataMap.Add("weight", 16)
+        'personUserDataMap.Add("sex", 17)
+        'personUserDataMap.Add("eyes", 18)
+        'personUserDataMap.Add("hair", 19)
+        'personUserDataMap.Add("ethnic", 20)
+        personUserDataMap.Add("dl_no", 21) 'RGuidi: no match
+        personUserDataMap.Add("dl_state", 22) 'RGuidi: no match
+        personUserDataMap.Add("dl_expdt", 23) 'RGuidi: no match
+
+        personUserDataMap.Add("DateOfBirth", 12)
+        personUserDataMap.Add("SocialSecurityNumber", 13)
+        personUserDataMap.Add("HeightInInches", 15)
+        personUserDataMap.Add("WeightInPounds", 16)
+        personUserDataMap.Add("SexCode", 17)
+        personUserDataMap.Add("EyeColorCode", 18)
+        personUserDataMap.Add("HairColorCode", 19)
+        personUserDataMap.Add("RaceCode", 20)
+
+        TraceLog(3, " ") 'blank line at job start
+
+        Dim refCmd As SqlCommand
+        'Dim CS_ControlTableReader As SqlDataReader = Nothing
+        'If Not IsNothing(Dts.Variables.Item("JobLogDir").Value) Then logDir = Dts.Variables.Item("JobLogDir").Value
+        Try
+            CS_Manager = Dts.Connections("CS")
+            CS_Connection = CS_Manager.AcquireConnection(Nothing) 'New SqlConnection
+            picConnection = CS_Manager.AcquireConnection(Nothing) ' Connection for reading picture from laxid
+            TraceLog(3, "Aquired connection to CS_BOSD")
+        Catch ex As Exception
+            TraceLog(0, "Exception in connecting to the CS database " & ex.ToString)
+            Return
+        End Try
+
+        Try
+            'NOTE: You cannot call the AcquireConnection method of the ODBC connection manager from managed code
+            '      because it returns a native object. Use the connection manager's connection string to connect 
+            '      to the data source by using the managed Odbc .NET Framework Data Provider. 
+            Dim ODBCconnString As String = Dts.Connections("PicturePerfectInformix").ConnectionString
+            InformixReadConnectionODBC = New OdbcConnection(ODBCconnString)
+            InformixReadConnectionODBC.Open()
+
+            InformixWriteConnectionODBC = New OdbcConnection(ODBCconnString)
+            InformixWriteConnectionODBC.Open()
+
+            TraceLog(3, "Acquired connection to informix")
+        Catch ex As Exception
+            TraceLog(0, "Exception in connecting to the Informix database " & ex.ToString)
+            Return
+        End Try
+
+        Dim c As Integer = 0
+
+        'RGuidi: added [TransferID] > @PriorTransferID to prevent infinite loops when something goes haywire
+        Dim PriorTransactionID As Integer = 0
+        Dim sSql As String = "Select TOP 1 * from [Data].[AccessControl.Transfers] where [TransmitEnd] is null and [TransferID] > @PriorTransferID ORDER BY [TransferID] "
+
+        Dim sSqlUpdStart As String = "UPDATE [Data].[AccessControl.Transfers] Set [TransmitStart]=getDate() WHERE [TransferID] = @TransferID"
+        Dim sSqlUpdEnd As String = "UPDATE [Data].[AccessControl.Transfers] Set [TransmitEnd]=getDate() WHERE [TransferID] = @TransferID"
+
+        'NOTE: This process updates the control tables accordingly:
+        '[AccessControl.Transfers].[TransmitStart]            -- within Main
+        '[AccessControl.TransferPersons].[WhenTransmitted]    -- within TransferPerson
+        '[AccessControl.TransferBadges].[WhenTransmitted]     -- within TransferBadge
+        '[AccessControl.TransferDivisions].[WhenTransmitted]  -- within TransferDivision
+        '[AccessControl.Transfers].[TransmitEnd]              -- within Main
+
+        While c < 5000
+            c = c + 1
+            refCmd = New SqlCommand(sSql, CS_Connection)
+            refCmd.Parameters.AddWithValue("PriorTransferID", PriorTransactionID)
+            Dim CS_ControlTableReader = refCmd.ExecuteReader()
+
+            If CS_ControlTableReader.Read Then
+                'Read a record from [Data].[AccessControl.Transfers] table
+                Dim transactionID As Integer = CS_ControlTableReader("TransferID")
+                Dim DataType As String = CS_ControlTableReader("DataType")
+                refCmd.Dispose()
+
+                CS_ControlTableReader.Close()
+
+                TraceLog(3, "============================Processing row with TransferID = " & transactionID)
+                refCmd = New SqlCommand(sSqlUpdStart, CS_Connection)
+                refCmd.Parameters.AddWithValue("TransferID", transactionID)
+                If refCmd.ExecuteNonQuery() <= 0 Then TraceLog(0, "Failed to update start_transmit date for transactionID " & transactionID)
+
+                'CALLS DEPEND ON DATA TYPE
+                If DataType = "Person" Then
+                    TransferPerson(transactionID)
+
+                    '3/19/2013 rguidi: it was decided not to transmit badges
+                    'ElseIf DataType = "Badge" Then
+                    '   TransferBadge(transactionID)
+
+                ElseIf DataType = "Division" Then
+                    TransferDivision(transactionID)
+                End If
+
+                'Currently not being used
+                'TransferCategory(transactionID)
+                'TransferBadgeCategory(transactionID)
+
+                If countPending(transactionID) = 0 Then
+                    refCmd = New SqlCommand(sSqlUpdEnd, CS_Connection)
+                    refCmd.Parameters.AddWithValue("TransferID", transactionID)
+                    If refCmd.ExecuteNonQuery() <= 0 Then TraceLog(0, "Failed to update End_transmit date for transactionID " & transactionID)
+                    refCmd.Dispose()
+                End If
+
+                PriorTransactionID = transactionID
+            Else
+                Exit While
+            End If
+        End While
+        CS_Connection.Close()
+
+        'If run_mode = "production" Then
+        InformixReadConnectionODBC.Close()
+        InformixWriteConnectionODBC.Close()
+        'Else
+        '    InformixReadConnectionSQL.Close()
+        '    InformixWriteConnectionSQL.Close()
+        'End If
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+    Function LoadPersonObject(ByVal transactionID As Integer, ByVal EmployeeID As Integer) As Person
+
+        Dim sSQL As String = ""
+
+        If transactionID > 0 Then
+            'Read record from TransferPersons table with matching transfer_id
+            sSQL = "Select top(1) tp.PersonID, pin, FirstName, MiddleName, LastName, Address, ApartmentNumber, City, CountrySubdivisionCode, CountryCode, PostalCode, " & _
+                   " WorkPhoneNumber, EmployeeID, DateOfBirth, SocialSecurityNumber, HeightInInches, WeightInPounds, SexCode, EyeColorCode, HairColorCode, RaceCode " & _
+                   " FROM [Data].[AccessControl.TransferPersons] tp " & _
+                   " INNER JOIN [Data].[Person.PersonBiographics] pb on pb.PersonID = tp.PersonID " & _
+                   " where TransferID = " & transactionID '@TransferID"
+        Else
+            'Read record from PersonBiographics table with matching EmployeeID
+            sSQL = "Select * from [Data].[Person.PersonBiographics] where EmployeeID = " & EmployeeID
+        End If
+
+        ' need to load oPerson!
+        Dim refCmd = New SqlCommand(sSQL, CS_Connection)
+        Dim Reader = refCmd.ExecuteReader
+
+        Dim oPerson As Person = New Person()
+        While Reader.Read
+            oPerson.PersonID = Reader("PersonID").ToString
+            oPerson.Pin = Reader("pin").ToString
+            oPerson.FirstName = Reader("FirstName").ToString
+            oPerson.MiddleName = Reader("MiddleName").ToString
+            oPerson.LastName = Reader("LastName").ToString
+            oPerson.Address = Reader("Address").ToString
+            oPerson.ApartmentNumber = Reader("ApartmentNumber").ToString
+            oPerson.City = Reader("City").ToString
+            oPerson.CountrySubdivisionCode = Reader("CountrySubdivisionCode").ToString
+            oPerson.CountryCode = Reader("CountryCode")
+            oPerson.PostalCode = Reader("PostalCode").ToString
+            oPerson.WorkPhoneNumber = Reader("WorkPhoneNumber").ToString
+            oPerson.EmployeeID = Reader("EmployeeID").ToString
+            oPerson.DateOfBirth = Reader("DateOfBirth").ToString
+            oPerson.SocialSecurityNumber = Reader("SocialSecurityNumber").ToString
+            oPerson.HeightInInches = Reader("HeightInInches").ToString
+            oPerson.WeightInPounds = Reader("WeightInPounds").ToString
+            oPerson.SexCode = Reader("SexCode").ToString
+            oPerson.EyeColorCode = Reader("EyeColorCode").ToString
+            oPerson.HairColorCode = Reader("HairColorCode").ToString
+            oPerson.RaceCode = Reader("RaceCode").ToString
+        End While
+        Reader.Close()
+        refCmd.Dispose()
+
+        Return oPerson
+
+    End Function
+
+    Function LoadDivisionObject(ByVal transactionID As Integer, ByVal DivisionID As Integer) As Division
+
+        Dim sSQL As String = ""
+
+        If transactionID > 0 Then
+            'Read record from Transfer_Division table with matching transfer_id
+            sSQL = "SELECT top(1) td.[DivisionID], d.[DivisionCode], d.[DivisionName], c.CompanyID, c.CompanyCode, c.CorporationName " & _
+                   " FROM [Data].[AccessControl.TransferDivisions] td " & _
+                   " INNER JOIN [Data].[Division.Divisions] d on d.[DivisionID] = td.[DivisionID] " & _
+                   " INNER JOIN [Data].[Company.Companies] c on c.[CompanyID] = d.[CompanyID] " & _
+                   " WHERE td.TransferID = " & transactionID '@TransferID"
+        Else
+            'Read record from Division table with matching DivisionID
+            sSQL = "SELECT top(1) d.[DivisionID], d.[DivisionCode], d.[DivisionName], c.CompanyID, c.CompanyCode, c.CorporationName " & _
+                   " FROM [Data].[Division.Divisions] d " & _
+                   " INNER JOIN [Data].[Company.Companies] c on c.[CompanyID] = d.[CompanyID] " & _
+                   " WHERE d.[DivisionID] = " & DivisionID
+        End If
+
+        Dim refCmd = New SqlCommand(sSQL, CS_Connection)
+        Dim CS_DivisionTableReader = refCmd.ExecuteReader
+
+        Dim oDivision As Division = New Division()
+        While CS_DivisionTableReader.Read
+            oDivision.DivisionID = CS_DivisionTableReader("DivisionID").ToString.Trim
+            oDivision.DivisionCode = CS_DivisionTableReader("DivisionCode").ToString.Trim
+            oDivision.DivisionName = CS_DivisionTableReader("DivisionName").ToString.Trim
+            oDivision.CompanyID = CS_DivisionTableReader("CompanyID").ToString.Trim
+            oDivision.CompanyCode = CS_DivisionTableReader("CompanyCode").ToString.Trim
+            oDivision.CorporationName = CS_DivisionTableReader("CorporationName").ToString.Trim
+        End While
+        CS_DivisionTableReader.Close()
+        refCmd.Dispose()
+
+        Return oDivision
+    End Function
+
+    Sub TransferDivision(ByVal transactionID As Integer)
+
+        'Read record from Transfer_Division table with matching transfer_id
+        Dim oDivision As Division = LoadDivisionObject(transactionID, 0)
+
+        If Not IsNothing(oDivision.DivisionID) Then
+            Dim i As Integer = InsertDivision(oDivision)
+
+            If i >= 0 Then
+                Dim sSqlUpdTrans As String = "UPDATE [Data].[AccessControl.TransferDivisions] Set [WhenTransmitted]=getDate() WHERE [TransferID] = @TransferID"
+                Dim refCmd = New SqlCommand(sSqlUpdTrans, CS_Connection)
+                refCmd.Parameters.AddWithValue("TransferID", transactionID)
+                If refCmd.ExecuteNonQuery() <= 0 Then TraceLog(0, "Failed to update TransferDivisions.WhenTransmitted date for transactionID " & transactionID)
+            End If
+
+        End If 'If Not IsNothing(oDivision.DivisionID)
+
+        oDivision = Nothing
+    End Sub
+
+    '2/2013 NOT USED
+    Sub TransferCategory(ByVal transactionID As Integer)
+        'Read record from Transfer_Division table with matching transfer_id
+        Dim refCmd = New SqlCommand("Select * from Transfer_Category where transferID = @transferID", CS_Connection)
+        refCmd.Parameters.AddWithValue("transferID", transactionID)
+        Dim laxidReader = refCmd.ExecuteReader
+        While laxidReader.Read
+            Dim informixCmd As New OdbcCommand("UPDATE Category SET description=?,modify_date=?,modify_time=? WHERE id=?", InformixWriteConnectionODBC)
+            informixCmd.Parameters.AddWithValue("description", laxidReader("descrp"))
+            informixCmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+            informixCmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+            informixCmd.Parameters.AddWithValue("id", laxidReader("CatID"))
+            Try
+                If informixCmd.ExecuteNonQuery <= 0 Then ' no records updated. Insert record
+                    informixCmd.Dispose()
+                    informixCmd = New OdbcCommand("INSERT INTO Category (id,description,permission_grp,m2mr_type,facility,modify_date,modify_time)" & _
+                                                       " VALUES (?,?,-1,0,?,?,?)", InformixWriteConnectionODBC)
+                    informixCmd.Parameters.AddWithValue("id", laxidReader("CatID"))
+                    informixCmd.Parameters.AddWithValue("description", laxidReader("descrp"))
+                    informixCmd.Parameters.AddWithValue("facility", -1)
+                    informixCmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+                    informixCmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+                    informixCmd.ExecuteNonQuery()
+                    TraceLog(3, "New category created " & laxidReader("CatId"))
+                Else ' update was successful
+                    TraceLog(3, "Category record updated. id=" & laxidReader("CatId"))
+                End If
+            Catch ex As Exception
+                TraceLog(0, "Exception creating Category ID=" & laxidReader("CatId") & ":" & ex.ToString)
+            Finally
+                informixCmd.Dispose()
+            End Try
+
+        End While
+        laxidReader.Close()
+        refCmd.Dispose()
+
+    End Sub
+
+    '2/2013 NOT USED 
+    Sub UpdateInsertCategories(ByVal laxCats As ArrayList, ByVal emp_id As String, ByVal co_div As String, ByVal transactionID As String)
+        ' read existing categories for this person
+        Dim sql As String = "SELECT pc.id ID, pc.category_id, pc.slot_number, p.id person_id" & _
+                            " from person p" & _
+                            " inner join department d on p.department=d.id" & _
+                            " left join person_category pc on pc.person_id=p.id" & _
+                            " Where p.employee=? and d.division=? Order by pc.category_id"
+
+        Dim informixCmd As New Odbc.OdbcCommand(sql, InformixReadConnectionODBC)
+        informixCmd.Parameters.AddWithValue("employee", emp_id)
+        informixCmd.Parameters.AddWithValue("division", co_div)
+        Dim informixReader As OdbcDataReader = informixCmd.ExecuteReader
+        Dim currentCats As New Hashtable
+        Dim person_id As Integer = 0
+        While informixReader.Read
+            person_id = informixReader("person_id")
+            If informixReader.IsDBNull(informixReader.GetOrdinal("category_id")) Then Continue While ' This will happen if there are no categories
+            If informixReader("slot_number") < specialCategoriesStartSlot Then ' not a special category. Retain special categories in PP.
+                ' tbd: change this when categories are managed in b2k
+                If Not laxCats.Contains(informixReader("category_id").ToString) Then ' category not in new list
+                    ' delete this catetory for this person from pp
+                    Dim delCommand As New OdbcCommand("DELETE From person_category where person_id=? and category_id=?", InformixWriteConnectionODBC)
+                    delCommand.Parameters.AddWithValue("person_id", person_id)
+                    delCommand.Parameters.AddWithValue("category_id", informixReader("category_id"))
+                    delCommand.ExecuteNonQuery()
+                    TraceLog(3, String.Format("Person Category {0} Deleted for person {1}", informixReader("category_id"), co_div + "." + emp_id))
+                    delCommand.Dispose()
+                    Continue While
+                End If
+            End If
+            ' store the category and slot_number for reference during insertion
+            If Not currentCats.ContainsKey(informixReader("category_id").ToString) Then currentCats.Add(informixReader("category_id").ToString, informixReader("slot_number").ToString)
+        End While
+
+        informixReader.Close()
+        informixCmd.Dispose()
+
+        Dim freeSlot As Integer = 0
+        Dim personCatMaxID As Integer = 0 ' this will be used as ID during insertion. Should not be required if ID was auto-increment field
+        ' insert new category in laxCats i.e. the ones not present in currentCats
+        For Each cat As Integer In laxCats
+            If Not currentCats.ContainsKey(cat.ToString) Then ' this is new category
+                ' find a free slot for insertig category
+                Do
+                    freeSlot = freeSlot + 1
+                Loop While currentCats.ContainsValue(freeSlot.ToString) ' slot number is in use
+
+                If personCatMaxID = 0 Then  ' lazy initialization of max ID
+                    informixCmd = New OdbcCommand("SELECT MAX(ID) MaxID from person_category", InformixReadConnectionODBC)
+                    Integer.TryParse(informixCmd.ExecuteScalar().ToString, personCatMaxID)
+                    informixCmd.Dispose()
+                End If
+
+                ' insert the new category in pp
+                Dim insCommand As New OdbcCommand("INSERT Into person_category (id, person_id, category_id, slot_number, facility, modify_date, modify_time)" & _
+                                                  " VALUES (?,?,?,?,?,?,?)", InformixWriteConnectionODBC)
+                personCatMaxID = personCatMaxID + 1
+                TraceLog(3, String.Format("Adding Person_Category id={0}, person_id={1}, slot_number={2}, category_id={3} ", personCatMaxID, person_id, freeSlot, cat))
+                insCommand.Parameters.AddWithValue("id", personCatMaxID)
+                insCommand.Parameters.AddWithValue("person_id", person_id)
+                insCommand.Parameters.AddWithValue("category_id", cat)
+                insCommand.Parameters.AddWithValue("slot_number", freeSlot)
+                insCommand.Parameters.AddWithValue("facility", -1)
+                insCommand.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+                insCommand.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+                Try
+                    'Check ACAMS Pending Messages stop after set amount
+                    If laxCats.IndexOf(cat) Mod 5 = 0 Then
+                        If ckACAMSqueue() > maxACAMSMessageQueue Then
+                            TraceLog(1, "***** Processing Haulted, ACAMS message queue = " & maxACAMSMessageQueue)
+                            Exit Sub
+                        End If
+                    End If
+
+                    If insCommand.ExecuteNonQuery() <= 0 Then
+                        TraceLog(1, String.Format("Failed to insert Category {0} for person {1} ", cat, co_div + "." + emp_id))
+                    Else
+                        'Update the transfer Badge Category Record to include a date
+                        TraceLog(3, String.Format("Person Category {0} Added to person {1}", cat, co_div + "." + emp_id))
+                        Dim updateCmd As New SqlCommand("UPDATE Transfer_BadgeCategory Set transmission_date = getDate() where transferID = @transferId AND category_id = @catID AND emp_id = @empId", CS_Connection)
+                        updateCmd.Parameters.AddWithValue("transferId", transactionID)
+                        updateCmd.Parameters.AddWithValue("catID", cat)
+                        updateCmd.Parameters.AddWithValue("empId", emp_id)
+                        updateCmd.ExecuteNonQuery()
+                        updateCmd.Dispose()
+                    End If
+                Catch ex As Exception
+                    TraceLog(1, String.Format("Exception Inserting Category {0} for person {1}: {2} ", cat, co_div + "." + emp_id, ex.Message))
+                End Try
+                insCommand.Dispose()
+            End If
+        Next
+    End Sub
+
+    '2/20133 NOT USED
+    Sub TransferBadgeCategory(ByVal transactionID As Integer)
+        'Read record from Transfer_Division table with matching transfer_id
+        Dim refCmd = New SqlCommand("Select distinct emp_id, co_div, category_id from Transfer_BadgeCategory where transferID = @transferID and transmission_date IS NULL order by emp_id, co_div, category_id", CS_Connection)
+        refCmd.Parameters.AddWithValue("transferID", transactionID)
+        Dim emp_id As String = ""
+        Dim co_div As String = ""
+        Dim laxidReader = refCmd.ExecuteReader
+        Dim laxCats As New ArrayList
+        Dim moreRecords As Boolean = laxidReader.Read
+        While moreRecords
+            laxCats.Clear() ' new emp. start over
+            emp_id = laxidReader("emp_id")
+            co_div = "9" & laxidReader("co_div")
+            While moreRecords
+                If emp_id.Equals(laxidReader("emp_id").ToString) And co_div.Equals("9" & laxidReader("co_div").ToString) Then
+                    laxCats.Add(laxidReader("Category_ID").ToString) ' collect the categories in an array
+                    moreRecords = laxidReader.Read
+                Else
+                    Exit While
+                End If
+            End While
+            UpdateInsertCategories(laxCats, emp_id, co_div, transactionID)
+        End While
+        refCmd.Dispose()
+        laxidReader.Close()
+    End Sub
+
+    Function UpdatePersonRecords(ByVal oPerson As Person) As Integer
+        ' Update Person based on employee id alone. (note that this may update multiple records)
+
+        Dim nRows As Integer = 0
+        Dim sqlUpd = "update " & PP_Schema & ".person set pin=?" & _
+                        ", first_name=?, last_name=?, initials=?, title =?" & _
+                        ", address1=?, address2=?, address3=?, address4=?, address5=?, phone=? " & _
+                        ", modify_date=? ,modify_time=?" & _
+                        " where person.status = 0 And employee = ?"
+
+        Dim informixCmd As Odbc.OdbcCommand
+        informixCmd = New Odbc.OdbcCommand(sqlUpd, InformixWriteConnectionODBC)
+        informixCmd.Parameters.AddWithValue("pin", oPerson.Pin)
+        informixCmd.Parameters.AddWithValue("first_name", oPerson.FirstName)
+        informixCmd.Parameters.AddWithValue("last_name", oPerson.LastName)
+        informixCmd.Parameters.AddWithValue("initials", oPerson.MiddleName)
+        informixCmd.Parameters.AddWithValue("title", DBNull.Value) ' TBD
+        informixCmd.Parameters.AddWithValue("address1", oPerson.Address)
+        informixCmd.Parameters.AddWithValue("address2", oPerson.ApartmentNumber)
+        informixCmd.Parameters.AddWithValue("address3", oPerson.City)
+        informixCmd.Parameters.AddWithValue("address4", oPerson.CountrySubdivisionCode)
+        informixCmd.Parameters.AddWithValue("address5", oPerson.PostalCode & oPerson.CountryCode)
+        informixCmd.Parameters.AddWithValue("phone", oPerson.WorkPhoneNumber)
+        informixCmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+        informixCmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+        informixCmd.Parameters.AddWithValue("employee", oPerson.EmployeeID)
+
+        Try
+            nRows = informixCmd.ExecuteNonQuery()
+        Catch ex As Exception
+            TraceLog(0, "Exception in updating person record for " & oPerson.EmployeeID & ":" & ex.ToString)
+        Finally
+            informixCmd.Dispose()
+        End Try
+
+        If nRows > 0 Then ' person exists. update user data for this person
+            InsertOrUpdateUserData(personUserDataMap, oPerson, Nothing)
+        End If
+        Return nRows
+    End Function
+
+    Function InsertDivision(ByVal oDivision As Division) As Integer
+
+        Dim nRows As Integer = 0
+        Dim bExists As Boolean = False
+        Dim sSql2 As String = "select id from " & PP_Schema & ".department where division = ?"
+        Dim sSqlUpd As String = "UPDATE " & PP_Schema & ".department " + _
+                        " SET description=?,location=?,manager=?,phone=?,user1=?,user2=?,facility=?, modify_date=?, modify_time=? " & _
+                        " WHERE division=?"
+
+        Dim informixCmd As New Odbc.OdbcCommand
+        Dim updCmdODBC As New Odbc.OdbcCommand
+        Dim CS_Cmd As New SqlCommand
+        Dim updCmdSQL As New SqlCommand
+
+        Dim dept As String = ""
+        Dim ddesc As String = ""
+        Dim dloc As String = ""
+
+        dept = "9" + oDivision.CompanyCode + oDivision.DivisionCode
+
+        informixCmd = New Odbc.OdbcCommand(sSql2, InformixReadConnectionODBC)
+        Dim reader As Odbc.OdbcDataReader = Nothing
+        informixCmd.Parameters.AddWithValue("division", dept)
+        '2. if found exit. 
+        Try
+            reader = informixCmd.ExecuteReader
+            If reader.Read Then
+                TraceLog(3, "PP Department already exists department.id = " & reader("id"))
+                bExists = True
+
+                updCmdODBC = New Odbc.OdbcCommand(sSqlUpd, InformixWriteConnectionODBC)
+
+                ddesc = dept + " " + oDivision.CorporationName
+                If ddesc.Length > 50 Then ddesc = ddesc.Substring(0, 50)
+                updCmdODBC.Parameters.AddWithValue("description", ddesc)
+
+                dloc = oDivision.CorporationName + ", " + oDivision.DivisionName
+                If dloc.Length > 60 Then dloc.Substring(0, 60).Trim()
+
+                updCmdODBC.Parameters.AddWithValue("location", "")
+                updCmdODBC.Parameters.AddWithValue("manager", "")
+                updCmdODBC.Parameters.AddWithValue("phone", "")
+                updCmdODBC.Parameters.AddWithValue("user1", oDivision.CorporationName)
+                updCmdODBC.Parameters.AddWithValue("user2", oDivision.DivisionName)
+                updCmdODBC.Parameters.AddWithValue("facility", -1)
+                updCmdODBC.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+                updCmdODBC.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+                updCmdODBC.Parameters.AddWithValue("division", dept)
+                Try
+                    nRows = updCmdODBC.ExecuteNonQuery()
+                    If (nRows = 0) Then
+                        TraceLog(1, "Warning: No rows updated by Update department : description=" & ddesc)
+                        nRows = -1
+                    Else
+                        TraceLog(3, "Department Updated : description=" & ddesc)
+                    End If
+                Catch ex As Exception
+                    TraceLog(0, "Casi_Department: Exception updating new department : description=" & ddesc & ":" & ex.ToString)
+                    nRows = -1
+                End Try
+
+                updCmdODBC.Dispose()
+                informixCmd.Dispose()
+
+            End If
+        Catch ex As Exception
+            TraceLog(0, "Casi_Department:Exception in Reading department " & ex.ToString)
+        Finally
+            reader.Close()
+            informixCmd.Dispose()
+        End Try
+
+        If bExists = False Then
+            ' Create department record in PP
+            Dim insCmdText As String = "INSERT INTO " & PP_Schema & ".department (" & _
+                                       "description,division,location,manager,phone,user1,user2," & _
+                                       "facility, modify_date, modify_time) VALUES (?,?,?,?,?,?,?,?,?,?)"
+
+            Dim insCmd As New Odbc.OdbcCommand(insCmdText, InformixWriteConnectionODBC)
+            Dim desc As String = dept + " " + oDivision.CorporationName
+            If desc.Length > 50 Then desc = desc.Substring(0, 50)
+            insCmd.Parameters.AddWithValue("description", desc)
+            insCmd.Parameters.AddWithValue("division", dept)
+            Dim loc As String = oDivision.CorporationName + ", " + oDivision.DivisionName
+            If loc.Length > 60 Then loc.Substring(0, 60).Trim()
+            insCmd.Parameters.AddWithValue("location", "")
+            insCmd.Parameters.AddWithValue("manager", "")
+            insCmd.Parameters.AddWithValue("phone", "")
+            insCmd.Parameters.AddWithValue("user1", oDivision.CorporationName)
+            insCmd.Parameters.AddWithValue("user2", oDivision.DivisionName)
+            insCmd.Parameters.AddWithValue("facility", -1)
+            insCmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+            insCmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+            Try
+                nRows = insCmd.ExecuteNonQuery()
+                If (nRows = 0) Then
+                    TraceLog(1, "Warning: Failed to create department: description=" & desc)
+                    nRows = -1
+                Else
+                    TraceLog(3, "New department created: description=" & desc)
+                End If
+            Catch ex As Exception
+                TraceLog(0, "Casi_Department: Exception creating new department: description=" & desc & ":" & ex.ToString)
+                nRows = -1
+            Finally
+                insCmd.Dispose()
+            End Try
+        End If 'bExists 
+
+        Return nRows
+    End Function
+
+    Function InsertPersonRecord(ByVal oPerson As Person, ByVal co_div As String) As Integer
+        Dim dept_id As Integer = 0
+        Dim nRows As Integer = 0
+        Dim sqlInsert As String = "INSERT INTO " & PP_Schema & ".person (" + _
+           "pin, status, type, person_kp_resp, person_trace, person_trace_alarm, " + _
+           "employee, department, first_name,last_name, initials, title, address1, address2, address3, address4,address5, " + _
+           "phone, phone2, 	reissue_cnt, apb, reader, access_date,access_time, access_tz, " + _
+           "active_date, active_time, active_context, deactive_date, deactive_time, deactive_context, force_download, " + _
+            "facility, modify_date, modify_time) " & _
+            "values (?,?,?,?,?,?,?, ?,?,?,?,null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+        Dim sql As String = "SELECT id from department where division=?"
+        Dim informixCmd As Odbc.OdbcCommand
+        If Not IsNothing(co_div) Then
+            informixCmd = New Odbc.OdbcCommand(sql, InformixReadConnectionODBC)
+            informixCmd.Parameters.AddWithValue("division", co_div)
+            Integer.TryParse(informixCmd.ExecuteScalar, dept_id)
+            If dept_id = 0 Then
+                TraceLog(1, String.Format("Department {0} Does not exist. Failed to create person {1} with this department", co_div, oPerson.EmployeeID))
+            End If
+        End If
+
+        informixCmd = New Odbc.OdbcCommand(sqlInsert, InformixWriteConnectionODBC)
+        informixCmd.Parameters.AddWithValue("pin", oPerson.Pin)
+        informixCmd.Parameters.AddWithValue("status", 0)
+        informixCmd.Parameters.AddWithValue("type", 1)
+        informixCmd.Parameters.AddWithValue("person_kp_resp", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("person_trace", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("person_trace_alarm", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("employee", oPerson.EmployeeID)
+        informixCmd.Parameters.AddWithValue("department", IIf(dept_id = 0, DBNull.Value, dept_id))
+        informixCmd.Parameters.AddWithValue("first_name", oPerson.FirstName)
+        informixCmd.Parameters.AddWithValue("last_name", oPerson.LastName)
+        informixCmd.Parameters.AddWithValue("initials", oPerson.MiddleName)
+        informixCmd.Parameters.AddWithValue("title", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("address1", oPerson.Address)
+        informixCmd.Parameters.AddWithValue("address2", oPerson.ApartmentNumber)
+        informixCmd.Parameters.AddWithValue("address3", oPerson.City)
+        informixCmd.Parameters.AddWithValue("address4", oPerson.CountrySubdivisionCode)
+        informixCmd.Parameters.AddWithValue("address5", oPerson.PostalCode & " " & oPerson.CountryCode)
+        informixCmd.Parameters.AddWithValue("phone", oPerson.WorkPhoneNumber)
+        informixCmd.Parameters.AddWithValue("phone2", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("reissue_cnt", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("apb", 0)
+        informixCmd.Parameters.AddWithValue("reader", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("access_date", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("access_time", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("access_tz", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("active_date", 19710101)
+        informixCmd.Parameters.AddWithValue("active_time", 235959)
+        informixCmd.Parameters.AddWithValue("active_context", 1)
+        informixCmd.Parameters.AddWithValue("deactive_date", 20201231)
+        informixCmd.Parameters.AddWithValue("deactive_time", 235959)
+        informixCmd.Parameters.AddWithValue("deactive_context", 1)
+        informixCmd.Parameters.AddWithValue("force_download", 0)
+        informixCmd.Parameters.AddWithValue("facility", -1)
+        informixCmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+        informixCmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+
+        Try
+            nRows = informixCmd.ExecuteNonQuery()
+            If (nRows = 0) Then
+                TraceLog(1, "0 Rows Inserted for New Person = " & co_div + "." + oPerson.EmployeeID)
+            Else
+                TraceLog(3, "New Person created " & co_div + "." + oPerson.EmployeeID)
+            End If
+        Catch ex As Exception
+            TraceLog(0, "Exception in inserting Person " & co_div + "." + oPerson.EmployeeID & ":" & ex.ToString)
+        Finally
+            informixCmd.Dispose()
+        End Try
+
+        If nRows > 0 Then
+            ' Create person_user records for data items known from person information
+            InsertOrUpdateUserData(personUserDataMap, oPerson, Nothing)
+        End If
+    End Function
+
+    Sub TransferPerson(ByVal transactionID As Integer)
+        ' Read record from [Data].[AccessControl.TransferPersons] table etc with matching transfer-id
+        Dim oPerson As Person = LoadPersonObject(transactionID, 0)
+
+        If Not IsNothing(oPerson.PersonID) Then
+            ' Update Person based on employee id alone. (note that this may update multiple records)
+            Dim NRows As Integer = UpdatePersonRecords(oPerson)
+            If (NRows > 0) Then ' Some records were updated. So this person already exists
+                TraceLog(3, "Person ID =" & oPerson.EmployeeID & ". " & NRows & " Records Updated")
+
+                Dim sSqlUpdTrans As String = "UPDATE [Data].[AccessControl.TransferPersons] Set [WhenTransmitted]=getDate() WHERE [TransferID] = @TransferID"
+                Dim refCmd = New SqlCommand(sSqlUpdTrans, CS_Connection)
+                refCmd.Parameters.AddWithValue("TransferID", transactionID)
+                If refCmd.ExecuteNonQuery() <= 0 Then TraceLog(0, "Failed to update TransferPersons.WhenTransmitted date for transactionID " & transactionID)
+            Else
+                ' No Records updated so Insert Person. It is a new person
+                InsertPersonRecord(oPerson, Nothing)
+            End If
+
+            oPerson = Nothing
+        End If
+
+    End Sub
+
+    Sub InsertOrUpdateUserData(ByVal userDataMap As Hashtable, ByVal oPerson As Person, ByVal oBadge As Badge)
+        Dim cmd As OdbcCommand
+        'Dim CS_UpdCmd As SqlCommand
+        'Dim CS_InsCmd As SqlCommand
+        Dim employee As String = oPerson.EmployeeID
+        Dim person_id As Integer = 0
+
+        ' first readback person_id
+        Dim sql As String = "Select id from person where employee=?"
+
+        cmd = New OdbcCommand(sql, InformixReadConnectionODBC) ' will find only one record
+        cmd.Parameters.AddWithValue("employee", employee)
+        Integer.TryParse(cmd.ExecuteScalar(), person_id)
+        If person_id = 0 Then
+            TraceLog(1, "Failed to retrieve Inserted Person " & employee)
+            Return
+        End If
+        cmd.Dispose()
+
+        For Each item As DictionaryEntry In userDataMap
+            Dim slot_number As Integer = item.Value
+
+            Dim user_data As String = ""
+            If Not IsNothing(oPerson) Then
+                For Each prop As PropertyInfo In oPerson.GetType().GetProperties()
+                    If prop.Name = item.Key Then
+                        user_data = prop.GetValue(oPerson, Nothing)
+                        Exit For
+                    End If
+                Next
+            End If
+            If Not IsNothing(oBadge) Then
+                For Each prop As PropertyInfo In oBadge.GetType().GetProperties()
+                    If prop.Name = item.Key Then
+                        user_data = prop.GetValue(oBadge, Nothing)
+                        Exit For
+                    End If
+                Next
+            End If
+
+            If user_data <> "" Then
+                Dim sqlUpdate = "Update person_user set description=?, modify_date=?, modify_time=? WHERE person_id=? AND slot_number=?"
+ 
+                Dim sqlInsert = "Insert Into person_user (id, description, person_id, slot_number, facility, modify_date, modify_time) VALUES (?,?,?,?,?,?,?)"
+
+                cmd = New OdbcCommand(sqlUpdate, InformixWriteConnectionODBC)
+                Try
+                    ' try to update first. if update does not change any records then insert
+                    cmd.Parameters.AddWithValue("description", user_data)
+                    cmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+                    cmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+                    cmd.Parameters.AddWithValue("person_id", person_id)
+                    cmd.Parameters.AddWithValue("slot_number", item.Value)
+                    If cmd.ExecuteNonQuery() <= 0 Then ' no rows were updated. Insert this slot
+                        cmd.Dispose()
+                        cmd = New OdbcCommand(sqlInsert, InformixWriteConnectionODBC)
+                        cmd.Parameters.AddWithValue("id", person_id * 100 + item.Value)
+                        cmd.Parameters.AddWithValue("description", user_data)
+                        cmd.Parameters.AddWithValue("person_id", person_id)
+                        cmd.Parameters.AddWithValue("slot_number", item.Value)
+                        cmd.Parameters.AddWithValue("facility", -1)
+                        cmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+                        cmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+                        cmd.ExecuteNonQuery()
+
+                    End If
+                Catch ex As Exception
+                    TraceLog(1, String.Format("Exception in setting user value employee={0}, slot={1}, value={2}:{3} ", employee, slot_number, user_data, ex.Message))
+                Finally
+                    cmd.Dispose()
+                End Try
+
+            End If 'useEnd If  <> ""
+        Next
+
+    End Sub
+
+    Function UpdateBadgeRecord(ByVal bid As String, ByVal oBadge As Badge) As Integer
+        Dim dept As String = "9" + oBadge.CompanyCode + oBadge.DivisionCode
+        Dim person_id As Integer = ObtainPPpersonID(oBadge.EmployeeID, dept, oBadge.DivisionID)
+        Dim desc As String = oBadge.BadgeColorID
+
+        Dim sqlText As String = "update " & PP_Schema & ".badge set description=?, person_id=?, return_date= ?, return_time= ?,return_tz= ?" + _
+                                ",status=?, modify_date= ?, modify_time= ? where bid = ?"
+        Dim NRows As Integer = 0
+
+        Dim StatusVal As Integer = IIf(DBNull.Value.Equals(oBadge.STAEmployeeStatusID), 0, Me.statusMapTable(oBadge.STAEmployeeStatusID))
+
+        Dim informixCmd As New Odbc.OdbcCommand(sqlText, InformixWriteConnectionODBC)
+        informixCmd.Parameters.AddWithValue("description", desc)
+        informixCmd.Parameters.AddWithValue("person_id", person_id)
+        informixCmd.Parameters.AddWithValue("return_date", MakeIntDate(oBadge.WhenExpires))
+        informixCmd.Parameters.AddWithValue("return_time", MakeIntTime(oBadge.WhenExpires))
+        informixCmd.Parameters.AddWithValue("return_tz", IIf(DBNull.Value.Equals(oBadge.WhenExpires), DBNull.Value, 342))
+        informixCmd.Parameters.AddWithValue("status", StatusVal)
+        informixCmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+        informixCmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+        informixCmd.Parameters.AddWithValue("bid", bid)
+
+        Try
+            NRows = informixCmd.ExecuteNonQuery()
+            If (NRows = 0) Then
+                TraceLog(1, "Failed to Update badge number= " & bid & ", Status=" & oBadge.STAEmployeeStatusID)
+            Else
+                TraceLog(3, "Updated badge number= " & bid & ", Status=" & oBadge.STAEmployeeStatusID)
+            End If
+        Catch ex As Exception
+            TraceLog(0, "Exception updating badge number=" & bid & ":" & ex.Message)
+        Finally
+            informixCmd.Dispose()
+        End Try
+
+        If NRows > 0 Then
+            'InsertOrUpdateUserData(badgeUserDataMap, Nothing, oPerson) 'Rguidi: Really?
+        End If
+        Return NRows
+    End Function
+
+    Function InsertBadgeRecord(ByVal bid As String, ByVal oBadge As Badge) As Integer
+        Dim sqlText As String = ""
+        ' Not an existing badge. Create new badge
+        Dim dept As String = "9" + oBadge.CompanyCode + oBadge.DivisionCode
+        Dim person_id As Integer = ObtainPPpersonID(oBadge.EmployeeID, dept, oBadge.DivisionID)
+        Dim desc As String = oBadge.BadgeColorID
+
+        Dim cmdText_OLD As String = "INSERT INTO " & PP_Schema & ".badge (description, bid, status, badge_tour, badge_temp, " + _
+           "person_id, reader, access_date, access_time, access_tz, issue_date, issue_time,issue_context, " + _
+           "expired_date, expired_time,expired_context, return_date, return_time,return_tz, usage_count," + _
+           "usage_exhausted, tour_badge, bid_format_id, reissue_cnt,reprint_cnt, unique_id, badge_design, " + _
+           "facility, modify_date, modify_time) " + _
+            "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+        Dim cmdText As String = "INSERT INTO " & PP_Schema & ".badge (description, bid, status, " + _
+           "person_id, issue_date, issue_time, issue_context, " + _
+           "expired_date, expired_time, expired_context, return_date, return_time, return_tz, " + _
+           "bid_format_id, reissue_cnt, reprint_cnt, unique_id, " + _
+           "facility, modify_date, modify_time) " + _
+            "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"
+
+        Dim NRows As Integer = 0
+        Dim Pacific_time As Integer = 342  ' the code for pacific time in ????????
+        Dim StatusVal As Integer = IIf(DBNull.Value.Equals(oBadge.STAEmployeeStatusID), 0, Me.statusMapTable(oBadge.STAEmployeeStatusID))
+
+        Dim informixCmd As New Odbc.OdbcCommand(cmdText, InformixWriteConnectionODBC)
+        informixCmd.Parameters.AddWithValue("description", desc)
+        informixCmd.Parameters.AddWithValue("bid", bid)
+        informixCmd.Parameters.AddWithValue("status", StatusVal)
+        'informixCmd.Parameters.AddWithValue("badge_tour", DBNull.Value)
+        'informixCmd.Parameters.AddWithValue("badge_temp", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("person_id", person_id)
+        'informixCmd.Parameters.AddWithValue("reader", DBNull.Value)
+        'informixCmd.Parameters.AddWithValue("access_date", DBNull.Value)
+        'informixCmd.Parameters.AddWithValue("access_time", DBNull.Value)
+        'informixCmd.Parameters.AddWithValue("access_tz", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("issue_date", MakeIntDate(oBadge.WhenBecomesActive))
+        informixCmd.Parameters.AddWithValue("issue_time", MakeIntTime(oBadge.WhenBecomesActive))
+        informixCmd.Parameters.AddWithValue("issue_context", 0) ' 1)
+        informixCmd.Parameters.AddWithValue("expired_date", MakeIntDate(oBadge.WhenExpires))
+        informixCmd.Parameters.AddWithValue("expired_time", 235959) 'MakeIntTime(BadgeReader("expired_time")))
+        informixCmd.Parameters.AddWithValue("expired_context", 0) '1)
+        informixCmd.Parameters.AddWithValue("return_date", MakeIntDate(oBadge.WhenExpires))
+        informixCmd.Parameters.AddWithValue("return_time", MakeIntTime(oBadge.WhenExpires))
+        informixCmd.Parameters.AddWithValue("return_tz", IIf(DBNull.Value.Equals(oBadge.WhenExpires), DBNull.Value, Pacific_time))
+        'informixCmd.Parameters.AddWithValue("usage_count", -1)
+        'informixCmd.Parameters.AddWithValue("usage_exhausted", DBNull.Value)
+        'informixCmd.Parameters.AddWithValue("tour_badge", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("bid_format_id", IIf(bid.StartsWith("00101"), 15, 19))
+        informixCmd.Parameters.AddWithValue("reissue_cnt", "00")
+        informixCmd.Parameters.AddWithValue("reprint_cnt", "00")
+        informixCmd.Parameters.AddWithValue("unique_id", oBadge.BadgeNumber)
+        'informixCmd.Parameters.AddWithValue("badge_design", DBNull.Value)
+        informixCmd.Parameters.AddWithValue("facility", -1)
+        informixCmd.Parameters.AddWithValue("modify_date", DateTime.UtcNow.ToString("yyyyMMdd"))
+        informixCmd.Parameters.AddWithValue("modify_time", DateTime.UtcNow.ToString("HHmmss"))
+
+        Try
+            NRows = informixCmd.ExecuteNonQuery()
+            If (NRows = 0) Then
+                TraceLog(1, "Failed to create new badge " & bid)
+            Else
+                TraceLog(3, "Created new badge " & bid)
+            End If
+
+        Catch ex As Exception
+            TraceLog(0, "Exception in inserting badge " & bid & ":" & ex.ToString)
+        Finally
+            informixCmd.Dispose()
+        End Try
+
+        'RGuidi: Person is already created in ObtainPPpersonID, so no need to call this here.. I think .....
+        'If NRows > 0 Then
+        'InsertOrUpdateUserData(badgeUserDataMap, oPerson)
+        'End If
+        Return NRows
+    End Function
+
+    Sub TransferBadge(ByVal transactionID As Integer)
+        ' Read record from Transfer_badge table with matching transfer_id
+
+        Dim sSQL As String = "SELECT top(1) pb.[EmployeeID],pb.[PersonID], x.[STAEmployeeStatusID], " & _
+                             " d.[DivisionID], d.[DivisionCode], d.[DivisionName], c.[CompanyID], c.[CompanyCode], c.[CorporationName], " & _
+                             " b.[BadgeID], b.[BadgeNumber], b.[BadgeColorID], b.[CardNumber], b.[WhenBecomesActive], b.WhenExpires " & _
+                             " FROM [Data].[AccessControl.TransferBadges] tb " & _
+                             " INNER JOIN [Data].[Person.Badges] b on b.[BadgeID] = tb.[BadgeID] " & _
+                             " INNER JOIN [Data].[Person.PersonDivisionXref] x on b.[PersonDivisionXrefID] = x.[PersonDivisionXrefID] " & _
+                             " INNER JOIN [Data].[Person.PersonBiographics] pb on pb.[PersonID] = x.[PersonID] " & _
+                             " INNER JOIN [Data].[Division.Divisions] d on d.[DivisionID] = x.[DivisionID] " & _
+                             " INNER JOIN [Data].[Company.Companies] c on c.[CompanyID] = d.[CompanyID] " & _
+                             " WHERE tb.TransferID = " & transactionID '@TransferID"
+
+        Dim refCmd = New SqlCommand(sSQL, CS_Connection)
+        'refCmd.Parameters.AddWithValue("TransferID", transactionID)
+        Dim CS_BadgeReader As SqlDataReader = refCmd.ExecuteReader
+
+        Dim oBadge As Badge = New Badge()
+        While CS_BadgeReader.Read
+            oBadge.EmployeeID = CS_BadgeReader("EmployeeID").ToString.Trim
+            oBadge.PersonID = CS_BadgeReader("PersonID").ToString.Trim
+            oBadge.STAEmployeeStatusID = CS_BadgeReader("STAEmployeeStatusID").ToString.Trim
+            oBadge.DivisionID = CS_BadgeReader("DivisionId").ToString.Trim
+            oBadge.DivisionCode = CS_BadgeReader("DivisionCode").ToString.Trim
+            oBadge.DivisionName = CS_BadgeReader("DivisionName").ToString.Trim
+            oBadge.CompanyID = CS_BadgeReader("CompanyID").ToString.Trim
+            oBadge.CompanyCode = CS_BadgeReader("CompanyCode").ToString.Trim
+            oBadge.CorporationName = CS_BadgeReader("CorporationName").ToString.Trim
+            oBadge.BadgeID = CS_BadgeReader("BadgeID").ToString.Trim
+            oBadge.BadgeNumber = CS_BadgeReader("BadgeNumber").ToString.Trim
+            oBadge.BadgeColorID = CS_BadgeReader("BadgeColorID").ToString.Trim
+            oBadge.CardNumber = CS_BadgeReader("CardNumber").ToString.Trim
+            oBadge.WhenBecomesActive = CS_BadgeReader("WhenBecomesActive").ToString.Trim
+            oBadge.WhenExpires = CS_BadgeReader("WhenExpires").ToString.Trim
+        End While
+        CS_BadgeReader.Close()
+        CS_BadgeReader = Nothing
+        refCmd.Dispose()
+
+        Dim informixCmd As Odbc.OdbcCommand
+
+        Dim sql2 As String = "select id from " & PP_Schema & ".badge where bid= ? "
+
+        Dim recordExists As Boolean = False
+        Dim bidStr As String = ""
+
+        Dim bid As String = oBadge.BadgeNumber
+        If bid.Length > 0 Then
+            'Mag Stripe
+            bidStr = "00101" + bid
+
+            informixCmd = New Odbc.OdbcCommand(sql2, InformixReadConnectionODBC)
+            '1. select all lines where employee= given employee and department= given department
+            informixCmd.Parameters.AddWithValue("bid", bidStr)
+            Dim informixReader As Odbc.OdbcDataReader
+            informixReader = informixCmd.ExecuteReader
+            recordExists = informixReader.Read
+            informixReader.Close()
+            informixCmd.Dispose()
+
+            If recordExists Then
+                UpdateBadgeRecord(bidStr, oBadge)
+            Else
+                InsertBadgeRecord(bidStr, oBadge)
+            End If
+
+            'iClass Number
+            bid = oBadge.CardNumber
+            If bid = "0" Then  ' Badge is not activated at swipe station yet  
+                bidStr = "00520" + bid
+
+                '1. select all lines where employee= given employee and department= given department
+                informixCmd = New Odbc.OdbcCommand(sql2, InformixReadConnectionODBC)
+                informixCmd.Parameters.AddWithValue("bid", bidStr)
+                Dim informixReader2 As Odbc.OdbcDataReader
+                informixReader2 = informixCmd.ExecuteReader
+                recordExists = informixReader2.Read
+                informixReader2.Close()
+                informixCmd.Dispose()
+
+                If recordExists Then
+                    UpdateBadgeRecord(bidStr, oBadge)
+                Else
+                    InsertBadgeRecord(bidStr, oBadge)
+                End If
+
+                'TO DO: rguiodi - ONLY update if there are no errors!
+                Dim sSqlUpdTrans As String = "UPDATE [Data].[AccessControl.TransferBadges] Set [WhenTransmitted]=getDate() WHERE [TransferID] = @TransferID"
+                refCmd = New SqlCommand(sSqlUpdTrans, CS_Connection)
+                refCmd.Parameters.AddWithValue("TransferID", transactionID)
+                If refCmd.ExecuteNonQuery() <= 0 Then TraceLog(0, "Failed to update TransferBadges.WhenTransmitted date for Badges update transactionID " & transactionID)
+            End If 'bid = 0
+        End If 'bid.length > 0
+
+        oBadge = Nothing
+    End Sub
+
+    Function GetPPpersonID(ByVal employee As String, ByVal division As String) As Integer
+
+        Dim sqlText As String = "SELECT p.id id FROM Person p Inner Join Department d on p.department=d.id Where p.Employee=? And d.division=?"
+        Dim person_id As Integer = 0
+
+        Dim informixCmd As New Odbc.OdbcCommand(sqlText, InformixReadConnectionODBC)
+        informixCmd.Parameters.AddWithValue("Employee", employee)
+        informixCmd.Parameters.AddWithValue("Division", division)
+        person_id = informixCmd.ExecuteScalar
+        informixCmd.Dispose()
+
+        If Not IsNothing(person_id) Then If person_id > 0 Then Return person_id ' person already exists with given emp,dept
+        Return 0
+    End Function
+
+    Function ObtainPPpersonID(ByVal employee As String, ByVal co_div As String, ByVal divisionid As Integer) As Integer ' creates person if not exists
+        ' Get PP person id if person already exists for given employee,dept
+        ' Otherwise: creates person and return id
+
+        'rguidi: if department does not exist in pp, create it
+        Dim oDivision As Division = LoadDivisionObject(0, divisionid)
+        If Not IsNothing(oDivision.DivisionID) Then
+            Dim i As Integer = InsertDivision(oDivision)
+        End If
+
+        Dim personID As Integer = GetPPpersonID(employee, co_div)
+        If personID > 0 Then Return personID
+
+        ' if person does not exist in pp, create the record
+        ' load oPerson!
+        Dim oPerson As Person = LoadPersonObject(0, CType(employee, Integer))
+
+        If IsNothing(oPerson.PersonID) Then
+            TraceLog(1, "No PersonBiographics record for EmployeeID = " & employee)
+            Return 0
+        Else
+            InsertPersonRecord(oPerson, co_div)
+        End If
+        oPerson = Nothing
+
+        personID = GetPPpersonID(employee, co_div)
+        Return personID
+    End Function
+
+    Private Sub TraceLog(ByVal level As Integer, ByVal msg As String)
+        If (GlobalErrorlevel >= level) Then
+            Dim fileName As String = "ACAMSTransfer" + DateTime.Now.ToString("yyyy-MM-dd") + ".log"
+            My.Computer.FileSystem.WriteAllText(logDir + fileName, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") & " L" & level & ": " & msg & vbCrLf, True)
+        End If
+    End Sub
+
+    Function MakeIntTime(ByVal t As Object) As Object
+        If DBNull.Value.Equals(t) Then Return DBNull.Value
+        Dim dt As DateTime
+        If Not DateTime.TryParse(t.ToString, dt) Then Return Nothing
+        Return Integer.Parse(dt.ToString("HHmmss"))
+    End Function
+
+    Function MakeIntDate(ByVal t As Object) As Object
+        If DBNull.Value.Equals(t) Then Return DBNull.Value
+        Dim dt As DateTime
+        If Not DateTime.TryParse(t.ToString, dt) Then Return Nothing
+        Return Integer.Parse(dt.ToString("yyyyMMdd"))
+    End Function
+
+
+    '20110628 - Added to be used to prevent overloading ACAMS when doing BULK TRANSFERS
+    Function countPending(ByVal tID As Integer) As Integer
+        Dim numPending As Integer = 99999
+
+        'This function counts the total number of transfers pending for a transferID
+        Dim qry As String
+
+        qry = "SELECT SUM(cnt) as totRecords from (" & _
+              " SELECT COUNT(*) as cnt from [Data].[AccessControl.TransferPersons] " & _
+              " WHERE [WhenTransmitted] Is null And TransferId = " & tID & _
+              " UNION " & _
+              " SELECT count(*) as cnt from [Data].[AccessControl.TransferDivisions] " & _
+              " WHERE [WhenTransmitted] Is null And TransferId = " & tID & _
+              ") a"
+
+        Dim myCmd As SqlCommand
+        myCmd = New SqlCommand(qry, CS_Connection)
+        Dim CS_ControlTableReader = myCmd.ExecuteReader()
+
+        Try
+            CS_ControlTableReader.Read()
+            numPending = CS_ControlTableReader("totRecords")
+            TraceLog(1, "number of records pending: " & numPending)
+        Catch ex As Exception
+            TraceLog(0, "Unable to CS_ControlTableReader.Read()" & ex.ToString)
+        Finally
+            CS_ControlTableReader.Close()
+        End Try
+        Return numPending
+    End Function
+
+    Function ckACAMSqueue() As Integer
+        Dim queue As Integer = 0
+
+        ' specify program to use
+        Dim prog As String = Dts.Variables("Telnet_Client_Path").Value 'eg "C:\plink\plink.exe"
+
+        ' add arguments to program
+        'Dim args As String = "-ssh ppadmin@10.64.194.10 -pw LAXPP45PPADMIN01 ""ipcs -q | awk '{ SUM += $6} END {print SUM}'"" "
+        Dim conn As String = Dts.Variables("Telnet_Connection").Value 'eg "ppadmin@10.64.194.10 -pw LAXPP45PPADMIN01"
+        'Dim args As String = "-ssh " & conn & " ""ipcs -q | awk '{ SUM += $6} END {print SUM}'"" "
+        'for testing purposes, modifying code above to code below
+        Dim args As String = "-ssh ppadmin@192.9.200.6 -pw ppadmin ""cat /cas/ipcs.txt | awk '{ SUM += $6} END {print SUM}'"" "
+
+        ' set program & arguments
+        Dim psi As ProcessStartInfo = New ProcessStartInfo(prog, args)
+
+        ' states that system shell will not be used to control the process instead program will handle the process
+        psi.UseShellExecute = False
+        psi.ErrorDialog = False
+
+        ' Do not show command prompt window separately
+        psi.CreateNoWindow = True
+        psi.WindowStyle = ProcessWindowStyle.Hidden
+        'redirect all standard inout to program
+        psi.RedirectStandardError = True
+        psi.RedirectStandardInput = True
+        psi.RedirectStandardOutput = True
+        'create the process with above infor and start it
+        Dim plinkProcess As Process = New Process()
+        plinkProcess.StartInfo = psi
+        plinkProcess.Start()
+        'link the streams to standard inout of process
+        Dim inputWriter As IO.StreamWriter = plinkProcess.StandardInput
+        Dim outputReader As IO.StreamReader = plinkProcess.StandardOutput
+        Dim errorReader As IO.StreamReader = plinkProcess.StandardError
+
+        'send command to cmd prompt and wait for command to execute with thread sleep
+        inputWriter.WriteLine()
+        Thread.Sleep(1000)
+
+        ' flush the input stream before sending exit command to end process for any unwanted characters
+        inputWriter.Flush()
+
+        ' read till end the stream into string
+        queue = outputReader.ReadToEnd()
+
+        Return queue
+
+    End Function
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Division.vb"
+            Encoding="UTF8"><![CDATA[
+Public Class Division
+
+    'Properties
+    Private mDivisionID As String
+    Private mDivisionCode As String
+    Private mDivisionName As String
+    Private mCompanyID As String
+    Private mCompanyCode As String
+    Private mCorporationName As String
+
+    Public Property DivisionID() As String
+        Get
+            Return mDivisionID
+        End Get
+        Set(ByVal Value As String)
+            mDivisionID = Value
+        End Set
+    End Property
+
+    Public Property DivisionCode() As String
+        Get
+            Return mDivisionCode
+        End Get
+        Set(ByVal Value As String)
+            mDivisionCode = Value
+        End Set
+    End Property
+
+    Public Property DivisionName() As String
+        Get
+            Return mDivisionName
+        End Get
+        Set(ByVal Value As String)
+            mDivisionName = Value
+        End Set
+    End Property
+
+    Public Property CompanyID() As String
+        Get
+            Return mCompanyID
+        End Get
+        Set(ByVal Value As String)
+            mCompanyID = Value
+        End Set
+    End Property
+
+    Public Property CompanyCode() As String
+        Get
+            Return mCompanyCode
+        End Get
+        Set(ByVal Value As String)
+            mCompanyCode = Value
+        End Set
+    End Property
+
+    Public Property CorporationName() As String
+        Get
+            Return mCorporationName
+        End Get
+        Set(ByVal Value As String)
+            mCorporationName = Value
+        End Set
+    End Property
+
+    'Methods
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(
+        ByVal DivisionID As String,
+        ByVal DivisionName As String,
+        ByVal CompanyID As String,
+        ByVal CorporationName As String
+        )
+
+        MyClass.DivisionID = DivisionID
+        MyClass.DivisionName = DivisionName
+        MyClass.CompanyID = CompanyID
+        MyClass.CorporationName = CorporationName
+    End Sub
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Badge.vb"
+            Encoding="UTF8"><![CDATA[Public Class Badge
+
+    'Properties
+    Private mEmployeeID As String
+    Private mPersonID As String
+    Private mSTAEmployeeStatusID As String
+    Private mDivisionID As String
+    Private mDivisionCode As String
+    Private mDivisionName As String
+    Private mCompanyID As String
+    Private mCompanyCode As String
+    Private mCorporationName As String
+    Private mBadgeID As String
+    Private mBadgeNumber As String
+    Private mBadgeColorID As String
+    Private mCardNumber As String
+    Private mWhenBecomesActive As String
+    Private mWhenExpires As String
+
+    Public Property EmployeeID() As String
+        Get
+            Return mEmployeeID
+        End Get
+        Set(ByVal Value As String)
+            mEmployeeID = Value
+        End Set
+    End Property
+
+    Public Property PersonID() As String
+        Get
+            Return mPersonID
+        End Get
+        Set(ByVal Value As String)
+            mPersonID = Value
+        End Set
+    End Property
+
+    Public Property STAEmployeeStatusID() As String
+        Get
+            Return mSTAEmployeeStatusID
+        End Get
+        Set(ByVal Value As String)
+            mSTAEmployeeStatusID = Value
+        End Set
+    End Property
+
+    Public Property DivisionID() As String
+        Get
+            Return mDivisionID
+        End Get
+        Set(ByVal Value As String)
+            mDivisionID = Value
+        End Set
+    End Property
+
+    Public Property DivisionCode() As String
+        Get
+            Return mDivisionCode
+        End Get
+        Set(ByVal Value As String)
+            mDivisionCode = Value
+        End Set
+    End Property
+
+    Public Property DivisionName() As String
+        Get
+            Return mDivisionName
+        End Get
+        Set(ByVal Value As String)
+            mDivisionName = Value
+        End Set
+    End Property
+
+    Public Property CompanyID() As String
+        Get
+            Return mCompanyID
+        End Get
+        Set(ByVal Value As String)
+            mCompanyID = Value
+        End Set
+    End Property
+
+    Public Property CompanyCode() As String
+        Get
+            Return mCompanyCode
+        End Get
+        Set(ByVal Value As String)
+            mCompanyCode = Value
+        End Set
+    End Property
+
+    Public Property CorporationName() As String
+        Get
+            Return mCorporationName
+        End Get
+        Set(ByVal Value As String)
+            mCorporationName = Value
+        End Set
+    End Property
+
+    Public Property BadgeID() As String
+        Get
+            Return mBadgeID
+        End Get
+        Set(ByVal Value As String)
+            mBadgeID = Value
+        End Set
+    End Property
+
+    Public Property BadgeNumber() As String
+        Get
+            Return mBadgeNumber
+        End Get
+        Set(ByVal Value As String)
+            mBadgeNumber = Value
+        End Set
+    End Property
+
+    Public Property BadgeColorID() As String
+        Get
+            Return mBadgeColorID
+        End Get
+        Set(ByVal Value As String)
+            mBadgeColorID = Value
+        End Set
+    End Property
+
+    Public Property CardNumber() As String
+        Get
+            Return mCardNumber
+        End Get
+        Set(ByVal Value As String)
+            mCardNumber = Value
+        End Set
+    End Property
+
+    Public Property WhenBecomesActive() As String
+        Get
+            Return mWhenBecomesActive
+        End Get
+        Set(ByVal Value As String)
+            mWhenBecomesActive = Value
+        End Set
+    End Property
+
+    Public Property WhenExpires() As String
+        Get
+            Return mWhenExpires
+        End Get
+        Set(ByVal Value As String)
+            mWhenExpires = Value
+        End Set
+    End Property
+
+    'Methods
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(
+        ByVal EmployeeID As String,
+        ByVal PersonID As String,
+        ByVal STAEmployeeStatusID As String,
+        ByVal DivisionID As String,
+        ByVal DivisionName As String,
+        ByVal CompanyID As String,
+        ByVal CorporationName As String,
+        ByVal BadgeID As String,
+        ByVal BadgeNumber As String,
+        ByVal BadgeColorID As String,
+        ByVal CardNumber As String,
+        ByVal WhenBecomesActive As String,
+        ByVal WhenExpires As String
+        )
+        MyClass.EmployeeID = EmployeeID
+        MyClass.PersonID = PersonID
+        MyClass.STAEmployeeStatusID = STAEmployeeStatusID
+        MyClass.DivisionID = DivisionID
+        MyClass.DivisionName = DivisionName
+        MyClass.CompanyID = CompanyID
+        MyClass.CorporationName = CorporationName
+        MyClass.BadgeID = BadgeID
+        MyClass.BadgeNumber = BadgeNumber
+        MyClass.BadgeColorID = BadgeColorID
+        MyClass.CardNumber = CardNumber
+        MyClass.WhenBecomesActive = WhenBecomesActive
+        MyClass.WhenExpires = WhenExpires
+    End Sub
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <auto-generated>
+'     This code was generated by a tool.
+'     Runtime Version:2.0.50727.3053
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </auto-generated>
+'------------------------------------------------------------------------------
+
+Option Strict On
+Option Explicit On
+
+
+
+<Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
+ Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "9.0.0.0"),  _
+ Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
+Partial Friend NotInheritable Class Settings
+    Inherits Global.System.Configuration.ApplicationSettingsBase
+    
+    Private Shared defaultInstance As Settings = CType(Global.System.Configuration.ApplicationSettingsBase.Synchronized(New Settings),Settings)
+    
+#Region "My.Settings Auto-Save Functionality"
+#If _MyType = "WindowsForms" Then
+    Private Shared addedHandler As Boolean
+
+    Private Shared addedHandlerLockObject As New Object
+
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
+    Private Shared Sub AutoSaveSettings(ByVal sender As Global.System.Object, ByVal e As Global.System.EventArgs)
+        If My.Application.SaveMySettingsOnExit Then
+            My.Settings.Save()
+        End If
+    End Sub
+#End If
+#End Region
+    
+    Public Shared ReadOnly Property [Default]() As Settings
+        Get
+            
+#If _MyType = "WindowsForms" Then
+               If Not addedHandler Then
+                    SyncLock addedHandlerLockObject
+                        If Not addedHandler Then
+                            AddHandler My.Application.Shutdown, AddressOf AutoSaveSettings
+                            addedHandler = True
+                        End If
+                    End SyncLock
+                End If
+#End If
+            Return defaultInstance
+        End Get
+    End Property
+End Class
+
+Namespace My
+    
+    <Global.Microsoft.VisualBasic.HideModuleNameAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
+    Friend Module MySettingsProperty
+        
+        <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
+        Friend ReadOnly Property Settings() As Global.ST_fee19305817346c48778eab4d49c9257.vbproj.Settings
+            Get
+                Return Global.ST_fee19305817346c48778eab4d49c9257.vbproj.Settings.Default
+            End Get
+        End Property
+    End Module
+End Namespace]]></ProjectItem>
+          <ProjectItem
+            Name="Person.vb"
+            Encoding="UTF8"><![CDATA[Public Class Person
+
+    'Properties
+    Private mPersonID As String
+    Private mPin As String
+    Private mFirstName As String
+    Private mMiddleName As String
+    Private mLastName As String
+    Private mAddress As String
+    Private mApartmentNumber As String
+    Private mCity As String
+    Private mCountrySubdivisionCode As String
+    Private mCountryCode As String
+    Private mPostalCode As String
+    Private mWorkPhoneNumber As String
+    Private mEmployeeID As String
+    Private mDateOfBirth As String
+    Private mSocialSecurityNumber As String
+    Private mHeightInInches As String
+    Private mWeightInPounds As String
+    Private mSexCode As String
+    Private mEyeColorCode As String
+    Private mHairColorCode As String
+    Private mRaceCode As String
+
+    Public Property PersonID() As String
+        Get
+            Return mPersonID
+        End Get
+        Set(ByVal Value As String)
+            mPersonID = Value
+        End Set
+    End Property
+
+    Public Property Pin() As String
+        Get
+            Return mPin
+        End Get
+        Set(ByVal Value As String)
+            mPin = Value
+        End Set
+    End Property
+
+    Public Property FirstName() As String
+        Get
+            Return mFirstName
+        End Get
+        Set(ByVal Value As String)
+            mFirstName = Value
+        End Set
+    End Property
+
+    Public Property MiddleName() As String
+        Get
+            Return mMiddleName
+        End Get
+        Set(ByVal Value As String)
+            mMiddleName = Value
+        End Set
+    End Property
+
+    Public Property LastName() As String
+        Get
+            Return mLastName
+        End Get
+        Set(ByVal Value As String)
+            mLastName = Value
+        End Set
+    End Property
+
+    Public Property Address() As String
+        Get
+            Return mAddress
+        End Get
+        Set(ByVal Value As String)
+            mAddress = Value
+        End Set
+    End Property
+
+    Public Property ApartmentNumber() As String
+        Get
+            Return mApartmentNumber
+        End Get
+        Set(ByVal Value As String)
+            mApartmentNumber = Value
+        End Set
+    End Property
+
+    Public Property City() As String
+        Get
+            Return mCity
+        End Get
+        Set(ByVal Value As String)
+            mCity = Value
+        End Set
+    End Property
+
+    Public Property CountrySubdivisionCode() As String
+        Get
+            Return mCountrySubdivisionCode
+        End Get
+        Set(ByVal Value As String)
+            mCountrySubdivisionCode = Value
+        End Set
+    End Property
+
+    Public Property CountryCode() As String
+        Get
+            Return mCountryCode
+        End Get
+        Set(ByVal Value As String)
+            mCountryCode = Value
+        End Set
+    End Property
+
+    Public Property PostalCode() As String
+        Get
+            Return mPostalCode
+        End Get
+        Set(ByVal Value As String)
+            mPostalCode = Value
+        End Set
+    End Property
+
+    Public Property WorkPhoneNumber() As String
+        Get
+            Return mWorkPhoneNumber
+        End Get
+        Set(ByVal Value As String)
+            mWorkPhoneNumber = Value
+        End Set
+    End Property
+
+    Public Property EmployeeID() As String
+        Get
+            Return mEmployeeID
+        End Get
+        Set(ByVal Value As String)
+            mEmployeeID = Value
+        End Set
+    End Property
+
+    Public Property DateOfBirth() As String
+        Get
+            Return mDateOfBirth
+        End Get
+        Set(ByVal Value As String)
+            mDateOfBirth = Value
+        End Set
+    End Property
+
+    Public Property SocialSecurityNumber() As String
+        Get
+            Return mSocialSecurityNumber
+        End Get
+        Set(ByVal Value As String)
+            mSocialSecurityNumber = Value
+        End Set
+    End Property
+
+    Public Property HeightInInches() As String
+        Get
+            Return mHeightInInches
+        End Get
+        Set(ByVal Value As String)
+            mHeightInInches = Value
+        End Set
+    End Property
+
+    Public Property WeightInPounds() As String
+        Get
+            Return mWeightInPounds
+        End Get
+        Set(ByVal Value As String)
+            mWeightInPounds = Value
+        End Set
+    End Property
+
+    Public Property SexCode() As String
+        Get
+            Return mSexCode
+        End Get
+        Set(ByVal Value As String)
+            mSexCode = Value
+        End Set
+    End Property
+
+    Public Property EyeColorCode() As String
+        Get
+            Return mEyeColorCode
+        End Get
+        Set(ByVal Value As String)
+            mEyeColorCode = Value
+        End Set
+    End Property
+
+    Public Property HairColorCode() As String
+        Get
+            Return mHairColorCode
+        End Get
+        Set(ByVal Value As String)
+            mHairColorCode = Value
+        End Set
+    End Property
+
+    Public Property RaceCode() As String
+        Get
+            Return mRaceCode
+        End Get
+        Set(ByVal Value As String)
+            mRaceCode = Value
+        End Set
+    End Property
+
+    'Methods
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(
+        ByVal PersonID As String,
+        ByVal Pin As String,
+        ByVal FirstName As String,
+        ByVal MiddleName As String,
+        ByVal LastName As String,
+        ByVal Address As String,
+        ByVal ApartmentNumber As String,
+        ByVal City As String,
+        ByVal CountrySubdivisionCode As String,
+        ByVal CountryCode As String,
+        ByVal PostalCode As String,
+        ByVal WorkPhoneNumber As String,
+        ByVal EmployeeID As String,
+        ByVal DateOfBirth As String,
+        ByVal SocialSecurityNumber As String,
+        ByVal HeightInInches As String,
+        ByVal WeightInPounds As String,
+        ByVal SexCode As String,
+        ByVal EyeColorCode As String,
+        ByVal HairColorCode As String,
+        ByVal RaceCode As String)
+
+        MyClass.mPersonID = PersonID
+        MyClass.mPin = Pin
+        MyClass.FirstName = FirstName
+        MyClass.MiddleName = MiddleName
+        MyClass.LastName = LastName
+        MyClass.Address = Address
+        MyClass.ApartmentNumber = ApartmentNumber
+        MyClass.City = City
+        MyClass.CountrySubdivisionCode = CountrySubdivisionCode
+        MyClass.CountryCode = CountryCode
+        MyClass.PostalCode = PostalCode
+        MyClass.WorkPhoneNumber = WorkPhoneNumber
+        MyClass.EmployeeID = EmployeeID
+        MyClass.DateOfBirth = DateOfBirth
+        MyClass.SocialSecurityNumber = SocialSecurityNumber
+        MyClass.HeightInInches = HeightInInches
+        MyClass.WeightInPounds = WeightInPounds
+        MyClass.SexCode = SexCode
+        MyClass.EyeColorCode = EyeColorCode
+        MyClass.HairColorCode = HairColorCode
+        MyClass.RaceCode = RaceCode
+    End Sub
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:ProjectId>{E0FB0C65-3C40-4C82-8B18-955651E32DB7}</msb:ProjectId>
+		<msb:NoContent>Reference;Import;Folder</msb:NoContent>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>st_fee19305817346c48778eab4d49c9257</msb:DisplayName>
+		<msb:CodeName>st_fee19305817346c48778eab4d49c9257</msb:CodeName>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:File Include="Division.vb"/>
+		<msb:File Include="My Project\Settings.Designer.vb"/>
+		<msb:File Include="My Project\Resources.Designer.vb"/>
+		<msb:File Include="My Project\AssemblyInfo.vb"/>
+		<msb:File Include="My Project\Resources.resx"/>
+		<msb:File Include="My Project\Settings.settings"/>
+		<msb:File Include="ScriptMain.vb"/>
+		<msb:File Include="Badge.vb"/>
+		<msb:File Include="Person.vb"/>
+		<msb:Project Include="st_fee19305817346c48778eab4d49c9257.vbproj"/>
+		<msb:Breakpoint Include="7c42ffaf8aed4e4b9a31621d6ff478be">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>1102</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="7af5295183bb434fa1ae7e745d65274e">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>862</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="b5be886506ff48fab636b58bde8f457b">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>766</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="f6860406ec8f4fa382fed5422ffc1b2c">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>1040</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="6772ca8ddf1f445fa12adbf56c54b722">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>867</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="2d0050fc56a74885bbbb6568d1268b85">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>761</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="c194a9239f60452fa0851e8f67937bae">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>698</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="7a43aec5c4604f848af4f9cd2075a87c">
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:LineNumber>926</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Condition></msb:Condition>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="94e4d042a2514c2cb3ace8397623e33a">
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:LineNumber>883</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>13</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Condition></msb:Condition>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+		<msb:Breakpoint Include="1c9040beccf84bb88a3440b7d60ced05">
+			<msb:HitCountType>1</msb:HitCountType>
+			<msb:FileName>ScriptMain.vb</msb:FileName>
+			<msb:LineNumber>555</msb:LineNumber>
+			<msb:HitCountTarget>1</msb:HitCountTarget>
+			<msb:ColumnNumber>9</msb:ColumnNumber>
+			<msb:Enabled>True</msb:Enabled>
+			<msb:Condition></msb:Condition>
+			<msb:ConditionType>1</msb:ConditionType>
+			<msb:Language>Basic</msb:Language>
+		</msb:Breakpoint>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+          <BinaryItem
+            Name="SSIS_PP_Export.vbproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAIRUW1EAAAAAAAAAAOAAAiELAQsAAMYAAAAGAAAAAAAA3uQA
+AAAgAAAAAAEAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAABAAQAAAgAAAAAAAAIAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAITkAABXAAAAAAABALADAAAAAAAAAAAAAAAAAAAA
+AAAAACABAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA5MQAAAAgAAAAxgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAALADAAAAAAEAAAQAAADIAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAACABAAACAAAAzAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADA
+5AAAAAAAAEgAAAACAAUAiFoAAPyJAAABAAAAAAAAAM9ZAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKAEAAAoqHgIoBAAACiqmcwYAAAqAAQAABHMHAAAKgAIA
+AARzCAAACoADAAAEcwkAAAqABAAABCoAABMwAQALAAAAAQAAEX4BAAAEbwoAAAoqABMwAQALAAAA
+AgAAEX4CAAAEbwsAAAoqABMwAQALAAAAAwAAEX4DAAAEbwwAAAoqABMwAQALAAAABAAAEX4EAAAE
+bw0AAAoqABMwAgANAAAABQAAEQIDKBEAAAooEgAACioAAAATMAEABwAAAAYAABECKBMAAAoqABMw
+AQALAAAABwAAEdAFAAACKBQAAAoqABMwAQAHAAAACAAAEQIoFQAACioAEzABABAAAAAJAAARAowB
+AAAbLQYoAQAAKyoCKhMwAgAQAAAACgAAEQMSAP4VAgAAGwaBAgAAGyoeAigXAAAKKhMwAgAoAAAA
+CwAAEQJ7GQAACm8aAAAKCweMAwAAGy0SKAIAACsLAnsZAAAKB28bAAAKBypKAigXAAAKAnMcAAAK
+fRkAAAoqABMwAQAHAAAADAAAEQJ7BgAABCoAIgIDfQYAAAQqAAAAEzABAAcAAAANAAARAnsHAAAE
+KgAiAgN9BwAABCoAAAATMAEABwAAAA4AABECewgAAAQqACICA30IAAAEKgAAABMwAQAHAAAADwAA
+EQJ7CQAABCoAIgIDfQkAAAQqAAAAEzABAAcAAAAQAAARAnsKAAAEKgAiAgN9CgAABCoAAAATMAEA
+BwAAABEAABECewsAAAQqACICA30LAAAEKgAAABMwAQAHAAAAEgAAEQJ7DAAABCoAIgIDfQwAAAQq
+AAAAEzABAAcAAAATAAARAnsNAAAEKgAiAgN9DQAABCoAAAATMAEABwAAABQAABECew4AAAQqACIC
+A30OAAAEKgAAABMwAQAHAAAAFQAAEQJ7DwAABCoAIgIDfQ8AAAQqAAAAEzABAAcAAAAWAAARAnsQ
+AAAEKgAiAgN9EAAABCoAAAATMAEABwAAABcAABECexEAAAQqACICA30RAAAEKgAAABMwAQAHAAAA
+GAAAEQJ7EgAABCoAIgIDfRIAAAQqAAAAEzABAAcAAAAZAAARAnsTAAAEKgAiAgN9EwAABCoAAAAT
+MAEABwAAABoAABECexQAAAQqACICA30UAAAEKgAAAB4CKBcAAAoqEzACAGwAAAAAAAAAAigXAAAK
+AgMoEgAABgIEKBQAAAYCBSgWAAAGAg4EKBgAAAYCDgUoHAAABgIOBigeAAAGAg4HKCIAAAYCDggo
+JAAABgIOCSgmAAAGAg4KKCgAAAYCDgsoKgAABgIODCgsAAAGAg4NKC4AAAYqEzABAAcAAAAbAAAR
+AnsVAAAEKgAiAgN9FQAABCoAAAATMAEABwAAABwAABECexYAAAQqACICA30WAAAEKgAAABMwAQAH
+AAAAHQAAEQJ7FwAABCoAIgIDfRcAAAQqAAAAEzABAAcAAAAeAAARAnsYAAAEKgAiAgN9GAAABCoA
+AAATMAEABwAAAB8AABECexkAAAQqACICA30ZAAAEKgAAABMwAQAHAAAAIAAAEQJ7GgAABCoAIgID
+fRoAAAQqAAAAHgIoFwAACiqSAigXAAAKAgMoMgAABgIEKDYAAAYCBSg4AAAGAg4EKDwAAAYqAAAA
+HgIoFwAACioTMAIALQAAACEAABF+GwAABC0gcgEAAHDQCQAAAigUAAAKbx4AAApzHwAACgsHgBsA
+AAR+GwAABCoAAAATMAEABgAAACIAABF+HAAABCoAAB4CgBwAAAQqVnNEAAAGKCAAAAp0CgAAAoAd
+AAAEKgAAHgIoIQAACioTMAEABgAAACMAABF+HQAABCoAABMwAQAGAAAAJAAAEShFAAAGKgAAEzAB
+AAcAAAAlAAARAnseAAAEKgAiAgN9HgAABCoAAAATMAEABwAAACYAABECex8AAAQqACICA30fAAAE
+KgAAABMwAQAHAAAAJwAAEQJ7IAAABCoAIgIDfSAAAAQqAAAAEzABAAcAAAAoAAARAnshAAAEKgAi
+AgN9IQAABCoAAAATMAEABwAAACkAABECeyIAAAQqACICA30iAAAEKgAAABMwAQAHAAAAKgAAEQJ7
+IwAABCoAIgIDfSMAAAQqAAAAEzABAAcAAAArAAARAnskAAAEKgAiAgN9JAAABCoAAAATMAEABwAA
+ACwAABECeyUAAAQqACICA30lAAAEKgAAABMwAQAHAAAALQAAEQJ7JgAABCoAIgIDfSYAAAQqAAAA
+EzABAAcAAAAuAAARAnsnAAAEKgAiAgN9JwAABCoAAAATMAEABwAAAC8AABECeygAAAQqACICA30o
+AAAEKgAAABMwAQAHAAAAMAAAEQJ7KQAABCoAIgIDfSkAAAQqAAAAEzABAAcAAAAxAAARAnsqAAAE
+KgAiAgN9KgAABCoAAAATMAEABwAAADIAABECeysAAAQqACICA30rAAAEKgAAABMwAQAHAAAAMwAA
+EQJ7LAAABCoAIgIDfSwAAAQqAAAAEzABAAcAAAA0AAARAnstAAAEKgAiAgN9LQAABCoAAAATMAEA
+BwAAADUAABECey4AAAQqACICA30uAAAEKgAAABMwAQAHAAAANgAAEQJ7LwAABCoAIgIDfS8AAAQq
+AAAAEzABAAcAAAA3AAARAnswAAAEKgAiAgN9MAAABCoAAAATMAEABwAAADgAABECezEAAAQqACIC
+A30xAAAEKgAAABMwAQAHAAAAOQAAEQJ7MgAABCoAIgIDfTIAAAQqAAAAHgIoFwAACioTMAIArAAA
+AAAAAAACKBcAAAoCA30eAAAEAgR9HwAABAIFKEwAAAYCDgQoTgAABgIOBShQAAAGAg4GKFIAAAYC
+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
+gAAACgJ7SAAABAYoMwAAChyNKQAAAQwIFih/AAAKCxIBcolJAHAoTQAACqIIF3KxSQBwoggYAyhB
+AAAKoggZcrdJAHCiCBoEoggbcr1JAHCiCChyAAAKF2+BAAAKKgAAEzACAEAAAABMAAARfmsAAAoD
+KBEAAApvEgAACiwGfmsAAAoqA28VAAAKEgAoggAACi0CFCoSAHIYFgBwKE0AAAoogwAACowqAAAB
+KhMwAgBAAAAATQAAEX5rAAAKAygRAAAKbxIAAAosBn5rAAAKKgNvFQAAChIAKIIAAAotAhQqEgBy
+7hUAcChNAAAKKIMAAAqMKgAAASobMAQAvAAAAE4AABEgn4YBAA0bjSkAAAETBhEGFnLDSQBwohEG
+FwMoQQAACqIRBhhy+koAcKIRBhkDKEEAAAqiEQYacvtLAHCiEQYocgAAChMEEQQCezwAAARzOAAA
+CgwIbzsAAAoLB288AAAKJgdyA0wAcG89AAAKKD4AAAoNAhdyGUwAcAkoQQAACigzAAAKb4UAAAbe
+LiUoMQAAChMFAhZyUUwAcBEFbzIAAAooMwAACm+FAAAGKDQAAAreBwdvQAAACtwJKgEcAAAAAFsA
+MYwAJyIAAAECAFsAWLMABwAAAAATMAIA5wAAAE8AABEWEwkCbyYAAApvJwAACnKfTABwbykAAApv
+KgAACigrAAAKEwcCbyYAAApvJwAACnLFTABwbykAAApvKgAACigrAAAKDHLpTABwChEHBnOEAAAK
+EwgRCBZvhQAAChEIFm+GAAAKEQgXb4cAAAoRCBdviAAAChEIF2+JAAAKEQgXb4oAAAoRCBdviwAA
+CnOMAAAKEwYRBhEIb40AAAoRBm+OAAAKJhEGb48AAAoTBBEGb5AAAAoTBREGb5EAAAoNEQRvkgAA
+CiDoAwAAKJMAAAoRBG+UAAAKEQVvlQAACih8AAAKEwkRCSq0AAAAzsrvvgEAAACRAAAAbFN5c3Rl
+bS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1
+bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVz
+b3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAAEJTSkIBAAEA
+AAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAHwZAAAjfgAA6BkAAOAaAAAjU3RyaW5ncwAAAADI
+NAAAqE0AACNVUwBwggAAEAAAACNHVUlEAAAAgIIAAHwHAAAjQmxvYgAAAAAAAAACAAABVx2iCQkP
+AAAA+iUzABYAAAEAAABUAAAADgAAAEwAAACJAAAAdgAAAKIAAAACAAAAPQAAAE8AAAAIAAAAMwAA
+AF4AAAAJAAAAAQAAAAYAAAABAAAAAwAAAAMAAAACAAAAAADDGgEAAAAAAAoAhwFdAQoAuwGdAQYA
+ywHEAQoAIwJdAQYAoQLEAQoAIwP5AgYA2gbJBgYABwfyBg4AaAdTBxIARAwbDAYAsAydDBYAPA0c
+DRoAiw11DRoAxg21DQYANA+dDAYAvxDEAQ4A8hDcEA4ACxHcEA4AOBEgEQYAYhFPEQoAoRF6EQoA
+uRETAA4A7hHREQYAIxIDEgYAQRLEAQYAZRLEAQoAfhITAAYAzBKtEgYA8hLgEg4ACBNTBwYAIhMD
+EgYAPRNPERoAWhN1DQYAZRPEARoAbxN1DRIAfRMbDBYAlxMcDRYAuBMcDQoAyhN6EQYA1hPEAQYA
+2xPEAQYA7BPEARYA8hMcDQoAIBR6ERoAbxR1DRoAlRR1DQ4AzBTcEAoA9BR6EQoAIBUTABoANhW1
+DQYAQhXEARoASxW1DRoAYxW1DRoAjhW1DQYAnRWdDAYASRbEAQYAWxbEAQoAdxYTAAYAhxadDAYA
+lxbgEgYApBadDAYAyBbgEgoAKBedAQoAWBc3FwYAlBeKFwYAoReKFw4ArhdPEQ4AthdPEQ4A/hdP
+EQYAuxiKFwYA4RjQGAYA/hjEARIAFBkbDAYAdRkDEgYAlRkDEgYAzRmzGQYA5hngEgYAAxqtEgYA
+ERrgEgYALBrgEgYARxrgEgYAYBrgEgYAeRrgEgYAlhrgEgAAAAABAAAAAAABAAEAAAAAACkANwAF
+AAEAAQAAAAAAZQA3AAkAAQACAAABEABwADcADQABAAMABQEAAHoAAAANAAUACAAFAQAAiAAAAA0A
+BQAPAAEAAACjAKkADQAGABEAAQAAANQAqQANABUAMQAAAAAA3QDpAA0AGwA/AAABEAAhAakAJQAd
+AEMAAAEAACoBNwANAB4ARgABAAAAPQGpAA0AHgBHAAEAAABEAakAKQAzAHMAAgEAAE8BAABBAEoA
+igAxAOYBIAAxAA8CLQAxADECOgAxAFYCRwAhADIDkAABAEgDnQABAFQDnQABAF4DnQABAHMDnQAB
+AH8DnQABAI0DnQABAJsDnQABAKYDnQABALMDnQABAMQDnQABAM0DnQABANoDnQABAOgDnQABAPQD
+nQABAAcEnQABAHMDnQABAH8DnQABAI0DnQABAJsDnQABAKYDnQABALMDnQARAOoGwgARABMHxgAR
+AIAH5AABAFQDnQABALEHnQABALYHnQABAMEHnQABAM0HnQABANcHnQABAOAHnQABAPEHnQABAPcH
+nQABAA8InQABABwInQABACgInQABAEgDnQABADkInQABAEYInQABAFwInQABAGwInQABAHwInQAB
+AIUInQABAJMInQABAKIInQABAGAMFAEBAHUMnQABAIIMFAEBALoMFwEBAMkMFwEBANsMFwEBAOwM
+FAEBAE4NGwEBAFkNGwEBAJkNHwEBAKcNHwEBANUNIwEBAPANIwEBAAwOHwEBACYOHwEBAEEOFAEB
+AFoOFAEBAG8OFAEBAIMOFAEBAJkOFAEBALIOFAEBAMoOnQABANEOnQAGBsQQFAFWgMwQhAFWgNQQ
+hAFQIAAAAAAGGJcBEwABAFggAAAAAAYYlwETAAEAYCAAAAAAERjSARcAAQCMIAAAAAATCNkBGwAB
+AKQgAAAAABMI/wEoAAEAvCAAAAAAEwgoAjUAAQDUIAAAAAATCEYCQgABAOwgAAAAAEYCjAJjAAEA
+CCEAAAAARgKVAmgAAgAcIQAAAACDAKYCbAACADQhAAAAAEYCrgJxAAIASCEAAAAAEQC3AngAAgBk
+IQAAAAABANUCgAADAIAhAAAAAAYYlwETAAQAiCEAAAAAAwjpAosABAC8IQAAAAAGGJcBEwAEANAh
+AAAAAAYIFARxAAQA5CEAAAAABggjBKAABADwIQAAAAAGCDgEcQAFAAQiAAAAAAYIRQSgAAUAECIA
+AAAABghSBHEABgAkIgAAAAAGCGoEoAAGADAiAAAAAAYIggRxAAcARCIAAAAABgiRBKAABwBQIgAA
+AAAGCKAEcQAIAGQiAAAAAAYIsQSgAAgAcCIAAAAABgjCBHEACQCEIgAAAAAGCNMEoAAJAJAiAAAA
+AAYI5ARxAAoApCIAAAAABgjyBKAACgCwIgAAAAAGCAAFcQALAMQiAAAAAAYIEAWgAAsA0CIAAAAA
+BgggBXEADADkIgAAAAAGCDQFoAAMAPAiAAAAAAYISAVxAA0ABCMAAAAABghUBaAADQAQIwAAAAAG
+CGAFcQAOACQjAAAAAAYIcAWgAA4AMCMAAAAABgiABXEADwBEIwAAAAAGCJEFoAAPAFAjAAAAAAYI
+ogVxABAAZCMAAAAABgixBaAAEABwIwAAAAAGCMAFcQARAIQjAAAAAAYI1gWgABEAkCMAAAAABgjs
+BXEAEgCkIwAAAAAGCPwFoAASALAjAAAAAAYYlwETABMAuCMAAAAABhiXAaUAEwAwJAAAAAAGCIIE
+cQAgAEQkAAAAAAYIkQSgACAAUCQAAAAABgigBHEAIQBkJAAAAAAGCLEEoAAhAHAkAAAAAAYIwgRx
+ACIAhCQAAAAABgjTBKAAIgCQJAAAAAAGCOQEcQAjAKQkAAAAAAYI8gSgACMAsCQAAAAABggABXEA
+JADEJAAAAAAGCBAFoAAkANAkAAAAAAYIIAVxACUA5CQAAAAABgg0BaAAJQDwJAAAAAAGGJcBEwAm
+APgkAAAAAAYYlwG6ACYAICUAAAAAAxiXARMAKgAoJQAAAAAWCB8HygAqAGQlAAAAABYIMwfPACoA
+eCUAAAAAFgg/B9QAKgCAJQAAAAARGNIBFwArAJglAAAAAAYYlwETACsAoCUAAAAAFgiQB+gAKwC0
+JQAAAAATCKQH6AArAMglAAAAAAYIOARxACsA3CUAAAAABghFBKAAKwDoJQAAAAAGCKwIcQAsAPwl
+AAAAAAYItAigACwACCYAAAAABgi8CHEALQAcJgAAAAAGCMoIoAAtACgmAAAAAAYI2AhxAC4APCYA
+AAAABgjnCKAALgBIJgAAAAAGCPYIcQAvAFwmAAAAAAYIAwmgAC8AaCYAAAAABggQCXEAMAB8JgAA
+AAAGCBwJoAAwAIgmAAAAAAYIKAlxADEAnCYAAAAABgg8CaAAMQCoJgAAAAAGCFAJcQAyALwmAAAA
+AAYIWQmgADIAyCYAAAAABghiCXEAMwDcJgAAAAAGCH0JoAAzAOgmAAAAAAYImAlxADQA/CYAAAAA
+BgioCaAANAAIJwAAAAAGCLgJcQA1ABwnAAAAAAYIxwmgADUAKCcAAAAABgjWCXEANgA8JwAAAAAG
+COoJoAA2AEgnAAAAAAYIFARxADcAXCcAAAAABggjBKAANwBoJwAAAAAGCP4JcQA4AHwnAAAAAAYI
+DgqgADgAiCcAAAAABggeCnEAOQCcJwAAAAAGCDcKoAA5AKgnAAAAAAYIUApxADoAvCcAAAAABghj
+CqAAOgDIJwAAAAAGCHYKcQA7ANwnAAAAAAYIiQqgADsA6CcAAAAABgicCnEAPAD8JwAAAAAGCKgK
+oAA8AAgoAAAAAAYItApxAD0AHCgAAAAABgjFCqAAPQAoKAAAAAAGCNYKcQA+ADwoAAAAAAYI6Aqg
+AD4ASCgAAAAABgj6CnEAPwBcKAAAAAAGCAcLoAA/AGgoAAAAAAYYlwETAEAAcCgAAAAABhiXAfIA
+QAAoKQAAAAAGGJcBEwBVALwpAAAAAAYA2w4TAFUAVC8AAAAABgDgDicBVQCYMQAAAAAGAP8OLgFX
+ALAyAAAAAAYAEg81AVkALDMAAAAABgAjDzUBWgCwNQAAAAAGAD4POgFbAHw6AAAAAAYAaw81AV8A
+kDsAAAAABgCBD0MBYACcPQAAAAAGAJ0PSQFhAAxDAAAAAAYAtg9PAWIA5EcAAAAABgDJDzUBZAC4
+SAAAAAAGANgPVgFlAFRMAAAAAAYAAhBgAWgAsE4AAAAABgAYEGABagBsUgAAAAAGACoQNQFsANRV
+AAAAAAYAOBBnAW0AQFYAAAAABgBYEG0BbwDAVgAAAAABAHQQdAFyAGBXAAAAAAYAhxB6AXQArFcA
+AAAABgCVEHoBdQD4VwAAAAAGAKEQfwF2ANxYAAAAAAYAshBoAHcAAAABAJMCAAABAMwCAAABAMwC
+AAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAAB
+ADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABAAwGAAACABcGAAADACAGAAAEADQG
+AAAFAD8GAAAGAEwGAAAHAFYGAAAIAGYGAAAJAG4GAAAKAHoGAAALAIcGAAAMAJIGAAANAKQGAAAB
+ADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADQGAAACAD8GAAADAEwGAAAEAFYG
+AAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAAB
+ADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIEAAABADIE
+AAABADIEAAABADIEAAABADIEAAABABcGAAACABQLAAADABgLAAAEACILAAAFAC0LAAAGADYLAAAH
+AD4LAAAIAE4LAAAJAFMLAAAKAGoLAAALAHYLAAAMAIELAAANAAwGAAAOAJELAAAPAJ0LAAAQALIL
+AAARAMELAAASANALAAATANgLAAAUAOULAAAVAPMLAAABAPEOAAACAAwGAAABAPEOAAACADQGAAAB
+APEOAAABAPEOAAABAFUPAAACAF0PAAADAGQPAAAEAPEOAAABAPEOAAABAJUPAAABAKwPAAABAJUP
+AAACAGQPAAABAPEOAAABAO8PAAACAJUPAAADAPsPAAABABQQAAACAPsPAAABABQQAAACAPsPAAAB
+APEOAAABAEYQAAACAE8QAAABAEYQAAACAGQPAAADAGkQAAABAH0QAAACAIMQAAABAJMQAAABAJMQ
+AAABAK4QCQCXARMAiQCXAZIBmQCXAaEBEQCXARMAoQCXARMAJACXARMALACXARMANACXARMAPACX
+ARMAJADpAosALADpAosANADpAosAPADpAosAqQCXARMAsQCXARMAuQCXAaAAwQAyEjYCGQCMAmMA
+GQCVAmgAKQBTEkMCGQCuAnEA0QBvElMCGQCXARMA2QCXAboARAAyA5AATACZEosATACjEtgCTACX
+ARMA4QCXAecCKQD7EvICOQCXAfcC8QAVExMDSQCXARMA+QCXARMAAQGXARMAUQCXARMAWQCXARMA
+UQCPE4kDIQGhE48DKQGvE2MAKQHBE5UDMQGZEpwDOQGuAqADSQHiE6UDWQDoE6wDIQH+E7IDWQHB
+E7gDYQAOFHoBYQEsFL4DEQGuAnEASQE8FMUDYQFDFBcAYQBVFHEAcQCXAaAAcQBqFBMACQGXAcsD
+CQGGFNIDaQGiFNgDCQGvFOADGQG9FOYDGQHBE+oDOQHCFO8DeQHWFBMAGQHeFBMAOQGuAvQDCQHk
+FGgAgQH+FPkDaQDeFBMAcQDeFBMAIQEMFTUBSQEbFXEAiQEsFT0EkQGXAUwEkQGGFFMEoQGiFFkE
+mQFxFWEEmQGuAmcEkQHkFGgAgQF8FWwEkQGvFIQEsQHBE+oDsQGpFYoEsQG0FY8EgQG9FZQEeQCv
+E2MASQE8FJsESQHaFaIEWQDhFWMAsQG9FOYDsQHeFBMAeQDtFakEuQH7FZwDUQGuAnEAWQAHFmMA
+kQEVFpwDUQEjFq8ESQHaFbYEeQAsFr0EEQE0FnEASQHaFcIEuQFAFuYDwQHWFBMAeQCXARMAeQBV
+FhMASQGMAu4EeQDoE70EyQEyBAEFSQE8FAYFkQGXARMACQGXARMASQFiFmgASQFtFh0F0QGDFk8F
+SQE8FFYFWQDtFXsF2QGZEpwDGQCmAmwAKQC6FoEF8QHTFnEA2QHcFpwDgQHkFpQE4QECF4gFgQEL
+F2wEOQHCFL0FWQDBE3oBSQEVF+4EmQEgF2EE+QFoFxgGAQJ3Fx4GmQEjFi4GUQGEF70FIQKXAaEB
+IQLHF+cCIQLbF+cCIQLrF+cCIQIRGE8GIQIhGOcCIQI7GOcCIQJVGOcCGQKXARMAGQJwGFYGGQJ+
+GOYDGQKEGF0GGQKWGGMGGQKpGGMGMQLGGBMAOQLoGGkGEQLuGBMACQL0GHEAQQKXAecCSQKXARMA
+UQKXATUBWQKXARMAYQKXAaAAaQKXAaAAcQKXAaAAeQKXAaAAgQKXAaAAiQKXAaAAkQKXAaAAmQKX
+AaAAoQKXAaAACAAsAYgBCAAwAY0BKQCDAAQCLgDzBDIHLgALBewCLgATBVIHLgCzBCwHLgDDBIUG
+LgDrAOwCLgADBW0HLgDrBOwCLgD7BFIHLgDLBI4GLgDTBK0GLgDbBPUGLgDjBAIHQAArAI0BQAAT
+AJgBQwATAJgBQwAbAKcBSQCDACICYwAbAKcBYwATAJgBaQCDABUCgAArAI0BgwAbAKcBgwBzAI0B
+gwB7AI0BiQCDAPABoAArAI0BowDDAGMCowATAJgBwAArAI0BwwDrAOwCwwATAJgB4AArAI0BAAET
+AJgBAAErAI0BIAETAJgBIAErAI0BQAETAJgBQAErAI0BQwETAY0BQwETAAoDQwEbAB8DYAETAJgB
+YAErAI0BYwETAY0BYwFzAI0BYwF7AI0BYwEbAY0BgAErAI0BoAErAI0BowGzBOwCowG7BI0BwAEr
+AI0BwAETAJgB4AErAI0BAAITAJgBAAIrAI0BaQMTAAoDiQMTAAoDyQODAHgD3AHhAeYB6wE7Aj8C
+SgJPAl4CXgLeAk8CTwJPAk8CTwJPAk8CTwJPAk8CTwJPAk8CTwJPAk8CTwJPAk8CTwJPAv4CBQMa
+AxoDTwJPAk8CTwJPAk8CTwJPAk8CTwJPAk8CTwJPAk8CTwJPAk8CTwJPAk8CAAQhBC8EQgRyBMoE
+8wQOBSMFXAVvBY8FwgXVBesFBQYOBiUGNwY3Bj4GbgYEAAEABgAFAAcABgAIABUACQAbAAoAHQAL
+AB4ADAAfAAAAuwFPAAAAdAJUAAAAIwJZAAAAgAJeAAAAPAOYAAAADAa2AAAAFwa2AAAAIAa2AAAA
+NAa2AAAAsAa2AAAAPwa2AAAATAa2AAAAvQa2AAAAVga2AAAAZga2AAAAbga2AAAAega2AAAAhwa2
+AAAAkga2AAAApAa2AAAANAa2AAAAsAa2AAAAPwa2AAAATAa2AAAAvQa2AAAAVga2AAAA2gbaAAAA
+SwffAAAAnAftAAAAIQHtAAAAFwa2AAAAFAu2AAAAGAu2AAAAIgu2AAAALQu2AAAANgu2AAAAPgu2
+AAAATgu2AAAAUwu2AAAAagu2AAAAdgu2AAAAgQu2AAAADAa2AAAAkQu2AAAAnQu2AAAAsgu2AAAA
+wQu2AAAA0Au2AAAA2Au2AAAA5Qu2AAAA8wu2AAIABAADAAIABQAFAAIABgAHAAIABwAJAAIADwAL
+AAIAEQANAAEAEgANAAIAEwAPAAEAFAAPAAEAFgARAAIAFQARAAEAGAATAAIAFwATAAIAGQAVAAEA
+GgAVAAIAGwAXAAEAHAAXAAEAHgAZAAIAHQAZAAIAHwAbAAEAIAAbAAEAIgAdAAIAIQAdAAEAJAAf
+AAIAIwAfAAIAJQAhAAEAJgAhAAIAJwAjAAEAKAAjAAEAKgAlAAIAKQAlAAIAKwAnAAEALAAnAAIA
+LQApAAEALgApAAEAMgArAAIAMQArAAIAMwAtAAEANAAtAAIANQAvAAEANgAvAAEAOAAxAAIANwAx
+AAIAOQAzAAEAOgAzAAEAPAA1AAIAOwA1AAIAQAA3AAIAQQA5AAEAQgA5AAIARQA7AAIARgA9AAEA
+SAA/AAIARwA/AAIASQBBAAEASgBBAAIASwBDAAEATABDAAEATgBFAAIATQBFAAIATwBHAAEAUABH
+AAIAUQBJAAEAUgBJAAEAVABLAAIAUwBLAAIAVQBNAAEAVgBNAAEAWABPAAIAVwBPAAEAWgBRAAIA
+WQBRAAIAWwBTAAEAXABTAAIAXQBVAAEAXgBVAAEAYABXAAIAXwBXAAIAYQBZAAEAYgBZAAEAZABb
+AAIAYwBbAAEAZgBdAAIAZQBdAAIAZwBfAAEAaABfAAEAagBhAAIAaQBhAAIAawBjAAEAbABjAAIA
+bQBlAAEAbgBlAAIAbwBnAAEAcABnAHUAdQCIAMABxwHOAdUBxQLMAgSAAAABAAAAAAAAAAAAAAAA
+AK0aAAAEAAAAAAAAAAAAAAABAAoAAAAAAAoAAAAAAAAAAAAAAAoAEwAAAAAABAAAAAAAAAAAAAAA
+AQDEAQAAAAALAAAAAAAAAAAAAAALAfwLAAAAAAsAAAAAAAAAAAAAAAsB/QwAAAAABAAAAAAAAAAA
+AAAAAQBpDQAAAAAAAAAAAQAAADYZAAAFAAQABgAEAA4ADQAAABAADADKAgAAEAAZAMoCAAAAABsA
+ygItAFkCLQDTAgAAADxNb2R1bGU+AG1zY29ybGliAE1pY3Jvc29mdC5WaXN1YWxCYXNpYwBNeUFw
+cGxpY2F0aW9uAFNUX2ZlZTE5MzA1ODE3MzQ2YzQ4Nzc4ZWFiNGQ0OWM5MjU3LnZicHJvai5NeQBN
+eUNvbXB1dGVyAE15UHJvamVjdABNeVdlYlNlcnZpY2VzAFRocmVhZFNhZmVPYmplY3RQcm92aWRl
+cmAxAEJhZGdlAFNUX2ZlZTE5MzA1ODE3MzQ2YzQ4Nzc4ZWFiNGQ0OWM5MjU3LnZicHJvagBEaXZp
+c2lvbgBNeVJlc291cmNlcwBTVF9mZWUxOTMwNTgxNzM0NmM0ODc3OGVhYjRkNDljOTI1Ny52YnBy
+b2ouTXkuUmVzb3VyY2VzAFNldHRpbmdzAE15U2V0dGluZ3NQcm9wZXJ0eQBQZXJzb24AU2NyaXB0
+TWFpbgBTY3JpcHRSZXN1bHRzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZp
+Y2VzAEFwcGxpY2F0aW9uQmFzZQAuY3RvcgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuRGV2aWNlcwBD
+b21wdXRlcgBTeXN0ZW0AT2JqZWN0AC5jY3RvcgBnZXRfQ29tcHV0ZXIAbV9Db21wdXRlck9iamVj
+dFByb3ZpZGVyAGdldF9BcHBsaWNhdGlvbgBtX0FwcE9iamVjdFByb3ZpZGVyAFVzZXIAZ2V0X1Vz
+ZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIAZ2V0X1dlYlNlcnZpY2VzAG1fTXlXZWJTZXJ2aWNlc09i
+amVjdFByb3ZpZGVyAEFwcGxpY2F0aW9uAFdlYlNlcnZpY2VzAEVxdWFscwBvAEdldEhhc2hDb2Rl
+AFR5cGUAR2V0VHlwZQBUb1N0cmluZwBDcmVhdGVfX0luc3RhbmNlX18AVABpbnN0YW5jZQBEaXNw
+b3NlX19JbnN0YW5jZV9fAGdldF9HZXRJbnN0YW5jZQBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuTXlT
+ZXJ2aWNlcy5JbnRlcm5hbABDb250ZXh0VmFsdWVgMQBtX0NvbnRleHQAR2V0SW5zdGFuY2UAbUVt
+cGxveWVlSUQAbVBlcnNvbklEAG1TVEFFbXBsb3llZVN0YXR1c0lEAG1EaXZpc2lvbklEAG1EaXZp
+c2lvbkNvZGUAbURpdmlzaW9uTmFtZQBtQ29tcGFueUlEAG1Db21wYW55Q29kZQBtQ29ycG9yYXRp
+b25OYW1lAG1CYWRnZUlEAG1CYWRnZU51bWJlcgBtQmFkZ2VDb2xvcklEAG1DYXJkTnVtYmVyAG1X
+aGVuQmVjb21lc0FjdGl2ZQBtV2hlbkV4cGlyZXMAZ2V0X0VtcGxveWVlSUQAc2V0X0VtcGxveWVl
+SUQAVmFsdWUAZ2V0X1BlcnNvbklEAHNldF9QZXJzb25JRABnZXRfU1RBRW1wbG95ZWVTdGF0dXNJ
+RABzZXRfU1RBRW1wbG95ZWVTdGF0dXNJRABnZXRfRGl2aXNpb25JRABzZXRfRGl2aXNpb25JRABn
+ZXRfRGl2aXNpb25Db2RlAHNldF9EaXZpc2lvbkNvZGUAZ2V0X0RpdmlzaW9uTmFtZQBzZXRfRGl2
+aXNpb25OYW1lAGdldF9Db21wYW55SUQAc2V0X0NvbXBhbnlJRABnZXRfQ29tcGFueUNvZGUAc2V0
+X0NvbXBhbnlDb2RlAGdldF9Db3Jwb3JhdGlvbk5hbWUAc2V0X0NvcnBvcmF0aW9uTmFtZQBnZXRf
+QmFkZ2VJRABzZXRfQmFkZ2VJRABnZXRfQmFkZ2VOdW1iZXIAc2V0X0JhZGdlTnVtYmVyAGdldF9C
+YWRnZUNvbG9ySUQAc2V0X0JhZGdlQ29sb3JJRABnZXRfQ2FyZE51bWJlcgBzZXRfQ2FyZE51bWJl
+cgBnZXRfV2hlbkJlY29tZXNBY3RpdmUAc2V0X1doZW5CZWNvbWVzQWN0aXZlAGdldF9XaGVuRXhw
+aXJlcwBzZXRfV2hlbkV4cGlyZXMARW1wbG95ZWVJRABQZXJzb25JRABTVEFFbXBsb3llZVN0YXR1
+c0lEAERpdmlzaW9uSUQARGl2aXNpb25OYW1lAENvbXBhbnlJRABDb3Jwb3JhdGlvbk5hbWUAQmFk
+Z2VJRABCYWRnZU51bWJlcgBCYWRnZUNvbG9ySUQAQ2FyZE51bWJlcgBXaGVuQmVjb21lc0FjdGl2
+ZQBXaGVuRXhwaXJlcwBEaXZpc2lvbkNvZGUAQ29tcGFueUNvZGUAU3lzdGVtLlJlc291cmNlcwBS
+ZXNvdXJjZU1hbmFnZXIAX3Jlc01ncgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBDdWx0dXJlSW5mbwBf
+cmVzQ3VsdHVyZQBnZXRfUmVzb3VyY2VNYW5hZ2VyAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAEN1
+bHR1cmUAU3lzdGVtLkNvbmZpZ3VyYXRpb24AQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UAZGVmYXVs
+dEluc3RhbmNlAGdldF9EZWZhdWx0AERlZmF1bHQAZ2V0X1NldHRpbmdzAG1QaW4AbUZpcnN0TmFt
+ZQBtTWlkZGxlTmFtZQBtTGFzdE5hbWUAbUFkZHJlc3MAbUFwYXJ0bWVudE51bWJlcgBtQ2l0eQBt
+Q291bnRyeVN1YmRpdmlzaW9uQ29kZQBtQ291bnRyeUNvZGUAbVBvc3RhbENvZGUAbVdvcmtQaG9u
+ZU51bWJlcgBtRGF0ZU9mQmlydGgAbVNvY2lhbFNlY3VyaXR5TnVtYmVyAG1IZWlnaHRJbkluY2hl
+cwBtV2VpZ2h0SW5Qb3VuZHMAbVNleENvZGUAbUV5ZUNvbG9yQ29kZQBtSGFpckNvbG9yQ29kZQBt
+UmFjZUNvZGUAZ2V0X1BpbgBzZXRfUGluAGdldF9GaXJzdE5hbWUAc2V0X0ZpcnN0TmFtZQBnZXRf
+TWlkZGxlTmFtZQBzZXRfTWlkZGxlTmFtZQBnZXRfTGFzdE5hbWUAc2V0X0xhc3ROYW1lAGdldF9B
+ZGRyZXNzAHNldF9BZGRyZXNzAGdldF9BcGFydG1lbnROdW1iZXIAc2V0X0FwYXJ0bWVudE51bWJl
+cgBnZXRfQ2l0eQBzZXRfQ2l0eQBnZXRfQ291bnRyeVN1YmRpdmlzaW9uQ29kZQBzZXRfQ291bnRy
+eVN1YmRpdmlzaW9uQ29kZQBnZXRfQ291bnRyeUNvZGUAc2V0X0NvdW50cnlDb2RlAGdldF9Qb3N0
+YWxDb2RlAHNldF9Qb3N0YWxDb2RlAGdldF9Xb3JrUGhvbmVOdW1iZXIAc2V0X1dvcmtQaG9uZU51
+bWJlcgBnZXRfRGF0ZU9mQmlydGgAc2V0X0RhdGVPZkJpcnRoAGdldF9Tb2NpYWxTZWN1cml0eU51
+bWJlcgBzZXRfU29jaWFsU2VjdXJpdHlOdW1iZXIAZ2V0X0hlaWdodEluSW5jaGVzAHNldF9IZWln
+aHRJbkluY2hlcwBnZXRfV2VpZ2h0SW5Qb3VuZHMAc2V0X1dlaWdodEluUG91bmRzAGdldF9TZXhD
+b2RlAHNldF9TZXhDb2RlAGdldF9FeWVDb2xvckNvZGUAc2V0X0V5ZUNvbG9yQ29kZQBnZXRfSGFp
+ckNvbG9yQ29kZQBzZXRfSGFpckNvbG9yQ29kZQBnZXRfUmFjZUNvZGUAc2V0X1JhY2VDb2RlAFBp
+bgBGaXJzdE5hbWUATWlkZGxlTmFtZQBMYXN0TmFtZQBBZGRyZXNzAEFwYXJ0bWVudE51bWJlcgBD
+aXR5AENvdW50cnlTdWJkaXZpc2lvbkNvZGUAQ291bnRyeUNvZGUAUG9zdGFsQ29kZQBXb3JrUGhv
+bmVOdW1iZXIARGF0ZU9mQmlydGgAU29jaWFsU2VjdXJpdHlOdW1iZXIASGVpZ2h0SW5JbmNoZXMA
+V2VpZ2h0SW5Qb3VuZHMAU2V4Q29kZQBFeWVDb2xvckNvZGUASGFpckNvbG9yQ29kZQBSYWNlQ29k
+ZQBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMu
+VGFza3MuU2NyaXB0VGFzawBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAbWF4QUNBTVNNZXNz
+YWdlUXVldWUAc3RhdHVzTWFwU3RyAHNwZWNpYWxDYXRlZ29yaWVzU3RhcnRTbG90AFN5c3RlbS5D
+b2xsZWN0aW9ucwBIYXNodGFibGUAc3RhdHVzTWFwVGFibGUAcGVyc29uVXNlckRhdGFNYXAAYmFk
+Z2VVc2VyRGF0YU1hcABHbG9iYWxFcnJvcmxldmVsAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdl
+ZERUUwBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50aW1lAENvbm5lY3Rpb25NYW5hZ2VyAENT
+X01hbmFnZXIAaW5mb3JtaXhNYW5hZ2VyAFN5c3RlbS5EYXRhAFN5c3RlbS5EYXRhLlNxbENsaWVu
+dABTcWxDb25uZWN0aW9uAENTX0Nvbm5lY3Rpb24AcGljQ29ubmVjdGlvbgBTeXN0ZW0uRGF0YS5P
+ZGJjAE9kYmNDb25uZWN0aW9uAEluZm9ybWl4UmVhZENvbm5lY3Rpb25PREJDAEluZm9ybWl4V3Jp
+dGVDb25uZWN0aW9uT0RCQwBJbmZvcm1peFJlYWRDb25uZWN0aW9uU1FMAEluZm9ybWl4V3JpdGVD
+b25uZWN0aW9uU1FMAE51bWJlck9mRGVwYXJ0bWVudHNBZGRlZABudW1iZXJPZlBlcnNvbnNBZGRl
+ZABudW1iZXJPZkJhZGdlc0FkZGVkAE51bWJlck9mUGljdHVyZXNBZGRlZABOdW1iZXJPZlBlcnNv
+bl9Vc2VyQWRkZWQATnVtYmVyT2ZQZXJzb25fQ2F0ZWdvcnkAbG9nRGlyAFBQX1NjaGVtYQBNYWlu
+AExvYWRQZXJzb25PYmplY3QAdHJhbnNhY3Rpb25JRABMb2FkRGl2aXNpb25PYmplY3QAVHJhbnNm
+ZXJEaXZpc2lvbgBUcmFuc2ZlckNhdGVnb3J5AEFycmF5TGlzdABVcGRhdGVJbnNlcnRDYXRlZ29y
+aWVzAGxheENhdHMAZW1wX2lkAGNvX2RpdgBUcmFuc2ZlckJhZGdlQ2F0ZWdvcnkAVXBkYXRlUGVy
+c29uUmVjb3JkcwBvUGVyc29uAEluc2VydERpdmlzaW9uAG9EaXZpc2lvbgBJbnNlcnRQZXJzb25S
+ZWNvcmQAVHJhbnNmZXJQZXJzb24ASW5zZXJ0T3JVcGRhdGVVc2VyRGF0YQB1c2VyRGF0YU1hcABv
+QmFkZ2UAVXBkYXRlQmFkZ2VSZWNvcmQAYmlkAEluc2VydEJhZGdlUmVjb3JkAFRyYW5zZmVyQmFk
+Z2UAR2V0UFBwZXJzb25JRABlbXBsb3llZQBkaXZpc2lvbgBPYnRhaW5QUHBlcnNvbklEAGRpdmlz
+aW9uaWQAVHJhY2VMb2cAbGV2ZWwAbXNnAE1ha2VJbnRUaW1lAHQATWFrZUludERhdGUAY291bnRQ
+ZW5kaW5nAHRJRABja0FDQU1TcXVldWUARW51bQB2YWx1ZV9fAFN1Y2Nlc3MARmFpbHVyZQBTeXN0
+ZW0uQ29tcG9uZW50TW9kZWwARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJs
+ZVN0YXRlAFN5c3RlbS5Db2RlRG9tLkNvbXBpbGVyAEdlbmVyYXRlZENvZGVBdHRyaWJ1dGUAU3lz
+dGVtLkRpYWdub3N0aWNzAERlYnVnZ2VySGlkZGVuQXR0cmlidXRlAE1pY3Jvc29mdC5WaXN1YWxC
+YXNpYy5Db21waWxlclNlcnZpY2VzAFN0YW5kYXJkTW9kdWxlQXR0cmlidXRlAEhpZGVNb2R1bGVO
+YW1lQXR0cmlidXRlAFN5c3RlbS5Db21wb25lbnRNb2RlbC5EZXNpZ24ASGVscEtleXdvcmRBdHRy
+aWJ1dGUAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBSdW50aW1lSGVscGVycwBHZXRP
+YmplY3RWYWx1ZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBBY3RpdmF0b3IA
+Q3JlYXRlSW5zdGFuY2UATXlHcm91cENvbGxlY3Rpb25BdHRyaWJ1dGUAZ2V0X1ZhbHVlAHNldF9W
+YWx1ZQBTeXN0ZW0uUnVudGltZS5JbnRlcm9wU2VydmljZXMAQ29tVmlzaWJsZUF0dHJpYnV0ZQBT
+eXN0ZW0uUmVmbGVjdGlvbgBBc3NlbWJseQBnZXRfQXNzZW1ibHkAU2V0dGluZ3NCYXNlAFN5bmNo
+cm9uaXplZABDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0
+cmlidXRlAFNxbENvbW1hbmQARXhjZXB0aW9uAFNxbERhdGFSZWFkZXIAU2NyaXB0T2JqZWN0TW9k
+ZWwAZ2V0X0R0cwBWYXJpYWJsZXMAZ2V0X1ZhcmlhYmxlcwBDb250YWlucwBWYXJpYWJsZQBnZXRf
+SXRlbQBDb252ZXJzaW9ucwBDaGFyAFN0cmluZwBTcGxpdABBZGQASW50MzIAQ29ubmVjdGlvbnMA
+Z2V0X0Nvbm5lY3Rpb25zAEFjcXVpcmVDb25uZWN0aW9uAFByb2plY3REYXRhAFNldFByb2plY3RF
+cnJvcgBDb25jYXQAQ2xlYXJQcm9qZWN0RXJyb3IAZ2V0X0Nvbm5lY3Rpb25TdHJpbmcAT3BlbgBT
+cWxQYXJhbWV0ZXJDb2xsZWN0aW9uAGdldF9QYXJhbWV0ZXJzAFNxbFBhcmFtZXRlcgBBZGRXaXRo
+VmFsdWUARXhlY3V0ZVJlYWRlcgBSZWFkAFRvSW50ZWdlcgBDb21wb25lbnQARGlzcG9zZQBDbG9z
+ZQBFeGVjdXRlTm9uUXVlcnkAT3BlcmF0b3JzAENvbXBhcmVTdHJpbmcAc2V0X1Rhc2tSZXN1bHQA
+VHJpbQBJbmZvcm1hdGlvbgBJc05vdGhpbmcAT2RiY0NvbW1hbmQARGF0ZVRpbWUAT2RiY1BhcmFt
+ZXRlckNvbGxlY3Rpb24AT2RiY1BhcmFtZXRlcgBnZXRfVXRjTm93AENvbmNhdGVuYXRlT2JqZWN0
+AE9kYmNEYXRhUmVhZGVyAElFbnVtZXJhdG9yAEdldE9yZGluYWwASXNEQk51bGwAQ29uZGl0aW9u
+YWxDb21wYXJlT2JqZWN0TGVzcwBGb3JtYXQAQ29udGFpbnNLZXkAR2V0RW51bWVyYXRvcgBnZXRf
+Q3VycmVudABDb250YWluc1ZhbHVlAEV4ZWN1dGVTY2FsYXIAVHJ5UGFyc2UASW5kZXhPZgBnZXRf
+TWVzc2FnZQBNb3ZlTmV4dABJRGlzcG9zYWJsZQBDbGVhcgBEQk51bGwAZ2V0X0xlbmd0aABTdWJz
+dHJpbmcASW50ZXJhY3Rpb24ASUlmAERpY3Rpb25hcnlFbnRyeQBQcm9wZXJ0eUluZm8ASURpY3Rp
+b25hcnlFbnVtZXJhdG9yAEdldFByb3BlcnRpZXMATWVtYmVySW5mbwBnZXRfTmFtZQBnZXRfS2V5
+AENvbmRpdGlvbmFsQ29tcGFyZU9iamVjdEVxdWFsAEdldFZhbHVlAEFkZE9iamVjdABTdGFydHNX
+aXRoAGdldF9Ob3cAU2VydmVyQ29tcHV0ZXIATWljcm9zb2Z0LlZpc3VhbEJhc2ljLk15U2Vydmlj
+ZXMARmlsZVN5c3RlbVByb3h5AGdldF9GaWxlU3lzdGVtAFdyaXRlQWxsVGV4dABQYXJzZQBTeXN0
+ZW0uSU8AU3RyZWFtUmVhZGVyAFN0cmVhbVdyaXRlcgBQcm9jZXNzAFByb2Nlc3NTdGFydEluZm8A
+c2V0X1VzZVNoZWxsRXhlY3V0ZQBzZXRfRXJyb3JEaWFsb2cAc2V0X0NyZWF0ZU5vV2luZG93AFBy
+b2Nlc3NXaW5kb3dTdHlsZQBzZXRfV2luZG93U3R5bGUAc2V0X1JlZGlyZWN0U3RhbmRhcmRFcnJv
+cgBzZXRfUmVkaXJlY3RTdGFuZGFyZElucHV0AHNldF9SZWRpcmVjdFN0YW5kYXJkT3V0cHV0AHNl
+dF9TdGFydEluZm8AU3RhcnQAZ2V0X1N0YW5kYXJkSW5wdXQAZ2V0X1N0YW5kYXJkT3V0cHV0AGdl
+dF9TdGFuZGFyZEVycm9yAFRleHRXcml0ZXIAV3JpdGVMaW5lAFN5c3RlbS5UaHJlYWRpbmcAVGhy
+ZWFkAFNsZWVwAEZsdXNoAFJlYWRUb0VuZABDTFNDb21wbGlhbnRBdHRyaWJ1dGUAU1NJU1Njcmlw
+dFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAFNUX2ZlZTE5MzA1ODE3MzQ2YzQ4Nzc4ZWFiNGQ0OWM5
+MjU3LnZicHJvai5SZXNvdXJjZXMucmVzb3VyY2VzAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRy
+aWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lv
+bmluZwBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlGaWxlVmVyc2lvbkF0dHJpYnV0
+ZQBHdWlkQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAEFzc2VtYmx5Q29weXJp
+Z2h0QXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRy
+aWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRl
+AFNTSVNfUFBfRXhwb3J0LnZicHJvagBTU0lTX1BQX0V4cG9ydC52YnByb2ouZGxsAAAAAAAxTQB5
+AC4AUgBlAHMAbwB1AHIAYwBlAHMALgBNAHkAUgBlAHMAbwB1AHIAYwBlAHMAAIDxQQBDAFQASQBW
+AEUAPQAwACwAQwBPAE4ARgBJAFMAQwBBAFQARQBEAD0ANQAsAEUAWABQAEkAUgBFAEQAPQA1ACwA
+SQBOAFYAQQBMAEkARAA9ADUALABMAE8AUwBUAD0ANAAsAFIARQBDAEEATABMAD0ANQAsAFIARQBU
+AFUAUgBOAEUARAA9ADYALABVAE4AQwBMAEEASQBNAEUARAA9ADUALABDAEEATgBDAEUATABMAEUA
+RAA9ADYALABTAFQATwBMAEUATgA9ADQALAA5AC0AMwAwAC0AMAAyACAAIABuAG8AbgAgAEYAUAA9
+ADUAAQEAD2wAbwBnAF8AZABpAHIAABFpAG4AZgBvAHIAbQBpAHgAAA9jAG8AXwBuAGEAbQBlAAAR
+ZABpAHYAXwBuAGEAbQBlAAALYwBvAGwAbwByAAAPYwB1AHMAdABvAG0AcwAAE2oAbwBiAF8AdABp
+AHQAbABlAAANZAByAGkAdgBlAHIAAAdsAGEAdwAAC2cAYQB0AGUAcwAACWEAdABjAHQAAA9iAGEA
+ZABnAGUAbgBvAAALaAB0AF8AZgB0AAALZABsAF8AbgBvAAARZABsAF8AcwB0AGEAdABlAAARZABs
+AF8AZQB4AHAAZAB0AAAXRABhAHQAZQBPAGYAQgBpAHIAdABoAAApUwBvAGMAaQBhAGwAUwBlAGMA
+dQByAGkAdAB5AE4AdQBtAGIAZQByAAAdSABlAGkAZwBoAHQASQBuAEkAbgBjAGgAZQBzAAAdVwBl
+AGkAZwBoAHQASQBuAFAAbwB1AG4AZABzAAAPUwBlAHgAQwBvAGQAZQAAGUUAeQBlAEMAbwBsAG8A
+cgBDAG8AZABlAAAbSABhAGkAcgBDAG8AbABvAHIAQwBvAGQAZQAAEVIAYQBjAGUAQwBvAGQAZQAA
+AyAAAAVDAFMAADtBAHEAdQBpAHIAZQBkACAAYwBvAG4AbgBlAGMAdABpAG8AbgAgAHQAbwAgAEMA
+UwBfAEIATwBTAEQAAFdFAHgAYwBlAHAAdABpAG8AbgAgAGkAbgAgAGMAbwBuAG4AZQBjAHQAaQBu
+AGcAIAB0AG8AIAB0AGgAZQAgAEMAUwAgAGQAYQB0AGEAYgBhAHMAZQAgAAAtUABpAGMAdAB1AHIA
+ZQBQAGUAcgBmAGUAYwB0AEkAbgBmAG8AcgBtAGkAeAAAP0EAYwBxAHUAaQByAGUAZAAgAGMAbwBu
+AG4AZQBjAHQAaQBvAG4AIAB0AG8AIABpAG4AZgBvAHIAbQBpAHgAAGNFAHgAYwBlAHAAdABpAG8A
+bgAgAGkAbgAgAGMAbwBuAG4AZQBjAHQAaQBuAGcAIAB0AG8AIAB0AGgAZQAgAEkAbgBmAG8AcgBt
+AGkAeAAgAGQAYQB0AGEAYgBhAHMAZQAgAACBF1MAZQBsAGUAYwB0ACAAVABPAFAAIAAxACAAKgAg
+AGYAcgBvAG0AIABbAEQAYQB0AGEAXQAuAFsAQQBjAGMAZQBzAHMAQwBvAG4AdAByAG8AbAAuAFQA
+cgBhAG4AcwBmAGUAcgBzAF0AIAB3AGgAZQByAGUAIABbAFQAcgBhAG4AcwBtAGkAdABFAG4AZABd
+ACAAaQBzACAAbgB1AGwAbAAgAGEAbgBkACAAWwBUAHIAYQBuAHMAZgBlAHIASQBEAF0AIAA+ACAA
+QABQAHIAaQBvAHIAVAByAGEAbgBzAGYAZQByAEkARAAgAE8AUgBEAEUAUgAgAEIAWQAgAFsAVABy
+AGEAbgBzAGYAZQByAEkARABdACAAAIDNVQBQAEQAQQBUAEUAIABbAEQAYQB0AGEAXQAuAFsAQQBj
+AGMAZQBzAHMAQwBvAG4AdAByAG8AbAAuAFQAcgBhAG4AcwBmAGUAcgBzAF0AIABTAGUAdAAgAFsA
+VAByAGEAbgBzAG0AaQB0AFMAdABhAHIAdABdAD0AZwBlAHQARABhAHQAZQAoACkAIABXAEgARQBS
+AEUAIABbAFQAcgBhAG4AcwBmAGUAcgBJAEQAXQAgAD0AIABAAFQAcgBhAG4AcwBmAGUAcgBJAEQA
+AIDJVQBQAEQAQQBUAEUAIABbAEQAYQB0AGEAXQAuAFsAQQBjAGMAZQBzAHMAQwBvAG4AdAByAG8A
+bAAuAFQAcgBhAG4AcwBmAGUAcgBzAF0AIABTAGUAdAAgAFsAVAByAGEAbgBzAG0AaQB0AEUAbgBk
+AF0APQBnAGUAdABEAGEAdABlACgAKQAgAFcASABFAFIARQAgAFsAVAByAGEAbgBzAGYAZQByAEkA
+RABdACAAPQAgAEAAVAByAGEAbgBzAGYAZQByAEkARAAAH1AAcgBpAG8AcgBUAHIAYQBuAHMAZgBl
+AHIASQBEAAAVVAByAGEAbgBzAGYAZQByAEkARAAAEUQAYQB0AGEAVAB5AHAAZQAAez0APQA9AD0A
+PQA9AD0APQA9AD0APQA9AD0APQA9AD0APQA9AD0APQA9AD0APQA9AD0APQA9AD0AUAByAG8AYwBl
+AHMAcwBpAG4AZwAgAHIAbwB3ACAAdwBpAHQAaAAgAFQAcgBhAG4AcwBmAGUAcgBJAEQAIAA9ACAA
+AG9GAGEAaQBsAGUAZAAgAHQAbwAgAHUAcABkAGEAdABlACAAcwB0AGEAcgB0AF8AdAByAGEAbgBz
+AG0AaQB0ACAAZABhAHQAZQAgAGYAbwByACAAdAByAGEAbgBzAGEAYwB0AGkAbwBuAEkARAAgAAAN
+UABlAHIAcwBvAG4AABFEAGkAdgBpAHMAaQBvAG4AAGtGAGEAaQBsAGUAZAAgAHQAbwAgAHUAcABk
+AGEAdABlACAARQBuAGQAXwB0AHIAYQBuAHMAbQBpAHQAIABkAGEAdABlACAAZgBvAHIAIAB0AHIA
+YQBuAHMAYQBjAHQAaQBvAG4ASQBEACAAAINpUwBlAGwAZQBjAHQAIAB0AG8AcAAoADEAKQAgAHQA
+cAAuAFAAZQByAHMAbwBuAEkARAAsACAAcABpAG4ALAAgAEYAaQByAHMAdABOAGEAbQBlACwAIABN
+AGkAZABkAGwAZQBOAGEAbQBlACwAIABMAGEAcwB0AE4AYQBtAGUALAAgAEEAZABkAHIAZQBzAHMA
+LAAgAEEAcABhAHIAdABtAGUAbgB0AE4AdQBtAGIAZQByACwAIABDAGkAdAB5ACwAIABDAG8AdQBu
+AHQAcgB5AFMAdQBiAGQAaQB2AGkAcwBpAG8AbgBDAG8AZABlACwAIABDAG8AdQBuAHQAcgB5AEMA
+bwBkAGUALAAgAFAAbwBzAHQAYQBsAEMAbwBkAGUALAAgACAAVwBvAHIAawBQAGgAbwBuAGUATgB1
+AG0AYgBlAHIALAAgAEUAbQBwAGwAbwB5AGUAZQBJAEQALAAgAEQAYQB0AGUATwBmAEIAaQByAHQA
+aAAsACAAUwBvAGMAaQBhAGwAUwBlAGMAdQByAGkAdAB5AE4AdQBtAGIAZQByACwAIABIAGUAaQBn
+AGgAdABJAG4ASQBuAGMAaABlAHMALAAgAFcAZQBpAGcAaAB0AEkAbgBQAG8AdQBuAGQAcwAsACAA
+UwBlAHgAQwBvAGQAZQAsACAARQB5AGUAQwBvAGwAbwByAEMAbwBkAGUALAAgAEgAYQBpAHIAQwBv
+AGwAbwByAEMAbwBkAGUALAAgAFIAYQBjAGUAQwBvAGQAZQAgACAARgBSAE8ATQAgAFsARABhAHQA
+YQBdAC4AWwBBAGMAYwBlAHMAcwBDAG8AbgB0AHIAbwBsAC4AVAByAGEAbgBzAGYAZQByAFAAZQBy
+AHMAbwBuAHMAXQAgAHQAcAAgACAASQBOAE4ARQBSACAASgBPAEkATgAgAFsARABhAHQAYQBdAC4A
+WwBQAGUAcgBzAG8AbgAuAFAAZQByAHMAbwBuAEIAaQBvAGcAcgBhAHAAaABpAGMAcwBdACAAcABi
+ACAAbwBuACAAcABiAC4AUABlAHIAcwBvAG4ASQBEACAAPQAgAHQAcAAuAFAAZQByAHMAbwBuAEkA
+RAAgACAAdwBoAGUAcgBlACAAVAByAGEAbgBzAGYAZQByAEkARAAgAD0AIAAAgIdTAGUAbABlAGMA
+dAAgACoAIABmAHIAbwBtACAAWwBEAGEAdABhAF0ALgBbAFAAZQByAHMAbwBuAC4AUABlAHIAcwBv
+AG4AQgBpAG8AZwByAGEAcABoAGkAYwBzAF0AIAB3AGgAZQByAGUAIABFAG0AcABsAG8AeQBlAGUA
+SQBEACAAPQAgAAARUABlAHIAcwBvAG4ASQBEAAAHcABpAG4AABNGAGkAcgBzAHQATgBhAG0AZQAA
+FU0AaQBkAGQAbABlAE4AYQBtAGUAABFMAGEAcwB0AE4AYQBtAGUAAA9BAGQAZAByAGUAcwBzAAAf
+QQBwAGEAcgB0AG0AZQBuAHQATgB1AG0AYgBlAHIAAAlDAGkAdAB5AAAtQwBvAHUAbgB0AHIAeQBT
+AHUAYgBkAGkAdgBpAHMAaQBvAG4AQwBvAGQAZQAAF0MAbwB1AG4AdAByAHkAQwBvAGQAZQAAFVAA
+bwBzAHQAYQBsAEMAbwBkAGUAAB9XAG8AcgBrAFAAaABvAG4AZQBOAHUAbQBiAGUAcgAAFUUAbQBw
+AGwAbwB5AGUAZQBJAEQAAIKlUwBFAEwARQBDAFQAIAB0AG8AcAAoADEAKQAgAHQAZAAuAFsARABp
+AHYAaQBzAGkAbwBuAEkARABdACwAIABkAC4AWwBEAGkAdgBpAHMAaQBvAG4AQwBvAGQAZQBdACwA
+IABkAC4AWwBEAGkAdgBpAHMAaQBvAG4ATgBhAG0AZQBdACwAIABjAC4AQwBvAG0AcABhAG4AeQBJ
+AEQALAAgAGMALgBDAG8AbQBwAGEAbgB5AEMAbwBkAGUALAAgAGMALgBDAG8AcgBwAG8AcgBhAHQA
+aQBvAG4ATgBhAG0AZQAgACAARgBSAE8ATQAgAFsARABhAHQAYQBdAC4AWwBBAGMAYwBlAHMAcwBD
+AG8AbgB0AHIAbwBsAC4AVAByAGEAbgBzAGYAZQByAEQAaQB2AGkAcwBpAG8AbgBzAF0AIAB0AGQA
+IAAgAEkATgBOAEUAUgAgAEoATwBJAE4AIABbAEQAYQB0AGEAXQAuAFsARABpAHYAaQBzAGkAbwBu
+AC4ARABpAHYAaQBzAGkAbwBuAHMAXQAgAGQAIABvAG4AIABkAC4AWwBEAGkAdgBpAHMAaQBvAG4A
+SQBEAF0AIAA9ACAAdABkAC4AWwBEAGkAdgBpAHMAaQBvAG4ASQBEAF0AIAAgAEkATgBOAEUAUgAg
+AEoATwBJAE4AIABbAEQAYQB0AGEAXQAuAFsAQwBvAG0AcABhAG4AeQAuAEMAbwBtAHAAYQBuAGkA
+ZQBzAF0AIABjACAAbwBuACAAYwAuAFsAQwBvAG0AcABhAG4AeQBJAEQAXQAgAD0AIABkAC4AWwBD
+AG8AbQBwAGEAbgB5AEkARABdACAAIABXAEgARQBSAEUAIAB0AGQALgBUAHIAYQBuAHMAZgBlAHIA
+SQBEACAAPQAgAACB7VMARQBMAEUAQwBUACAAdABvAHAAKAAxACkAIABkAC4AWwBEAGkAdgBpAHMA
+aQBvAG4ASQBEAF0ALAAgAGQALgBbAEQAaQB2AGkAcwBpAG8AbgBDAG8AZABlAF0ALAAgAGQALgBb
+AEQAaQB2AGkAcwBpAG8AbgBOAGEAbQBlAF0ALAAgAGMALgBDAG8AbQBwAGEAbgB5AEkARAAsACAA
+YwAuAEMAbwBtAHAAYQBuAHkAQwBvAGQAZQAsACAAYwAuAEMAbwByAHAAbwByAGEAdABpAG8AbgBO
+AGEAbQBlACAAIABGAFIATwBNACAAWwBEAGEAdABhAF0ALgBbAEQAaQB2AGkAcwBpAG8AbgAuAEQA
+aQB2AGkAcwBpAG8AbgBzAF0AIABkACAAIABJAE4ATgBFAFIAIABKAE8ASQBOACAAWwBEAGEAdABh
+AF0ALgBbAEMAbwBtAHAAYQBuAHkALgBDAG8AbQBwAGEAbgBpAGUAcwBdACAAYwAgAG8AbgAgAGMA
+LgBbAEMAbwBtAHAAYQBuAHkASQBEAF0AIAA9ACAAZAAuAFsAQwBvAG0AcABhAG4AeQBJAEQAXQAg
+ACAAVwBIAEUAUgBFACAAZAAuAFsARABpAHYAaQBzAGkAbwBuAEkARABdACAAPQAgAAAVRABpAHYA
+aQBzAGkAbwBuAEkARAAAGUQAaQB2AGkAcwBpAG8AbgBDAG8AZABlAAAZRABpAHYAaQBzAGkAbwBu
+AE4AYQBtAGUAABNDAG8AbQBwAGEAbgB5AEkARAAAF0MAbwBtAHAAYQBuAHkAQwBvAGQAZQAAH0MA
+bwByAHAAbwByAGEAdABpAG8AbgBOAGEAbQBlAACA4VUAUABEAEEAVABFACAAWwBEAGEAdABhAF0A
+LgBbAEEAYwBjAGUAcwBzAEMAbwBuAHQAcgBvAGwALgBUAHIAYQBuAHMAZgBlAHIARABpAHYAaQBz
+AGkAbwBuAHMAXQAgAFMAZQB0ACAAWwBXAGgAZQBuAFQAcgBhAG4AcwBtAGkAdAB0AGUAZABdAD0A
+ZwBlAHQARABhAHQAZQAoACkAIABXAEgARQBSAEUAIABbAFQAcgBhAG4AcwBmAGUAcgBJAEQAXQAg
+AD0AIABAAFQAcgBhAG4AcwBmAGUAcgBJAEQAAICVRgBhAGkAbABlAGQAIAB0AG8AIAB1AHAAZABh
+AHQAZQAgAFQAcgBhAG4AcwBmAGUAcgBEAGkAdgBpAHMAaQBvAG4AcwAuAFcAaABlAG4AVAByAGEA
+bgBzAG0AaQB0AHQAZQBkACAAZABhAHQAZQAgAGYAbwByACAAdAByAGEAbgBzAGEAYwB0AGkAbwBu
+AEkARAAgAAB9UwBlAGwAZQBjAHQAIAAqACAAZgByAG8AbQAgAFQAcgBhAG4AcwBmAGUAcgBfAEMA
+YQB0AGUAZwBvAHIAeQAgAHcAaABlAHIAZQAgAHQAcgBhAG4AcwBmAGUAcgBJAEQAIAA9ACAAQAB0
+AHIAYQBuAHMAZgBlAHIASQBEAAAVdAByAGEAbgBzAGYAZQByAEkARAAAgJFVAFAARABBAFQARQAg
+AEMAYQB0AGUAZwBvAHIAeQAgAFMARQBUACAAZABlAHMAYwByAGkAcAB0AGkAbwBuAD0APwAsAG0A
+bwBkAGkAZgB5AF8AZABhAHQAZQA9AD8ALABtAG8AZABpAGYAeQBfAHQAaQBtAGUAPQA/ACAAVwBI
+AEUAUgBFACAAaQBkAD0APwAAF2QAZQBzAGMAcgBpAHAAdABpAG8AbgAADWQAZQBzAGMAcgBwAAAX
+bQBvAGQAaQBmAHkAXwBkAGEAdABlAAAReQB5AHkAeQBNAE0AZABkAAAXbQBvAGQAaQBmAHkAXwB0
+AGkAbQBlAAANSABIAG0AbQBzAHMAAAVpAGQAAAtDAGEAdABJAEQAAIDvSQBOAFMARQBSAFQAIABJ
+AE4AVABPACAAQwBhAHQAZQBnAG8AcgB5ACAAKABpAGQALABkAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+LABwAGUAcgBtAGkAcwBzAGkAbwBuAF8AZwByAHAALABtADIAbQByAF8AdAB5AHAAZQAsAGYAYQBj
+AGkAbABpAHQAeQAsAG0AbwBkAGkAZgB5AF8AZABhAHQAZQAsAG0AbwBkAGkAZgB5AF8AdABpAG0A
+ZQApACAAVgBBAEwAVQBFAFMAIAAoAD8ALAA/ACwALQAxACwAMAAsAD8ALAA/ACwAPwApAAERZgBh
+AGMAaQBsAGkAdAB5AAArTgBlAHcAIABjAGEAdABlAGcAbwByAHkAIABjAHIAZQBhAHQAZQBkACAA
+AAtDAGEAdABJAGQAADlDAGEAdABlAGcAbwByAHkAIAByAGUAYwBvAHIAZAAgAHUAcABkAGEAdABl
+AGQALgAgAGkAZAA9AAA/RQB4AGMAZQBwAHQAaQBvAG4AIABjAHIAZQBhAHQAaQBuAGcAIABDAGEA
+dABlAGcAbwByAHkAIABJAEQAPQAAAzoAAIHRUwBFAEwARQBDAFQAIABwAGMALgBpAGQAIABJAEQA
+LAAgAHAAYwAuAGMAYQB0AGUAZwBvAHIAeQBfAGkAZAAsACAAcABjAC4AcwBsAG8AdABfAG4AdQBt
+AGIAZQByACwAIABwAC4AaQBkACAAcABlAHIAcwBvAG4AXwBpAGQAIABmAHIAbwBtACAAcABlAHIA
+cwBvAG4AIABwACAAaQBuAG4AZQByACAAagBvAGkAbgAgAGQAZQBwAGEAcgB0AG0AZQBuAHQAIABk
+ACAAbwBuACAAcAAuAGQAZQBwAGEAcgB0AG0AZQBuAHQAPQBkAC4AaQBkACAAbABlAGYAdAAgAGoA
+bwBpAG4AIABwAGUAcgBzAG8AbgBfAGMAYQB0AGUAZwBvAHIAeQAgAHAAYwAgAG8AbgAgAHAAYwAu
+AHAAZQByAHMAbwBuAF8AaQBkAD0AcAAuAGkAZAAgAFcAaABlAHIAZQAgAHAALgBlAG0AcABsAG8A
+eQBlAGUAPQA/ACAAYQBuAGQAIABkAC4AZABpAHYAaQBzAGkAbwBuAD0APwAgAE8AcgBkAGUAcgAg
+AGIAeQAgAHAAYwAuAGMAYQB0AGUAZwBvAHIAeQBfAGkAZAAAEWUAbQBwAGwAbwB5AGUAZQAAEWQA
+aQB2AGkAcwBpAG8AbgAAE3AAZQByAHMAbwBuAF8AaQBkAAAXYwBhAHQAZQBnAG8AcgB5AF8AaQBk
+AAAXcwBsAG8AdABfAG4AdQBtAGIAZQByAAB/RABFAEwARQBUAEUAIABGAHIAbwBtACAAcABlAHIA
+cwBvAG4AXwBjAGEAdABlAGcAbwByAHkAIAB3AGgAZQByAGUAIABwAGUAcgBzAG8AbgBfAGkAZAA9
+AD8AIABhAG4AZAAgAGMAYQB0AGUAZwBvAHIAeQBfAGkAZAA9AD8AAFVQAGUAcgBzAG8AbgAgAEMA
+YQB0AGUAZwBvAHIAeQAgAHsAMAB9ACAARABlAGwAZQB0AGUAZAAgAGYAbwByACAAcABlAHIAcwBv
+AG4AIAB7ADEAfQAAAy4AAFNTAEUATABFAEMAVAAgAE0AQQBYACgASQBEACkAIABNAGEAeABJAEQA
+IABmAHIAbwBtACAAcABlAHIAcwBvAG4AXwBjAGEAdABlAGcAbwByAHkAAIEBSQBOAFMARQBSAFQA
+IABJAG4AdABvACAAcABlAHIAcwBvAG4AXwBjAGEAdABlAGcAbwByAHkAIAAoAGkAZAAsACAAcABl
+AHIAcwBvAG4AXwBpAGQALAAgAGMAYQB0AGUAZwBvAHIAeQBfAGkAZAAsACAAcwBsAG8AdABfAG4A
+dQBtAGIAZQByACwAIABmAGEAYwBpAGwAaQB0AHkALAAgAG0AbwBkAGkAZgB5AF8AZABhAHQAZQAs
+ACAAbQBvAGQAaQBmAHkAXwB0AGkAbQBlACkAIABWAEEATABVAEUAUwAgACgAPwAsAD8ALAA/ACwA
+PwAsAD8ALAA/ACwAPwApAACAn0EAZABkAGkAbgBnACAAUABlAHIAcwBvAG4AXwBDAGEAdABlAGcA
+bwByAHkAIABpAGQAPQB7ADAAfQAsACAAcABlAHIAcwBvAG4AXwBpAGQAPQB7ADEAfQAsACAAcwBs
+AG8AdABfAG4AdQBtAGIAZQByAD0AewAyAH0ALAAgAGMAYQB0AGUAZwBvAHIAeQBfAGkAZAA9AHsA
+MwB9ACAAAGEqACoAKgAqACoAIABQAHIAbwBjAGUAcwBzAGkAbgBnACAASABhAHUAbAB0AGUAZAAs
+ACAAQQBDAEEATQBTACAAbQBlAHMAcwBhAGcAZQAgAHEAdQBlAHUAZQAgAD0AIAAAW0YAYQBpAGwA
+ZQBkACAAdABvACAAaQBuAHMAZQByAHQAIABDAGEAdABlAGcAbwByAHkAIAB7ADAAfQAgAGYAbwBy
+ACAAcABlAHIAcwBvAG4AIAB7ADEAfQAgAABPUABlAHIAcwBvAG4AIABDAGEAdABlAGcAbwByAHkA
+IAB7ADAAfQAgAEEAZABkAGUAZAAgAHQAbwAgAHAAZQByAHMAbwBuACAAewAxAH0AAIEXVQBQAEQA
+QQBUAEUAIABUAHIAYQBuAHMAZgBlAHIAXwBCAGEAZABnAGUAQwBhAHQAZQBnAG8AcgB5ACAAUwBl
+AHQAIAB0AHIAYQBuAHMAbQBpAHMAcwBpAG8AbgBfAGQAYQB0AGUAIAA9ACAAZwBlAHQARABhAHQA
+ZQAoACkAIAB3AGgAZQByAGUAIAB0AHIAYQBuAHMAZgBlAHIASQBEACAAPQAgAEAAdAByAGEAbgBz
+AGYAZQByAEkAZAAgAEEATgBEACAAYwBhAHQAZQBnAG8AcgB5AF8AaQBkACAAPQAgAEAAYwBhAHQA
+SQBEACAAQQBOAEQAIABlAG0AcABfAGkAZAAgAD0AIABAAGUAbQBwAEkAZAAAFXQAcgBhAG4AcwBm
+AGUAcgBJAGQAAAtjAGEAdABJAEQAAAtlAG0AcABJAGQAAGtFAHgAYwBlAHAAdABpAG8AbgAgAEkA
+bgBzAGUAcgB0AGkAbgBnACAAQwBhAHQAZQBnAG8AcgB5ACAAewAwAH0AIABmAG8AcgAgAHAAZQBy
+AHMAbwBuACAAewAxAH0AOgAgAHsAMgB9ACAAAIFTUwBlAGwAZQBjAHQAIABkAGkAcwB0AGkAbgBj
+AHQAIABlAG0AcABfAGkAZAAsACAAYwBvAF8AZABpAHYALAAgAGMAYQB0AGUAZwBvAHIAeQBfAGkA
+ZAAgAGYAcgBvAG0AIABUAHIAYQBuAHMAZgBlAHIAXwBCAGEAZABnAGUAQwBhAHQAZQBnAG8AcgB5
+ACAAdwBoAGUAcgBlACAAdAByAGEAbgBzAGYAZQByAEkARAAgAD0AIABAAHQAcgBhAG4AcwBmAGUA
+cgBJAEQAIABhAG4AZAAgAHQAcgBhAG4AcwBtAGkAcwBzAGkAbwBuAF8AZABhAHQAZQAgAEkAUwAg
+AE4AVQBMAEwAIABvAHIAZABlAHIAIABiAHkAIABlAG0AcABfAGkAZAAsACAAYwBvAF8AZABpAHYA
+LAAgAGMAYQB0AGUAZwBvAHIAeQBfAGkAZAAADWUAbQBwAF8AaQBkAAADOQAADWMAbwBfAGQAaQB2
+AAAXQwBhAHQAZQBnAG8AcgB5AF8ASQBEAAAPdQBwAGQAYQB0AGUAIAAAgZ8uAHAAZQByAHMAbwBu
+ACAAcwBlAHQAIABwAGkAbgA9AD8ALAAgAGYAaQByAHMAdABfAG4AYQBtAGUAPQA/ACwAIABsAGEA
+cwB0AF8AbgBhAG0AZQA9AD8ALAAgAGkAbgBpAHQAaQBhAGwAcwA9AD8ALAAgAHQAaQB0AGwAZQAg
+AD0APwAsACAAYQBkAGQAcgBlAHMAcwAxAD0APwAsACAAYQBkAGQAcgBlAHMAcwAyAD0APwAsACAA
+YQBkAGQAcgBlAHMAcwAzAD0APwAsACAAYQBkAGQAcgBlAHMAcwA0AD0APwAsACAAYQBkAGQAcgBl
+AHMAcwA1AD0APwAsACAAcABoAG8AbgBlAD0APwAgACwAIABtAG8AZABpAGYAeQBfAGQAYQB0AGUA
+PQA/ACAALABtAG8AZABpAGYAeQBfAHQAaQBtAGUAPQA/ACAAdwBoAGUAcgBlACAAcABlAHIAcwBv
+AG4ALgBzAHQAYQB0AHUAcwAgAD0AIAAwACAAQQBuAGQAIABlAG0AcABsAG8AeQBlAGUAIAA9ACAA
+PwAAFWYAaQByAHMAdABfAG4AYQBtAGUAABNsAGEAcwB0AF8AbgBhAG0AZQAAEWkAbgBpAHQAaQBh
+AGwAcwAAC3QAaQB0AGwAZQAAEWEAZABkAHIAZQBzAHMAMQAAEWEAZABkAHIAZQBzAHMAMgAAEWEA
+ZABkAHIAZQBzAHMAMwAAEWEAZABkAHIAZQBzAHMANAAAEWEAZABkAHIAZQBzAHMANQAAC3AAaABv
+AG4AZQAAUUUAeABjAGUAcAB0AGkAbwBuACAAaQBuACAAdQBwAGQAYQB0AGkAbgBnACAAcABlAHIA
+cwBvAG4AIAByAGUAYwBvAHIAZAAgAGYAbwByACAAAB9zAGUAbABlAGMAdAAgAGkAZAAgAGYAcgBv
+AG0AIAAAPS4AZABlAHAAYQByAHQAbQBlAG4AdAAgAHcAaABlAHIAZQAgAGQAaQB2AGkAcwBpAG8A
+bgAgAD0AIAA/AAAPVQBQAEQAQQBUAEUAIAAAgQ0uAGQAZQBwAGEAcgB0AG0AZQBuAHQAIAAgAFMA
+RQBUACAAZABlAHMAYwByAGkAcAB0AGkAbwBuAD0APwAsAGwAbwBjAGEAdABpAG8AbgA9AD8ALABt
+AGEAbgBhAGcAZQByAD0APwAsAHAAaABvAG4AZQA9AD8ALAB1AHMAZQByADEAPQA/ACwAdQBzAGUA
+cgAyAD0APwAsAGYAYQBjAGkAbABpAHQAeQA9AD8ALAAgAG0AbwBkAGkAZgB5AF8AZABhAHQAZQA9
+AD8ALAAgAG0AbwBkAGkAZgB5AF8AdABpAG0AZQA9AD8AIAAgAFcASABFAFIARQAgAGQAaQB2AGkA
+cwBpAG8AbgA9AD8AAFtQAFAAIABEAGUAcABhAHIAdABtAGUAbgB0ACAAYQBsAHIAZQBhAGQAeQAg
+AGUAeABpAHMAdABzACAAZABlAHAAYQByAHQAbQBlAG4AdAAuAGkAZAAgAD0AIAAABSwAIAAAEWwA
+bwBjAGEAdABpAG8AbgAAD20AYQBuAGEAZwBlAHIAAAt1AHMAZQByADEAAAt1AHMAZQByADIAAHlX
+AGEAcgBuAGkAbgBnADoAIABOAG8AIAByAG8AdwBzACAAdQBwAGQAYQB0AGUAZAAgAGIAeQAgAFUA
+cABkAGEAdABlACAAZABlAHAAYQByAHQAbQBlAG4AdAAgADoAIABkAGUAcwBjAHIAaQBwAHQAaQBv
+AG4APQAAQ0QAZQBwAGEAcgB0AG0AZQBuAHQAIABVAHAAZABhAHQAZQBkACAAOgAgAGQAZQBzAGMA
+cgBpAHAAdABpAG8AbgA9AACAg0MAYQBzAGkAXwBEAGUAcABhAHIAdABtAGUAbgB0ADoAIABFAHgA
+YwBlAHAAdABpAG8AbgAgAHUAcABkAGEAdABpAG4AZwAgAG4AZQB3ACAAZABlAHAAYQByAHQAbQBl
+AG4AdAAgADoAIABkAGUAcwBjAHIAaQBwAHQAaQBvAG4APQAAYUMAYQBzAGkAXwBEAGUAcABhAHIA
+dABtAGUAbgB0ADoARQB4AGMAZQBwAHQAaQBvAG4AIABpAG4AIABSAGUAYQBkAGkAbgBnACAAZABl
+AHAAYQByAHQAbQBlAG4AdAAgAAAZSQBOAFMARQBSAFQAIABJAE4AVABPACAAAIELLgBkAGUAcABh
+AHIAdABtAGUAbgB0ACAAKABkAGUAcwBjAHIAaQBwAHQAaQBvAG4ALABkAGkAdgBpAHMAaQBvAG4A
+LABsAG8AYwBhAHQAaQBvAG4ALABtAGEAbgBhAGcAZQByACwAcABoAG8AbgBlACwAdQBzAGUAcgAx
+ACwAdQBzAGUAcgAyACwAZgBhAGMAaQBsAGkAdAB5ACwAIABtAG8AZABpAGYAeQBfAGQAYQB0AGUA
+LAAgAG0AbwBkAGkAZgB5AF8AdABpAG0AZQApACAAVgBBAEwAVQBFAFMAIAAoAD8ALAA/ACwAPwAs
+AD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8AKQAAZVcAYQByAG4AaQBuAGcAOgAgAEYAYQBpAGwA
+ZQBkACAAdABvACAAYwByAGUAYQB0AGUAIABkAGUAcABhAHIAdABtAGUAbgB0ADoAIABkAGUAcwBj
+AHIAaQBwAHQAaQBvAG4APQAASU4AZQB3ACAAZABlAHAAYQByAHQAbQBlAG4AdAAgAGMAcgBlAGEA
+dABlAGQAOgAgAGQAZQBzAGMAcgBpAHAAdABpAG8AbgA9AACAgUMAYQBzAGkAXwBEAGUAcABhAHIA
+dABtAGUAbgB0ADoAIABFAHgAYwBlAHAAdABpAG8AbgAgAGMAcgBlAGEAdABpAG4AZwAgAG4AZQB3
+ACAAZABlAHAAYQByAHQAbQBlAG4AdAA6ACAAZABlAHMAYwByAGkAcAB0AGkAbwBuAD0AAIPVLgBw
+AGUAcgBzAG8AbgAgACgAcABpAG4ALAAgAHMAdABhAHQAdQBzACwAIAB0AHkAcABlACwAIABwAGUA
+cgBzAG8AbgBfAGsAcABfAHIAZQBzAHAALAAgAHAAZQByAHMAbwBuAF8AdAByAGEAYwBlACwAIABw
+AGUAcgBzAG8AbgBfAHQAcgBhAGMAZQBfAGEAbABhAHIAbQAsACAAZQBtAHAAbABvAHkAZQBlACwA
+IABkAGUAcABhAHIAdABtAGUAbgB0ACwAIABmAGkAcgBzAHQAXwBuAGEAbQBlACwAbABhAHMAdABf
+AG4AYQBtAGUALAAgAGkAbgBpAHQAaQBhAGwAcwAsACAAdABpAHQAbABlACwAIABhAGQAZAByAGUA
+cwBzADEALAAgAGEAZABkAHIAZQBzAHMAMgAsACAAYQBkAGQAcgBlAHMAcwAzACwAIABhAGQAZABy
+AGUAcwBzADQALABhAGQAZAByAGUAcwBzADUALAAgAHAAaABvAG4AZQAsACAAcABoAG8AbgBlADIA
+LAAgAAkAcgBlAGkAcwBzAHUAZQBfAGMAbgB0ACwAIABhAHAAYgAsACAAcgBlAGEAZABlAHIALAAg
+AGEAYwBjAGUAcwBzAF8AZABhAHQAZQAsAGEAYwBjAGUAcwBzAF8AdABpAG0AZQAsACAAYQBjAGMA
+ZQBzAHMAXwB0AHoALAAgAGEAYwB0AGkAdgBlAF8AZABhAHQAZQAsACAAYQBjAHQAaQB2AGUAXwB0
+AGkAbQBlACwAIABhAGMAdABpAHYAZQBfAGMAbwBuAHQAZQB4AHQALAAgAGQAZQBhAGMAdABpAHYA
+ZQBfAGQAYQB0AGUALAAgAGQAZQBhAGMAdABpAHYAZQBfAHQAaQBtAGUALAAgAGQAZQBhAGMAdABp
+AHYAZQBfAGMAbwBuAHQAZQB4AHQALAAgAGYAbwByAGMAZQBfAGQAbwB3AG4AbABvAGEAZAAsACAA
+ZgBhAGMAaQBsAGkAdAB5ACwAIABtAG8AZABpAGYAeQBfAGQAYQB0AGUALAAgAG0AbwBkAGkAZgB5
+AF8AdABpAG0AZQApACAAdgBhAGwAdQBlAHMAIAAoAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8A
+LAAgAD8ALAA/ACwAPwAsAD8ALABuAHUAbABsACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAs
+AD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwA
+PwAsAD8AKQAAVVMARQBMAEUAQwBUACAAaQBkACAAZgByAG8AbQAgAGQAZQBwAGEAcgB0AG0AZQBu
+AHQAIAB3AGgAZQByAGUAIABkAGkAdgBpAHMAaQBvAG4APQA/AACAn0QAZQBwAGEAcgB0AG0AZQBu
+AHQAIAB7ADAAfQAgAEQAbwBlAHMAIABuAG8AdAAgAGUAeABpAHMAdAAuACAARgBhAGkAbABlAGQA
+IAB0AG8AIABjAHIAZQBhAHQAZQAgAHAAZQByAHMAbwBuACAAewAxAH0AIAB3AGkAdABoACAAdABo
+AGkAcwAgAGQAZQBwAGEAcgB0AG0AZQBuAHQAAA1zAHQAYQB0AHUAcwAACXQAeQBwAGUAAB1wAGUA
+cgBzAG8AbgBfAGsAcABfAHIAZQBzAHAAABlwAGUAcgBzAG8AbgBfAHQAcgBhAGMAZQAAJXAAZQBy
+AHMAbwBuAF8AdAByAGEAYwBlAF8AYQBsAGEAcgBtAAAVZABlAHAAYQByAHQAbQBlAG4AdAAADXAA
+aABvAG4AZQAyAAAXcgBlAGkAcwBzAHUAZQBfAGMAbgB0AAAHYQBwAGIAAA1yAGUAYQBkAGUAcgAA
+F2EAYwBjAGUAcwBzAF8AZABhAHQAZQAAF2EAYwBjAGUAcwBzAF8AdABpAG0AZQAAE2EAYwBjAGUA
+cwBzAF8AdAB6AAAXYQBjAHQAaQB2AGUAXwBkAGEAdABlAAAXYQBjAHQAaQB2AGUAXwB0AGkAbQBl
+AAAdYQBjAHQAaQB2AGUAXwBjAG8AbgB0AGUAeAB0AAAbZABlAGEAYwB0AGkAdgBlAF8AZABhAHQA
+ZQAAG2QAZQBhAGMAdABpAHYAZQBfAHQAaQBtAGUAACFkAGUAYQBjAHQAaQB2AGUAXwBjAG8AbgB0
+AGUAeAB0AAAdZgBvAHIAYwBlAF8AZABvAHcAbgBsAG8AYQBkAABDMAAgAFIAbwB3AHMAIABJAG4A
+cwBlAHIAdABlAGQAIABmAG8AcgAgAE4AZQB3ACAAUABlAHIAcwBvAG4AIAA9ACAAACdOAGUAdwAg
+AFAAZQByAHMAbwBuACAAYwByAGUAYQB0AGUAZAAgAAA9RQB4AGMAZQBwAHQAaQBvAG4AIABpAG4A
+IABpAG4AcwBlAHIAdABpAG4AZwAgAFAAZQByAHMAbwBuACAAABdQAGUAcgBzAG8AbgAgAEkARAAg
+AD0AAAUuACAAACEgAFIAZQBjAG8AcgBkAHMAIABVAHAAZABhAHQAZQBkAACA3VUAUABEAEEAVABF
+ACAAWwBEAGEAdABhAF0ALgBbAEEAYwBjAGUAcwBzAEMAbwBuAHQAcgBvAGwALgBUAHIAYQBuAHMA
+ZgBlAHIAUABlAHIAcwBvAG4AcwBdACAAUwBlAHQAIABbAFcAaABlAG4AVAByAGEAbgBzAG0AaQB0
+AHQAZQBkAF0APQBnAGUAdABEAGEAdABlACgAKQAgAFcASABFAFIARQAgAFsAVAByAGEAbgBzAGYA
+ZQByAEkARABdACAAPQAgAEAAVAByAGEAbgBzAGYAZQByAEkARAAAgJFGAGEAaQBsAGUAZAAgAHQA
+bwAgAHUAcABkAGEAdABlACAAVAByAGEAbgBzAGYAZQByAFAAZQByAHMAbwBuAHMALgBXAGgAZQBu
+AFQAcgBhAG4AcwBtAGkAdAB0AGUAZAAgAGQAYQB0AGUAIABmAG8AcgAgAHQAcgBhAG4AcwBhAGMA
+dABpAG8AbgBJAEQAIAAATVMAZQBsAGUAYwB0ACAAaQBkACAAZgByAG8AbQAgAHAAZQByAHMAbwBu
+ACAAdwBoAGUAcgBlACAAZQBtAHAAbABvAHkAZQBlAD0APwAAR0YAYQBpAGwAZQBkACAAdABvACAA
+cgBlAHQAcgBpAGUAdgBlACAASQBuAHMAZQByAHQAZQBkACAAUABlAHIAcwBvAG4AIAAAgM1VAHAA
+ZABhAHQAZQAgAHAAZQByAHMAbwBuAF8AdQBzAGUAcgAgAHMAZQB0ACAAZABlAHMAYwByAGkAcAB0
+AGkAbwBuAD0APwAsACAAbQBvAGQAaQBmAHkAXwBkAGEAdABlAD0APwAsACAAbQBvAGQAaQBmAHkA
+XwB0AGkAbQBlAD0APwAgAFcASABFAFIARQAgAHAAZQByAHMAbwBuAF8AaQBkAD0APwAgAEEATgBE
+ACAAcwBsAG8AdABfAG4AdQBtAGIAZQByAD0APwAAgPlJAG4AcwBlAHIAdAAgAEkAbgB0AG8AIABw
+AGUAcgBzAG8AbgBfAHUAcwBlAHIAIAAoAGkAZAAsACAAZABlAHMAYwByAGkAcAB0AGkAbwBuACwA
+IABwAGUAcgBzAG8AbgBfAGkAZAAsACAAcwBsAG8AdABfAG4AdQBtAGIAZQByACwAIABmAGEAYwBp
+AGwAaQB0AHkALAAgAG0AbwBkAGkAZgB5AF8AZABhAHQAZQAsACAAbQBvAGQAaQBmAHkAXwB0AGkA
+bQBlACkAIABWAEEATABVAEUAUwAgACgAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwApAACAjUUA
+eABjAGUAcAB0AGkAbwBuACAAaQBuACAAcwBlAHQAdABpAG4AZwAgAHUAcwBlAHIAIAB2AGEAbAB1
+AGUAIABlAG0AcABsAG8AeQBlAGUAPQB7ADAAfQAsACAAcwBsAG8AdAA9AHsAMQB9ACwAIAB2AGEA
+bAB1AGUAPQB7ADIAfQA6AHsAMwB9ACAAAIETLgBiAGEAZABnAGUAIABzAGUAdAAgAGQAZQBzAGMA
+cgBpAHAAdABpAG8AbgA9AD8ALAAgAHAAZQByAHMAbwBuAF8AaQBkAD0APwAsACAAcgBlAHQAdQBy
+AG4AXwBkAGEAdABlAD0AIAA/ACwAIAByAGUAdAB1AHIAbgBfAHQAaQBtAGUAPQAgAD8ALAByAGUA
+dAB1AHIAbgBfAHQAegA9ACAAPwAsAHMAdABhAHQAdQBzAD0APwAsACAAbQBvAGQAaQBmAHkAXwBk
+AGEAdABlAD0AIAA/ACwAIABtAG8AZABpAGYAeQBfAHQAaQBtAGUAPQAgAD8AIAB3AGgAZQByAGUA
+IABiAGkAZAAgAD0AIAA/AAAXcgBlAHQAdQByAG4AXwBkAGEAdABlAAAXcgBlAHQAdQByAG4AXwB0
+AGkAbQBlAAATcgBlAHQAdQByAG4AXwB0AHoAAAdiAGkAZAAAP0YAYQBpAGwAZQBkACAAdABvACAA
+VQBwAGQAYQB0AGUAIABiAGEAZABnAGUAIABuAHUAbQBiAGUAcgA9ACAAABMsACAAUwB0AGEAdAB1
+AHMAPQAALVUAcABkAGEAdABlAGQAIABiAGEAZABnAGUAIABuAHUAbQBiAGUAcgA9ACAAAEFFAHgA
+YwBlAHAAdABpAG8AbgAgAHUAcABkAGEAdABpAG4AZwAgAGIAYQBkAGcAZQAgAG4AdQBtAGIAZQBy
+AD0AAIN1LgBiAGEAZABnAGUAIAAoAGQAZQBzAGMAcgBpAHAAdABpAG8AbgAsACAAYgBpAGQALAAg
+AHMAdABhAHQAdQBzACwAIABiAGEAZABnAGUAXwB0AG8AdQByACwAIABiAGEAZABnAGUAXwB0AGUA
+bQBwACwAIABwAGUAcgBzAG8AbgBfAGkAZAAsACAAcgBlAGEAZABlAHIALAAgAGEAYwBjAGUAcwBz
+AF8AZABhAHQAZQAsACAAYQBjAGMAZQBzAHMAXwB0AGkAbQBlACwAIABhAGMAYwBlAHMAcwBfAHQA
+egAsACAAaQBzAHMAdQBlAF8AZABhAHQAZQAsACAAaQBzAHMAdQBlAF8AdABpAG0AZQAsAGkAcwBz
+AHUAZQBfAGMAbwBuAHQAZQB4AHQALAAgAGUAeABwAGkAcgBlAGQAXwBkAGEAdABlACwAIABlAHgA
+cABpAHIAZQBkAF8AdABpAG0AZQAsAGUAeABwAGkAcgBlAGQAXwBjAG8AbgB0AGUAeAB0ACwAIABy
+AGUAdAB1AHIAbgBfAGQAYQB0AGUALAAgAHIAZQB0AHUAcgBuAF8AdABpAG0AZQAsAHIAZQB0AHUA
+cgBuAF8AdAB6ACwAIAB1AHMAYQBnAGUAXwBjAG8AdQBuAHQALAB1AHMAYQBnAGUAXwBlAHgAaABh
+AHUAcwB0AGUAZAAsACAAdABvAHUAcgBfAGIAYQBkAGcAZQAsACAAYgBpAGQAXwBmAG8AcgBtAGEA
+dABfAGkAZAAsACAAcgBlAGkAcwBzAHUAZQBfAGMAbgB0ACwAcgBlAHAAcgBpAG4AdABfAGMAbgB0
+ACwAIAB1AG4AaQBxAHUAZQBfAGkAZAAsACAAYgBhAGQAZwBlAF8AZABlAHMAaQBnAG4ALAAgAGYA
+YQBjAGkAbABpAHQAeQAsACAAbQBvAGQAaQBmAHkAXwBkAGEAdABlACwAIABtAG8AZABpAGYAeQBf
+AHQAaQBtAGUAKQAgAHYAYQBsAHUAZQBzACAAKAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwA
+PwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/
+ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8AKQAAgl0uAGIAYQBkAGcAZQAgACgAZABl
+AHMAYwByAGkAcAB0AGkAbwBuACwAIABiAGkAZAAsACAAcwB0AGEAdAB1AHMALAAgAHAAZQByAHMA
+bwBuAF8AaQBkACwAIABpAHMAcwB1AGUAXwBkAGEAdABlACwAIABpAHMAcwB1AGUAXwB0AGkAbQBl
+ACwAIABpAHMAcwB1AGUAXwBjAG8AbgB0AGUAeAB0ACwAIABlAHgAcABpAHIAZQBkAF8AZABhAHQA
+ZQAsACAAZQB4AHAAaQByAGUAZABfAHQAaQBtAGUALAAgAGUAeABwAGkAcgBlAGQAXwBjAG8AbgB0
+AGUAeAB0ACwAIAByAGUAdAB1AHIAbgBfAGQAYQB0AGUALAAgAHIAZQB0AHUAcgBuAF8AdABpAG0A
+ZQAsACAAcgBlAHQAdQByAG4AXwB0AHoALAAgAGIAaQBkAF8AZgBvAHIAbQBhAHQAXwBpAGQALAAg
+AHIAZQBpAHMAcwB1AGUAXwBjAG4AdAAsACAAcgBlAHAAcgBpAG4AdABfAGMAbgB0ACwAIAB1AG4A
+aQBxAHUAZQBfAGkAZAAsACAAZgBhAGMAaQBsAGkAdAB5ACwAIABtAG8AZABpAGYAeQBfAGQAYQB0
+AGUALAAgAG0AbwBkAGkAZgB5AF8AdABpAG0AZQApACAAdgBhAGwAdQBlAHMAIAAoAD8ALAA/ACwA
+PwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/ACwAPwAsAD8ALAA/
+ACwAPwAsAD8ALAA/ACkAABVpAHMAcwB1AGUAXwBkAGEAdABlAAAVaQBzAHMAdQBlAF8AdABpAG0A
+ZQAAG2kAcwBzAHUAZQBfAGMAbwBuAHQAZQB4AHQAABllAHgAcABpAHIAZQBkAF8AZABhAHQAZQAA
+GWUAeABwAGkAcgBlAGQAXwB0AGkAbQBlAAAfZQB4AHAAaQByAGUAZABfAGMAbwBuAHQAZQB4AHQA
+ABtiAGkAZABfAGYAbwByAG0AYQB0AF8AaQBkAAALMAAwADEAMAAxAAAFMAAwAAAXcgBlAHAAcgBp
+AG4AdABfAGMAbgB0AAATdQBuAGkAcQB1AGUAXwBpAGQAADdGAGEAaQBsAGUAZAAgAHQAbwAgAGMA
+cgBlAGEAdABlACAAbgBlAHcAIABiAGEAZABnAGUAIAAAJUMAcgBlAGEAdABlAGQAIABuAGUAdwAg
+AGIAYQBkAGcAZQAgAAA7RQB4AGMAZQBwAHQAaQBvAG4AIABpAG4AIABpAG4AcwBlAHIAdABpAG4A
+ZwAgAGIAYQBkAGcAZQAgAACF31MARQBMAEUAQwBUACAAdABvAHAAKAAxACkAIABwAGIALgBbAEUA
+bQBwAGwAbwB5AGUAZQBJAEQAXQAsAHAAYgAuAFsAUABlAHIAcwBvAG4ASQBEAF0ALAAgAHgALgBb
+AFMAVABBAEUAbQBwAGwAbwB5AGUAZQBTAHQAYQB0AHUAcwBJAEQAXQAsACAAIABkAC4AWwBEAGkA
+dgBpAHMAaQBvAG4ASQBEAF0ALAAgAGQALgBbAEQAaQB2AGkAcwBpAG8AbgBDAG8AZABlAF0ALAAg
+AGQALgBbAEQAaQB2AGkAcwBpAG8AbgBOAGEAbQBlAF0ALAAgAGMALgBbAEMAbwBtAHAAYQBuAHkA
+SQBEAF0ALAAgAGMALgBbAEMAbwBtAHAAYQBuAHkAQwBvAGQAZQBdACwAIABjAC4AWwBDAG8AcgBw
+AG8AcgBhAHQAaQBvAG4ATgBhAG0AZQBdACwAIAAgAGIALgBbAEIAYQBkAGcAZQBJAEQAXQAsACAA
+YgAuAFsAQgBhAGQAZwBlAE4AdQBtAGIAZQByAF0ALAAgAGIALgBbAEIAYQBkAGcAZQBDAG8AbABv
+AHIASQBEAF0ALAAgAGIALgBbAEMAYQByAGQATgB1AG0AYgBlAHIAXQAsACAAYgAuAFsAVwBoAGUA
+bgBCAGUAYwBvAG0AZQBzAEEAYwB0AGkAdgBlAF0ALAAgAGIALgBXAGgAZQBuAEUAeABwAGkAcgBl
+AHMAIAAgAEYAUgBPAE0AIABbAEQAYQB0AGEAXQAuAFsAQQBjAGMAZQBzAHMAQwBvAG4AdAByAG8A
+bAAuAFQAcgBhAG4AcwBmAGUAcgBCAGEAZABnAGUAcwBdACAAdABiACAAIABJAE4ATgBFAFIAIABK
+AE8ASQBOACAAWwBEAGEAdABhAF0ALgBbAFAAZQByAHMAbwBuAC4AQgBhAGQAZwBlAHMAXQAgAGIA
+IABvAG4AIABiAC4AWwBCAGEAZABnAGUASQBEAF0AIAA9ACAAdABiAC4AWwBCAGEAZABnAGUASQBE
+AF0AIAAgAEkATgBOAEUAUgAgAEoATwBJAE4AIABbAEQAYQB0AGEAXQAuAFsAUABlAHIAcwBvAG4A
+LgBQAGUAcgBzAG8AbgBEAGkAdgBpAHMAaQBvAG4AWAByAGUAZgBdACAAeAAgAG8AbgAgAGIALgBb
+AFAAZQByAHMAbwBuAEQAaQB2AGkAcwBpAG8AbgBYAHIAZQBmAEkARABdACAAPQAgAHgALgBbAFAA
+ZQByAHMAbwBuAEQAaQB2AGkAcwBpAG8AbgBYAHIAZQBmAEkARABdACAAIABJAE4ATgBFAFIAIABK
+AE8ASQBOACAAWwBEAGEAdABhAF0ALgBbAFAAZQByAHMAbwBuAC4AUABlAHIAcwBvAG4AQgBpAG8A
+ZwByAGEAcABoAGkAYwBzAF0AIABwAGIAIABvAG4AIABwAGIALgBbAFAAZQByAHMAbwBuAEkARABd
+ACAAPQAgAHgALgBbAFAAZQByAHMAbwBuAEkARABdACAAIABJAE4ATgBFAFIAIABKAE8ASQBOACAA
+WwBEAGEAdABhAF0ALgBbAEQAaQB2AGkAcwBpAG8AbgAuAEQAaQB2AGkAcwBpAG8AbgBzAF0AIABk
+ACAAbwBuACAAZAAuAFsARABpAHYAaQBzAGkAbwBuAEkARABdACAAPQAgAHgALgBbAEQAaQB2AGkA
+cwBpAG8AbgBJAEQAXQAgACAASQBOAE4ARQBSACAASgBPAEkATgAgAFsARABhAHQAYQBdAC4AWwBD
+AG8AbQBwAGEAbgB5AC4AQwBvAG0AcABhAG4AaQBlAHMAXQAgAGMAIABvAG4AIABjAC4AWwBDAG8A
+bQBwAGEAbgB5AEkARABdACAAPQAgAGQALgBbAEMAbwBtAHAAYQBuAHkASQBEAF0AIAAgAFcASABF
+AFIARQAgAHQAYgAuAFQAcgBhAG4AcwBmAGUAcgBJAEQAIAA9ACAAACdTAFQAQQBFAG0AcABsAG8A
+eQBlAGUAUwB0AGEAdAB1AHMASQBEAAAVRABpAHYAaQBzAGkAbwBuAEkAZAAAD0IAYQBkAGcAZQBJ
+AEQAABdCAGEAZABnAGUATgB1AG0AYgBlAHIAABlCAGEAZABnAGUAQwBvAGwAbwByAEkARAAAFUMA
+YQByAGQATgB1AG0AYgBlAHIAACNXAGgAZQBuAEIAZQBjAG8AbQBlAHMAQQBjAHQAaQB2AGUAABdX
+AGgAZQBuAEUAeABwAGkAcgBlAHMAACkuAGIAYQBkAGcAZQAgAHcAaABlAHIAZQAgAGIAaQBkAD0A
+IAA/ACAAAAMwAAALMAAwADUAMgAwAACA21UAUABEAEEAVABFACAAWwBEAGEAdABhAF0ALgBbAEEA
+YwBjAGUAcwBzAEMAbwBuAHQAcgBvAGwALgBUAHIAYQBuAHMAZgBlAHIAQgBhAGQAZwBlAHMAXQAg
+AFMAZQB0ACAAWwBXAGgAZQBuAFQAcgBhAG4AcwBtAGkAdAB0AGUAZABdAD0AZwBlAHQARABhAHQA
+ZQAoACkAIABXAEgARQBSAEUAIABbAFQAcgBhAG4AcwBmAGUAcgBJAEQAXQAgAD0AIABAAFQAcgBh
+AG4AcwBmAGUAcgBJAEQAAICrRgBhAGkAbABlAGQAIAB0AG8AIAB1AHAAZABhAHQAZQAgAFQAcgBh
+AG4AcwBmAGUAcgBCAGEAZABnAGUAcwAuAFcAaABlAG4AVAByAGEAbgBzAG0AaQB0AHQAZQBkACAA
+ZABhAHQAZQAgAGYAbwByACAAQgBhAGQAZwBlAHMAIAB1AHAAZABhAHQAZQAgAHQAcgBhAG4AcwBh
+AGMAdABpAG8AbgBJAEQAIAAAgNtTAEUATABFAEMAVAAgAHAALgBpAGQAIABpAGQAIABGAFIATwBN
+ACAAUABlAHIAcwBvAG4AIABwACAASQBuAG4AZQByACAASgBvAGkAbgAgAEQAZQBwAGEAcgB0AG0A
+ZQBuAHQAIABkACAAbwBuACAAcAAuAGQAZQBwAGEAcgB0AG0AZQBuAHQAPQBkAC4AaQBkACAAVwBo
+AGUAcgBlACAAcAAuAEUAbQBwAGwAbwB5AGUAZQA9AD8AIABBAG4AZAAgAGQALgBkAGkAdgBpAHMA
+aQBvAG4APQA/AAARRQBtAHAAbABvAHkAZQBlAABbTgBvACAAUABlAHIAcwBvAG4AQgBpAG8AZwBy
+AGEAcABoAGkAYwBzACAAcgBlAGMAbwByAGQAIABmAG8AcgAgAEUAbQBwAGwAbwB5AGUAZQBJAEQA
+IAA9ACAAABtBAEMAQQBNAFMAVAByAGEAbgBzAGYAZQByAAAVeQB5AHkAeQAtAE0ATQAtAGQAZAAB
+CS4AbABvAGcAACd5AHkAeQB5AC0ATQBNAC0AZABkACAASABIADoAbQBtADoAcwBzAAEFIABMAAAF
+OgAgAAAFDQAKAACBNVMARQBMAEUAQwBUACAAUwBVAE0AKABjAG4AdAApACAAYQBzACAAdABvAHQA
+UgBlAGMAbwByAGQAcwAgAGYAcgBvAG0AIAAoACAAUwBFAEwARQBDAFQAIABDAE8AVQBOAFQAKAAq
+ACkAIABhAHMAIABjAG4AdAAgAGYAcgBvAG0AIABbAEQAYQB0AGEAXQAuAFsAQQBjAGMAZQBzAHMA
+QwBvAG4AdAByAG8AbAAuAFQAcgBhAG4AcwBmAGUAcgBQAGUAcgBzAG8AbgBzAF0AIAAgAFcASABF
+AFIARQAgAFsAVwBoAGUAbgBUAHIAYQBuAHMAbQBpAHQAdABlAGQAXQAgAEkAcwAgAG4AdQBsAGwA
+IABBAG4AZAAgAFQAcgBhAG4AcwBmAGUAcgBJAGQAIAA9ACAAAID/IABVAE4ASQBPAE4AIAAgAFMA
+RQBMAEUAQwBUACAAYwBvAHUAbgB0ACgAKgApACAAYQBzACAAYwBuAHQAIABmAHIAbwBtACAAWwBE
+AGEAdABhAF0ALgBbAEEAYwBjAGUAcwBzAEMAbwBuAHQAcgBvAGwALgBUAHIAYQBuAHMAZgBlAHIA
+RABpAHYAaQBzAGkAbwBuAHMAXQAgACAAVwBIAEUAUgBFACAAWwBXAGgAZQBuAFQAcgBhAG4AcwBt
+AGkAdAB0AGUAZABdACAASQBzACAAbgB1AGwAbAAgAEEAbgBkACAAVAByAGEAbgBzAGYAZQByAEkA
+ZAAgAD0AIAAABykAIABhAAAVdABvAHQAUgBlAGMAbwByAGQAcwAAN24AdQBtAGIAZQByACAAbwBm
+ACAAcgBlAGMAbwByAGQAcwAgAHAAZQBuAGQAaQBuAGcAOgAgAABNVQBuAGEAYgBsAGUAIAB0AG8A
+IABDAFMAXwBDAG8AbgB0AHIAbwBsAFQAYQBiAGwAZQBSAGUAYQBkAGUAcgAuAFIAZQBhAGQAKAAp
+AAAlVABlAGwAbgBlAHQAXwBDAGwAaQBlAG4AdABfAFAAYQB0AGgAACNUAGUAbABuAGUAdABfAEMA
+bwBuAG4AZQBjAHQAaQBvAG4AAIC9LQBzAHMAaAAgAHAAcABhAGQAbQBpAG4AQAAxADkAMgAuADkA
+LgAyADAAMAAuADYAIAAtAHAAdwAgAHAAcABhAGQAbQBpAG4AIAAiAGMAYQB0ACAALwBjAGEAcwAv
+AGkAcABjAHMALgB0AHgAdAAgAHwAIABhAHcAawAgACcAewAgAFMAVQBNACAAKwA9ACAAJAA2AH0A
+IABFAE4ARAAgAHsAcAByAGkAbgB0ACAAUwBVAE0AfQAnACIAIAAB1O+w03WJdEKnEC53jf6yNgAI
+t3pcVhk04IkIsD9ffxHVCjoDIAABAwAAAQQAABIMBwYVEhgBEgwEAAASCAcGFRIYARIIBAAAEhEH
+BhUSGAESEQQAABIUBwYVEhgBEhQECAASDAQIABIIBAgAEhEECAASFAQgAQIcAyAACAQgABIVAyAA
+DgIeAAcQAQEeAB4ABzABAQEQHgACEwAEIAATAAcGFRIZARMABCgAEwACBg4EIAEBDhAgDQEODg4O
+Dg4ODg4ODg4OAygADgcgBAEODg4OAwYSHQMGEiEEAAASHQQAABIhBQABARIhBAgAEh0ECAASIQMG
+EigEAAASKAQIABIoGCAVAQ4ODg4ODg4ODg4ODg4ODg4ODg4ODgiJhF3NgIDMkQIGCAMGEi0DBhIx
+AwYSNQMGEjkGIAISMAgIBiACEiAICAQgAQEICCAEARI9Dg4OBSABCBIwBSABCBIgBiACCBIwDgkg
+AwESLRIwEhwGIAIIDhIcBSACCA4OBiADCA4OCAUgAgEIDgQgARwcBCABCAgDBhE4BAAAAAAEAQAA
+AAUgAQERSQgBAAEAAAAAAAUgAgEODhgBAApNeVRlbXBsYXRlCDEwLjAuMC4wAAAGFRIYARIMBhUS
+GAESCAYVEhgBEhEGFRIYARIUBAcBEgwEBwESCAQHARIRBAcBEhQTAQAOTXkuV2ViU2VydmljZXMA
+ABABAAtNeS5Db21wdXRlcgAADAEAB015LlVzZXIAABMBAA5NeS5BcHBsaWNhdGlvbgAABAABHBwD
+BwECAwcBCAYAARIVEWUEBwESFQMHAQ4FEAEAHgAECgEeAAQHAR4AYQEANFN5c3RlbS5XZWIuU2Vy
+dmljZXMuUHJvdG9jb2xzLlNvYXBIdHRwQ2xpZW50UHJvdG9jb2wSQ3JlYXRlX19JbnN0YW5jZV9f
+E0Rpc3Bvc2VfX0luc3RhbmNlX18AAAAGFRIYARMABhUSGQETAAQKARMABSABARMACAcDEwATABMA
+BCABAQIFAQAAAAAEIAASdQYgAgEOEnUGBwISHRIdBAcBEiEIAQACAAAAAAAGAAESeRJ5BAcBEihY
+AQBLTWljcm9zb2Z0LlZpc3VhbFN0dWRpby5FZGl0b3JzLlNldHRpbmdzRGVzaWduZXIuU2V0dGlu
+Z3NTaW5nbGVGaWxlR2VuZXJhdG9yBzkuMC4wLjAAABABAAtNeS5TZXR0aW5ncwAABSAAEoCRBSAA
+EoCVBiABEoCZHAMgABwEAAEOHAYgAR0OHQMFIAIBHBwFIAASgK0FIAESMRwGAAEBEoCJBQACDg4O
+BiACAQ4SNQUgABKAtQcgAhKAuQ4cBSAAEoCNAyAAAgQgARwOBAABCBwEAAEOCAYAAwgODgIgBxII
+CBKAhR0ODg4OHQ4OEoCJDhKAiRKAjQ4IHQMIHQ4NBwUSMBIwEoCNEoCFDg0HBRKAjRIgEiASgIUO
+BAABAhwJBwQSIAgSgIUOBiACAQ4SOQUgABKA0QcgAhKA1Q4cBQAAEYDNBCABDg4FAAIcHBwRBwUS
+gI0SgIUSgMkSgIkRgM0FIAASgNkEIAEIDgQgAQIIBgADAhwcAgYAAw4ODg4GAAMODhwcBSAAEoDd
+BgACAg4QCAYAAg4OHRwEIAEIHAcABA4OHBwcIwcPEi0IEoDJEoDZCAgOEoDJCBKAyRKAhRKAiRKA
+3R0cEYDNBCABAg4NBwYODhI9EoCNAhKAhQQGEoDlBwAEDg4ODg4OBwYSgMkIDggSgIkRgM0FIAIO
+CAgrBxUCEoCFDg4OEoDJCAgSgNkODhKAyRKAhRKAiRKAiQ4SgMkODhKAiRGAzQYAAxwCHBwFAAEO
+HQ4SBwkIEoDJCAgODhKAiRGAzR0OCwcFEjAIEoCFDh0OBSAAEoD1BiAAHRKA8QYgAhwcHRwtBxQS
+gMkOCA4RgO0IDhKA8RKA8Q4OEoCJEoD1EYDtCB0SgPEIHRKA8RGAzR0cBAABCA4SBwoODhKAyQgI
+DggIEoCJEYDNFQcNDg4ODhKAyQgICAgOCBKAiRGAzRkHDA4OEoCNEoDJEhwCEoCFDg4SgNkSgNkO
+CAcECBKAyQgOCQcFCBIgEjAICAUgABKBAQYgAwEODgIIBwMOEYDNHQ4IAAICDhARgM0GBwIRgM0c
+EAcHCBKAjRKAhQgOEoCJHQ4GIAEBEYEVBiABARKBEQUgABKBCQUgABKBBQQAAQEIFgcKDggOEoEF
+EoEJEoEFEoENDhKBEQgIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBRwEA
+Gi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVU
+IEZyYW1ld29yayA0DAEABzEuMC4wLjAAACkBACRjMjBjYzI0ZS04MDA4LTRmMjctYjhhYS05MjBm
+OTkxYmFkYTMAAAUBAAEAAB8BABpDb3B5cmlnaHQgQCBNaWNyb3NvZnQgMjAxMAAAGgEAFVNTSVNf
+UFBfRXhwb3J0LnZicHJvagAADgEACU1pY3Jvc29mdAAArOQAAAAAAAAAAAAAzuQAAAAgAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAMDkAAAAAAAAAAAAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVl
+LmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAA
+ADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgAAABYAAEAWAMAAAAAAAAAAAAAWAM0AAAAVgBTAF8A
+VgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAAAL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAA
+AAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQA
+BAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAAAAAAAACwBLgCAAABAFMAdAByAGkAbgBnAEYAaQBs
+AGUASQBuAGYAbwAAAJQCAAABADAAMAAwADAAMAA0AGIAMAAAADQACgABAEMAbwBtAHAAYQBuAHkA
+TgBhAG0AZQAAAAAATQBpAGMAcgBvAHMAbwBmAHQAAABUABYAAQBGAGkAbABlAEQAZQBzAGMAcgBp
+AHAAdABpAG8AbgAAAAAAUwBTAEkAUwBfAFAAUABfAEUAeABwAG8AcgB0AC4AdgBiAHAAcgBvAGoA
+AAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AMAAuADAAAABUABoAAQBJ
+AG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAUwBJAFMAXwBQAFAAXwBFAHgAcABvAHIAdAAuAHYA
+YgBwAHIAbwBqAC4AZABsAGwAAABcABsAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABD
+AG8AcAB5AHIAaQBnAGgAdAAgAEAAIABNAGkAYwByAG8AcwBvAGYAdAAgADIAMAAxADAAAAAAAFwA
+GgABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAFMASQBTAF8AUABQAF8ARQB4
+AHAAbwByAHQALgB2AGIAcAByAG8AagAuAGQAbABsAAAATAAWAAEAUAByAG8AZAB1AGMAdABOAGEA
+bQBlAAAAAABTAFMASQBTAF8AUABQAF8ARQB4AHAAbwByAHQALgB2AGIAcAByAG8AagAAADQACAAB
+AFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBBAHMA
+cwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAOAAAAwAAADgNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAA=</BinaryItem>
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="1102"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="862"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="766"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="1040"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="867"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="761"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="926"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="698"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="883"
+            Column="13" />
+          <Breakpoint
+            Enabled="True"
+            File="ScriptMain.vb"
+            Line="555"
+            Column="9" />
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Transfer Person Data"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

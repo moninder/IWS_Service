@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SafeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SafeEntities" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="Safe_CitationPoliceOfficers" EntityType="SafeModel.Safe_CitationPoliceOfficers" />
+    <EntitySet Name="Safe_Citations" EntityType="SafeModel.Safe_Citations" />
+    <EntitySet Name="Safe_CitationViolations" EntityType="SafeModel.Safe_CitationViolations" />
+    <EntitySet Name="Safe_Hearings" EntityType="SafeModel.Safe_Hearings" />
+    <EntitySet Name="Safe_VehicleBodyTypes" EntityType="SafeModel.Safe_VehicleBodyTypes" />
+    <EntitySet Name="Safe_VehicleMakes" EntityType="SafeModel.Safe_VehicleMakes" />
+    <EntitySet Name="Safe_Violations" EntityType="SafeModel.Safe_Violations" />
+    <EntitySet Name="Safe_ViolationTypes" EntityType="SafeModel.Safe_ViolationTypes" />
+    <AssociationSet Name="C_Safe_CitationPoliceOfficers_______Safe_Citations_" Association="SafeModel.C_Safe_CitationPoliceOfficers_______Safe_Citations_">
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+      <End Role="Safe_CitationPoliceOfficers" EntitySet="Safe_CitationPoliceOfficers" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_Citations_______Safe_VehicleBodyTypes_" Association="SafeModel.C_Safe_Citations_______Safe_VehicleBodyTypes_">
+      <End Role="Safe_VehicleBodyTypes" EntitySet="Safe_VehicleBodyTypes" />
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_Citations_______Safe_VehicleMakes_" Association="SafeModel.C_Safe_Citations_______Safe_VehicleMakes_">
+      <End Role="Safe_VehicleMakes" EntitySet="Safe_VehicleMakes" />
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_CitationViolations_______Safe_Citations_" Association="SafeModel.C_Safe_CitationViolations_______Safe_Citations_">
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+      <End Role="Safe_CitationViolations" EntitySet="Safe_CitationViolations" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_Hearings_______Safe_Citations_" Association="SafeModel.C_Safe_Hearings_______Safe_Citations_">
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+      <End Role="Safe_Hearings" EntitySet="Safe_Hearings" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_CitationViolations_______Safe_Violations_" Association="SafeModel.C_Safe_CitationViolations_______Safe_Violations_">
+      <End Role="Safe_Violations" EntitySet="Safe_Violations" />
+      <End Role="Safe_CitationViolations" EntitySet="Safe_CitationViolations" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_CitationViolations_______Safe_ViolationTypes_" Association="SafeModel.C_Safe_CitationViolations_______Safe_ViolationTypes_">
+      <End Role="Safe_ViolationTypes" EntitySet="Safe_ViolationTypes" />
+      <End Role="Safe_CitationViolations" EntitySet="Safe_CitationViolations" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_Violations_______Safe_ViolationTypes_" Association="SafeModel.C_Safe_Violations_______Safe_ViolationTypes_">
+      <End Role="Safe_ViolationTypes" EntitySet="Safe_ViolationTypes" />
+      <End Role="Safe_Violations" EntitySet="Safe_Violations" />
+    </AssociationSet>
+    <FunctionImport Name="Company_List_CompanyID_ByFacility" ReturnType="Collection(Int32)">
+      <Parameter Name="FacilityCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Safe_HearingPoliceOfficers" EntityType="SafeModel.Safe_HearingPoliceOfficers" />
+    <AssociationSet Name="C_Safe_HearingPoliceOfficers_______Safe_Hearings_" Association="SafeModel.C_Safe_HearingPoliceOfficers_______Safe_Hearings_">
+      <End Role="Safe_Hearings" EntitySet="Safe_Hearings" />
+      <End Role="Safe_HearingPoliceOfficers" EntitySet="Safe_HearingPoliceOfficers" />
+    </AssociationSet>
+    <EntitySet Name="Person_FullName" EntityType="SafeModel.Person_FullName" />
+    <EntitySet Name="Person_PersonDivisionXref" EntityType="SafeModel.Person_PersonDivisionXref" />
+    <AssociationSet Name="Person_PersonDivisionXrefSafe_Citations" Association="SafeModel.Person_PersonDivisionXrefSafe_Citations">
+      <End Role="Person_PersonDivisionXref" EntitySet="Person_PersonDivisionXref" />
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+    </AssociationSet>
+    <AssociationSet Name="Person_FullNamePerson_PersonDivisionXref" Association="SafeModel.Person_FullNamePerson_PersonDivisionXref">
+      <End Role="Person_FullName" EntitySet="Person_FullName" />
+      <End Role="Person_PersonDivisionXref" EntitySet="Person_PersonDivisionXref" />
+    </AssociationSet>
+    <EntitySet Name="Safe_Officers" EntityType="SafeModel.Safe_Officers" />
+    <AssociationSet Name="C_Safe_Hearings_______Safe_Officers_" Association="SafeModel.C_Safe_Hearings_______Safe_Officers_">
+      <End Role="Safe_Officers" EntitySet="Safe_Officers" />
+      <End Role="Safe_Hearings" EntitySet="Safe_Hearings" />
+    </AssociationSet>
+    <EntitySet Name="Company_Companies" EntityType="SafeModel.Company_Companies" />
+    <EntitySet Name="Division_Divisions" EntityType="SafeModel.Division_Divisions" />
+    <AssociationSet Name="C_Division_Divisions_______Company_Companies_" Association="SafeModel.C_Division_Divisions_______Company_Companies_">
+      <End Role="Company_Companies" EntitySet="Company_Companies" />
+      <End Role="Division_Divisions" EntitySet="Division_Divisions" />
+    </AssociationSet>
+    <AssociationSet Name="Person_PersonDivisionXrefDivision_Divisions" Association="SafeModel.Person_PersonDivisionXrefDivision_Divisions">
+      <End Role="Person_PersonDivisionXref" EntitySet="Person_PersonDivisionXref" />
+      <End Role="Division_Divisions" EntitySet="Division_Divisions" />
+    </AssociationSet>
+    <EntitySet Name="Person_Badges" EntityType="SafeModel.Person_Badges" />
+    <AssociationSet Name="C_Safe_Citations_______Person_Badges_" Association="SafeModel.C_Safe_Citations_______Person_Badges_">
+      <End EntitySet="Person_Badges" Role="Person_Badges" />
+      <End EntitySet="Safe_Citations" Role="Safe_Citations" />
+    </AssociationSet>
+    <AssociationSet Name="Person_PersonDivisionXrefPerson_Badges" Association="SafeModel.Person_PersonDivisionXrefPerson_Badges">
+      <End Role="Person_PersonDivisionXref" EntitySet="Person_PersonDivisionXref" />
+      <End Role="Person_Badges" EntitySet="Person_Badges" />
+    </AssociationSet>
+    <EntitySet Name="Badges_Info" EntityType="SafeModel.Badges_Info" />
+    <AssociationSet Name="Badges_InfoPerson_Badges" Association="SafeModel.Badges_InfoPerson_Badges">
+      <End Role="Badges_Info" EntitySet="Badges_Info" />
+      <End Role="Person_Badges" EntitySet="Person_Badges" />
+    </AssociationSet>
+    <EntitySet Name="Documents" EntityType="SafeModel.Documents" />
+    <EntitySet Name="Common_Requirement_DocumentsRequired" EntityType="SafeModel.Common_Requirement_DocumentsRequired" />
+    <EntitySet Name="Person_FullName_LastFirst" EntityType="SafeModel.Person_FullName_LastFirst" />
+    <AssociationSet Name="Person_FullName_LastFirstPerson_PersonDivisionXref" Association="SafeModel.Person_FullName_LastFirstPerson_PersonDivisionXref">
+      <End Role="Person_FullName_LastFirst" EntitySet="Person_FullName_LastFirst" />
+      <End Role="Person_PersonDivisionXref" EntitySet="Person_PersonDivisionXref" />
+    </AssociationSet>
+    <EntitySet Name="LEO_OfficerBadges" EntityType="SafeModel.LEO_OfficerBadges" />
+    <AssociationSet Name="C_Safe_CitationPoliceOfficers_______LEO_OfficerBadges_" Association="SafeModel.C_Safe_CitationPoliceOfficers_______LEO_OfficerBadges_">
+      <End Role="LEO_OfficerBadges" EntitySet="LEO_OfficerBadges" />
+      <End Role="Safe_CitationPoliceOfficers" EntitySet="Safe_CitationPoliceOfficers" />
+    </AssociationSet>
+    <AssociationSet Name="C_Safe_HearingPoliceOfficers_______LEO_OfficerBadges_" Association="SafeModel.C_Safe_HearingPoliceOfficers_______LEO_OfficerBadges_">
+      <End Role="LEO_OfficerBadges" EntitySet="LEO_OfficerBadges" />
+      <End Role="Safe_HearingPoliceOfficers" EntitySet="Safe_HearingPoliceOfficers" />
+    </AssociationSet>
+    <AssociationSet Name="Person_FullName_LastFirstLEO_OfficerBadges" Association="SafeModel.Person_FullName_LastFirstLEO_OfficerBadges">
+      <End Role="Person_FullName_LastFirst" EntitySet="Person_FullName_LastFirst" />
+      <End Role="LEO_OfficerBadges" EntitySet="LEO_OfficerBadges" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Safe_CitationPoliceOfficers">
+    <Key>
+      <PropertyRef Name="SafeCitationID" />
+      <PropertyRef Name="OfficerBadgeID" />
+    </Key>
+    <Property Type="Int32" Name="SafeCitationID" Nullable="false" />
+    <Property Type="Int16" Name="OfficerBadgeID" Nullable="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="LEO_OfficerBadges" Relationship="SafeModel.C_Safe_CitationPoliceOfficers_______LEO_OfficerBadges_" FromRole="Safe_CitationPoliceOfficers" ToRole="LEO_OfficerBadges" />
+  </EntityType>
+  <EntityType Name="Safe_Citations">
+    <Key>
+      <PropertyRef Name="SafeCitationID" />
+    </Key>
+    <Property Type="Int32" Name="SafeCitationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CitationNumber" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PersonDivisionXrefID" Nullable="false" />
+    <Property Type="Int32" Name="BadgeID" />
+    <Property Type="Int32" Name="VehicleMakeID" />
+    <Property Type="Int32" Name="VehicleBodyID" />
+    <Property Type="String" Name="CountryCode_LicensePlate" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CountrySubdivisionCode_LicensePlate" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LicensePlate" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="BadgeUnknown" Nullable="false" />
+    <Property Type="Boolean" Name="BadgeDisplayed" Nullable="false" />
+    <Property Type="Boolean" Name="DriverIcon" Nullable="false" />
+    <Property Type="Boolean" Name="LicenseValid" Nullable="false" />
+    <Property Type="Boolean" Name="DriverTrainingRequired" Nullable="false" />
+    <Property Type="Boolean" Name="SecurityTrainingRequired" Nullable="false" />
+    <Property Type="Boolean" Name="IsDeleted" Nullable="false" />
+    <Property Type="String" Name="ViolationLocation" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Cancelled" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="FollowUp" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="WhenCreated" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="WhenDue" Precision="3" Nullable="true" />
+    <Property Type="DateTime" Name="WhenResolved" Precision="3" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Safe_CitationPoliceOfficers" Relationship="SafeModel.C_Safe_CitationPoliceOfficers_______Safe_Citations_" FromRole="Safe_Citations" ToRole="Safe_CitationPoliceOfficers" />
+    <NavigationProperty Name="Safe_VehicleBodyTypes" Relationship="SafeModel.C_Safe_Citations_______Safe_VehicleBodyTypes_" FromRole="Safe_Citations" ToRole="Safe_VehicleBodyTypes" />
+    <NavigationProperty Name="Safe_VehicleMakes" Relationship="SafeModel.C_Safe_Citations_______Safe_VehicleMakes_" FromRole="Safe_Citations" ToRole="Safe_VehicleMakes" />
+    <NavigationProperty Name="Safe_CitationViolations" Relationship="SafeModel.C_Safe_CitationViolations_______Safe_Citations_" FromRole="Safe_Citations" ToRole="Safe_CitationViolations" />
+    <NavigationProperty Name="Safe_Hearings" Relationship="SafeModel.C_Safe_Hearings_______Safe_Citations_" FromRole="Safe_Citations" ToRole="Safe_Hearings" />
+    <NavigationProperty Name="Person_PersonDivisionXref" Relationship="SafeModel.Person_PersonDivisionXrefSafe_Citations" FromRole="Safe_Citations" ToRole="Person_PersonDivisionXref" />
+    <NavigationProperty Name="Person_Badges" Relationship="SafeModel.C_Safe_Citations_______Person_Badges_" FromRole="Safe_Citations" ToRole="Person_Badges" />
+    <Property Type="String" Name="DriversLicenseNumber" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VehicleIdentification" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Conditions" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Superintendent" Nullable="false" FixedLength="false" MaxLength="30" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Safe_CitationViolations">
+    <Key>
+      <PropertyRef Name="SafeCitationID" />
+      <PropertyRef Name="ViolationID" />
+    </Key>
+    <Property Type="Int32" Name="SafeCitationID" Nullable="false" />
+    <Property Type="Int32" Name="ViolationID" Nullable="false" />
+    <Property Type="Int16" Name="ViolationTypeID" Nullable="false" />
+    <Property Type="Boolean" Name="IsMovingViolation" Nullable="false" />
+    <Property Type="Byte" Name="ViolationPoints" Nullable="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Safe_Violations" Relationship="SafeModel.C_Safe_CitationViolations_______Safe_Violations_" FromRole="Safe_CitationViolations" ToRole="Safe_Violations" />
+    <NavigationProperty Name="Safe_ViolationTypes" Relationship="SafeModel.C_Safe_CitationViolations_______Safe_ViolationTypes_" FromRole="Safe_CitationViolations" ToRole="Safe_ViolationTypes" />
+    <Property Type="String" Name="Conditions" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Safe_Hearings">
+    <Key>
+      <PropertyRef Name="SafeHearingID" />
+    </Key>
+    <Property Type="Int32" Name="SafeHearingID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SafeCitationID" Nullable="false" />
+    <Property Type="Int32" Name="SafeOfficerID_Hearing" Nullable="false" />
+    <Property Type="DateTime" Name="WhenHearingHeld" Precision="3" Nullable="true" />
+    <Property Type="DateTime" Name="WhenAppealToBeHeld" Precision="3" />
+    <Property Type="DateTime" Name="WhenTrainingHeld" Precision="3" />
+    <Property Type="DateTime" Name="WhenCompleted" Precision="3" />
+    <Property Type="String" Name="HearingNotes" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Safe_HearingPoliceOfficers" Relationship="SafeModel.C_Safe_HearingPoliceOfficers_______Safe_Hearings_" FromRole="Safe_Hearings" ToRole="Safe_HearingPoliceOfficers" />
+    <NavigationProperty Name="Safe_Officers" Relationship="SafeModel.C_Safe_Hearings_______Safe_Officers_" FromRole="Safe_Hearings" ToRole="Safe_Officers" />
+    <Property Type="String" Name="Superintendent" Nullable="false" FixedLength="false" MaxLength="30" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Safe_VehicleBodyTypes">
+    <Key>
+      <PropertyRef Name="VehicleBodyID" />
+    </Key>
+    <Property Type="Int32" Name="VehicleBodyID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="VehicleBodyDescription" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VehicleBodyAbbreviation" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int16" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Safe_VehicleMakes">
+    <Key>
+      <PropertyRef Name="VehicleMakeID" />
+    </Key>
+    <Property Type="Int32" Name="VehicleMakeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="VehicleMakeDescription" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VehicleMakeAbbreviation" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int16" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Safe_Violations">
+    <Key>
+      <PropertyRef Name="ViolationID" />
+    </Key>
+    <Property Type="Int32" Name="ViolationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ViolationNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ViolationDescription" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="ViolationTypeID" Nullable="false" />
+    <Property Type="Byte" Name="ViolationPoints" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int16" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Safe_ViolationTypes" Relationship="SafeModel.C_Safe_Violations_______Safe_ViolationTypes_" FromRole="Safe_Violations" ToRole="Safe_ViolationTypes" />
+  </EntityType>
+  <EntityType Name="Safe_ViolationTypes">
+    <Key>
+      <PropertyRef Name="ViolationTypeID" />
+    </Key>
+    <Property Type="Int16" Name="ViolationTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ViolationTypeDescription" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ViolationTypeAbbreviation" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int16" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="C_Safe_CitationPoliceOfficers_______Safe_Citations_">
+    <End Type="SafeModel.Safe_Citations" Role="Safe_Citations" Multiplicity="1" />
+    <End Type="SafeModel.Safe_CitationPoliceOfficers" Role="Safe_CitationPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Citations">
+        <PropertyRef Name="SafeCitationID" />
+      </Principal>
+      <Dependent Role="Safe_CitationPoliceOfficers">
+        <PropertyRef Name="SafeCitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_Citations_______Safe_VehicleBodyTypes_">
+    <End Type="SafeModel.Safe_VehicleBodyTypes" Role="Safe_VehicleBodyTypes" Multiplicity="0..1" />
+    <End Type="SafeModel.Safe_Citations" Role="Safe_Citations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_VehicleBodyTypes">
+        <PropertyRef Name="VehicleBodyID" />
+      </Principal>
+      <Dependent Role="Safe_Citations">
+        <PropertyRef Name="VehicleBodyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_Citations_______Safe_VehicleMakes_">
+    <End Type="SafeModel.Safe_VehicleMakes" Role="Safe_VehicleMakes" Multiplicity="0..1" />
+    <End Type="SafeModel.Safe_Citations" Role="Safe_Citations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_VehicleMakes">
+        <PropertyRef Name="VehicleMakeID" />
+      </Principal>
+      <Dependent Role="Safe_Citations">
+        <PropertyRef Name="VehicleMakeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_CitationViolations_______Safe_Citations_">
+    <End Type="SafeModel.Safe_Citations" Role="Safe_Citations" Multiplicity="1" />
+    <End Type="SafeModel.Safe_CitationViolations" Role="Safe_CitationViolations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Citations">
+        <PropertyRef Name="SafeCitationID" />
+      </Principal>
+      <Dependent Role="Safe_CitationViolations">
+        <PropertyRef Name="SafeCitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_Hearings_______Safe_Citations_">
+    <End Type="SafeModel.Safe_Citations" Role="Safe_Citations" Multiplicity="1" />
+    <End Type="SafeModel.Safe_Hearings" Role="Safe_Hearings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Citations">
+        <PropertyRef Name="SafeCitationID" />
+      </Principal>
+      <Dependent Role="Safe_Hearings">
+        <PropertyRef Name="SafeCitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_CitationViolations_______Safe_Violations_">
+    <End Type="SafeModel.Safe_Violations" Role="Safe_Violations" Multiplicity="1" />
+    <End Type="SafeModel.Safe_CitationViolations" Role="Safe_CitationViolations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Violations">
+        <PropertyRef Name="ViolationID" />
+      </Principal>
+      <Dependent Role="Safe_CitationViolations">
+        <PropertyRef Name="ViolationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_CitationViolations_______Safe_ViolationTypes_">
+    <End Type="SafeModel.Safe_ViolationTypes" Role="Safe_ViolationTypes" Multiplicity="1" />
+    <End Type="SafeModel.Safe_CitationViolations" Role="Safe_CitationViolations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_ViolationTypes">
+        <PropertyRef Name="ViolationTypeID" />
+      </Principal>
+      <Dependent Role="Safe_CitationViolations">
+        <PropertyRef Name="ViolationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_Violations_______Safe_ViolationTypes_">
+    <End Type="SafeModel.Safe_ViolationTypes" Role="Safe_ViolationTypes" Multiplicity="1" />
+    <End Type="SafeModel.Safe_Violations" Role="Safe_Violations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_ViolationTypes">
+        <PropertyRef Name="ViolationTypeID" />
+      </Principal>
+      <Dependent Role="Safe_Violations">
+        <PropertyRef Name="ViolationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Safe_HearingPoliceOfficers">
+    <Key>
+      <PropertyRef Name="SafeHearingID" />
+      <PropertyRef Name="OfficerBadgeID" />
+    </Key>
+    <Property Type="Int32" Name="SafeHearingID" Nullable="false" />
+    <Property Type="Int16" Name="OfficerBadgeID" Nullable="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="LEO_OfficerBadges" Relationship="SafeModel.C_Safe_HearingPoliceOfficers_______LEO_OfficerBadges_" FromRole="Safe_HearingPoliceOfficers" ToRole="LEO_OfficerBadges" />
+  </EntityType>
+  <Association Name="C_Safe_HearingPoliceOfficers_______Safe_Hearings_">
+    <End Type="SafeModel.Safe_Hearings" Role="Safe_Hearings" Multiplicity="1" />
+    <End Type="SafeModel.Safe_HearingPoliceOfficers" Role="Safe_HearingPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Hearings">
+        <PropertyRef Name="SafeHearingID" />
+      </Principal>
+      <Dependent Role="Safe_HearingPoliceOfficers">
+        <PropertyRef Name="SafeHearingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Person_FullName">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Type="Int32" Name="PersonID" Nullable="false" />
+    <Property Type="String" Name="FullName" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Person_PersonDivisionXref">
+    <Key>
+      <PropertyRef Name="PersonDivisionXrefID" />
+    </Key>
+    <Property Type="Int32" Name="PersonDivisionXrefID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PersonID" Nullable="false" />
+    <Property Type="Int32" Name="DivisionID" Nullable="false" />
+    <Property Type="DateTime" Name="WhenAccepted" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="WhenBegins" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="WhenEnds" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Person_FullName" Relationship="SafeModel.Person_FullNamePerson_PersonDivisionXref" FromRole="Person_PersonDivisionXref" ToRole="Person_FullName" />
+    <NavigationProperty Name="Division_Divisions" Relationship="SafeModel.Person_PersonDivisionXrefDivision_Divisions" FromRole="Person_PersonDivisionXref" ToRole="Division_Divisions" />
+    <NavigationProperty Name="Person_Badges" Relationship="SafeModel.Person_PersonDivisionXrefPerson_Badges" FromRole="Person_PersonDivisionXref" ToRole="Person_Badges" />
+    <NavigationProperty Name="Person_FullName_LastFirst" Relationship="SafeModel.Person_FullName_LastFirstPerson_PersonDivisionXref" FromRole="Person_PersonDivisionXref" ToRole="Person_FullName_LastFirst" />
+  </EntityType>
+  <Association Name="Person_PersonDivisionXrefSafe_Citations">
+    <End Type="SafeModel.Person_PersonDivisionXref" Role="Person_PersonDivisionXref" Multiplicity="1" />
+    <End Type="SafeModel.Safe_Citations" Role="Safe_Citations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person_PersonDivisionXref">
+        <PropertyRef Name="PersonDivisionXrefID" />
+      </Principal>
+      <Dependent Role="Safe_Citations">
+        <PropertyRef Name="PersonDivisionXrefID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Person_FullNamePerson_PersonDivisionXref">
+    <End Type="SafeModel.Person_FullName" Role="Person_FullName" Multiplicity="1" />
+    <End Type="SafeModel.Person_PersonDivisionXref" Role="Person_PersonDivisionXref" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person_FullName">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Person_PersonDivisionXref">
+        <PropertyRef Name="PersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Safe_Officers">
+    <Key>
+      <PropertyRef Name="SafeOfficerID" />
+    </Key>
+    <Property Type="Int32" Name="SafeOfficerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SafeDivisionID" Nullable="false" />
+    <Property Type="String" Name="OfficerName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OfficerBadgeNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int16" Name="SortOrder" Nullable="false" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="C_Safe_Hearings_______Safe_Officers_">
+    <End Type="SafeModel.Safe_Officers" Role="Safe_Officers" Multiplicity="1" />
+    <End Type="SafeModel.Safe_Hearings" Role="Safe_Hearings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Officers">
+        <PropertyRef Name="SafeOfficerID" />
+      </Principal>
+      <Dependent Role="Safe_Hearings">
+        <PropertyRef Name="SafeOfficerID_Hearing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Company_Companies">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Type="Int32" Name="CompanyID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="CompanyCode" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="CorporationName" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DBAName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BadgeName" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="InsuranceRequired" Nullable="false" />
+    <Property Type="Boolean" Name="BTRCRequired" Nullable="false" />
+    <Property Type="Boolean" Name="FingerprintRequired" />
+    <Property Type="Boolean" Name="BackgroundCheckRequired" />
+    <Property Type="Int16" Name="BadgeColorID_HighestLevel" Nullable="false" />
+    <Property Type="String" Name="ProviderNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="WhenLastUpdated" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="StaffID_LastUpdated" Nullable="false" />
+    <Property Type="String" Name="RAMSAgreementNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="RAMSExpirationDate" Precision="0" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="C_Legacy_PrimaryKeyValue" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="Int32" Name="StaffID_BadgeCoordinator" />
+  </EntityType>
+  <EntityType Name="Division_Divisions">
+    <Key>
+      <PropertyRef Name="DivisionID" />
+    </Key>
+    <Property Type="Int32" Name="DivisionID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="DivisionCode" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="DivisionName" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="DivisionTypeID" />
+    <Property Type="String" Name="DivisionStatusCode" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address3" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CountrySubdivisionCode" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CountryCode" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FaxNumber" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EmailAddress" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="WhenEnrolled" Precision="3" />
+    <Property Type="Boolean" Name="FingerprintRequired" Nullable="false" />
+    <Property Type="Boolean" Name="BackgroundCheckRequired" Nullable="false" />
+    <Property Type="DateTime" Name="WhenLastUpdated" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="StaffID_LastUpdated" Nullable="false" />
+    <Property Type="String" Name="CategoryCode" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProviderNumber" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FacilityCode" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="Decimal" Name="NewBadgeCost" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="ReplaceBadgeCost" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="BadgeBillingCost" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="BadgeCreditCost" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="C_Legacy_DIV_ID" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Company_Companies" Relationship="SafeModel.C_Division_Divisions_______Company_Companies_" FromRole="Division_Divisions" ToRole="Company_Companies" />
+    <Property Type="String" Name="RAMSAgreementNumber" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="RAMSExpirationDate" Precision="0" />
+  </EntityType>
+  <Association Name="C_Division_Divisions_______Company_Companies_">
+    <End Type="SafeModel.Company_Companies" Role="Company_Companies" Multiplicity="1" />
+    <End Type="SafeModel.Division_Divisions" Role="Division_Divisions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Division_Divisions">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Person_PersonDivisionXrefDivision_Divisions">
+    <End Type="SafeModel.Person_PersonDivisionXref" Role="Person_PersonDivisionXref" Multiplicity="*" />
+    <End Type="SafeModel.Division_Divisions" Role="Division_Divisions" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Division_Divisions">
+        <PropertyRef Name="DivisionID" />
+      </Principal>
+      <Dependent Role="Person_PersonDivisionXref">
+        <PropertyRef Name="DivisionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Person_Badges">
+    <Key>
+      <PropertyRef Name="BadgeID" />
+    </Key>
+    <Property Type="Int32" Name="BadgeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PersonDivisionXrefID" Nullable="false" />
+    <Property Type="Int64" Name="BadgeID_IWS" Nullable="true" />
+    <Property Type="String" Name="BadgeNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="BadgeIssuanceReasonCode" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="BadgeColorID" />
+    <Property Type="DateTime" Name="WhenBecomesActive" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="WhenExpires" Nullable="false" Precision="3" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="C_Legacy_BadgeReturnDate_ONT" Precision="0" />
+    <Property Type="Byte" Name="C_Legacy_PersonType_ONT" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Badges_Info" Relationship="SafeModel.Badges_InfoPerson_Badges" FromRole="Person_Badges" ToRole="Badges_Info" />
+    <Property Type="String" Name="ProxNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="DriveThroughGates" Nullable="false" />
+    <Property Type="Boolean" Name="DriverLEO" Nullable="false" />
+    <Property Type="Int32" Name="CardNumber" />
+  </EntityType>
+  <Association Name="C_Safe_Citations_______Person_Badges_">
+    <End Type="SafeModel.Person_Badges" Multiplicity="0..1" Role="Person_Badges" />
+    <End Type="SafeModel.Safe_Citations" Multiplicity="*" Role="Safe_Citations" />
+    <ReferentialConstraint>
+      <Principal Role="Person_Badges">
+        <PropertyRef Name="BadgeID" />
+      </Principal>
+      <Dependent Role="Safe_Citations">
+        <PropertyRef Name="BadgeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Person_PersonDivisionXrefPerson_Badges">
+    <End Type="SafeModel.Person_PersonDivisionXref" Role="Person_PersonDivisionXref" Multiplicity="1" />
+    <End Type="SafeModel.Person_Badges" Role="Person_Badges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person_PersonDivisionXref">
+        <PropertyRef Name="PersonDivisionXrefID" />
+      </Principal>
+      <Dependent Role="Person_Badges">
+        <PropertyRef Name="PersonDivisionXrefID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Badges_Info">
+    <Key>
+      <PropertyRef Name="BadgeID" />
+    </Key>
+    <Property Type="Int32" Name="PersonID" Nullable="false" />
+    <Property Type="String" Name="FullName" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BadgeID" Nullable="false" />
+    <Property Type="String" Name="BadgeNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="CompanyCode" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CorporationName" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DivisionID" Nullable="false" />
+    <Property Type="String" Name="DivisionCode" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="DivisionName" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address3" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CountryCode" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="CountrySubdivisionCode" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Type="String" Name="PostalCode" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="WhenBecomesActive" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="WhenExpires" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="PersonDivisionXrefID" Nullable="false" />
+  </EntityType>
+  <Association Name="Badges_InfoPerson_Badges">
+    <End Type="SafeModel.Badges_Info" Role="Badges_Info" Multiplicity="1" />
+    <End Type="SafeModel.Person_Badges" Role="Person_Badges" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Person_Badges">
+        <PropertyRef Name="BadgeID" />
+      </Principal>
+      <Dependent Role="Badges_Info">
+        <PropertyRef Name="BadgeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Type="Int32" Name="DocumentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="EntityID" Nullable="false" />
+    <Property Type="Int16" Name="DocumentTypeNumber" Nullable="false" />
+    <Property Type="String" Name="DocumentFilename" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DocumentDescription" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContentTypeCode" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Type="Binary" Name="DocumentImage" MaxLength="Max" FixedLength="false" />
+    <Property Type="DateTime" Name="WhenCreated" Nullable="false" Precision="3" />
+    <Property Type="String" Name="IssuingAuthority_CountryCode" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="IssuingAuthority_CountrySubdivisionCode" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="IdentificationNumber" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="ExpirationDate" Nullable="false" Precision="0" />
+    <Property Type="String" Name="C_Legacy_DatabaseName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="C_Legacy_TableName" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Type="String" Name="RequirementCode" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Common_Requirement_DocumentsRequired">
+    <Key>
+      <PropertyRef Name="RequirementCode" />
+      <PropertyRef Name="DocumentTypeNumber" />
+    </Key>
+    <Property Type="String" Name="RequirementCode" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="DocumentTypeNumber" Nullable="false" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int16" Name="SortOrder" Nullable="false" />
+    <Property Type="Int32" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DropdownName" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Person_FullName_LastFirst">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Type="Int32" Name="PersonID" Nullable="false" />
+    <Property Type="String" Name="FullName" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="Person_FullName_LastFirstPerson_PersonDivisionXref">
+    <End Type="SafeModel.Person_FullName_LastFirst" Role="Person_FullName_LastFirst" Multiplicity="1" />
+    <End Type="SafeModel.Person_PersonDivisionXref" Role="Person_PersonDivisionXref" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person_FullName_LastFirst">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Person_PersonDivisionXref">
+        <PropertyRef Name="PersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LEO_OfficerBadges">
+    <Key>
+      <PropertyRef Name="OfficerBadgeID" />
+    </Key>
+    <Property Type="Int16" Name="OfficerBadgeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SerialNumber" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Byte" Name="PoliceDepartmentID" Nullable="false" />
+    <Property Type="Int32" Name="PersonID" Nullable="false" />
+    <Property Type="DateTime" Name="WhenBecomesActive" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="WhenExpires" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="C_DataChanges_RowID" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="Safe_CitationPoliceOfficers" Relationship="SafeModel.C_Safe_CitationPoliceOfficers_______LEO_OfficerBadges_" FromRole="LEO_OfficerBadges" ToRole="Safe_CitationPoliceOfficers" />
+    <NavigationProperty Name="Safe_HearingPoliceOfficers" Relationship="SafeModel.C_Safe_HearingPoliceOfficers_______LEO_OfficerBadges_" FromRole="LEO_OfficerBadges" ToRole="Safe_HearingPoliceOfficers" />
+    <NavigationProperty Name="Person_FullName" Relationship="SafeModel.Person_FullName_LastFirstLEO_OfficerBadges" FromRole="LEO_OfficerBadges" ToRole="Person_FullName_LastFirst" />
+    <Property Type="String" Name="OfficerRankTitleDescription" Nullable="false" />
+  </EntityType>
+  <Association Name="C_Safe_CitationPoliceOfficers_______LEO_OfficerBadges_">
+    <End Type="SafeModel.LEO_OfficerBadges" Role="LEO_OfficerBadges" Multiplicity="1" />
+    <End Type="SafeModel.Safe_CitationPoliceOfficers" Role="Safe_CitationPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LEO_OfficerBadges">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Principal>
+      <Dependent Role="Safe_CitationPoliceOfficers">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="C_Safe_HearingPoliceOfficers_______LEO_OfficerBadges_">
+    <End Type="SafeModel.LEO_OfficerBadges" Role="LEO_OfficerBadges" Multiplicity="1" />
+    <End Type="SafeModel.Safe_HearingPoliceOfficers" Role="Safe_HearingPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LEO_OfficerBadges">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Principal>
+      <Dependent Role="Safe_HearingPoliceOfficers">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Person_FullName_LastFirstLEO_OfficerBadges">
+    <End Type="SafeModel.Person_FullName_LastFirst" Role="Person_FullName_LastFirst" Multiplicity="1" />
+    <End Type="SafeModel.LEO_OfficerBadges" Role="LEO_OfficerBadges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person_FullName_LastFirst">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="LEO_OfficerBadges">
+        <PropertyRef Name="PersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

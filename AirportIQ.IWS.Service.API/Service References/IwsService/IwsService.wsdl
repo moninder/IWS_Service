@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="IwsService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:54548/IwsService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:54548/IwsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:54548/IwsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AirportIQ.IWS.Service.Web" />
+      <xsd:import schemaLocation="http://localhost:54548/IwsService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:54548/IwsService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIwsService_GetFingerprintImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFingerprintImages" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetFingerprintImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFingerprintImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetDojStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDojStatus" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetDojStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDojStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetBadges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBadges" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetBadges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBadgesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerson" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetFingerprints_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFingerprints" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetFingerprints_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFingerprintsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetEBTS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEBTS" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetEBTS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEBTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_AddNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNote" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_AddNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_BiometricUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:BiometricUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_BiometricUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BiometricUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBadgeID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBadgeID" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBadgeID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBadgeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_InitiateBackgroundCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateBackgroundCheck" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_InitiateBackgroundCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitiateBackgroundCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBackgroundCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBackgroundCheck" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBackgroundCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBackgroundCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBackgroundCheckStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBackgroundCheckStatus" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBackgroundCheckStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBackgroundCheckStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBackgroundCheckResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBackgroundCheckResult" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_UpdateBackgroundCheckResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBackgroundCheckResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_RetreiveFbiHistoryUrl_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetreiveFbiHistoryUrl" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_RetreiveFbiHistoryUrl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetreiveFbiHistoryUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_SetFBICaseNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetFBICaseNumber" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_SetFBICaseNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetFBICaseNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_SetTSACaseNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetTSACaseNumber" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_SetTSACaseNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetTSACaseNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ExpireBadge_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExpireBadge" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ExpireBadge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExpireBadgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ProvisionedByCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionedByCard" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ProvisionedByCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionedByCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ProvisionedByBOAABadgeID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionedByBOAABadgeID" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ProvisionedByBOAABadgeID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisionedByBOAABadgeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ProvisioningComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisioningComplete" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_ProvisioningComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProvisioningCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_IsAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_IsAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_IsDbConnected_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDbConnected" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_IsDbConnected_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDbConnectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_DoDeletePersonTasks_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoDeletePersonTasks" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_DoDeletePersonTasks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoDeletePersonTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetPersonsForBatchUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsForBatchUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetPersonsForBatchUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsForBatchUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_BeginPersonUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginPersonUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_BeginPersonUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginPersonUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_CancelPersonUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPersonUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_CancelPersonUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPersonUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetCurrentPersonUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentPersonUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetCurrentPersonUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentPersonUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetAllPersonUpdates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPersonUpdates" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_GetAllPersonUpdates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPersonUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_PopulatePersonUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:PopulatePersonUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IIwsService_PopulatePersonUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PopulatePersonUpdateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IIwsService">
+    <wsdl:operation name="GetFingerprintImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetFingerprintImages" message="tns:IIwsService_GetFingerprintImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetFingerprintImagesResponse" message="tns:IIwsService_GetFingerprintImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetDocuments" message="tns:IIwsService_GetDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetDocumentsResponse" message="tns:IIwsService_GetDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDojStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetDojStatus" message="tns:IIwsService_GetDojStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetDojStatusResponse" message="tns:IIwsService_GetDojStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBadges">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetBadges" message="tns:IIwsService_GetBadges_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetBadgesResponse" message="tns:IIwsService_GetBadges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetPerson" message="tns:IIwsService_GetPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetPersonResponse" message="tns:IIwsService_GetPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFingerprints">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetFingerprints" message="tns:IIwsService_GetFingerprints_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetFingerprintsResponse" message="tns:IIwsService_GetFingerprints_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEBTS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetEBTS" message="tns:IIwsService_GetEBTS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetEBTSResponse" message="tns:IIwsService_GetEBTS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/AddNote" message="tns:IIwsService_AddNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/AddNoteResponse" message="tns:IIwsService_AddNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BiometricUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/BiometricUpdate" message="tns:IIwsService_BiometricUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/BiometricUpdateResponse" message="tns:IIwsService_BiometricUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBadgeID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/UpdateBadgeID" message="tns:IIwsService_UpdateBadgeID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/UpdateBadgeIDResponse" message="tns:IIwsService_UpdateBadgeID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitiateBackgroundCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/InitiateBackgroundCheck" message="tns:IIwsService_InitiateBackgroundCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/InitiateBackgroundCheckResponse" message="tns:IIwsService_InitiateBackgroundCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBackgroundCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/UpdateBackgroundCheck" message="tns:IIwsService_UpdateBackgroundCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/UpdateBackgroundCheckResponse" message="tns:IIwsService_UpdateBackgroundCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBackgroundCheckStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/UpdateBackgroundCheckStatus" message="tns:IIwsService_UpdateBackgroundCheckStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/UpdateBackgroundCheckStatusResponse" message="tns:IIwsService_UpdateBackgroundCheckStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBackgroundCheckResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/UpdateBackgroundCheckResult" message="tns:IIwsService_UpdateBackgroundCheckResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/UpdateBackgroundCheckResultResponse" message="tns:IIwsService_UpdateBackgroundCheckResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveFbiHistoryUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/RetreiveFbiHistoryUrl" message="tns:IIwsService_RetreiveFbiHistoryUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/RetreiveFbiHistoryUrlResponse" message="tns:IIwsService_RetreiveFbiHistoryUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFBICaseNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/SetFBICaseNumber" message="tns:IIwsService_SetFBICaseNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/SetFBICaseNumberResponse" message="tns:IIwsService_SetFBICaseNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTSACaseNumber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/SetTSACaseNumber" message="tns:IIwsService_SetTSACaseNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/SetTSACaseNumberResponse" message="tns:IIwsService_SetTSACaseNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpireBadge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/ExpireBadge" message="tns:IIwsService_ExpireBadge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/ExpireBadgeResponse" message="tns:IIwsService_ExpireBadge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionedByCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/ProvisionedByCard" message="tns:IIwsService_ProvisionedByCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/ProvisionedByCardResponse" message="tns:IIwsService_ProvisionedByCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionedByBOAABadgeID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/ProvisionedByBOAABadgeID" message="tns:IIwsService_ProvisionedByBOAABadgeID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/ProvisionedByBOAABadgeIDResponse" message="tns:IIwsService_ProvisionedByBOAABadgeID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProvisioningComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/ProvisioningComplete" message="tns:IIwsService_ProvisioningComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/ProvisioningCompleteResponse" message="tns:IIwsService_ProvisioningComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/IsAlive" message="tns:IIwsService_IsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/IsAliveResponse" message="tns:IIwsService_IsAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDbConnected">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/IsDbConnected" message="tns:IIwsService_IsDbConnected_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/IsDbConnectedResponse" message="tns:IIwsService_IsDbConnected_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoDeletePersonTasks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/DoDeletePersonTasks" message="tns:IIwsService_DoDeletePersonTasks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/DoDeletePersonTasksResponse" message="tns:IIwsService_DoDeletePersonTasks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsForBatchUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetPersonsForBatchUpdate" message="tns:IIwsService_GetPersonsForBatchUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetPersonsForBatchUpdateResponse" message="tns:IIwsService_GetPersonsForBatchUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginPersonUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/BeginPersonUpdate" message="tns:IIwsService_BeginPersonUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/BeginPersonUpdateResponse" message="tns:IIwsService_BeginPersonUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelPersonUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/CancelPersonUpdate" message="tns:IIwsService_CancelPersonUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/CancelPersonUpdateResponse" message="tns:IIwsService_CancelPersonUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPersonUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetCurrentPersonUpdate" message="tns:IIwsService_GetCurrentPersonUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetCurrentPersonUpdateResponse" message="tns:IIwsService_GetCurrentPersonUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPersonUpdates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/GetAllPersonUpdates" message="tns:IIwsService_GetAllPersonUpdates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/GetAllPersonUpdatesResponse" message="tns:IIwsService_GetAllPersonUpdates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePersonUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIwsService/PopulatePersonUpdate" message="tns:IIwsService_PopulatePersonUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIwsService/PopulatePersonUpdateResponse" message="tns:IIwsService_PopulatePersonUpdate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IIwsService" type="tns:IIwsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFingerprintImages">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetFingerprintImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetDocuments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDojStatus">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetDojStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBadges">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetBadges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerson">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFingerprints">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetFingerprints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEBTS">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetEBTS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNote">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/AddNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BiometricUpdate">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/BiometricUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBadgeID">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/UpdateBadgeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitiateBackgroundCheck">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/InitiateBackgroundCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBackgroundCheck">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/UpdateBackgroundCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBackgroundCheckStatus">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/UpdateBackgroundCheckStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBackgroundCheckResult">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/UpdateBackgroundCheckResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetreiveFbiHistoryUrl">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/RetreiveFbiHistoryUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFBICaseNumber">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/SetFBICaseNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTSACaseNumber">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/SetTSACaseNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpireBadge">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/ExpireBadge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionedByCard">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/ProvisionedByCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisionedByBOAABadgeID">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/ProvisionedByBOAABadgeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProvisioningComplete">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/ProvisioningComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAlive">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/IsAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDbConnected">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/IsDbConnected" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoDeletePersonTasks">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/DoDeletePersonTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonsForBatchUpdate">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetPersonsForBatchUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginPersonUpdate">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/BeginPersonUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelPersonUpdate">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/CancelPersonUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentPersonUpdate">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetCurrentPersonUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPersonUpdates">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/GetAllPersonUpdates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePersonUpdate">
+      <soap:operation soapAction="http://tempuri.org/IIwsService/PopulatePersonUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IwsService">
+    <wsdl:port name="BasicHttpBinding_IIwsService" binding="tns:BasicHttpBinding_IIwsService">
+      <soap:address location="http://localhost:54548/IwsService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

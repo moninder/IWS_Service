@@ -1,0 +1,83 @@
+﻿Notes on the ACAM SSIS export to PP process
+March 2013
+
+====================================================================
+ Flag records to be exported within 'AirportIQ'
+====================================================================
+A record is inserted into SSIS.AccessControlTransfer* tables whenever 
+a Badge, Division or PersonBiographics record is inserted or updated
+unless an unprocessed record exists.
+
+-  A stored procedure, [App.Sbo].[SSIS.AccessControlTransfers.Insert], 
+   is executed within the after update trigger behind each of the 
+   3 tables. This procedure inserts records into the appropriate 
+   Access Control Tables:
+   - AccessControl.Transfers: houses the unique TransferID and processing status info
+   - AccessControl.TransferPersons: houses PersonBiographic record key etc
+   - AccessControl.TransferDivisions: houses Division (aka Department) record key etc
+   - AccessControl.TransferBadges: houses Badge record key etc
+   
+====================================================================
+ Execute the SSIS package
+====================================================================
+A to-be-created Sql Agent job will be scheduled to run (frequency?)
+The job will execute the SSIS export package.
+
+====================================================================
+ SSIS Package - Process steps
+====================================================================
+Unprocessed AccessControl.Transfers records are collected.
+
+For each record, 
+- AccessControl.Transfers.TransmitStart timestamp is 
+  populated when the record processing initiates.
+  
+- AccessControl.Transfers.TransmitEnd timestamp is 
+  populated when *successful* processing completes
+  for all related AccessControl.Transfers* table records.
+  IE Their [WhenTransmitted] dates are populated.
+  
+
+Processing behavior is conditional based on the type or record and action:
+
+- Division:
+    Find match in PicturePerfect.department table matching on division.
+	
+	If PP Department exists, update description, location, manager, 
+	    phone, user1, user2, facility, modify_date, modify_time
+	Else insert new Department record
+	
+	UPDATE [Data].[AccessControl.TransferDivisions].[WhenTransmitted] value.
+	
+- PersonBiographics
+	Find match in PicturePerfect.person table matching on employee id alone. 
+	(note that this may update multiple records)
+	
+	If PP Person exists, 
+	  update person record with person, pin, first_name, last_name, initials, 
+	    title, address1,  address2, address3, address4, address5, phone, 
+	    modify_date, modify_time
+	  update person_user record with description, modify_date, modify_time
+	    match on person_id AND slot_number
+		
+	Else insert new Person record and 
+	     insert new Person_user record
+	
+	UPDATE [Data].[AccessControl.TransferPersons].[WhenTransmitted] value.
+	
+- Badges:
+	Find match in PicturePerfect.badge table matching on bid
+	
+	If PP Badge exists, 	
+		if department does not exist in pp, create the record in pp
+		if person does not exist in pp, create the record in pp
+		update badge record with description, person_id, return_date, 
+		   return_time, return_tz, status, modify_date, modify_time
+		   
+	Else insert new Badge record
+	
+	UPDATE [Data].[AccessControl.TransferBadges].[WhenTransmitted] value.
+	
+- NOTE: BadgeCategories and Categories sections of the code are commented out!!!
+
+

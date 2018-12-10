@@ -1,0 +1,11 @@
+<?xml version="1.0"?><DTSConfiguration><DTSConfigurationHeading><DTSConfigurationFileInfo GeneratedBy="GCR1\rguidi" GeneratedFromPackageName="Package" GeneratedFromPackageID="{10D83FB4-C6E3-4047-8FCD-30D25ACCE649}" GeneratedDate="4/6/2013 12:48:31 PM"/></DTSConfigurationHeading>
+<Configuration ConfiguredType="Property" Path="\Package.Variables[User::CS_Connection].Properties[Value]" ValueType="String">
+<ConfiguredValue>Data Source=192.168.65.3;Initial Catalog=CS_BOSD -- Dev;Integrated Security=True;Application Name=SSIS-ACAMPackagePP4-{70559378-9960-4DA3-8862-DE50C4083CCA}192.168.65.3.CS_BOSD -- Dev;</ConfiguredValue>
+</Configuration>
+<Configuration ConfiguredType="Property" Path="\Package.Variables[User::logDir].Properties[Value]" ValueType="String">
+<ConfiguredValue>C:\ACAMS_SSIS\Logs\</ConfiguredValue>
+</Configuration>
+<Configuration ConfiguredType="Property" Path="\Package.Variables[User::PP_Connection].Properties[Value]" ValueType="String">
+<ConfiguredValue>uid=informix;Dsn=PicturePerfectInformix;pw=informix;</ConfiguredValue>
+</Configuration>
+</DTSConfiguration>

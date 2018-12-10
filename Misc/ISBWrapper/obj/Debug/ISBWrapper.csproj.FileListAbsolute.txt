@@ -1,0 +1,27 @@
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.dll.config
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.pdb
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ImageWare.ISBLibrary.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\log4net.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\nunit.framework.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.csprojResolveAssemblyReference.cache
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.pdb
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.dll.config
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.dll
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.pdb
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ImageWare.ISBLibrary.dll
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\log4net.dll
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\nunit.framework.dll
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.csprojResolveAssemblyReference.cache
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.dll
+C:\Users\pcappello\Documents\Visual Studio 2015\Projects\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.pdb
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.dll.config
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ISBWrapper.pdb
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\ImageWare.ISBLibrary.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\log4net.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\bin\Debug\nunit.framework.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.csprojResolveAssemblyReference.cache
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\Misc\ISBWrapper\obj\Debug\ISBWrapper.pdb

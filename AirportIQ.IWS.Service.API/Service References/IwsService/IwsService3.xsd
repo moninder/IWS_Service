@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/AirportIQ.IWS.Service.Web" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AirportIQ.IWS.Service.Web" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:54548/IwsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="FingerprintImages">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fingerprintImages" nillable="true" type="tns:ArrayOfFingerprintImage" />
+      <xs:element minOccurs="0" name="version" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FingerprintImages" nillable="true" type="tns:FingerprintImages" />
+  <xs:complexType name="ArrayOfFingerprintImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FingerprintImage" nillable="true" type="tns:FingerprintImage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFingerprintImage" nillable="true" type="tns:ArrayOfFingerprintImage" />
+  <xs:complexType name="FingerprintImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="sequence" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FingerprintImage" nillable="true" type="tns:FingerprintImage" />
+  <xs:complexType name="Documents">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="documents" nillable="true" type="tns:ArrayOfDocument" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Documents" nillable="true" type="tns:Documents" />
+  <xs:complexType name="ArrayOfDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Document" nillable="true" type="tns:Document" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDocument" nillable="true" type="tns:ArrayOfDocument" />
+  <xs:complexType name="Document">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="School" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhenCreated" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Document" nillable="true" type="tns:Document" />
+  <xs:complexType name="Doj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DojStatus" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Doj" nillable="true" type="tns:Doj" />
+  <xs:complexType name="Badges">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="badges" nillable="true" type="tns:ArrayOfBadgeDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Badges" nillable="true" type="tns:Badges" />
+  <xs:complexType name="ArrayOfBadgeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BadgeDetails" nillable="true" type="tns:BadgeDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBadgeDetails" nillable="true" type="tns:ArrayOfBadgeDetails" />
+  <xs:complexType name="BadgeDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadgeColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadgeIssuanceReasonCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadgeNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="BadgeStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="DivisionID" type="xs:int" />
+      <xs:element minOccurs="0" name="DvisionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Employer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobRoleDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="customsType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="expiryDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="issueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="jobTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdateDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="originalBadgeDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BadgeDetails" nillable="true" type="tns:BadgeDetails" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alias1FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias1LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias1MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias2FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias2LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias2MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias3FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias3LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alias3MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountrySubdivisionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DojStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailAddress_Alternate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeightInInches" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SexCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WeightInPounds" type="xs:int" />
+      <xs:element minOccurs="0" name="addressAptNo" type="xs:int" />
+      <xs:element minOccurs="0" name="addressCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addressCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addressState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addressZip" type="xs:int" />
+      <xs:element minOccurs="0" name="airportCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="alienRegistrationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cardPayloadLpublic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cardPayloadStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cardPayloadType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="certNumberDs1350" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="citizenship" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contactPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contactPhone2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="countryOfBirth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="division" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="employer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eyeColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="formNumberI94" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hairColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nonImmigrantVisaNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="occupation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pasportNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="passportIssuingCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="residenceAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="suffix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="Fingerprinted">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fingerprinted" nillable="true" type="tns:ArrayOfFingerprint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fingerprinted" nillable="true" type="tns:Fingerprinted" />
+  <xs:complexType name="ArrayOfFingerprint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Fingerprint" nillable="true" type="tns:Fingerprint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFingerprint" nillable="true" type="tns:ArrayOfFingerprint" />
+  <xs:complexType name="Fingerprint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FPType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersonGUID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Fingerprint" nillable="true" type="tns:Fingerprint" />
+  <xs:complexType name="ProvisionData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmployeeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IWS_CardID" type="xs:long" />
+      <xs:element minOccurs="0" name="JobRoleID" type="xs:int" />
+      <xs:element minOccurs="0" name="PIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvisionedCategories" nillable="true" type="tns:ArrayOfCategoryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProvisionData" nillable="true" type="tns:ProvisionData" />
+  <xs:complexType name="ArrayOfCategoryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryData" nillable="true" type="tns:CategoryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryData" nillable="true" type="tns:ArrayOfCategoryData" />
+  <xs:complexType name="CategoryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessType" type="ser:char" />
+      <xs:element minOccurs="0" name="CategoryID" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhenBecomesActive" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WhenExpires" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryData" nillable="true" type="tns:CategoryData" />
+  <xs:complexType name="DeletePersonInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadgeInfo" nillable="true" type="tns:ArrayOfDeletePersonBadgeInfo" />
+      <xs:element minOccurs="0" name="CompanyInfo" nillable="true" type="tns:ArrayOfDeletePersonCompanyInfo" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastTransactionID" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonDivisionCheckID" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonGUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SSN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeletePersonInfo" nillable="true" type="tns:DeletePersonInfo" />
+  <xs:complexType name="ArrayOfDeletePersonBadgeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeletePersonBadgeInfo" nillable="true" type="tns:DeletePersonBadgeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeletePersonBadgeInfo" nillable="true" type="tns:ArrayOfDeletePersonBadgeInfo" />
+  <xs:complexType name="DeletePersonBadgeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadgeID" type="xs:int" />
+      <xs:element minOccurs="0" name="BadgeID_IWS" type="xs:int" />
+      <xs:element minOccurs="0" name="BadgeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorporationName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeletePersonBadgeInfo" nillable="true" type="tns:DeletePersonBadgeInfo" />
+  <xs:complexType name="ArrayOfDeletePersonCompanyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeletePersonCompanyInfo" nillable="true" type="tns:DeletePersonCompanyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeletePersonCompanyInfo" nillable="true" type="tns:ArrayOfDeletePersonCompanyInfo" />
+  <xs:complexType name="DeletePersonCompanyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeletePersonCompanyInfo" nillable="true" type="tns:DeletePersonCompanyInfo" />
+  <xs:complexType name="PersonUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PersonUpdateID" type="xs:int" />
+      <xs:element minOccurs="0" name="Persons" nillable="true" type="tns:ArrayOfPersonUpdateDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonUpdate" nillable="true" type="tns:PersonUpdate" />
+  <xs:complexType name="ArrayOfPersonUpdateDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonUpdateDetail" nillable="true" type="tns:PersonUpdateDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonUpdateDetail" nillable="true" type="tns:ArrayOfPersonUpdateDetail" />
+  <xs:complexType name="PersonUpdateDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadgeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadgeStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Badges" nillable="true" type="tns:ArrayOfBadgeRecord" />
+      <xs:element minOccurs="0" name="CorporationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataSubmitted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="ExceptionText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSuccessful" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderBy" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      <xs:element minOccurs="0" name="PersonUpdateID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReasonForDeactivation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SocialSecurityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransmitEnd" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TransmitStart" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonUpdateDetail" nillable="true" type="tns:PersonUpdateDetail" />
+  <xs:complexType name="ArrayOfBadgeRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BadgeRecord" nillable="true" type="tns:BadgeRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBadgeRecord" nillable="true" type="tns:ArrayOfBadgeRecord" />
+  <xs:complexType name="BadgeRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BadgeID" type="xs:int" />
+      <xs:element minOccurs="0" name="BadgeID_IWS" type="xs:long" />
+      <xs:element minOccurs="0" name="BadgeNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BadgeStatusCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorporationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionTypeID" type="xs:short" />
+      <xs:element minOccurs="0" name="PersonGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PersonID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReasonForDeactivation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BadgeRecord" nillable="true" type="tns:BadgeRecord" />
+  <xs:complexType name="ArrayOfPersonUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonUpdate" nillable="true" type="tns:PersonUpdate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonUpdate" nillable="true" type="tns:ArrayOfPersonUpdate" />
+</xs:schema>

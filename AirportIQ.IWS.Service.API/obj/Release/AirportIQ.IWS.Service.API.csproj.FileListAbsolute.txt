@@ -1,0 +1,14 @@
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\AirportIQ.IWS.Service.API.dll.config
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\AirportIQ.IWS.Service.API.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\AirportIQ.IWS.Service.API.pdb
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\nunit.framework.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\obj\Release\AirportIQ.IWS.Service.API.csprojResolveAssemblyReference.cache
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\obj\Release\AirportIQ.IWS.Service.API.dll
+C:\Users\gcr1\Desktop\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\obj\Release\AirportIQ.IWS.Service.API.pdb
+C:\Development\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\AirportIQ.IWS.Service.API.dll.config
+C:\Development\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\AirportIQ.IWS.Service.API.dll
+C:\Development\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\AirportIQ.IWS.Service.API.pdb
+C:\Development\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\bin\Release\nunit.framework.dll
+C:\Development\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\obj\Release\AirportIQ.IWS.Service.API.csprojResolveAssemblyReference.cache
+C:\Development\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\obj\Release\AirportIQ.IWS.Service.API.dll
+C:\Development\IWS Web service\AirportIQSolution - CS-Prod\AirportIQ.IWS.Service.API\obj\Release\AirportIQ.IWS.Service.API.pdb

@@ -1,0 +1,13 @@
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\test.txt
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\Database.Tests.sdf
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\AirportIQ.WF.Tests.Integration.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\AirportIQ.WF.Tests.Integration.pdb
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\AirportIQ.WF.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\System.Data.SqlServerCe.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\Newtonsoft.Json.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\AirportIQ.WF.pdb
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\obj\Debug\AirportIQ.WF.Tests.Integration.csprojResolveAssemblyReference.cache
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\obj\Debug\AirportIQ.WF.Tests.Integration.dll
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\obj\Debug\AirportIQ.WF.Tests.Integration.pdb
+C:\Development\DEV Rebadge 2017\LAWA Rebadge\AirportIQSolution - CS-Prod\AirportIQ.WF.Tests.Integration\bin\Debug\Newtonsoft.Json.xml

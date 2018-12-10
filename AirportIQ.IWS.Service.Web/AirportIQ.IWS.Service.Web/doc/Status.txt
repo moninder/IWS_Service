@@ -1,0 +1,33 @@
+﻿Status for IWS Web Service
+Atchison - September 2012
+
+
+In the table below, I estimate the hours needed to scope, estimate, design, develop and document each task.
+Tasks are enumerated in "New IDSB Interface Requirement Definition v0.8.xlsx"
+A complete discussion of the applicable tasks (and the specs I developed for them) is in Notes.txt.
+
+
+Completed
+estimated,actual	task
+-------------------------
+8,8					T02 - Biometric Update
+3,3					T03 - End Biometric Capture
+							NOTE: There is nothing that has to happen in the db to reflect that capture is complete.  
+							I ultimately removed this interface from the webservice.
+8,8					T05 - Update BadgeID (was Card Status)
+8,8					T11 - Deactivate a Card
+2,2					T15 - Update Person Status
+							NOTE: this functionality is included in T08 and I removed this interface from the webservice interface.
+8,10				T07 - Initiate CHBC (Criminal History Background Check)
+8,11				T08 - CHBC update
+8,14				T12 - Reprovision  (no spec - like pulling teeth)
+
+
+
+
+Remaining
+estimated,actual	task
+-------------------------
+12				develop spec and estimate for work
+16				T09 - CHBC index to history search on FBI website
+8 				T13 - Provision

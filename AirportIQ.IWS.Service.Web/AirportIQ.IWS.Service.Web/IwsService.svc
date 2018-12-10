@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AirportIQ.IWS.Service.Web.IwsService" CodeBehind="IwsService.svc.cs" %>

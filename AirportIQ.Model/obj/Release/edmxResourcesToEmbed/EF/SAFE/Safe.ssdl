@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SafeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SafeModelStoreContainer">
+    <EntitySet Name="Common_Requirement_Documents" EntityType="SafeModel.Store.Common_Requirement_Documents" store:Type="Tables" Schema="Data" Table="Common.Requirement.Documents" />
+    <EntitySet Name="Common_Requirement_DocumentsRequired" EntityType="SafeModel.Store.Common_Requirement_DocumentsRequired" store:Type="Tables" Schema="Data" Table="Common.Requirement.DocumentsRequired" />
+    <EntitySet Name="Company_Companies" EntityType="SafeModel.Store.Company_Companies" store:Type="Tables" Schema="Data" Table="Company.Companies" />
+    <EntitySet Name="Division_Divisions" EntityType="SafeModel.Store.Division_Divisions" store:Type="Tables" Schema="Data" Table="Division.Divisions" />
+    <EntitySet Name="LEO_OfficerBadges" EntityType="SafeModel.Store.LEO_OfficerBadges">
+      <DefiningQuery>
+					SELECT 
+						StatusPeriods.OfficerBadgeID, 					 
+						OfficerBadge.SerialNumber,  
+						LPD.PoliceDepartmentID,
+						OfficerBadge.PersonID,                   
+						OfficerBadge.WhenBecomesActive,  
+						OfficerBadge.WhenExpires, 
+						OfficerBadge.[_DataChanges_RowID],
+						RanksAndTitles.OfficerRankTitleDescription
+					FROM
+						Data.[LEO.BadgeStatusPeriods] AS StatusPeriods INNER JOIN
+						Data.[LEO.OfficerBadges] AS OfficerBadge ON StatusPeriods.OfficerBadgeID = OfficerBadge.OfficerBadgeID INNER JOIN
+						Data.[Person.PersonBiographics] AS PPB ON OfficerBadge.PersonID = PPB.PersonID INNER JOIN
+						Data.[LEO.OfficerRanksAndTitles] AS RanksAndTitles ON StatusPeriods.OfficerRankAndTitleID = RanksAndTitles.OfficerRankAndTitleID INNER JOIN
+						Data.[LEO.OfficerTypes] AS OfficerTypes ON RanksAndTitles.OfficerTypeID = OfficerTypes.OfficerTypeID INNER JOIN
+						Data.[LEO.PoliceDepartments] AS LPD ON OfficerBadge.PoliceDepartmentID = LPD.PoliceDepartmentID INNER JOIN
+						BL.[Person.FullName.LastFirst] AS FullName ON FullName.PersonID = OfficerBadge.PersonID
+					WHERE (RanksAndTitles.OfficerRankTitleDescription &lt;&gt; 'Recruit') AND (StatusPeriods.BadgeStatusCode &lt;&gt; 'RTRN')
+				</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Person_Badges" EntityType="SafeModel.Store.Person_Badges" store:Type="Tables" Schema="Data" Table="Person.Badges" />
+    <EntitySet Name="Safe_CitationPoliceOfficers" EntityType="SafeModel.Store.Safe_CitationPoliceOfficers" store:Type="Tables" Schema="Data" Table="Safe.CitationPoliceOfficers" />
+    <EntitySet Name="Safe_Citations" EntityType="SafeModel.Store.Safe_Citations" store:Type="Tables" Schema="Data" Table="Safe.Citations" />
+    <EntitySet Name="Safe_CitationViolations" EntityType="SafeModel.Store.Safe_CitationViolations" store:Type="Tables" Schema="Data" Table="Safe.CitationViolations" />
+    <EntitySet Name="Safe_HearingPoliceOfficers" EntityType="SafeModel.Store.Safe_HearingPoliceOfficers" store:Type="Tables" Schema="Data" Table="Safe.HearingPoliceOfficers" />
+    <EntitySet Name="Safe_Hearings" EntityType="SafeModel.Store.Safe_Hearings" store:Type="Tables" Schema="Data" Table="Safe.Hearings" />
+    <EntitySet Name="Safe_Officers" EntityType="SafeModel.Store.Safe_Officers" store:Type="Tables" Schema="Data" Table="Safe.Officers" />
+    <EntitySet Name="Safe_VehicleBodyTypes" EntityType="SafeModel.Store.Safe_VehicleBodyTypes" store:Type="Tables" Schema="Data" Table="Safe.VehicleBodyTypes" />
+    <EntitySet Name="Safe_VehicleMakes" EntityType="SafeModel.Store.Safe_VehicleMakes" store:Type="Tables" Schema="Data" Table="Safe.VehicleMakes" />
+    <EntitySet Name="Safe_Violations" EntityType="SafeModel.Store.Safe_Violations" store:Type="Tables" Schema="Data" Table="Safe.Violations" />
+    <EntitySet Name="Safe_ViolationTypes" EntityType="SafeModel.Store.Safe_ViolationTypes" store:Type="Tables" Schema="Data" Table="Safe.ViolationTypes" />
+    <EntitySet Name="Badges_Info" EntityType="SafeModel.Store.Badges_Info" store:Type="Views" store:Schema="BL" store:Name="Badges.Info">
+      <DefiningQuery>SELECT 
+      [Badges_Info].[PersonID] AS [PersonID], 
+      [Badges_Info].[FullName] AS [FullName], 
+      [Badges_Info].[BadgeID] AS [BadgeID], 
+      [Badges_Info].[BadgeNumber] AS [BadgeNumber], 
+      [Badges_Info].[CompanyID] AS [CompanyID], 
+      [Badges_Info].[CompanyCode] AS [CompanyCode], 
+      [Badges_Info].[CorporationName] AS [CorporationName], 
+      [Badges_Info].[DivisionID] AS [DivisionID], 
+      [Badges_Info].[DivisionCode] AS [DivisionCode], 
+      [Badges_Info].[DivisionName] AS [DivisionName], 
+      [Badges_Info].[Address1] AS [Address1], 
+      [Badges_Info].[Address2] AS [Address2], 
+      [Badges_Info].[Address3] AS [Address3], 
+      [Badges_Info].[City] AS [City], 
+      [Badges_Info].[CountryCode] AS [CountryCode], 
+      [Badges_Info].[CountrySubdivisionCode] AS [CountrySubdivisionCode], 
+      [Badges_Info].[PostalCode] AS [PostalCode], 
+      [Badges_Info].[WhenBecomesActive] AS [WhenBecomesActive], 
+      [Badges_Info].[WhenExpires] AS [WhenExpires], 
+      [Badges_Info].[PersonDivisionXrefID] AS [PersonDivisionXrefID]
+      FROM [BL].[Badges.Info] AS [Badges_Info]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Person_FullName" EntityType="SafeModel.Store.Person_FullName" store:Type="Views" store:Schema="BL" store:Name="Person.FullName">
+      <DefiningQuery>SELECT 
+      [Person_FullName].[PersonID] AS [PersonID], 
+      [Person_FullName].[FullName] AS [FullName]
+      FROM [BL].[Person.FullName] AS [Person_FullName]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Person_FullName_LastFirst" EntityType="SafeModel.Store.Person_FullName_LastFirst" store:Type="Views" store:Schema="BL" store:Name="Person.FullName.LastFirst">
+      <DefiningQuery>SELECT 
+      [Person_FullName_LastFirst].[PersonID] AS [PersonID], 
+      [Person_FullName_LastFirst].[FullName] AS [FullName]
+      FROM [BL].[Person.FullName.LastFirst] AS [Person_FullName_LastFirst]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Person_PersonDivisionXref" EntityType="SafeModel.Store.Person_PersonDivisionXref" store:Type="Views" store:Schema="EF.ReadOnly" store:Name="Person.PersonDivisionXref">
+      <DefiningQuery>SELECT 
+      [Person_PersonDivisionXref].[PersonDivisionXrefID] AS [PersonDivisionXrefID], 
+      [Person_PersonDivisionXref].[PersonID] AS [PersonID], 
+      [Person_PersonDivisionXref].[DivisionID] AS [DivisionID], 
+      [Person_PersonDivisionXref].[WhenAccepted] AS [WhenAccepted], 
+      [Person_PersonDivisionXref].[WhenBegins] AS [WhenBegins], 
+      [Person_PersonDivisionXref].[WhenEnds] AS [WhenEnds]
+      FROM [EF.ReadOnly].[Person.PersonDivisionXref] AS [Person_PersonDivisionXref]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="“Division_Divisions” --&gt; “Company_Companies”" Association="SafeModel.Store.“Division_Divisions” --&gt; “Company_Companies”">
+      <End Role="Company_Companies" EntitySet="Company_Companies" />
+      <End Role="Division_Divisions" EntitySet="Division_Divisions" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_CitationPoliceOfficers” --&gt; “LEO_OfficerBadges”" Association="SafeModel.Store.“Safe_CitationPoliceOfficers” --&gt; “LEO_OfficerBadges”">
+      <End Role="LEO_OfficerBadges" EntitySet="LEO_OfficerBadges" />
+      <End Role="Safe_CitationPoliceOfficers" EntitySet="Safe_CitationPoliceOfficers" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_CitationPoliceOfficers” --&gt; “Safe_Citations”" Association="SafeModel.Store.“Safe_CitationPoliceOfficers” --&gt; “Safe_Citations”">
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+      <End Role="Safe_CitationPoliceOfficers" EntitySet="Safe_CitationPoliceOfficers" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_Citations” --&gt; “Person_Badges”" Association="SafeModel.Store.“Safe_Citations” --&gt; “Person_Badges”">
+      <End Role="Person_Badges" EntitySet="Person_Badges" />
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_Citations” --&gt; “Safe_VehicleBodyTypes”" Association="SafeModel.Store.“Safe_Citations” --&gt; “Safe_VehicleBodyTypes”">
+      <End Role="Safe_VehicleBodyTypes" EntitySet="Safe_VehicleBodyTypes" />
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_Citations” --&gt; “Safe_VehicleMakes”" Association="SafeModel.Store.“Safe_Citations” --&gt; “Safe_VehicleMakes”">
+      <End Role="Safe_VehicleMakes" EntitySet="Safe_VehicleMakes" />
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_CitationViolations” --&gt; “Safe_Citations”" Association="SafeModel.Store.“Safe_CitationViolations” --&gt; “Safe_Citations”">
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+      <End Role="Safe_CitationViolations" EntitySet="Safe_CitationViolations" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_CitationViolations” --&gt; “Safe_Violations”" Association="SafeModel.Store.“Safe_CitationViolations” --&gt; “Safe_Violations”">
+      <End Role="Safe_Violations" EntitySet="Safe_Violations" />
+      <End Role="Safe_CitationViolations" EntitySet="Safe_CitationViolations" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_CitationViolations” --&gt; “Safe_ViolationTypes”" Association="SafeModel.Store.“Safe_CitationViolations” --&gt; “Safe_ViolationTypes”">
+      <End Role="Safe_ViolationTypes" EntitySet="Safe_ViolationTypes" />
+      <End Role="Safe_CitationViolations" EntitySet="Safe_CitationViolations" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_HearingPoliceOfficers” --&gt; “LEO_OfficerBadges”" Association="SafeModel.Store.“Safe_HearingPoliceOfficers” --&gt; “LEO_OfficerBadges”">
+      <End Role="LEO_OfficerBadges" EntitySet="LEO_OfficerBadges" />
+      <End Role="Safe_HearingPoliceOfficers" EntitySet="Safe_HearingPoliceOfficers" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_HearingPoliceOfficers” --&gt; “Safe_Hearings”" Association="SafeModel.Store.“Safe_HearingPoliceOfficers” --&gt; “Safe_Hearings”">
+      <End Role="Safe_Hearings" EntitySet="Safe_Hearings" />
+      <End Role="Safe_HearingPoliceOfficers" EntitySet="Safe_HearingPoliceOfficers" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_Hearings” --&gt; “Safe_Citations”" Association="SafeModel.Store.“Safe_Hearings” --&gt; “Safe_Citations”">
+      <End Role="Safe_Citations" EntitySet="Safe_Citations" />
+      <End Role="Safe_Hearings" EntitySet="Safe_Hearings" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_Hearings” --&gt; “Safe_Officers”" Association="SafeModel.Store.“Safe_Hearings” --&gt; “Safe_Officers”">
+      <End Role="Safe_Officers" EntitySet="Safe_Officers" />
+      <End Role="Safe_Hearings" EntitySet="Safe_Hearings" />
+    </AssociationSet>
+    <AssociationSet Name="“Safe_Violations” --&gt; “Safe_ViolationTypes”" Association="SafeModel.Store.“Safe_Violations” --&gt; “Safe_ViolationTypes”">
+      <End Role="Safe_ViolationTypes" EntitySet="Safe_ViolationTypes" />
+      <End Role="Safe_Violations" EntitySet="Safe_Violations" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Common.Requirement.Documents' was excluded.
+      -->
+  <EntityType Name="Common_Requirement_Documents">
+    <Key>
+      <PropertyRef Name="DocumentID" />
+    </Key>
+    <Property Name="DocumentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EntityID" Type="int" Nullable="false" />
+    <Property Name="DocumentTypeNumber" Type="smallint" Nullable="false" />
+    <Property Name="DocumentFilename" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DocumentDescription" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="ContentTypeCode" Type="varchar" MaxLength="75" />
+    <Property Name="DocumentImage" Type="varbinary(max)" />
+    <Property Name="WhenCreated" Type="datetime" Nullable="false" />
+    <Property Name="IssuingAuthority_CountryCode" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="IssuingAuthority_CountrySubdivisionCode" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="IdentificationNumber" Type="varchar" Nullable="false" MaxLength="35" />
+    <Property Name="ExpirationDate" Type="date" Nullable="false" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="RequirementCode" Type="varchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Common_Requirement_DocumentsRequired">
+    <Key>
+      <PropertyRef Name="RequirementCode" />
+      <PropertyRef Name="DocumentTypeNumber" />
+    </Key>
+    <Property Name="RequirementCode" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="DocumentTypeNumber" Type="smallint" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="smallint" Nullable="false" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DropdownName" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Company_Companies">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyCode" Type="varchar" Nullable="false" MaxLength="4" StoreGeneratedPattern="Computed" />
+    <Property Name="CorporationName" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="DBAName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="BadgeName" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="InsuranceRequired" Type="bit" Nullable="false" />
+    <Property Name="BTRCRequired" Type="bit" Nullable="false" />
+    <Property Name="FingerprintRequired" Type="bit" />
+    <Property Name="BackgroundCheckRequired" Type="bit" />
+    <Property Name="BadgeColorID_HighestLevel" Type="smallint" Nullable="false" />
+    <Property Name="ProviderNumber" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="WhenLastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="StaffID_LastUpdated" Type="int" Nullable="false" />
+    <Property Name="RAMSAgreementNumber" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="RAMSExpirationDate" Type="date" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_PrimaryKeyValue" Type="int" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="StaffID_BadgeCoordinator" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Division.Divisions' was excluded.
+      -->
+  <EntityType Name="Division_Divisions">
+    <Key>
+      <PropertyRef Name="DivisionID" />
+    </Key>
+    <Property Name="DivisionID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="DivisionCode" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="DivisionName" Type="varchar" Nullable="false" MaxLength="70" />
+    <Property Name="DivisionTypeID" Type="smallint" />
+    <Property Name="DivisionStatusCode" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address3" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="CountrySubdivisionCode" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="PostalCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="CountryCode" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="PhoneNumber" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="FaxNumber" Type="varchar" Nullable="false" MaxLength="14" />
+    <Property Name="EmailAddress" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="WhenEnrolled" Type="datetime" />
+    <Property Name="FingerprintRequired" Type="bit" Nullable="false" />
+    <Property Name="BackgroundCheckRequired" Type="bit" Nullable="false" />
+    <Property Name="WhenLastUpdated" Type="datetime" Nullable="false" />
+    <Property Name="StaffID_LastUpdated" Type="int" Nullable="false" />
+    <Property Name="CategoryCode" Type="varchar" MaxLength="5" />
+    <Property Name="ProviderNumber" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="FacilityCode" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="NewBadgeCost" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="ReplaceBadgeCost" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="BadgeBillingCost" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="BadgeCreditCost" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_DIV_ID" Type="int" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="RAMSAgreementNumber" Type="varchar" MaxLength="10" />
+    <Property Name="RAMSExpirationDate" Type="date" />
+  </EntityType>
+  <EntityType Name="LEO_OfficerBadges">
+    <Key>
+      <PropertyRef Name="OfficerBadgeID" />
+    </Key>
+    <Property Name="OfficerBadgeID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SerialNumber" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="PoliceDepartmentID" Type="tinyint" Nullable="false" />
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="WhenBecomesActive" Type="datetime" Nullable="false" />
+    <Property Name="WhenExpires" Type="datetime" Nullable="false" />
+    <Property Name="_DataChanges_RowID" Type="smallint" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="OfficerRankTitleDescription" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Person.Badges' was excluded.
+      -->
+  <EntityType Name="Person_Badges">
+    <Key>
+      <PropertyRef Name="BadgeID" />
+    </Key>
+    <Property Name="BadgeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PersonDivisionXrefID" Type="int" Nullable="false" />
+    <Property Name="BadgeID_IWS" Type="bigint" />
+    <Property Name="BadgeNumber" Type="varchar" MaxLength="15" />
+    <Property Name="ProxNumber" Type="varchar" MaxLength="15" />
+    <Property Name="BadgeIssuanceReasonCode" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="BadgeColorID" Type="smallint" />
+    <Property Name="WhenBecomesActive" Type="datetime" Nullable="false" />
+    <Property Name="WhenExpires" Type="datetime" Nullable="false" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_BadgeReturnDate_ONT" Type="date" />
+    <Property Name="_Legacy_PersonType_ONT" Type="tinyint" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="DriveThroughGates" Type="bit" Nullable="false" />
+    <Property Name="DriverLEO" Type="bit" Nullable="false" />
+    <Property Name="CardNumber" Type="int" />
+  </EntityType>
+  <EntityType Name="Safe_CitationPoliceOfficers">
+    <Key>
+      <PropertyRef Name="SafeCitationID" />
+      <PropertyRef Name="OfficerBadgeID" />
+    </Key>
+    <Property Name="SafeCitationID" Type="int" Nullable="false" />
+    <Property Name="OfficerBadgeID" Type="smallint" Nullable="false" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Safe.Citations' was excluded.
+      -->
+  <EntityType Name="Safe_Citations">
+    <Key>
+      <PropertyRef Name="SafeCitationID" />
+    </Key>
+    <Property Name="SafeCitationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CitationNumber" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="PersonDivisionXrefID" Type="int" Nullable="false" />
+    <Property Name="BadgeID" Type="int" />
+    <Property Name="VehicleMakeID" Type="int" />
+    <Property Name="VehicleBodyID" Type="int" />
+    <Property Name="CountryCode_LicensePlate" Type="varchar" MaxLength="3" />
+    <Property Name="CountrySubdivisionCode_LicensePlate" Type="varchar" MaxLength="3" />
+    <Property Name="LicensePlate" Type="varchar" MaxLength="15" />
+    <Property Name="BadgeUnknown" Type="bit" Nullable="false" />
+    <Property Name="BadgeDisplayed" Type="bit" Nullable="false" />
+    <Property Name="DriverIcon" Type="bit" Nullable="false" />
+    <Property Name="LicenseValid" Type="bit" Nullable="false" />
+    <Property Name="DriverTrainingRequired" Type="bit" Nullable="false" />
+    <Property Name="SecurityTrainingRequired" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="ViolationLocation" Type="varchar(max)" />
+    <Property Name="Cancelled" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FollowUp" Type="varchar(max)" Nullable="false" />
+    <Property Name="WhenCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhenDue" Type="datetime" />
+    <Property Name="WhenResolved" Type="datetime" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="DriverslicenseNumber" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleIdentification" Type="varchar" MaxLength="50" />
+    <Property Name="Superintendent" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Conditions" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Safe_CitationViolations">
+    <Key>
+      <PropertyRef Name="SafeCitationID" />
+      <PropertyRef Name="ViolationID" />
+    </Key>
+    <Property Name="SafeCitationID" Type="int" Nullable="false" />
+    <Property Name="ViolationID" Type="int" Nullable="false" />
+    <Property Name="ViolationTypeID" Type="smallint" Nullable="false" />
+    <Property Name="IsMovingViolation" Type="bit" Nullable="false" />
+    <Property Name="ViolationPoints" Type="tinyint" Nullable="false" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Conditions" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Safe_HearingPoliceOfficers">
+    <Key>
+      <PropertyRef Name="SafeHearingID" />
+      <PropertyRef Name="OfficerBadgeID" />
+    </Key>
+    <Property Name="SafeHearingID" Type="int" Nullable="false" />
+    <Property Name="OfficerBadgeID" Type="smallint" Nullable="false" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Safe.Hearings' was excluded.
+      -->
+  <EntityType Name="Safe_Hearings">
+    <Key>
+      <PropertyRef Name="SafeHearingID" />
+    </Key>
+    <Property Name="SafeHearingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SafeCitationID" Type="int" Nullable="false" />
+    <Property Name="SafeOfficerID_Hearing" Type="int" Nullable="false" />
+    <Property Name="WhenHearingHeld" Type="datetime" Nullable="true" />
+    <Property Name="WhenAppealToBeHeld" Type="datetime" />
+    <Property Name="WhenTrainingHeld" Type="datetime" />
+    <Property Name="WhenCompleted" Type="datetime" />
+    <Property Name="HearingNotes" Type="varchar(max)" Nullable="false" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Superintendent" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Safe.Officers' was excluded.
+      -->
+  <EntityType Name="Safe_Officers">
+    <Key>
+      <PropertyRef Name="SafeOfficerID" />
+    </Key>
+    <Property Name="SafeOfficerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SafeDivisionID" Type="int" Nullable="false" />
+    <Property Name="OfficerName" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="OfficerBadgeNumber" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="smallint" Nullable="false" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Safe.VehicleBodyTypes' was excluded.
+      -->
+  <EntityType Name="Safe_VehicleBodyTypes">
+    <Key>
+      <PropertyRef Name="VehicleBodyID" />
+    </Key>
+    <Property Name="VehicleBodyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleBodyDescription" Type="varchar" Nullable="false" MaxLength="40" />
+    <Property Name="VehicleBodyAbbreviation" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="smallint" Nullable="false" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Safe_VehicleMakes">
+    <Key>
+      <PropertyRef Name="VehicleMakeID" />
+    </Key>
+    <Property Name="VehicleMakeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleMakeDescription" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="VehicleMakeAbbreviation" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="smallint" Nullable="false" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Safe.Violations' was excluded.
+      -->
+  <EntityType Name="Safe_Violations">
+    <Key>
+      <PropertyRef Name="ViolationID" />
+    </Key>
+    <Property Name="ViolationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ViolationNumber" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ViolationDescription" Type="varchar" Nullable="false" MaxLength="120" />
+    <Property Name="ViolationTypeID" Type="smallint" Nullable="false" />
+    <Property Name="ViolationPoints" Type="tinyint" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="smallint" Nullable="false" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_DataChanges_RowID" Type="int" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'sql_variant' is currently not supported for the target .NET Framework version; the column '_Legacy_PrimaryKeyValue' in table 'CS_BOSD - - Dev.Data.Safe.ViolationTypes' was excluded.
+      -->
+  <EntityType Name="Safe_ViolationTypes">
+    <Key>
+      <PropertyRef Name="ViolationTypeID" />
+    </Key>
+    <Property Name="ViolationTypeID" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ViolationTypeDescription" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ViolationTypeAbbreviation" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="smallint" Nullable="false" />
+    <Property Name="_Legacy_DatabaseName" Type="varchar" MaxLength="128" />
+    <Property Name="_Legacy_TableName" Type="varchar" MaxLength="128" />
+    <Property Name="_DataChanges_RowID" Type="smallint" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS_BOSD - - Dev.BL.Badges.Info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Badges_Info">
+    <Key>
+      <PropertyRef Name="BadgeID" />
+    </Key>
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" />
+    <Property Name="BadgeID" Type="int" Nullable="false" />
+    <Property Name="BadgeNumber" Type="varchar" MaxLength="15" />
+    <Property Name="CompanyID" Type="int" Nullable="false" />
+    <Property Name="CompanyCode" Type="varchar" MaxLength="4" />
+    <Property Name="CorporationName" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="DivisionID" Type="int" Nullable="false" />
+    <Property Name="DivisionCode" Type="char" Nullable="false" MaxLength="2" />
+    <Property Name="DivisionName" Type="varchar" Nullable="false" MaxLength="70" />
+    <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Address3" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="City" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="CountryCode" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="CountrySubdivisionCode" Type="varchar" Nullable="false" MaxLength="3" />
+    <Property Name="PostalCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="WhenBecomesActive" Type="datetime" Nullable="false" />
+    <Property Name="WhenExpires" Type="datetime" Nullable="false" />
+    <Property Name="PersonDivisionXrefID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS_BOSD - - Dev.BL.Person.FullName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Person_FullName">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS_BOSD - - Dev.BL.Person.FullName.LastFirst' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Person_FullName_LastFirst">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'CS_BOSD - - Dev.EF.ReadOnly.Person.PersonDivisionXref' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Person_PersonDivisionXref">
+    <Key>
+      <PropertyRef Name="PersonDivisionXrefID" />
+    </Key>
+    <Property Name="PersonDivisionXrefID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PersonID" Type="int" Nullable="false" />
+    <Property Name="DivisionID" Type="int" Nullable="false" />
+    <Property Name="WhenAccepted" Type="datetime" Nullable="false" />
+    <Property Name="WhenBegins" Type="datetime" Nullable="false" />
+    <Property Name="WhenEnds" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="“Division_Divisions” --&gt; “Company_Companies”">
+    <End Role="Company_Companies" Type="SafeModel.Store.Company_Companies" Multiplicity="1" />
+    <End Role="Division_Divisions" Type="SafeModel.Store.Division_Divisions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company_Companies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Division_Divisions">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_CitationPoliceOfficers” --&gt; “LEO_OfficerBadges”">
+    <End Role="LEO_OfficerBadges" Type="SafeModel.Store.LEO_OfficerBadges" Multiplicity="1" />
+    <End Role="Safe_CitationPoliceOfficers" Type="SafeModel.Store.Safe_CitationPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LEO_OfficerBadges">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Principal>
+      <Dependent Role="Safe_CitationPoliceOfficers">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_CitationPoliceOfficers” --&gt; “Safe_Citations”">
+    <End Role="Safe_Citations" Type="SafeModel.Store.Safe_Citations" Multiplicity="1" />
+    <End Role="Safe_CitationPoliceOfficers" Type="SafeModel.Store.Safe_CitationPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Citations">
+        <PropertyRef Name="SafeCitationID" />
+      </Principal>
+      <Dependent Role="Safe_CitationPoliceOfficers">
+        <PropertyRef Name="SafeCitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_Citations” --&gt; “Person_Badges”">
+    <End Role="Person_Badges" Type="SafeModel.Store.Person_Badges" Multiplicity="0..1" />
+    <End Role="Safe_Citations" Type="SafeModel.Store.Safe_Citations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person_Badges">
+        <PropertyRef Name="BadgeID" />
+      </Principal>
+      <Dependent Role="Safe_Citations">
+        <PropertyRef Name="BadgeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_Citations” --&gt; “Safe_VehicleBodyTypes”">
+    <End Role="Safe_VehicleBodyTypes" Type="SafeModel.Store.Safe_VehicleBodyTypes" Multiplicity="0..1" />
+    <End Role="Safe_Citations" Type="SafeModel.Store.Safe_Citations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_VehicleBodyTypes">
+        <PropertyRef Name="VehicleBodyID" />
+      </Principal>
+      <Dependent Role="Safe_Citations">
+        <PropertyRef Name="VehicleBodyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_Citations” --&gt; “Safe_VehicleMakes”">
+    <End Role="Safe_VehicleMakes" Type="SafeModel.Store.Safe_VehicleMakes" Multiplicity="0..1" />
+    <End Role="Safe_Citations" Type="SafeModel.Store.Safe_Citations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_VehicleMakes">
+        <PropertyRef Name="VehicleMakeID" />
+      </Principal>
+      <Dependent Role="Safe_Citations">
+        <PropertyRef Name="VehicleMakeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_CitationViolations” --&gt; “Safe_Citations”">
+    <End Role="Safe_Citations" Type="SafeModel.Store.Safe_Citations" Multiplicity="1" />
+    <End Role="Safe_CitationViolations" Type="SafeModel.Store.Safe_CitationViolations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Citations">
+        <PropertyRef Name="SafeCitationID" />
+      </Principal>
+      <Dependent Role="Safe_CitationViolations">
+        <PropertyRef Name="SafeCitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_CitationViolations” --&gt; “Safe_Violations”">
+    <End Role="Safe_Violations" Type="SafeModel.Store.Safe_Violations" Multiplicity="1" />
+    <End Role="Safe_CitationViolations" Type="SafeModel.Store.Safe_CitationViolations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Violations">
+        <PropertyRef Name="ViolationID" />
+      </Principal>
+      <Dependent Role="Safe_CitationViolations">
+        <PropertyRef Name="ViolationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_CitationViolations” --&gt; “Safe_ViolationTypes”">
+    <End Role="Safe_ViolationTypes" Type="SafeModel.Store.Safe_ViolationTypes" Multiplicity="1" />
+    <End Role="Safe_CitationViolations" Type="SafeModel.Store.Safe_CitationViolations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_ViolationTypes">
+        <PropertyRef Name="ViolationTypeID" />
+      </Principal>
+      <Dependent Role="Safe_CitationViolations">
+        <PropertyRef Name="ViolationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_HearingPoliceOfficers” --&gt; “LEO_OfficerBadges”">
+    <End Role="LEO_OfficerBadges" Type="SafeModel.Store.LEO_OfficerBadges" Multiplicity="1" />
+    <End Role="Safe_HearingPoliceOfficers" Type="SafeModel.Store.Safe_HearingPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LEO_OfficerBadges">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Principal>
+      <Dependent Role="Safe_HearingPoliceOfficers">
+        <PropertyRef Name="OfficerBadgeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_HearingPoliceOfficers” --&gt; “Safe_Hearings”">
+    <End Role="Safe_Hearings" Type="SafeModel.Store.Safe_Hearings" Multiplicity="1" />
+    <End Role="Safe_HearingPoliceOfficers" Type="SafeModel.Store.Safe_HearingPoliceOfficers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Hearings">
+        <PropertyRef Name="SafeHearingID" />
+      </Principal>
+      <Dependent Role="Safe_HearingPoliceOfficers">
+        <PropertyRef Name="SafeHearingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_Hearings” --&gt; “Safe_Citations”">
+    <End Role="Safe_Citations" Type="SafeModel.Store.Safe_Citations" Multiplicity="1" />
+    <End Role="Safe_Hearings" Type="SafeModel.Store.Safe_Hearings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Citations">
+        <PropertyRef Name="SafeCitationID" />
+      </Principal>
+      <Dependent Role="Safe_Hearings">
+        <PropertyRef Name="SafeCitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_Hearings” --&gt; “Safe_Officers”">
+    <End Role="Safe_Officers" Type="SafeModel.Store.Safe_Officers" Multiplicity="1" />
+    <End Role="Safe_Hearings" Type="SafeModel.Store.Safe_Hearings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_Officers">
+        <PropertyRef Name="SafeOfficerID" />
+      </Principal>
+      <Dependent Role="Safe_Hearings">
+        <PropertyRef Name="SafeOfficerID_Hearing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="“Safe_Violations” --&gt; “Safe_ViolationTypes”">
+    <End Role="Safe_ViolationTypes" Type="SafeModel.Store.Safe_ViolationTypes" Multiplicity="1" />
+    <End Role="Safe_Violations" Type="SafeModel.Store.Safe_Violations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Safe_ViolationTypes">
+        <PropertyRef Name="ViolationTypeID" />
+      </Principal>
+      <Dependent Role="Safe_Violations">
+        <PropertyRef Name="ViolationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Company_List_CompanyID_ByFacility" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" StoreFunctionName="Company.List.CompanyID.ByFacility" Schema="App.Sbo">
+    <Parameter Name="FacilityCode" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

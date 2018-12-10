@@ -1,0 +1,140 @@
+﻿Notes on the IWSWrapper DLL
+October 2012
+
+
+
+
+For Audit,
+
+- we will pass in the number of days to set the audit date age threshold 
+- basic flow:
+	
+				// 1 - get badges to audit 
+						uses SP [App.Sbo].[IWS.GetBadgesToAudit]
+						selects badges that have never been audited and badges whose AuditDate > @threshold days ago
+				// 2 - for each badge to audit
+				// 2.3 - get BOAA provisioning data for badge
+				// 2.1 - get the CMS provisioning data for the badge
+					FAIL if either (or both!) sides don't have data
+				// 2.2 - set badge to WAITING and LastTransmitted to today
+				// 2.4 - compare CMS prov data with BOAA prov data
+					NOTE: WE ARE NOT AUDITING PIN OR POSITION
+					FAIL if AccessType or ActiveDate or ExpireDate differ in any way
+					FAIL if data from either side is missing 
+					PASS if CMS prov data matches BOAA prov data
+	
+	Upon FAIL, UPDATE [Data].[Audit.CMSBadges], SET Status = -1, Note = 'the reason it failed', LastAudited = GETDATE()
+	Upon PASS, UPDATE [Data].[Audit.CMSBadges], SET Status = 1, Note = '', LastAudited = GETDATE()  (clears out old fail notes)
+	
+
+Questions for IWS
+
+
+
+Document types:
+
+·1 - DGN - non biometric
+·2 - QuickBadge Portrait - biometric, type 10.
+·3 - Migrated EFT - ???
+·4 - Migrated Picture- biometric, to be type 10 in the next version.
+·5 - EBTS File - contains a mix of biometric and non biometric.
+·10 - Face- biometric
+·11 - Fingerprint - biometric
+·12 - Document (EBTS related) ???
+·13 – Iris- biometric
+
+
+
+
+
+
+
+
+
+14 - PIN is not returned...
+
+
+
+Item 6 Get Picture 
+- what doc type is a 'picture'.  
+- is a picture considered a 'non-biometric' document?
+
+
+Item 10   Revoke CMS badge by BOAA Badge ID
+- need some good BOAA BadgeID for testing - none of the ones I am trying are found.
+
+Item 14   GetProvisioningAuditData
+- need some good BOAA BadgeID for testing - none of the ones I am trying are found.
+
+Item 16 "GetPersonInfoForBadge" a.k.a "Who owns this badge?"
+- need some good BOAA BadgeID for testing - none of the ones I am trying are found.
+
+
+
+Item 17  "GetCardIDsForPerson" a.k.a. "Get all cards" a.k.a. "CMSGetBOAACardIDsByPersonGUID"
+- modified signature is 
+	public IBMAPerson CMSGetBOAACardIDsByPersonGUID(int systemID, string personGUID)
+Why is systemID necessary?
+
+
+Item 20 "GetNonBiometricDocuments"
+- need a list of all NON-BIOMETRIC doc types and a list of all docs types
+
+
+
+
+Item 6 "Return picture"
+- DOCM
+- not implemented
+- special case of item 20
+
+Item 12 "Reprovision"
+- CMS
+- when provisioning data changes on BOAA side, tell IWS that they need to get ACAMS updated.
+- not implemented
+
+Item 14 "Audit"
+- (CMS) BOAA calls CMS to get list of doors provisioned for the passed CMS_CardID and BOAA_BadgeID
+- not implemented  
+- Spec says it returns "doors provisioned for that badgeID"
+
+
+Item 16 "GetPersonInfoForBadge" a.k.a "Who owns this badge?"
+- (CMS) BOAA calls CMS with a BOAA_BadgeID and CMS returns person info. 
+- not implemented  
+- Spec says it returns: Name, PersonGUID, SSN, CMS_CardID, PhotoLocation
+
+ 
+Item 17 "GetCardIDsForPerson" a.k.a. "Get all cards" a.k.a. "CMSGetBOAACardIDsByPersonGUID"
+- (CMS)  BOAA calls CMS to get a list of all of the CMS_CardIDs for the specified person
+- not implemented  
+- Spec says it returns list of CMS_CardIDs (which are ints)
+
+
+Item 18 "GetPersonDocuments"
+- (DOCM)  BOAA calls DOCM to get a list of all docs associated with the specified PersonGUID
+- partially implemented - we are calling into DOCM and getting the list of documents, but need to know what to do with it.
+- Need to define a return type - spec says it returns list of 'documents' (assume we only want docname, type)
+
+
+Item 19 "GetPerson"
+- (IDMS) BOAA calls IDMS to get all demographic info for the passed PersonGUID.
+- partially implemented - we are calling into IDMS and getting the Person info, but need to know what to do with it.
+- IS THIS PART OF AUDIT? Spec says it returns "demographic info for quality check"
+- Need to define a return type - spec says it returns "demographic info for quality check"
+
+
+Item 20 "GetNonBiometricDocuments"
+- (DOCM) BOAA calls CMS to get a list of all NON-BIOMETRIC docs for a person 
+
+
+
+
+14		public void GetProvisioningAuditData(int CMS_CardID, string BOAA_BadgeID)
+16		public void GetPersonInfoForBadge(string BOAA_BadgeID)
+17		public void GetCardIDsForPerson(string personString)
+18		public void GetPersonDocuments(string personString)
+19		public void GetPersonDemographic(string personString)
+20		public void GetNonBiometricDocuments(string personString)
+
+

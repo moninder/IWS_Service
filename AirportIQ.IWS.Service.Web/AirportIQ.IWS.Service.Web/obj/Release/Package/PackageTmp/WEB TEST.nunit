@@ -1,0 +1,10 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" appbase="C:\Source\Credentialing_System\Dev\AirportIQ.IWS.Service.API\bin\Debug" processModel="Default" domainUsage="Default" />
+  <Config name="Debug" configfile="C:\Source\Credentialing_System\Dev\AirportIQ.IWS.Service.Web\AirportIQ.IWS.Service.Web\web.config" binpathtype="Auto" runtimeFramework="any">
+    <assembly path="..\..\..\AirportIQ.IWS.Service.Web\AirportIQ.IWS.Service.Web\bin\AirportIQ.IWS.Service.Web.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="bin\AirportIQ.IWS.Service.Web.dll" />
+    <assembly path="..\..\AirportIQ.IWS.Service.API\bin\Release\AirportIQ.IWS.Service.API.dll" />
+  </Config>
+</NUnitProject>

@@ -1,0 +1,583 @@
+﻿Developer Notes for IWS Web Service
+Atchison - September 2012
+
+
+General
+- spec is excel spreadsheet and email - speak to Jim Darraugh for more details.
+- general plan is to add stored procedures to implement functionality called out in spreadsheet 
+  to flesh out web service wrapper developed by MV.
+
+
+ 
+Narrative:  (ordered loosely by elapsed time, not item number)
+ 
+In the beginning, we create a badge record with 
+
+	- PersonID 
+	- BadgeID 
+	- default active icons 
+	- default security access privileges
+ 
+(T01) Then we start QuickBadge (or QuickCapture?) and pass the following data to IWS:
+ 
+	- our BadgeID for the badge we just created 
+	- their badge ID if we have it (stored locally in Data.Person.Badges.BadgeID_IWS), 
+			if the person has been previously badged then we have the BadgeID_IWS.
+	- person name
+	- company badge name
+	- badge expiration date
+	- facility
+	- badge number
+	- badge color
+	- card type - lax secure, lax concessions, law enforcement officer id badge, ontario 
+	- list of icons for the badge, including:
+		IconAbbreviation, 
+		WhenBecomesActive
+		WhenExpires
+	and a lot of optional stuff...
+ 
+IWS performs their magic, data entry and biometric collection.
+ 
+(T03) IWS informs us when biometric collection is complete for a person. We ignore this update
+as we don't have to update anything on our side.  (FIX THIS: should we keep this entry point - 
+I vote we drop it)
+ 
+Anytime after biometric collection is complete, IWS can print and ACTIVATE the badge. 
+ 
+(T05) When IWS activates a badge, they send us their BadgeID (CardID) and we store it as 
+BadgeID_IWS in Data.Person.Badges.  
+(This will always be an UPDATE, as the badge record was created in T01)
+ 
+(T02) Anytime after the badge is activated, IWS can send us a signature image.  We take this image
+and attach it to Data.Person.AuthorizedSigners with the passed PersonGUID.  
+NOTE:  our db will change in the near future and we will have to change the input params to be 
+PersonGUID, Division and signature image.
+ 
+(T07) When IWS initiates a Background Check with TSC, they inform us that it is occurring.  
+IWS will provide the following parameters:
+ 
+	PersonGUID
+    	TSCTransactionTypeID
+	TransactionControlNumber
+	TransactionDate
+	ProgramIdentification
+	ResponseIdentification
+	Status
+	StatusText
+	xmlData
+	Direction
+ 
+Using the entry in PersonDivisionChecks that was set up in T01 prior to launching QuickCapture, 
+we will INSERT an entry in TSCTransactions with these parameters.
+ 
+(T08) When IWS receives data associated with a Background Check, they notify us.  
+IWS will provide the following parameters:
+ 
+	PersonGUID		
+    AgencyCode			(could we infer this if they passed TSCTransactionTypeID?)
+	CheckTypeCode
+	TransactionControlNumber
+	TransactionDate
+	TransactionTypeCode		(this is not the same as TSCTransactionTypeID)	
+	Result
+	ResultDate
+	ResultDetails
+	??? ResultDetailsSplit1		(if necessary - could be a legacy restriction that we can drop now...)
+	??? ResultDetailsSplit2
+	??? ResultDetailsSplit3
+	ResultDetailDate
+ 
+We will INSERT an entry in AgencyTransactions with these values.
+ 
+(T09)  When the FBI notifies IWS that a background check is complete, IWS will 
+notify us of that transaction as usual, using T08 (this transaction will include all of the details 
+of the CHRC criminal history record check).  Completed background checks require an additional call
+into the webservice, where IWS will ask us to pull data from an FBI website and update DivisionCheck. 
+IWS will provide the following parameters:
+ 
+	PersonGUID		
+    (AgencyCode + CheckTypeCode) or TSCTransactionTypeID
+	TransactionControlNumber
+	TransactionDate
+	TransactionTypeCode		(can we infer this from TSCTransactionTypeID?
+    	URL				(can we get metadata to automate the scape, or do we have to hardcode it?)
+	 
+We will scrape the data from the page at the URl and store it in DivisionCheck.  FIX THIS - what data, where?
+ 
+NOTE:  we could combine T08 and T09 by adding a URL param to T08.  If the URL is present, then we would 
+do the T09 scrape.
+ 
+ 
+(T11) When a badge expires, IWS informs us and we will update the currently-active 
+Person.BadgeStatusPeriods column WhenExpires to now() and create a new Person.BadgeStatusPeriod 
+record with StatusCode 'EXPR' and with WhenBecomesActive = now() and with WhenExpires = 12/31/9999.  
+We will ensure that ACTV period’s WhenExpires = EXPR period’s WhenBecomesActive = now().
+  
+(T12) At any time, IWS can request a list of the security access privileges that are provisioned for a badge.
+IWS will provide either (1) the GCR BadgeID or (2) the IWS PersonGUID and the IWS_CardID. We will
+look up the provisioning data and return it as a list. 
+
+ProvisionedByCard(int IWS_CardID) returns the following in a ProvisionData struct;
+
+ProvisionData
+{
+	int IWS_CardID;
+	int PIN;
+	List<CategoryData> ProvisionedCategories;
+}
+
+CategoryData
+{
+	char AccessType;	// D for Default or S for Special
+	int CategoryID;
+	string CategoryName;	// human readable category
+	string WhenBecomesActive;
+	string WhenExpires;	
+} 
+
+
+(T13) NEEDS SPEC
+At any time, IWS can ask us to verify the security access privileges that are provisioned for a badge.
+IWS will provide either (1) the GCR BadgeID or (2) the IWS PersonGUID and the IWS_CardID, as well as a list of the
+security access privileges THEY think the badge is provisioned for. (FIX THIS - what data is supplied in the list?)
+We will extract our list from the db and compare it to their list. If the lists
+are IDENTICAL, we return OK.  If the lists differ, we log an error by (FIX THIS UNKNOWN). 
+ 
+
+
+
+Web Service entry points:
+
+
+bool BiometricUpdate(Guid IWS_PersonID, byte[] signatureImage);
+
+
+bool UpdateBadgeID(int IWS_CardID, int GCR_BadgeID);
+
+
+bool InitiateBackgroundCheck(Guid IWS_PersonID, int TSCTransactionTypeID, string TransactionControlNumber, DateTime TransactionDate, string ProgramIdentification,
+				string ResponseIdentification, string Status, string StatusText, string XMLdata, string Direction);
+
+bool UpdateBackgroundCheck(Guid IWS_PersonID, string AgencyCode, string CheckTypeCode, string TransactionTypeCode, string TransactionControlNumber,
+				DateTime TransactionDate, string Result, DateTime ResultDate, string ResultDetails, DateTime ResultDetailDate);
+
+bool ExpireBadge(Guid IWS_PersonID, int IWS_CardID);
+
+
+ProvisionData ProvisionedByCard(int IWS_CardID);
+
+
+
+ProvisionData
+{
+	int IWS_CardID;
+	int PIN;
+	List<CategoryData> ProvisionedCategories;
+}
+
+CategoryData
+{
+	char AccessType;	// D for Default or S for Special
+	int CategoryID;
+	string CategoryName;	// human readable category
+	string WhenBecomesActive;
+	string WhenExpires;	
+}
+ 
+ 
+
+
+Specific Tasks (these numbers map directly to item numbers in the spreadsheet)
+
+  
+T01 - Initiate Biometric Capture
+--------------------------------
+Send new badge info to IWS.  Out of scope for the web service.
+
+
+T02 - Biometric Update
+----------------------
+Update Data.Person.AuthorizedSigners with a signature image.  
+
+Signature image and PersonGUID (the IWS primary key for a person) are passed in.
+
+NOTE:  our db will change in the near future and we will have to change the input params to be PersonGUID, Division and signature image.
+
+
+
+USE [CS_BOSD -- Dev]
+GO
+/****** Object:  StoredProcedure [App.Sbo].[IWS.BiometricUpdate]    Script Date: 09/17/2012 11:48:19 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/*
+	Updates the signature image for a given person.
+
+	09/14/2012	Lance Atchison	Created.
+*/
+ALTER PROCEDURE [App.Sbo].[IWS.BiometricUpdate]
+(
+	@PersonGUID uniqueidentifier = NULL
+	,@SignatureImage varbinary(max) 
+)
+AS
+BEGIN
+	-- returns the number of affected rows.
+	UPDATE [Data].[Person.AuthorizedSigners] 
+	SET		SignatureImage = @SignatureImage
+	FROM	[Data].[Person.Persons] as DPP
+			INNER JOIN 	[Data].[Person.PersonDivisionXref] as DPPDX
+			ON DPPDX.PersonID = DPP.PersonID
+			INNER JOIN 	[Data].[Person.AuthorizedSigners] as DPA
+			ON DPPDX.PersonDivisionXrefID = DPA.PersonDivisionXrefID
+	WHERE	DPP.PersonID_IWS = @PersonGUID
+
+END
+
+
+T03 - End Biometric Capture
+---------------------------
+This is a positive reply from IWS that the biometric capture is complete.  
+
+When we launched QuickBadge in T01, we had already created a 'temporary' person to keep 
+track of background check status updates for a person. (IWS sends us those updates in T07, T08 and T09)
+
+NOTE: There is nothing that has to happen in the db to reflect that capture is complete.  
+I am leaving this interface in the webservice for now, just in case I'm wrong.
+
+
+
+T05 Update BadgeID
+------------------
+
+Spreadsheet says parameters passed are PersonGUID, CardID, BadgeID
+Q: If BadgeID is really OUR BadgeID, BadgeID is the PK on Data.Person.Badges, so if we have 
+   OUR BadgeID we don't need the PersonGUID and can drop it from the interface.
+   I think that we HAVE to have OUR BadgeID as an input param, because IWS has to tie their new
+   BadgeID to our existing BadgeID.  We don't need PersonGUID if we have OUR BadgeID. 
+
+NOTE: I'm ignoring the PersonGUID param.
+
+
+Here is the stored procedure:
+
+USE [CS_BOSD -- Dev]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+/*
+	Updates IWS' BadgeID for a given BOAA Person/Badge.
+
+	09/18/2012	Lance Atchison	Created.
+*/
+CREATE PROCEDURE [App.Sbo].[IWS.UpdateBadgeID]
+(
+	@BOAA_BadgeID int
+	, @IWS_CardID int
+)
+AS
+BEGIN
+	-- returns the number of affected rows.
+	UPDATE [Data].[Person.Badges] 
+	SET		BadgeID_IWS = @IWS_CardID
+	WHERE	BadgeID = @BOAA_BadgeID
+END
+GO
+
+
+old stored procedure
+<ignore>
+CREATE PROCEDURE [App.Sbo].[IWS.UpdateBadgeID]
+(
+	@IWS_PersonGUID uniqueidentifier = NULL
+	, @IWS_CardID int
+	, @BOAA_BadgeID int
+)
+AS
+BEGIN
+	-- returns the number of affected rows.
+	UPDATE [Data].[Person.Badges] 
+	SET		BadgeID_IWS = @IWS_CardID
+	FROM	[Data].[Person.Persons] as DPP
+			INNER JOIN 	[Data].[Person.PersonDivisionXref] as DPPDX
+			ON DPPDX.PersonID = DPP.PersonID
+			INNER JOIN 	[Data].[Person.Badges] as DPB
+			ON DPPDX.PersonDivisionXrefID = DPB.PersonDivisionXrefID
+	WHERE	DPP.PersonID_IWS = @IWS_PersonGUID
+END
+</ignore>
+
+T07 - Initiate Background Check  (was Initiate CHBC - Criminal History Background Check)
+-------------------------------
+
+Here is the stored procedure:
+USE [CS_BOSD -- Dev]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+/*
+	IWS has initiated a BC with TSC, so we have to INSERT a record into TSCTransactions
+
+	09/20/2012	Lance Atchison	Created.
+*/
+CREATE PROCEDURE [App.Sbo].[IWS.InitiateBackgroundCheck]
+(
+	@IWS_PersonGUID uniqueidentifier = NULL,
+    @TSCTransactionTypeID int,
+	@TransactionControlNumber VARCHAR(25),
+	@TransactionDate DATETIME,
+	@ProgramIdentification VARCHAR(10),
+	@ResponseIdentification VARCHAR(20),
+	@Status VARCHAR(20),
+	@StatusText VARCHAR(max),
+	@xmlData XML,
+	@Direction VARCHAR(15)
+)
+AS
+BEGIN
+	INSERT INTO [Data].[BackgroundCheck.TSCTransactions]
+		(TransactionDate, 
+		ProgramIdentification,
+		ResponseIdentification,
+		TransactionControlNumber,
+		TSCTransactionTypeID,
+		Status,
+		StatusText,
+		xmlData,
+		Direction,
+		PersonDivisionCheckID)
+	VALUES	
+		(@TransactionDate, 
+		@ProgramIdentification,
+		@ResponseIdentification,
+		@TransactionControlNumber,
+		@TSCTransactionTypeID,
+		@Status,
+		@StatusText,
+		@xmlData,
+		@Direction,
+			(SELECT  PersonDivisionCheckID
+			FROM	[Data].[BackgroundCheck.PersonDivisionChecks] AS PDC
+			INNER JOIN [Data].[Person.PersonDivisionXref] AS PDX
+			ON		PDX.PersonDivisionXrefID = PDC.PersonDivisionXrefID
+			INNER JOIN [Data].[Person.Persons] AS PP
+			ON		PDX.PersonID = PP.PersonID
+			AND		PP.PersonID_IWS = @IWS_PersonGUID)
+		)
+
+END
+
+
+GO
+
+
+T08 - Update Background Check (was CHBC update)
+-----------------------------
+
+
+Here is the stored procedure:
+USE [CS_BOSD -- Dev]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+/*
+	IWS has received data on a BC from and agency, so we have to INSERT a record into AgencyTransactions
+
+	09/20/2012	Lance Atchison	Created.
+*/
+CREATE PROCEDURE [App.Sbo].[IWS.UpdateBackgroundCheck]
+(
+	@IWS_PersonGUID uniqueidentifier = NULL,
+    @AgencyCode VARCHAR(5),
+	@CheckTypeCode VARCHAR(5),
+	@TransactionTypeCode VARCHAR(5),
+	@TransactionDate DATETIME,
+	@TransactionControlNumber VARCHAR(25),
+	@Result VARCHAR(40),
+	@ResultDate DATETIME,
+	@ResultDetails VARCHAR(max),
+	@ResultDetailDate DATETIME
+	)
+AS
+BEGIN
+	INSERT INTO [Data].[BackgroundCheck.AgencyTransactions]
+		(AgencyCode,
+		CheckTypeCode,
+		TransactionTypeCode,
+		TransactionDate,
+		TransactionControlNumber,
+		Result,
+		ResultDate,
+		ResultDetails,
+		ResultDetailDate,
+		PersonDivisionCheckID)
+	VALUES	
+		(@AgencyCode,
+		@CheckTypeCode,
+		@TransactionTypeCode, 
+		@TransactionDate, 
+		@TransactionControlNumber, 
+		@Result,
+		@ResultDate, 
+		@ResultDetails,
+		@ResultDetailDate,
+			(SELECT  PersonDivisionCheckID
+			FROM	[Data].[BackgroundCheck.PersonDivisionChecks] AS PDC
+			INNER JOIN [Data].[Person.PersonDivisionXref] AS PDX
+			ON		PDX.PersonDivisionXrefID = PDC.PersonDivisionXrefID
+			INNER JOIN [Data].[Person.Persons] AS PP
+			ON		PDX.PersonID = PP.PersonID
+			AND		PP.PersonID_IWS = @IWS_PersonGUID)
+		)
+
+END
+
+GO
+
+
+
+T09 - CHBC index to history search on FBI website
+-------------------------------------------------
+Needs spec
+
+
+
+
+T11 Expire a Badge
+----------------------
+
+If badge is already expired? (BadgeStatusCode = EXPR and WhenExpires = 12/31/9999) we should treat it as if it were active.
+
+
+Parameters passed are GCR_BadgeID.
+Q: We could also support (PersonGUID and CardID) as parameters
+
+Here is the stored procedure:
+
+/*
+	Sets a given badge to 'expired'
+	
+	09/18/2012	Lance Atchison	Created.
+*/
+CREATE PROCEDURE [App.Sbo].[IWS.ExpireBadge]
+(
+	@BOAA_BadgeID int
+)
+AS
+BEGIN
+	DECLARE @thisInstant DATETIME
+	DECLARE @StaffID int
+
+
+	SET @thisInstant = GETDATE()
+	SET @StaffID = 9999				-- FIX THIS ATCHISON - we have to set up a Staff person that is CS System and connect these record to it
+
+	-- 'expire' the active badge period
+    UPDATE	DPBSP 
+    SET		WhenExpires = @thisInstant   
+    FROM	[Data].[Person.BadgeStatusPeriods] as DPBSP
+    WHERE	DPBSP.BadgeID = @BOAA_BadgeID
+    AND		DPBSP.WhenExpires = '12/31/9999'
+    --AND		DPBSP.BadgeStatusCode = ‘ACTV’   don’t require Active, it should be an active badge but it’s possible the badge is Lost or Invalid.
+    
+	-- 'activate' the expired badge period
+	INSERT INTO [Data].[Person.BadgeStatusPeriods]
+	(BadgeID, WhenBecomesActive, WhenExpires, BadgeStatusCode, StaffID)
+	VALUES	(@BOAA_BadgeID, @thisInstant, '12/31/9999', 'EXPR', @StaffID)
+
+
+END
+
+
+
+
+T12 Re-provision (We tell them)
+----------------
+
+ 
+-- SECURE ACCESS
+-- Data.Person.BadgeAccessPeriods (BadgeID, CategoryID, AccessType, WhenBecomesActive, WhenExpires)
+-- Data.Access.Categories (CategoryID, SourceCategoryPKID (PicturePerfect value for the category)
+
+SELECT DPP.PersonID_IWS, DPPDX.PersonID, DPB.BadgeID, DPB.BadgeID_IWS, 
+		DPBAP.CategoryID, DAC.CategoryName, DAC.SourceCategoryPKID,
+		DPB.WhenBecomesActive
+FROM [Data].[Person.Persons] AS DPP
+
+INNER JOIN 	[Data].[Person.PersonDivisionXref] AS DPPDX
+ON DPPDX.PersonID = DPP.PersonID
+
+INNER JOIN [Data].[Person.Badges] AS DPB
+ON DPPDX.PersonDivisionXrefID = DPB.PersonDivisionXrefID
+
+INNER JOIN [Data].[Person.BadgeAccessPeriods] as DPBAP
+ON DPB.BadgeID = DPBAP.BadgeID
+
+INNER JOIN [Data].[Access.Categories] as DAC
+ON DPBAP.CategoryID = DAC.CategoryID
+
+WHERE DPB.BadgeID_IWS = 1932169
+AND DPP.PersonID_IWS =  '764952BC-1E87-759E-B3C2-5CFA429B649E'
+
+
+
+
+-- ICONS	
+--Data.Person.Badges (BadgeID, PersonID, WhenBecomesActive)
+--Data.Person.Persons(PersonID, PersonID_IWS)
+--Data.Person.BadgeIconPeriods    (badgeID, IconID, WhenBecomesActive, WhenExpires)
+--Data.Icon.Icons    (IconID, IconDescription, IconAbbreviation)
+
+SELECT DPP.PersonID_IWS, DPPDX.PersonID, DPB.BadgeID, DPB.BadgeID_IWS, DPB.WhenBecomesActive, DII.IconAbbreviation, DPBIP.WhenBecomesActive, DPBIP.WhenExpires
+FROM [Data].[Person.Persons] AS DPP
+
+INNER JOIN 	[Data].[Person.PersonDivisionXref] AS DPPDX
+ON DPPDX.PersonID = DPP.PersonID
+
+INNER JOIN [Data].[Person.Badges] AS DPB
+ON DPPDX.PersonDivisionXrefID = DPB.PersonDivisionXrefID
+
+INNER JOIN [Data].[Person.BadgeIconPeriods] AS DPBIP
+ON DPB.WhenBecomesActive >= DPBIP.WhenBecomesActive 
+AND DPB.WhenExpires < DPBIP.WhenExpires
+AND DPB.BadgeID = DPBIP.BadgeID
+
+INNER JOIN [Data].[Icon.Icons] as DII
+ON DPBIP.IconID = DII.IconID
+
+WHERE DPP.PersonID_IWS =  '6E6BCBA4-5F5C-FB94-6C53-550DB5A482D3'
+AND DPB.BadgeID_IWS = 3939289
+--AND DPB.BadgeID_IWS = 3255196
+
+
+ 
+
+
+T13 Provision  (They tell us)
+-------------
+BOAA will send to IBMA the access privileges for a badge (they can change over time, they are in Person.BadgeAccessPeriods).  We don’t directly interact with ACAMS (Access Control and Alarm Management System, also called Picture Perfect or PP).
+
+"THEY TELL US what the badge sec acces priv are   we are QA and will note an exception and return OK or not.
+
+Assuming provisioning data is stored in CMS, use person.guid to query the CMS."
+
+
+T15 Update Person Status
+------------------------
+This functionality is included in T08, and is dropped.  
+Remove this interface from the WebService. 

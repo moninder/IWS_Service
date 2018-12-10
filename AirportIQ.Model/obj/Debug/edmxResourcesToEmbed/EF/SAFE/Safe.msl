@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SafeModelStoreContainer" CdmEntityContainer="SafeEntities">
+    <EntitySetMapping Name="Safe_CitationPoliceOfficers">
+      <EntityTypeMapping TypeName="SafeModel.Safe_CitationPoliceOfficers">
+        <MappingFragment StoreEntitySet="Safe_CitationPoliceOfficers">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="OfficerBadgeID" ColumnName="OfficerBadgeID" />
+          <ScalarProperty Name="SafeCitationID" ColumnName="SafeCitationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_Citations">
+      <EntityTypeMapping TypeName="IsTypeOf(SafeModel.Safe_Citations)">
+        <MappingFragment StoreEntitySet="Safe_Citations">
+          <ScalarProperty Name="DriversLicenseNumber" ColumnName="DriverslicenseNumber" />
+          <ScalarProperty Name="Conditions" ColumnName="Conditions" />
+          <ScalarProperty Name="VehicleIdentification" ColumnName="VehicleIdentification" />
+          <ScalarProperty Name="SafeCitationID" ColumnName="SafeCitationID" />
+          <ScalarProperty Name="CitationNumber" ColumnName="CitationNumber" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+          <ScalarProperty Name="VehicleMakeID" ColumnName="VehicleMakeID" />
+          <ScalarProperty Name="VehicleBodyID" ColumnName="VehicleBodyID" />
+          <ScalarProperty Name="CountryCode_LicensePlate" ColumnName="CountryCode_LicensePlate" />
+          <ScalarProperty Name="CountrySubdivisionCode_LicensePlate" ColumnName="CountrySubdivisionCode_LicensePlate" />
+          <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+          <ScalarProperty Name="BadgeUnknown" ColumnName="BadgeUnknown" />
+          <ScalarProperty Name="BadgeDisplayed" ColumnName="BadgeDisplayed" />
+          <ScalarProperty Name="DriverIcon" ColumnName="DriverIcon" />
+          <ScalarProperty Name="LicenseValid" ColumnName="LicenseValid" />
+          <ScalarProperty Name="DriverTrainingRequired" ColumnName="DriverTrainingRequired" />
+          <ScalarProperty Name="SecurityTrainingRequired" ColumnName="SecurityTrainingRequired" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ViolationLocation" ColumnName="ViolationLocation" />
+          <ScalarProperty Name="Cancelled" ColumnName="Cancelled" />
+          <ScalarProperty Name="FollowUp" ColumnName="FollowUp" />
+          <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+          <ScalarProperty Name="WhenDue" ColumnName="WhenDue" />
+          <ScalarProperty Name="WhenResolved" ColumnName="WhenResolved" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="Superintendent" ColumnName="Superintendent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_CitationViolations">
+      <EntityTypeMapping TypeName="SafeModel.Safe_CitationViolations">
+        <MappingFragment StoreEntitySet="Safe_CitationViolations">
+          <ScalarProperty Name="Conditions" ColumnName="Conditions" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="ViolationPoints" ColumnName="ViolationPoints" />
+          <ScalarProperty Name="IsMovingViolation" ColumnName="IsMovingViolation" />
+          <ScalarProperty Name="ViolationTypeID" ColumnName="ViolationTypeID" />
+          <ScalarProperty Name="ViolationID" ColumnName="ViolationID" />
+          <ScalarProperty Name="SafeCitationID" ColumnName="SafeCitationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_Hearings">
+      <EntityTypeMapping TypeName="SafeModel.Safe_Hearings">
+        <MappingFragment StoreEntitySet="Safe_Hearings">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="HearingNotes" ColumnName="HearingNotes" />
+          <ScalarProperty Name="WhenCompleted" ColumnName="WhenCompleted" />
+          <ScalarProperty Name="WhenTrainingHeld" ColumnName="WhenTrainingHeld" />
+          <ScalarProperty Name="WhenAppealToBeHeld" ColumnName="WhenAppealToBeHeld" />
+          <ScalarProperty Name="WhenHearingHeld" ColumnName="WhenHearingHeld" />
+          <ScalarProperty Name="SafeOfficerID_Hearing" ColumnName="SafeOfficerID_Hearing" />
+          <ScalarProperty Name="SafeCitationID" ColumnName="SafeCitationID" />
+          <ScalarProperty Name="SafeHearingID" ColumnName="SafeHearingID" />
+          <ScalarProperty Name="Superintendent" ColumnName="Superintendent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_VehicleBodyTypes">
+      <EntityTypeMapping TypeName="SafeModel.Safe_VehicleBodyTypes">
+        <MappingFragment StoreEntitySet="Safe_VehicleBodyTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="VehicleBodyAbbreviation" ColumnName="VehicleBodyAbbreviation" />
+          <ScalarProperty Name="VehicleBodyDescription" ColumnName="VehicleBodyDescription" />
+          <ScalarProperty Name="VehicleBodyID" ColumnName="VehicleBodyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_VehicleMakes">
+      <EntityTypeMapping TypeName="SafeModel.Safe_VehicleMakes">
+        <MappingFragment StoreEntitySet="Safe_VehicleMakes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="VehicleMakeAbbreviation" ColumnName="VehicleMakeAbbreviation" />
+          <ScalarProperty Name="VehicleMakeDescription" ColumnName="VehicleMakeDescription" />
+          <ScalarProperty Name="VehicleMakeID" ColumnName="VehicleMakeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_Violations">
+      <EntityTypeMapping TypeName="SafeModel.Safe_Violations">
+        <MappingFragment StoreEntitySet="Safe_Violations">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ViolationPoints" ColumnName="ViolationPoints" />
+          <ScalarProperty Name="ViolationTypeID" ColumnName="ViolationTypeID" />
+          <ScalarProperty Name="ViolationDescription" ColumnName="ViolationDescription" />
+          <ScalarProperty Name="ViolationNumber" ColumnName="ViolationNumber" />
+          <ScalarProperty Name="ViolationID" ColumnName="ViolationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_ViolationTypes">
+      <EntityTypeMapping TypeName="SafeModel.Safe_ViolationTypes">
+        <MappingFragment StoreEntitySet="Safe_ViolationTypes">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ViolationTypeAbbreviation" ColumnName="ViolationTypeAbbreviation" />
+          <ScalarProperty Name="ViolationTypeDescription" ColumnName="ViolationTypeDescription" />
+          <ScalarProperty Name="ViolationTypeID" ColumnName="ViolationTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Company_List_CompanyID_ByFacility" FunctionName="SafeModel.Store.Company_List_CompanyID_ByFacility" />
+    <EntitySetMapping Name="Safe_HearingPoliceOfficers">
+      <EntityTypeMapping TypeName="SafeModel.Safe_HearingPoliceOfficers">
+        <MappingFragment StoreEntitySet="Safe_HearingPoliceOfficers">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="OfficerBadgeID" ColumnName="OfficerBadgeID" />
+          <ScalarProperty Name="SafeHearingID" ColumnName="SafeHearingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_FullName">
+      <EntityTypeMapping TypeName="SafeModel.Person_FullName">
+        <MappingFragment StoreEntitySet="Person_FullName">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_PersonDivisionXref">
+      <EntityTypeMapping TypeName="SafeModel.Person_PersonDivisionXref">
+        <MappingFragment StoreEntitySet="Person_PersonDivisionXref">
+          <ScalarProperty Name="WhenEnds" ColumnName="WhenEnds" />
+          <ScalarProperty Name="WhenBegins" ColumnName="WhenBegins" />
+          <ScalarProperty Name="WhenAccepted" ColumnName="WhenAccepted" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Safe_Officers">
+      <EntityTypeMapping TypeName="SafeModel.Safe_Officers">
+        <MappingFragment StoreEntitySet="Safe_Officers">
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="OfficerBadgeNumber" ColumnName="OfficerBadgeNumber" />
+          <ScalarProperty Name="OfficerName" ColumnName="OfficerName" />
+          <ScalarProperty Name="SafeDivisionID" ColumnName="SafeDivisionID" />
+          <ScalarProperty Name="SafeOfficerID" ColumnName="SafeOfficerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Company_Companies">
+      <EntityTypeMapping TypeName="IsTypeOf(SafeModel.Company_Companies)">
+        <MappingFragment StoreEntitySet="Company_Companies">
+          <ScalarProperty Name="StaffID_BadgeCoordinator" ColumnName="StaffID_BadgeCoordinator" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="CorporationName" ColumnName="CorporationName" />
+          <ScalarProperty Name="DBAName" ColumnName="DBAName" />
+          <ScalarProperty Name="BadgeName" ColumnName="BadgeName" />
+          <ScalarProperty Name="InsuranceRequired" ColumnName="InsuranceRequired" />
+          <ScalarProperty Name="BTRCRequired" ColumnName="BTRCRequired" />
+          <ScalarProperty Name="FingerprintRequired" ColumnName="FingerprintRequired" />
+          <ScalarProperty Name="BackgroundCheckRequired" ColumnName="BackgroundCheckRequired" />
+          <ScalarProperty Name="BadgeColorID_HighestLevel" ColumnName="BadgeColorID_HighestLevel" />
+          <ScalarProperty Name="ProviderNumber" ColumnName="ProviderNumber" />
+          <ScalarProperty Name="WhenLastUpdated" ColumnName="WhenLastUpdated" />
+          <ScalarProperty Name="StaffID_LastUpdated" ColumnName="StaffID_LastUpdated" />
+          <ScalarProperty Name="RAMSAgreementNumber" ColumnName="RAMSAgreementNumber" />
+          <ScalarProperty Name="RAMSExpirationDate" ColumnName="RAMSExpirationDate" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_PrimaryKeyValue" ColumnName="_Legacy_PrimaryKeyValue" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Division_Divisions">
+      <EntityTypeMapping TypeName="SafeModel.Division_Divisions">
+        <MappingFragment StoreEntitySet="Division_Divisions">
+          <ScalarProperty Name="RAMSExpirationDate" ColumnName="RAMSExpirationDate" />
+          <ScalarProperty Name="RAMSAgreementNumber" ColumnName="RAMSAgreementNumber" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_DIV_ID" ColumnName="_Legacy_DIV_ID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="BadgeCreditCost" ColumnName="BadgeCreditCost" />
+          <ScalarProperty Name="BadgeBillingCost" ColumnName="BadgeBillingCost" />
+          <ScalarProperty Name="ReplaceBadgeCost" ColumnName="ReplaceBadgeCost" />
+          <ScalarProperty Name="NewBadgeCost" ColumnName="NewBadgeCost" />
+          <ScalarProperty Name="FacilityCode" ColumnName="FacilityCode" />
+          <ScalarProperty Name="ProviderNumber" ColumnName="ProviderNumber" />
+          <ScalarProperty Name="CategoryCode" ColumnName="CategoryCode" />
+          <ScalarProperty Name="StaffID_LastUpdated" ColumnName="StaffID_LastUpdated" />
+          <ScalarProperty Name="WhenLastUpdated" ColumnName="WhenLastUpdated" />
+          <ScalarProperty Name="BackgroundCheckRequired" ColumnName="BackgroundCheckRequired" />
+          <ScalarProperty Name="FingerprintRequired" ColumnName="FingerprintRequired" />
+          <ScalarProperty Name="WhenEnrolled" ColumnName="WhenEnrolled" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DivisionStatusCode" ColumnName="DivisionStatusCode" />
+          <ScalarProperty Name="DivisionTypeID" ColumnName="DivisionTypeID" />
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_Badges">
+      <EntityTypeMapping TypeName="SafeModel.Person_Badges">
+        <MappingFragment StoreEntitySet="Person_Badges">
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="DriverLEO" ColumnName="DriverLEO" />
+          <ScalarProperty Name="DriveThroughGates" ColumnName="DriveThroughGates" />
+          <ScalarProperty Name="ProxNumber" ColumnName="ProxNumber" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_PersonType_ONT" ColumnName="_Legacy_PersonType_ONT" />
+          <ScalarProperty Name="C_Legacy_BadgeReturnDate_ONT" ColumnName="_Legacy_BadgeReturnDate_ONT" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="BadgeColorID" ColumnName="BadgeColorID" />
+          <ScalarProperty Name="BadgeIssuanceReasonCode" ColumnName="BadgeIssuanceReasonCode" />
+          <ScalarProperty Name="BadgeNumber" ColumnName="BadgeNumber" />
+          <ScalarProperty Name="BadgeID_IWS" ColumnName="BadgeID_IWS" />
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Badges_Info">
+      <EntityTypeMapping TypeName="SafeModel.Badges_Info">
+        <MappingFragment StoreEntitySet="Badges_Info">
+          <ScalarProperty Name="PersonDivisionXrefID" ColumnName="PersonDivisionXrefID" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="CountrySubdivisionCode" ColumnName="CountrySubdivisionCode" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+          <ScalarProperty Name="DivisionCode" ColumnName="DivisionCode" />
+          <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+          <ScalarProperty Name="CorporationName" ColumnName="CorporationName" />
+          <ScalarProperty Name="CompanyCode" ColumnName="CompanyCode" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="BadgeNumber" ColumnName="BadgeNumber" />
+          <ScalarProperty Name="BadgeID" ColumnName="BadgeID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="SafeModel.Documents">
+        <MappingFragment StoreEntitySet="Common_Requirement_Documents">
+          <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="C_Legacy_TableName" ColumnName="_Legacy_TableName" />
+          <ScalarProperty Name="C_Legacy_DatabaseName" ColumnName="_Legacy_DatabaseName" />
+          <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+          <ScalarProperty Name="IdentificationNumber" ColumnName="IdentificationNumber" />
+          <ScalarProperty Name="IssuingAuthority_CountrySubdivisionCode" ColumnName="IssuingAuthority_CountrySubdivisionCode" />
+          <ScalarProperty Name="IssuingAuthority_CountryCode" ColumnName="IssuingAuthority_CountryCode" />
+          <ScalarProperty Name="WhenCreated" ColumnName="WhenCreated" />
+          <ScalarProperty Name="DocumentImage" ColumnName="DocumentImage" />
+          <ScalarProperty Name="ContentTypeCode" ColumnName="ContentTypeCode" />
+          <ScalarProperty Name="DocumentDescription" ColumnName="DocumentDescription" />
+          <ScalarProperty Name="DocumentFilename" ColumnName="DocumentFilename" />
+          <ScalarProperty Name="DocumentTypeNumber" ColumnName="DocumentTypeNumber" />
+          <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+          <ScalarProperty Name="DocumentID" ColumnName="DocumentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Common_Requirement_DocumentsRequired">
+      <EntityTypeMapping TypeName="SafeModel.Common_Requirement_DocumentsRequired">
+        <MappingFragment StoreEntitySet="Common_Requirement_DocumentsRequired">
+          <ScalarProperty Name="DropdownName" ColumnName="DropdownName" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DocumentTypeNumber" ColumnName="DocumentTypeNumber" />
+          <ScalarProperty Name="RequirementCode" ColumnName="RequirementCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person_FullName_LastFirst">
+      <EntityTypeMapping TypeName="SafeModel.Person_FullName_LastFirst">
+        <MappingFragment StoreEntitySet="Person_FullName_LastFirst">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LEO_OfficerBadges">
+      <EntityTypeMapping TypeName="SafeModel.LEO_OfficerBadges">
+        <MappingFragment StoreEntitySet="LEO_OfficerBadges">
+          <ScalarProperty Name="OfficerRankTitleDescription" ColumnName="OfficerRankTitleDescription" />
+          <ScalarProperty Name="C_DataChanges_RowID" ColumnName="_DataChanges_RowID" />
+          <ScalarProperty Name="WhenExpires" ColumnName="WhenExpires" />
+          <ScalarProperty Name="WhenBecomesActive" ColumnName="WhenBecomesActive" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="PoliceDepartmentID" ColumnName="PoliceDepartmentID" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="OfficerBadgeID" ColumnName="OfficerBadgeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
